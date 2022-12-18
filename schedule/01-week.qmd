@@ -1,0 +1,10 @@
+---
+title: "Week 1"
+subtitle: "Missing Data"
+date: 2023-02-01
+---
+
+## Prepare
+
+-   {{< fa book >}} Baraldi, A. N., & Enders, C. K. (2010). *An introduction to modern missing data analyses. Journal of School Psychology, 48(1), 5--37.* doi:10.1016/j.jsp.2009.10.001 \[[Baradi and Enders 20](https://www.uvm.edu/~statdhtx/StatPages/Missing_Data/Baraldi-Enders.html)10\]
+-   {{< fa book >}} \*R in Action\* chapter 18.

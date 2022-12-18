@@ -7,7 +7,7 @@ date: 2023-02-14
 
 {{< fa book >}} Wehrens, R., Putter, H., & Buydens, L. (2000). The bootstrap: a tutorial. Chemometrics and Intelligent Laboratory Systems, 54, 35-52.
 
-[Wehrens et al.](readings/03-week-robust_methods/wehrens2000.pdf)
+[Wehrens et al.](/readings/03-week-robust_methods/wehrens2000.pdf)
 
 - When do you use a bootstrapping procedure? What purpose does it serve?
 - How is a bootstrapped sampling distribution generated?
@@ -16,7 +16,7 @@ date: 2023-02-14
 
 {{< fa book >}} Wilcox, R. R. (1998). How many discoveries have been lost by ignoring modern statistical methods? American Psychologist, 53, 300—314.
 
-[Wilcox 1998](readings/03-week-robust_methods/wilcox1998.pdf)
+[Wilcox 1998](/readings/03-week-robust_methods/wilcox1998.pdf)
 
 - What are the statistical and theoretical problems associated with removing outliers?
 - How does skew affect your test?

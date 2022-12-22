@@ -13,8 +13,8 @@ As a discipline, statistics has given profound tools to the sciences. Statistics
 3.  Process models: Mediation, multiple mediation, mediated moderation, moderated mediation, path analysis
 4.  Non-Gaussian statistics: Generalized Linear Model, Poisson regression, ordinal regression, multinomial regression
 5.  Beyond Null Hypothesis Significance Testing (NHST): Structural equation models, Bayesian hypothesis testing
-6.  Dimension reduction: Exploratory factor analysis, principal components analysis, cluster analysis, confirmatory factor analysis (CFA)
-7.  Time-based analyses: growth curve modeling
+6.  Dimension reduction: Exploratory factor analysis, principal components analysis (PCA), cluster analysis, confirmatory factor analysis (CFA)
+7.  Time-based analyses: survival modeling and growth curve modeling
 8.  Meta-analysis
 
 I place a strong emphasis on practical application. I believe you are more likely to learn and readily use these analyses in the future if you do them at least once now. Every lecture will have "challenge" demonstrations for you to try the analyses along with me. Every Wednesday there will be a lab going over the material covered that week. The lab assignments will help you build a personal library of example statistical scripts that you will hopefully find useful for years into the future. These lab assignments will be due at the end of class.

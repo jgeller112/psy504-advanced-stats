@@ -9,9 +9,9 @@ sidebar: false
 As a discipline, statistics has given profound tools to the sciences. Statistics is our way of detecting patterns in the noisy universe. Traditionally, psychologists were limited to research questions that could be answered with classical statistical analyses, but without particularly intending to do so, psychologists have found themselves at the cutting age of statistical discovery in the 20th and 21st centuries. This is because we needed to adapt our tools to meet the demands of the complex nature of the phenomena we study. This course will give you the quantitative tools to ask and answer research questions that were impossible to test as recently as a decade ago. Specifically, we will cover the following topics as stand-alone modules:
 
 1.  Missing Data
-2.  Robust Methods and Nonparamteric Statistics
+2.  Robust Methods (bootstrapping)
 3.  Process models: Mediation, multiple mediation, mediated moderation, moderated mediation, path analysis
-4.  Non-Gaussian statistics: Generalized Linear Model, Poisson regression, ordinal regression, multinomial regression, bootstrapping
+4.  Non-Gaussian statistics: Generalized Linear Model, Poisson regression, ordinal regression, multinomial regression
 5.  Beyond Null Hypothesis Significance Testing (NHST): Structural equation models, Bayesian hypothesis testing
 6.  Dimension reduction: Exploratory factor analysis, principal components analysis, cluster analysis, confirmatory factor analysis (CFA)
 7.  Time-based analyses: growth curve modeling
@@ -67,7 +67,7 @@ Attendance and active participation in each class is required. 10% of your grade
 
 # Absences and Late Work
 
-If you need to be absent or submit an assignment late, please let me and Alex know as soon as possible. We don't need to know your personal or medical details. We can be flexible, but please respect my and Alex's time by turning your assignments in on time whenever possible.
+If you need to be absent or submit an assignment late, please let me know as soon as possible. We don't need to know your personal or medical details. We can be flexible, but please respect my time by turning your assignments in on time whenever possible.
 
 # Technology
 
@@ -90,7 +90,7 @@ In these presentations, I would like:
 - A review of key concepts and definitions: The student should provide a summary of the key concepts and definitions related to the topic, including any technical terms that may be unfamiliar to the class.
 
 - Examples and applications: To help peers' understand the practical implications of the topic, you should provide examples and applications of how the topic is used in psychology. This could include your own research or examples from the literature or the materials. 
-- Limitations and challenges: It is important for peers to understand the limitations and challenges associated with the topic. You should discuss any potential issues or difficulties that may arise when using the topic in research, and how these can be addressed.
+- Limitations and challenges: It is important for your peers to understand the limitations and challenges associated with the method. You should discuss any potential issues or difficulties that may arise when using the topic in research, and how these can be addressed.
 
 - Future directions: You can discuss any current or future research directions related to the topic, highlighting any areas of debate or uncertainty, if any are relevant.
 

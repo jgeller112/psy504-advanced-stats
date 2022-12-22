@@ -13,13 +13,13 @@ instructor:
   appointment_url: https://calendly.com/jg9120
 
 course:
-  number: "PSY 505"
+  number: "PSY 504"
   semester: "Spring 2023"
   days: "MW"
   time: "10:00 AM –11:20 PM"
   location: "A03"
   dates: "Janurary 31–April 25, 2023"
-  github: "https://www.github.com/andrewheiss/evalf22.classes.andrewheiss.com"
+  github: "https://github.com/jgeller112/psy504-advanced-stats"
   copyright_year: "2023"
 
 university:

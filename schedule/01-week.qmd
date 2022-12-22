@@ -1,10 +1,16 @@
 ---
 title: "Week 1"
-subtitle: "Missing Data"
+subtitle: "Missing Data Techniques"
 date: 2023-02-01
 ---
+## Before Class
 
-## Prepare
+-   {{< fa book >}} [Baraldi, A. N., & Enders, C. K. (2010). *An introduction to modern missing data analyses. Journal of School Psychology, 48(1), 5--37.* doi:10.1016/j.jsp.2009.10.00](https://www.uvm.edu/~statdhtx/StatPages/Missing_Data/Baraldi-Enders.html)10\]
 
--   {{< fa book >}} Baraldi, A. N., & Enders, C. K. (2010). *An introduction to modern missing data analyses. Journal of School Psychology, 48(1), 5--37.* doi:10.1016/j.jsp.2009.10.001 \[[Baradi and Enders 20](https://www.uvm.edu/~statdhtx/StatPages/Missing_Data/Baraldi-Enders.html)10\]
--   {{< fa book >}} \*R in Action\* chapter 18.
+- [Quantitude Podcast.S4E08 Missing Data: The New State Of The Art With Craig Enders](https://quantitudepod.org/s4e08-craig-enders/)
+
+- [Quantitude Podcast. S1E16: IF EPISODE=16 THEN EPISODE=-999](https://quantitudepod.org/s4e08-craig-enders/)
+
+## After Class
+
+-   {{< fa book >}} Kabacoff, R. I. (2022). \*R* in Action\* chapter 18.

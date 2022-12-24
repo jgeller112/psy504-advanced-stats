@@ -95,7 +95,7 @@
     "href": "schedule/schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Here’s your roadmap for the semester!\n\n\n Readings should be completed before each class session\n\n\n Slides and other class materials will be added on the day of class\n\n\n Assignments are due at noon on the day they are due (unless otherwise stated)\n\n\n\n\n\nWeek\nDate\nTopic\nDetail\nLecture\n\n\n\n\n1\n01-30-23/02-01-23\nTidying data in R\n\n\n\n\n2\n02-06-23/02-08-23\nMissing data\n\n\n\n\n3\n02-13-23/02-15-23\nMediation\n\n\n\n\n4\n02-20-23/02-22-23\nNon-Gaussian Statistics: Ordinal Regression/Possion\n\n\n\n\n5\n02-27-23/03-01-23\nBayesian modeling\n\n\n\n\n6\n03-06-23/03-08-23\nRobust methods/bootstrapping\n\n\n\n\n7\nSpring Break\n\n\n\n\n\n8\n03-20-23/03-22-23\nPath modeling/SEM\n\n\n\n\n9\n03-27-23/03-29-23\nPCA\n\n\n\n\n10\n04-03-23/04-05-23\nClustering: K-means/hierarichal clustering\n\n\n\n\n11\n04-10-23/04-12-23\nMultilevel modeling\n\n\n\n\n12\n04-17-23/04-19-23\nGrowth curve modeling (GCA)\n\n\n\n\n13\n04-24-23/04-26-23\nMeta-analysis\n\n\n\n\n14\nReading Week\n\n\n\n\n\n15\nFinals"
+    "text": "Here’s your roadmap for the semester!\n\n\n Readings should be completed before each class session\n\n\n Slides and other class materials will be added on the day of class\n\n\n Assignments are due at noon on the day they are due (unless otherwise stated)\n\n\n\n\n\nWeek\nDate\nTopic\nDetails\nClass\n\n\n\n\n1\n01-30-23/02-01-23\nCleaning data\n\n\n\n\n2\n02-06-23/02-08-23\nRobust methods: bootstrapping and permutation\n\n\n\n\n3\n02-13-23/02-15-23\nMissing data\n\n\n\n\n4\n02-20-23/02-22-23\nOrdinal and Poisson regression\n\n\n\n\n5\n02-27-23/03-01-23\nBayesian analysis\n\n\n\n\n6\n03-06-23/03-08-23\nMediation\n\n\n\n\n7\nSpring Break\n\n\n\n\n\n8\n03-20-23/03-22-23\nPath modeling/SEM\n\n\n\n\n9\n03-27-23/03-29-23\nPCA\n\n\n\n\n10\n04-03-23/04-05-23\nClustering: K-means/hierarichal clustering\n\n\n\n\n11\n04-10-23/04-12-23\nMultilevel modeling\n\n\n\n\n12\n04-17-23/04-19-23\nGrowth curve modeling (GCA)\n\n\n\n\n13\n04-24-23/04-26-23\nMeta-analysis\n\n\n\n\n14\nReading Week\n\n\n\n\n\n15\nFinals"
   },
   {
     "objectID": "syllabus.html",
@@ -151,7 +151,7 @@
     "href": "syllabus.html#tutorial",
     "title": "Syllabus",
     "section": "Tutorial",
-    "text": "Tutorial\nFor your final project, you will create a tutorial explaining how to run a particular analysis in R or Python. This will involve finding data or using your own data. The final project gives you a chance to pursue any topic in the R universe and learn more about it. For example, you could choose to write a tutorial on any R package or how to perform a statistical analysis.\nHere are some helpful links:\nhttps://quarto.org/docs/websites/\nhttps://crumplab.com/articles/blog/post_887_8_25_22_quartoblog/index.html\nThere is no final exam. This project is your final exam."
+    "text": "Tutorial\nFor your final project, you will create a tutorial explaining how to run a particular analysis in R or Python. This will involve finding data or using your own data. The final project gives you a chance to pursue a specific method discussed in class and apply it to your own data. For example, you could choose to write a tutorial on any R package or how to perform a statistical analysis.\nHere are some helpful links:\nhttps://quarto.org/docs/websites/\nhttps://crumplab.com/articles/blog/post_887_8_25_22_quartoblog/index.html\nThere is no final exam"
   },
   {
     "objectID": "syllabus.html#participation",
@@ -159,5 +159,12 @@
     "title": "Syllabus",
     "section": "Participation",
     "text": "Participation\nIt is expected that you will come to class every prepared to discuss the material. This means you have read the pre-class materials and watch the pre-class videos."
+  },
+  {
+    "objectID": "syllabus.html#stundent-weekly-presentations",
+    "href": "syllabus.html#stundent-weekly-presentations",
+    "title": "Syllabus",
+    "section": "Stundent Weekly Presentations",
+    "text": "Stundent Weekly Presentations\nEvery week (Monday) one of your peers will present an introduction on the method we will be discussing that week, based on the assigned reading for that week. Each presentation will be 30 minutes, and will summarize the method’s uses. After, I will highlight how to use R to apply these methods to your data.\nIn these presentations, I would like:\n\nA clear overview of the topic: This should include a brief introduction to the topic, highlighting its relevance and importance in psychological research.\nA review of key concepts and definitions: The student should provide a summary of the key concepts and definitions related to the topic, including any technical terms that may be unfamiliar to the class.\nExamples and applications: To help peers’ understand the practical implications of the topic, you should provide examples and applications of how the topic is used in psychology. This could include your own research or examples from the literature or the materials.\nLimitations and challenges: It is important for your peers to understand the limitations and challenges associated with the method. You should discuss any potential issues or difficulties that may arise when using the topic in research, and how these can be addressed.\nFuture directions: You can discuss any current or future research directions related to the topic, highlighting any areas of debate or uncertainty, if any are relevant.\nQuestions for discussion: You should provide 3 - 5 questions for discussion. Questions could also cover content from the material you are still unsure about, so one of your peers or I can answer it."
   }
 ]

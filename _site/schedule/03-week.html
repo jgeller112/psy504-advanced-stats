@@ -142,7 +142,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#prepare" id="toc-prepare" class="nav-link active" data-scroll-target="#prepare">Prepare</a></li>
+  <li><a href="#before-class" id="toc-before-class" class="nav-link active" data-scroll-target="#before-class">Before Class</a>
+  <ul class="collapse">
+  <li><a href="#articles" id="toc-articles" class="nav-link" data-scroll-target="#articles">Articles</a></li>
+  </ul></li>
+  <li><a href="#video" id="toc-video" class="nav-link" data-scroll-target="#video">Video</a></li>
   </ul>
 </nav>
     </div>
@@ -172,23 +176,33 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="prepare" class="level2">
-<h2 class="anchored" data-anchor-id="prepare">Prepare</h2>
-<p><i class="fa-solid fa-book" aria-hidden="true"></i> Wehrens, R., Putter, H., &amp; Buydens, L. (2000). The bootstrap: a tutorial. Chemometrics and Intelligent Laboratory Systems, 54, 35-52.</p>
-<p><a href="../readings/03-week-robust_methods/wehrens2000.pdf">Wehrens et al.</a></p>
+<section id="before-class" class="level2">
+<h2 class="anchored" data-anchor-id="before-class">Before Class</h2>
+<section id="articles" class="level3">
+<h3 class="anchored" data-anchor-id="articles">Articles</h3>
+<p><i class="fa-solid fa-book" aria-hidden="true"></i> Wehrens, R., Putter, H., &amp; Buydens, L. (2000). <a href="../readings/03-week-robust_methods/wehrens2000.pdf">The bootstrap: a tutorial.</a> Chemometrics and Intelligent Laboratory Systems, 54, 35-52.</p>
 <ul>
 <li>When do you use a bootstrapping procedure? What purpose does it serve?</li>
 <li>How is a bootstrapped sampling distribution generated?</li>
 <li>How many bootstrap samples should you use?</li>
 <li>When should you bootstrap your actual data (“cases”) versus your prediction error (“residuals”)?</li>
 </ul>
-<p><i class="fa-solid fa-book" aria-hidden="true"></i> Wilcox, R. R. (1998). How many discoveries have been lost by ignoring modern statistical methods? American Psychologist, 53, 300—314.</p>
-<p><a href="../readings/03-week-robust_methods/wilcox1998.pdf">Wilcox 1998</a></p>
+<p><i class="fa-solid fa-book" aria-hidden="true"></i> Wilcox, R. R. (1998). <a href="../readings/03-week-robust_methods/wilcox1998.pdf">How many discoveries have been lost by ignoring modern statistical methods?</a>. American Psychologist, 53, 300—314.</p>
 <ul>
 <li>What are the statistical and theoretical problems associated with removing outliers?</li>
 <li>How does skew affect your test?</li>
 <li>What are the solutions to these problems</li>
 </ul>
+<p>LaFleur, B. J., &amp; Greevy, R. A. (2009). Introduction to Permutation and Resampling-Based Hypothesis Tests∗. Journal of Clinical Child &amp; Adolescent Psychology, 38(2), 286–294. https://doi.org/10.1080/15374410902740411</p>
+</section>
+</section>
+<section id="video" class="level2">
+<h2 class="anchored" data-anchor-id="video">Video</h2>
+<p><i class="fa-solid fa-video" aria-hidden="true"></i></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XSjj7IeBHnA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Xz0x-8-cgaQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
 
 
 </section>
@@ -296,7 +310,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">Content <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> 2023 by <a href="https://www.drjasongeller.com">Jason Geller</a> <br> All content licensed under a <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-by" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-nc" aria-hidden="true"></i> <a href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International license (CC BY-NC 4.0)</a></div>   
-    <div class="nav-footer-right">Made with <i class="fa-brands fa-r-project" aria-hidden="true"></i> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://www.github.com/andrewheiss/evalf22.classes.andrewheiss.com">View the source at <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></div>
+    <div class="nav-footer-right">Made with <i class="fa-brands fa-r-project" aria-hidden="true"></i> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://github.com/jgeller112/psy504-advanced-stats">View the source at <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></div>
   </div>
 </footer>
 

@@ -81,7 +81,7 @@
     "href": "schedule/03-week.html",
     "title": "Week 3",
     "section": "",
-    "text": "Wehrens, R., Putter, H., & Buydens, L. (2000). The bootstrap: a tutorial. Chemometrics and Intelligent Laboratory Systems, 54, 35-52.\nWehrens et al.\n\nWhen do you use a bootstrapping procedure? What purpose does it serve?\nHow is a bootstrapped sampling distribution generated?\nHow many bootstrap samples should you use?\nWhen should you bootstrap your actual data (“cases”) versus your prediction error (“residuals”)?\n\n Wilcox, R. R. (1998). How many discoveries have been lost by ignoring modern statistical methods? American Psychologist, 53, 300—314.\nWilcox 1998\n\nWhat are the statistical and theoretical problems associated with removing outliers?\nHow does skew affect your test?\nWhat are the solutions to these problems"
+    "text": "Wehrens, R., Putter, H., & Buydens, L. (2000). The bootstrap: a tutorial. Chemometrics and Intelligent Laboratory Systems, 54, 35-52.\n\nWhen do you use a bootstrapping procedure? What purpose does it serve?\nHow is a bootstrapped sampling distribution generated?\nHow many bootstrap samples should you use?\nWhen should you bootstrap your actual data (“cases”) versus your prediction error (“residuals”)?\n\n Wilcox, R. R. (1998). How many discoveries have been lost by ignoring modern statistical methods?. American Psychologist, 53, 300—314.\n\nWhat are the statistical and theoretical problems associated with removing outliers?\nHow does skew affect your test?\nWhat are the solutions to these problems\n\nLaFleur, B. J., & Greevy, R. A. (2009). Introduction to Permutation and Resampling-Based Hypothesis Tests∗. Journal of Clinical Child & Adolescent Psychology, 38(2), 286–294. https://doi.org/10.1080/15374410902740411"
   },
   {
     "objectID": "schedule/index.html",
@@ -95,14 +95,14 @@
     "href": "schedule/schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Here’s your roadmap for the semester!\n\n\n Readings should be completed before each class session\n\n\n Slides and other class materials will be added on the day of class\n\n\n Assignments are due at noon on the day they are due (unless otherwise stated)\n\n\n\n\n\nWeek\nDate\nTopic\nDetails\nClass\n\n\n\n\n1\n01-30-23/02-01-23\nCleaning data\n\n\n\n\n2\n02-06-23/02-08-23\nRobust methods: bootstrapping and permutation\n\n\n\n\n3\n02-13-23/02-15-23\nMissing data\n\n\n\n\n4\n02-20-23/02-22-23\nOrdinal and Poisson regression\n\n\n\n\n5\n02-27-23/03-01-23\nBayesian analysis\n\n\n\n\n6\n03-06-23/03-08-23\nMediation\n\n\n\n\n7\nSpring Break\n\n\n\n\n\n8\n03-20-23/03-22-23\nPath modeling/SEM\n\n\n\n\n9\n03-27-23/03-29-23\nPCA\n\n\n\n\n10\n04-03-23/04-05-23\nClustering: K-means/hierarichal clustering\n\n\n\n\n11\n04-10-23/04-12-23\nMultilevel modeling\n\n\n\n\n12\n04-17-23/04-19-23\nGrowth curve modeling (GCA)\n\n\n\n\n13\n04-24-23/04-26-23\nMeta-analysis\n\n\n\n\n14\nReading Week\n\n\n\n\n\n15\nFinals"
+    "text": "Here’s your roadmap for the semester!\n\n\n Readings should be completed before each class session\n\n\n Slides and other class materials will be added on the day of class\n\n\n Assignments are due at noon on the day they are due (unless otherwise stated)\n\n\n\n\n\nWeek\nDate\nTopic\nDetails\nClass\n\n\n\n\n1\n01-30-23/02-01-23\nCleaning data\n\n\n\n\n2\n02-06-23/02-08-23\nRobust methods: Resampling methods and permutation tests\n\n\n\n\n3\n02-13-23/02-15-23\nMissing data\n\n\n\n\n4\n02-20-23/02-22-23\nOrdinal and Poisson regression\n\n\n\n\n5\n02-27-23/03-01-23\nBayesian analysis\n\n\n\n\n6\n03-06-23/03-08-23\nMediation\n\n\n\n\n7\nSpring Break\n\n\n\n\n\n8\n03-20-23/03-22-23\nPath modeling/SEM\n\n\n\n\n9\n03-27-23/03-29-23\nPCA\n\n\n\n\n10\n04-03-23/04-05-23\nClustering: K-means/hierarichal clustering\n\n\n\n\n11\n04-10-23/04-12-23\nMultilevel modeling\n\n\n\n\n12\n04-17-23/04-19-23\nGrowth curve modeling (GCA)\n\n\n\n\n13\n04-24-23/04-26-23\nMeta-analysis\n\n\n\n\n14\nReading Week\n\n\n\n\n\n15\nFinals"
   },
   {
     "objectID": "syllabus.html",
     "href": "syllabus.html",
     "title": "Syllabus",
     "section": "",
-    "text": "As a discipline, statistics has given profound tools to the sciences. Statistics is our way of detecting patterns in the noisy universe. Traditionally, psychologists were limited to research questions that could be answered with classical statistical analyses, but without particularly intending to do so, psychologists have found themselves at the cutting age of statistical discovery in the 20th and 21st centuries. This is because we needed to adapt our tools to meet the demands of the complex nature of the phenomena we study. This course will give you the quantitative tools to ask and answer research questions that were impossible to test as recently as a decade ago. Specifically, we will cover the following topics as stand-alone modules:\n\nMissing Data\nRobust Methods (bootstrapping)\nProcess models: Mediation, multiple mediation, mediated moderation, moderated mediation, path analysis\nNon-Gaussian statistics: Generalized Linear Model, Poisson regression, ordinal regression, multinomial regression\nBeyond Null Hypothesis Significance Testing (NHST): Structural equation models, Bayesian hypothesis testing\nDimension reduction: Exploratory factor analysis, principal components analysis (PCA), cluster analysis, confirmatory factor analysis (CFA)\nTime-based analyses: survival modeling and growth curve modeling\nMeta-analysis\n\nI place a strong emphasis on practical application. I believe you are more likely to learn and readily use these analyses in the future if you do them at least once now. Every lecture will have “challenge” demonstrations for you to try the analyses along with me. Every Wednesday there will be a lab going over the material covered that week. The lab assignments will help you build a personal library of example statistical scripts that you will hopefully find useful for years into the future. These lab assignments will be due at the end of class."
+    "text": "As a discipline, statistics has given profound tools to the sciences. Statistics is our way of detecting patterns in the noisy universe. Traditionally, psychologists were limited to research questions that could be answered with classical statistical analyses, but without particularly intending to do so, psychologists have found themselves at the cutting age of statistical discovery in the 20th and 21st centuries. This is because we needed to adapt our tools to meet the demands of the complex nature of the phenomena we study. This course will give you the quantitative tools to ask and answer research questions that were impossible to test as recently as a decade ago. Specifically, we will cover the following topics as stand-alone modules:\n\nMissing Data\nRobust Methods (bootstrapping)\nProcess models: Mediation, multiple mediation, mediated moderation, moderated mediation, path analysis\nNon-Gaussian statistics: Generalized Linear Model, Poisson regression, ordinal regression\nBeyond Null Hypothesis Significance Testing (NHST): Structural equation models, Bayesian hypothesis testing\nDimension reduction: Exploratory factor analysis, principal components analysis (PCA), confirmatory factor analysis (CFA)\nTime-based analyses: Growth curve modeling\nMeta-analysis\n\nI place a strong emphasis on practical application. I believe you are more likely to learn and readily use these analyses in the future if you do them at least once now. Every lecture will have “challenge” demonstrations for you to try the analyses along with me. Every Wednesday there will be a lab going over the material covered that week. The lab assignments will help you build a personal library of example statistical scripts that you will hopefully find useful for years into the future. These lab assignments will be due at the end of class."
   },
   {
     "objectID": "syllabus.html#in-class-labs-60",
@@ -166,5 +166,33 @@
     "title": "Syllabus",
     "section": "Stundent Weekly Presentations",
     "text": "Stundent Weekly Presentations\nEvery week (Monday) one of your peers will present an introduction on the method we will be discussing that week, based on the assigned reading for that week. Each presentation will be 30 minutes, and will summarize the method’s uses. After, I will highlight how to use R to apply these methods to your data.\nIn these presentations, I would like:\n\nA clear overview of the topic: This should include a brief introduction to the topic, highlighting its relevance and importance in psychological research.\nA review of key concepts and definitions: The student should provide a summary of the key concepts and definitions related to the topic, including any technical terms that may be unfamiliar to the class.\nExamples and applications: To help peers’ understand the practical implications of the topic, you should provide examples and applications of how the topic is used in psychology. This could include your own research or examples from the literature or the materials.\nLimitations and challenges: It is important for your peers to understand the limitations and challenges associated with the method. You should discuss any potential issues or difficulties that may arise when using the topic in research, and how these can be addressed.\nFuture directions: You can discuss any current or future research directions related to the topic, highlighting any areas of debate or uncertainty, if any are relevant.\nQuestions for discussion: You should provide 3 - 5 questions for discussion. Questions could also cover content from the material you are still unsure about, so one of your peers or I can answer it."
+  },
+  {
+    "objectID": "schedule/06-week.html",
+    "href": "schedule/06-week.html",
+    "title": "Week 6",
+    "section": "",
+    "text": "Baron, R. M., & Kenny, D. A. (1986). The moderator–mediator variable distinction in social psychological research: Conceptual, strategic, and statistical considerations. Journal of Personality and Social Psychology, 51, 1173-1182.\n\nWhat are the steps (i.e., equations, regression models) that comprise a mediation analysis?\nWhat are you looking to see in the output of these models to establish that mediation has occurred?\nHow do you test for the overall significance of a mediational model?\nWhat is the difference between a mediation and a moderation (i.e., how do the interpretations of each differ)?\n\n Zhao, X., Lynch, Jr., J. G., & Chen, Q. (2010). Reconsidering Baron and Kenny: Myths and truths about mediation analysis.. Journal of Consumer Research, 37, 197-206)\n\nidentify at least three recommendations/assertions of Baron and Kenny (1986) that Zhao et al (2010) argue against. State Baron & Kenny’s reasoning behind the original assertion but also the reasoning of Zhao et al when arguing the recommendation is wrong.\nWhat are the five types of mediation and nonmediation?\nWhat type of mediation can tell you whether the mediator is consistent with the causal model?\n\nDo you know a technical reason why the classic, 3-variable mediation model cannot be implemented as a path model?"
+  },
+  {
+    "objectID": "schedule/06-week.html#class",
+    "href": "schedule/06-week.html#class",
+    "title": "Week 6",
+    "section": "Class",
+    "text": "Class\nMediation Data"
+  },
+  {
+    "objectID": "schedule/06-week.html#practice",
+    "href": "schedule/06-week.html#practice",
+    "title": "Week 6",
+    "section": "Practice",
+    "text": "Practice"
+  },
+  {
+    "objectID": "schedule/03-week.html#video",
+    "href": "schedule/03-week.html#video",
+    "title": "Week 3",
+    "section": "Video",
+    "text": "Video"
   }
 ]

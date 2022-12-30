@@ -27,7 +27,7 @@ Here's your roadmap for the semester!
 | Week  | Date              | Topic                                         | Details                                    | Class |
 |-------|-------------------|-----------------------------------------------|--------------------------------------------|-------|
 | 1     | 01-30-23/02-01-23 | Cleaning data                                 |                                            |       |
-| 2     | 02-06-23/02-08-23 | Robust methods: bootstrapping and permutation | [{{< fa book >}}](/schedule/03-week.qmd) |       |
+| 2     | 02-06-23/02-08-23 | Robust methods: Resampling methods and permutation tests | [{{< fa book >}}](/schedule/03-week.qmd) |       |
 | 3     | 02-13-23/02-15-23 | Missing data                                  | [{{< fa book >}}](/schedule/01-week.qmd) |       |
 | 4     | 02-20-23/02-22-23 | Ordinal and Poisson regression                |                                            |       |
 | 5     | 02-27-23/03-01-23 | Bayesian analysis                             |                                            |       |

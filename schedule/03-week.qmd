@@ -43,4 +43,4 @@ LaFleur, B. J., & Greevy, R. A. (2009). [Introduction to Permutation and Resampl
 
 ## After Class
 
-
+-   {{< fa book >}} Kabacoff, R. I. (2022). \*R* in Action\* chapter 12.

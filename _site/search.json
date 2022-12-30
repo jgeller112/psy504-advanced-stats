@@ -60,7 +60,7 @@
     "href": "schedule/01-week.html",
     "title": "Week 1",
     "section": "",
-    "text": "Baraldi, A. N., & Enders, C. K. (2010). An introduction to modern missing data analyses. Journal of School Psychology, 48(1), 5–37. doi:10.1016/j.jsp.2009.10.0010]\nQuantitude Podcast.S4E08 Missing Data: The New State Of The Art With Craig Enders\nQuantitude Podcast. S1E16: IF EPISODE=16 THEN EPISODE=-999"
+    "text": "Baraldi, A. N., & Enders, C. K. (2010). An introduction to modern missing data analyses. Journal of School Psychology, 48(1), 5–37. doi:10.1016/j.jsp.2009.10.00]\nQuantitude Podcast.S4E08 Missing Data: The New State Of The Art With Craig Enders\nQuantitude Podcast. S1E16: IF EPISODE=16 THEN EPISODE=-999"
   },
   {
     "objectID": "schedule/02-week.html",
@@ -200,6 +200,6 @@
     "href": "schedule/03-week.html#after-class",
     "title": "Week 3",
     "section": "After Class",
-    "text": "After Class"
+    "text": "After Class\n\n Kabacoff, R. I. (2022). *R* in Action* chapter 12."
   }
 ]

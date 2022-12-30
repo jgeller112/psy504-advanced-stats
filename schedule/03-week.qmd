@@ -41,4 +41,6 @@ LaFleur, B. J., & Greevy, R. A. (2009). [Introduction to Permutation and Resampl
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Xz0x-8-cgaQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+## After Class
+
 

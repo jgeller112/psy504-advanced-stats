@@ -23,23 +23,36 @@ Here's your roadmap for the semester!
 <li><i class="fas fa-keyboard"></i> Assignments are due at noon on the day they are due (unless otherwise stated)</li>
 
 </ul>
-
-| Week  | Date              | Topic                                         | Details                                    | Class |
-|-------|-------------------|-----------------------------------------------|--------------------------------------------|-------|
-| 1     | 01-30-23/02-01-23 | Cleaning data                                 |                                            |       |
-| 2     | 02-06-23/02-08-23 | Robust methods: Resampling methods and permutation tests | [{{< fa book >}}](/schedule/03-week.qmd) |       |
-| 3     | 02-13-23/02-15-23 | Missing data                                  | [{{< fa book >}}](/schedule/01-week.qmd) |       |
-| 4     | 02-20-23/02-22-23 | Ordinal and Poisson regression                |                                            |       |
-| 5     | 02-27-23/03-01-23 | Bayesian analysis                             |                                            |       |
-| 6     | 03-06-23/03-08-23 | Mediation                                     |                                            |       |
-| 7     | Spring Break      |                                               |                                            |       |
-| 8     | 03-20-23/03-22-23 | Path modeling/SEM                             |                                            |       |
-| 9     | 03-27-23/03-29-23 | PCA                                           |                                            |       |
-| 10    | 04-03-23/04-05-23 | Clustering: K-means/hierarichal clustering    |                                            |       |
-| 11    | 04-10-23/04-12-23 | Multilevel modeling                           |                                            |       |
-| 12    | 04-17-23/04-19-23 | Growth curve modeling (GCA)                   |                                            |       |
-| 13    | 04-24-23/04-26-23 | Meta-analysis                                 |                                            |       |
-| 14    | Reading Week      |                                               |                                            |       |
-| 15    | Finals            |                                               |                                            |       |
+|     Week  |     Date         |     Topic                                         | Class Materials                                  | Class PDFs | Peer Leader |
+|-----------|------------------|---------------------------------------------------|--------------------------------------------------|------------|-------------|
+|     1     |     1/30/23      | Introduction                                      |                                                  |            |             |
+|           | 2/1/23           | Cleaning data                                     |                                                  |            |             |
+|     2     |     2/6/23       |     Robust methods: bootstrapping and permutation |     [{{<   fa book   >}}](/schedule/02-week.qmd) |            |             |
+|           | 2/8/23           | Lab 1                                             |                                                  |            |             |
+|     3     |     2/13/23      |     Missing data                                  |     [{{<   fa book   >}}](/schedule/03-week.qmd) |            |             |
+|           | 2/15/23          | Lab 2                                             |                                                  |            |             |
+|     4     |     2/20/23      |     Ordinal and Poisson regression                |                                                  |            |             |
+|           | 2/22/23          | Lab 3                                             |                                                  |            |             |
+|     5     |     2/27/23      |     Bayesian analysis                             |                                                  |            |             |
+|           | 3/1/23           | Lab 4                                             |                                                  |            |             |
+|     6     |     3/6/23       |     Mediation                                     |                                                  |            |             |
+|           | 3/8/23           | Lab 5                                             |                                                  |            |             |
+|     7     |     Spring Break |                                                   |                                                  |            |             |
+|           |                  |                                                   |                                                  |            |             |
+|     8     |     3/20/23      |     Path modeling/SEM                             |                                                  |            |             |
+|           | 3/22/23          | Lab 6                                             |                                                  |            |             |
+|     9     |     3/27/23      |     PCA                                           |                                                  |            |             |
+|           | 3/29/23          | Lab 7                                             |                                                  |            |             |
+|     10    |     4/3/23       |     Clustering: K-means/hierarichal clustering    |                                                  |            |             |
+|           | 4/5/23           | Lab 8                                             |                                                  |            |             |
+|     11    |     4/10/23      |     Multilevel modeling                           |                                                  |            |             |
+|           | 4/12/23          | Lab 9                                             |                                                  |            |             |
+|     12    |     4/17/23      |     Growth curve modeling (GCA)                   |                                                  |            |             |
+|           | 4/19/23          | Lab 10                                            |                                                  |            |             |
+|     13    |     4/24/23      |     Meta-analysis                                 |                                                  |            |             |
+|           | 4/26/23          | Lab 11                                            |                                                  |            |             |
+|     14    |     Reading Week |                                                   |                                                  |            |             |
+|     15    |     Finals       |                                                   |                                                  |            |             |
+|           |                  |                                                   |                                                  |            |             |
 
 :::

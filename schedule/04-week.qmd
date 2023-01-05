@@ -8,7 +8,9 @@ date: 2023-02-20
 
 ### Articles
 
-- The following articles use brms (which is a Bayesian package in R). There might be things you do not understand (e.g., priors). The output is very similar to lm outputs you have seen before. However, there are no p-values so it is common to only look at the 95% CIs to determine significance. 
+**The following article uses the R package brms (which is a Bayesian data analysis package). While there are differences between frequenist and Bayesian statsitics, you can use brms to fit models equivalent to frequentist statistics by using weakly informative priors--which is what we will be doing. I hope you notice that the output from brms is very similar to lm outputs you have seen before. However, there are no p-values so it is common to only look at the 95% CIs to determine significance.
+
+I think this paper is a very nice introduction to ordinal regression.**
 
 - {{< fa book >}}
 Bürkner P-C, Vuorre M. [Ordinal Regression Models in Psychology: A Tutorial](https://journals.sagepub.com/doi/epub/10.1177/2515245918823199). Advances in Methods and Practices in Psychological Science. 2019;2(1):77-101. doi:10.1177/2515245918823199

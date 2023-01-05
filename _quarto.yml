@@ -42,6 +42,8 @@ website:
       - syllabus.qmd
       - text: "Schedule"
         file: schedule/index.qmd
+      - text: "Assignments"
+        file: Assignments/index.qmd
   sidebar:
     - title: "Schedule"
       style: "docked"
@@ -49,7 +51,18 @@ website:
       contents:
         - schedule/index.qmd
         - schedule/01-week.qmd
+        - schedule/02-week.qmd
         - schedule/03-week.qmd
+        
+    - title: "Assignments"
+      contents:
+        - section: "Overview"
+          contents:
+            - assignment/index.qmd
+        - section: "Preparation"
+          contents:
+            - Assignments/Reading-report.qmd
+            - Assignments/presentation-discussion.qmd
   page-footer:
     left: |
       Content {{< fa brands creative-commons >}} {{< var course.copyright_year >}} by [{{< var instructor.name_no_title >}}]({{< var instructor.url >}}) <br>

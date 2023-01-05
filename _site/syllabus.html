@@ -97,6 +97,9 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link" href="./schedule/index.html">Schedule</a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Assignments/index.html">Assignments</a>
+  </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
@@ -123,7 +126,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#technology" id="toc-technology" class="nav-link" data-scroll-target="#technology">Technology</a></li>
   <li><a href="#assignments" id="toc-assignments" class="nav-link" data-scroll-target="#assignments">Assignments</a>
   <ul class="collapse">
-  <li><a href="#stundent-weekly-presentations" id="toc-stundent-weekly-presentations" class="nav-link" data-scroll-target="#stundent-weekly-presentations">Stundent Weekly Presentations</a></li>
+  <li><a href="#reading-reports" id="toc-reading-reports" class="nav-link" data-scroll-target="#reading-reports">Reading Reports</a></li>
+  <li><a href="#student-mini-presentations-and-discussions" id="toc-student-mini-presentations-and-discussions" class="nav-link" data-scroll-target="#student-mini-presentations-and-discussions">Student Mini-Presentations and Discussions</a></li>
   <li><a href="#labsexercises" id="toc-labsexercises" class="nav-link" data-scroll-target="#labsexercises">Labs/Exercises</a></li>
   <li><a href="#tutorial" id="toc-tutorial" class="nav-link" data-scroll-target="#tutorial">Tutorial</a></li>
   <li><a href="#participation" id="toc-participation" class="nav-link" data-scroll-target="#participation">Participation</a></li>
@@ -157,11 +161,11 @@ ul.task-list li input[type="checkbox"] {
 <h1>Course Introduction</h1>
 <p>As a discipline, statistics has given profound tools to the sciences. Statistics is our way of detecting patterns in the noisy universe. Traditionally, psychologists were limited to research questions that could be answered with classical statistical analyses, but without particularly intending to do so, psychologists have found themselves at the cutting age of statistical discovery in the 20th and 21st centuries. This is because we needed to adapt our tools to meet the demands of the complex nature of the phenomena we study. This course will give you the quantitative tools to ask and answer research questions that were impossible to test as recently as a decade ago. Specifically, we will cover the following topics as stand-alone modules:</p>
 <ol type="1">
+<li>Robust Methods: bootstrapping, permutation tests</li>
 <li>Missing Data</li>
-<li>Robust Methods (bootstrapping)</li>
-<li>Process models: Mediation, multiple mediation, mediated moderation, moderated mediation, path analysis</li>
-<li>Non-Gaussian statistics: Generalized Linear Model, Poisson regression, ordinal regression</li>
+<li>Non-Gaussian statistics: Generalized:Linear Model, poisson regression, ordinal regression</li>
 <li>Beyond Null Hypothesis Significance Testing (NHST): Structural equation models, Bayesian hypothesis testing</li>
+<li>Process models: Mediation, multiple mediation, mediated moderation, moderated mediation, path analysis</li>
 <li>Dimension reduction: Exploratory factor analysis, principal components analysis (PCA), confirmatory factor analysis (CFA)</li>
 <li>Time-based analyses: Growth curve modeling</li>
 <li>Meta-analysis</li>
@@ -175,7 +179,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="prerequisite" class="level1">
 <h1>Prerequisite</h1>
 <p>The main prerequisite for this course is PSY 503.</p>
-<p><strong>NOTE:</strong> Students are expected to enroll in <em>PSY 505: Advances in Statistical Methods and Research Practices in Psychology</em> (Spring 2023, T: 11am - 1pm), which constitutes an important complement to this course. You can think of PSY 505 as the required precept time of the week for PSY 503. Please reach out to me if you would like to enroll in PSY 503 but are not able to take PSY 505.</p>
+<p><strong>NOTE:</strong> It is highly recommended (but not mandatory) that students also enroll in <em>PSY 505: Advanced Seminar in Statistical Methods and Research Practices in Psychology</em> (Spring 2023, T: 11am - 1pm), which constitutes an important complement to this course.</p>
 </section>
 <section id="student-learning-outcomes" class="level1">
 <h1>Student Learning Outcomes</h1>
@@ -193,7 +197,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="textbooks" class="level1">
 <h1>Textbooks</h1>
 <ul>
-<li><p>I strongly recommend the following books:</p>
+<li><p>I strongly recommend you get the following books:</p>
 <ul>
 <li>McCoach, D. B., &amp; Cintron, D. (2022). Introduction to Modern Modelling Methods (1st edition). SAGE Publications Ltd.</li>
 </ul>
@@ -209,7 +213,8 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="attendance-policy" class="level1">
 <h1>Attendance Policy</h1>
-<p>Attendance and active participation in each class is required. 10% of your grade will be based on attendance and participation.</p>
+<p>You're expected to come to class, having (1) carefully read the material and (2) completed the weekly reading report.</p>
+<p>Attendance and participation are <em>crucial</em> to your success in this course. However, we're in the middle of a deadly global pandemic and <em>so many people</em> are getting sick. If you are sick or are incapable of participating meaningfully in class (e.g.&nbsp;you have stayed up all night and are going to fall asleep in class), please stay home. I will try my best to record in-class lectures (or record them at home).</p>
 </section>
 <section id="absences-and-late-work" class="level1">
 <h1>Absences and Late Work</h1>
@@ -222,17 +227,22 @@ ul.task-list li input[type="checkbox"] {
 <section id="assignments" class="level1">
 <h1>Assignments</h1>
 <p>There will be no points associated with any of the assignments this semester. To receive a passing grade (A), all assignments must be turned in.</p>
-<section id="stundent-weekly-presentations" class="level2">
-<h2 class="anchored" data-anchor-id="stundent-weekly-presentations">Stundent Weekly Presentations</h2>
-<p>Every week (Monday) one of your peers will present an introduction on the method we will be discussing that week, based on the assigned reading for that week. Each presentation will be 30 minutes, and will summarize the method’s uses. After, I will highlight how to use R to apply these methods to your data.</p>
+<section id="reading-reports" class="level2">
+<h2 class="anchored" data-anchor-id="reading-reports">Reading Reports</h2>
+<p>You should read all the assigned articles each week. Keep notes of the main arguments, methods, surprises, and shortcomings in each reading, think about how the readings connect to each other, and consider how they apply to your research.</p>
+<p>Before class on Mondays, you need to write a reading report about what you’ve read. This report is designed to (1) allow you to engage with the assigned readings, (2) help you practice high quality academic writing, and (3) help you be prepared for in-class discussions of the readings.</p>
+<p>Reading reports are due by 11:59 PM on the day before class via Canvas.</p>
+</section>
+<section id="student-mini-presentations-and-discussions" class="level2">
+<h2 class="anchored" data-anchor-id="student-mini-presentations-and-discussions">Student Mini-Presentations and Discussions</h2>
+<p>Every week (Monday) one of your peers will present an introduction to the method we will be discussing that week, based on the assigned reading for that week (you are to use the assigned articles to guide your presentation and discussion). Each presentation should be be (12-15 minutes) with a discussion ~10 minutes.</p>
+<p>After, I will take over and highlight how to use R to apply these methods to your data.</p>
 <p>In these presentations, I would like:</p>
 <ul>
-<li><p>A clear overview of the topic: This should include a brief introduction to the topic, highlighting its relevance and importance in psychological research.</p></li>
-<li><p>A review of key concepts and definitions: The student should provide a summary of the key concepts and definitions related to the topic, including any technical terms that may be unfamiliar to the class.</p></li>
-<li><p>Examples and applications: To help peers’ understand the practical implications of the topic, you should provide examples and applications of how the topic is used in psychology. This could include your own research or examples from the literature or the materials.</p></li>
-<li><p>Limitations and challenges: It is important for your peers to understand the limitations and challenges associated with the method. You should discuss any potential issues or difficulties that may arise when using the topic in research, and how these can be addressed.</p></li>
-<li><p>Future directions: You can discuss any current or future research directions related to the topic, highlighting any areas of debate or uncertainty, if any are relevant.</p></li>
-<li><p>Questions for discussion: You should provide 3 - 5 questions for discussion. Questions could also cover content from the material you are still unsure about, so one of your peers or I can answer it.</p></li>
+<li><p>A clear overview of the topic: This should include a brief introduction to the topic, highlighting its relevance and importance in psychological research. You should also address assumptions of the methods, if any.</p></li>
+<li><p>A review of key concepts and definitions: The student should provide a summary of the key concepts and definitions related to the topic, including any technical terms that may be unfamiliar to you or the class.</p></li>
+<li><p>Examples and applications: To help peers’ understand the practical implications of the topic, you should provide examples and applications of how the topic is used in psychology. This could include your own research or examples from the literature or the materials. If you wanted to walk through an example dataset, that is also welcome. I am going to be program agnostic here (use R, Python, SPSS, JASP, etc.) to do this.</p></li>
+<li><p>A discussion of things you did not understand</p></li>
 </ul>
 </section>
 <section id="labsexercises" class="level2">
@@ -257,7 +267,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="grades" class="level1">
 <h1>Grades</h1>
-<p>At the end of the semester, you will assign yourself the final grade.</p>
+<p>At the end of the semester, you will assign yourself the final grade. You will need write a paragraph explaining why they deserve the grade they do. I have veto rights to change your assigned grade :).</p>
 </section>
 <section id="diversity-and-inclusion-statement" class="level1">
 <h1>Diversity and Inclusion Statement</h1>

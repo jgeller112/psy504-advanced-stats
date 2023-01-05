@@ -25,8 +25,6 @@ date: 2023-03-06
 
 - What type of mediation can tell you whether the mediator is consistent with the causal model?
 
-Do you know a technical reason why the classic, 3-variable mediation model cannot be implemented as a path model?
-
 ### Video
 
 {{< fa video >}}
@@ -36,7 +34,12 @@ Do you know a technical reason why the classic, 3-variable mediation model canno
 
 ## Class
 
+- Data we are using for class: 
 [Mediation Data](https://raw.githubusercontent.com/doomlab/statsofdoom-files/master/advanced/R/Notes/Mediation%20Moderation/data%206.csv)
 
-## Practice
+## After Class
+
+**ignore moderation sections**
+
+[Mediation in R ](https://ademos.people.uic.edu/Chapter14.html#1_what_are_mediation_and_moderation)
 

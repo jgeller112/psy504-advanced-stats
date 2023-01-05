@@ -58,7 +58,7 @@ website:
       contents:
         - section: "Overview"
           contents:
-            - assignment/index.qmd
+            - Assignments/index.qmd
         - section: "Preparation"
           contents:
             - Assignments/Reading-report.qmd

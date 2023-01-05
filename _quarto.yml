@@ -53,6 +53,8 @@ website:
         - schedule/01-week.qmd
         - schedule/02-week.qmd
         - schedule/03-week.qmd
+        - schedule/04-week.qmd
+        - schedule/05-week.qmd
         - schedule/06-week.qmd
         
     - title: "Assignments"

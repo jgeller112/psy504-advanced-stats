@@ -1,0 +1,40 @@
+---
+title: "Week 5"
+subtitle: "Bayesian Data Analysis"
+date: 2023-02-01
+---
+## Before Class
+
+### Articles
+
+- {{< fa book >}} van de Schoot, R., Depaoli, S., King, R., Kramer, B., Märtens, K., Tadesse, M. G., Vannucci, M., Gelman, A., Veen, D., Willemsen, J., & Yau, C. (2021). [Bayesian statistics and modelling. Nature Reviews Methods Primers](https://repository.oceanbestpractices.org/handle/11329/1902), 1(1), Article 1. https://doi.org/10.1038/s43586-020-00001-2
+
+  - What is Bayes' Theorem and how is it used in statistical analysis?
+  - How does Bayesian statistical analysis differ from frequentist statistical analysis?
+  - What can Bayesian statistics do that frequentist statistics cannot?
+  - How do Bayesian models incorporate prior knowledge or beliefs about the data?
+  - What are some advantages and disadvantages of using Bayesian statistical methods?
+  - How do you make statistical inferences and predictions using Bayesian methods?
+  - What is a Bayes Factor? What are 
+
+### Video
+
+- {{< fa video >}} What is Bayes?
+
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3OJEae7Qb_o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<center>
+
+- {{< fa video >}} Why use Bayes?
+
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mAUwjSo5TJE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<center>
+
+## After Class
+
+- JASP has some nice Bayesian implementations
+
+[Bayesian Regression in JASP ](https://www.youtube.com/watch?v=QRJ05uZs58w)
+
+

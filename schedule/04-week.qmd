@@ -15,6 +15,13 @@ Bürkner P-C, Vuorre M. [Ordinal Regression Models in Psychology: A Tutorial](ht
 
 Veríssimo, J. (2021). [Analysis of rating scales: A pervasive problem in bilingualism research and a solution with Bayesian ordinal models](https://files.osf.io/v1/resources/4m2ap/providers/osfstorage/6013ef9a75226b05015161a6?action=download&direct&version=2). Bilingualism: Language and Cognition, 24(5), 842-848. doi:10.1017/S1366728921000316
 
+- What is ordinal regression and how does it differ from other types of regression?
+- When is ordinal regression used and what are some common applications of it?
+- How do you specify and fit an ordinal regression model?
+- How do you interpret the coefficients and odds ratios in an ordinal regression model?
+- What are some common assumptions and limitations of ordinal regression?
+
+
 ### Videos
 
 {{< fa video >}}

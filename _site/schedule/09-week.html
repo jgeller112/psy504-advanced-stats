@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-02-20">
+<meta name="dcterms.date" content="2023-04-10">
 <meta name="description" content="Explore advanced statistical methods in psychology">
 
-<title>Advanced Statistics in Psychology - Week 4</title>
+<title>Advanced Statistics in Psychology - Week 11</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,19 +64,19 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Advanced Statistics in Psychology - Week 4">
-<meta property="og:description" content="Ordinal Regression">
+<meta property="og:title" content="Advanced Statistics in Psychology - Week 11">
+<meta property="og:description" content="SEM">
 <meta property="og:image" content="/files/social-image-f22.png">
 <meta property="og:site-name" content="Advanced Statistics in Psychology">
 <meta property="og:locale" content="en_US">
-<meta name="twitter:title" content="Advanced Statistics in Psychology - Week 4">
-<meta name="twitter:description" content="Ordinal Regression">
+<meta name="twitter:title" content="Advanced Statistics in Psychology - Week 11">
+<meta name="twitter:description" content="SEM">
 <meta name="twitter:image" content="/files/social-image-f22.png">
 <meta name="twitter:creator" content="@jgeller_phd">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -96,7 +96,7 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../syllabus.html">Syllabus</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../schedule/index.html" aria-current="page">Schedule</a>
+    <a class="nav-link" href="../schedule/index.html">Schedule</a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../Assignments/index.html">Assignments</a>
@@ -106,87 +106,10 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Week 4</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
-      </button>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../schedule/index.html" class="sidebar-item-text sidebar-link">Schedule</a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../schedule/01-week.html" class="sidebar-item-text sidebar-link">Week 1</a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../schedule/02-week.html" class="sidebar-item-text sidebar-link">Week 2</a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../schedule/03-week.html" class="sidebar-item-text sidebar-link">Week 4</a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../schedule/04-week.html" class="sidebar-item-text sidebar-link active">Week 4</a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../schedule/05-week.html" class="sidebar-item-text sidebar-link">Week 5</a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../schedule/06-week.html" class="sidebar-item-text sidebar-link">Week 6</a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  schedule/07-week.qmd
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../schedule/08-week.html" class="sidebar-item-text sidebar-link">Week 8</a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../schedule/09-week.html" class="sidebar-item-text sidebar-link">Week 11</a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../schedule/10-week.html" class="sidebar-item-text sidebar-link">Week 10</a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../schedule/11-week.html" class="sidebar-item-text sidebar-link">Week 11</a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../schedule/12-week.html" class="sidebar-item-text sidebar-link">Week 12</a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -196,9 +119,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#before-class" id="toc-before-class" class="nav-link active" data-scroll-target="#before-class">Before Class</a>
   <ul class="collapse">
   <li><a href="#articles" id="toc-articles" class="nav-link" data-scroll-target="#articles">Articles</a></li>
-  <li><a href="#videos" id="toc-videos" class="nav-link" data-scroll-target="#videos">Videos</a></li>
   </ul></li>
-  <li><a href="#after-class" id="toc-after-class" class="nav-link" data-scroll-target="#after-class">After Class</a></li>
   </ul>
 </nav>
     </div>
@@ -207,8 +128,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Week 4</h1>
-<p class="subtitle lead">Ordinal Regression</p>
+<h1 class="title">Week 11</h1>
+<p class="subtitle lead">SEM</p>
 </div>
 
 
@@ -219,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Materials for meeting on</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 20, 2023</p>
+      <p class="date">April 10, 2023</p>
     </div>
   </div>
     
@@ -232,38 +153,11 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="before-class">Before Class</h2>
 <section id="articles" class="level3">
 <h3 class="anchored" data-anchor-id="articles">Articles</h3>
-<p>**The following article uses the R package brms (which is a Bayesian data analysis package). While there are differences between frequenist and Bayesian statsitics, you can use brms to fit models equivalent to frequentist statistics by using weakly informative priors–which is what we will be doing. I hope you notice that the output from brms is very similar to lm outputs you have seen before. However, there are no p-values so it is common to only look at the 95% CIs to determine significance.</p>
-<ul>
-<li><i class="fa-solid fa-book" aria-hidden="true"></i> Bürkner P-C, Vuorre M. <a href="https://journals.sagepub.com/doi/epub/10.1177/2515245918823199">Ordinal Regression Models in Psychology: A Tutorial</a>. Advances in Methods and Practices in Psychological Science. 2019;2(1):77-101. doi:10.1177/2515245918823199</li>
-</ul>
-<p>Veríssimo, J. (2021). <a href="https://files.osf.io/v1/resources/4m2ap/providers/osfstorage/6013ef9a75226b05015161a6?action=download&amp;direct&amp;version=2">Analysis of rating scales: A pervasive problem in bilingualism research and a solution with Bayesian ordinal models</a>. Bilingualism: Language and Cognition, 24(5), 842-848. doi:10.1017/S1366728921000316</p>
-<ul>
-<li>What is ordinal regression and how does it differ from other types of regression?</li>
-<li>When is ordinal regression used and what are some common applications of it?</li>
-<li>How do you specify and fit an ordinal regression model?</li>
-<li>How do you interpret the coefficients and odds ratios in an ordinal regression model?</li>
-<li>What are some common assumptions and limitations of ordinal regression?</li>
-</ul>
-</section>
-<section id="videos" class="level3">
-<h3 class="anchored" data-anchor-id="videos">Videos</h3>
-<p><i class="fa-solid fa-video" aria-hidden="true"></i></p>
-<ul>
-<li>Introduction to Ordinal regression in R</li>
-</ul>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jWIJ7P1G9P4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
-</iframe>
-</section>
-</section>
-<section id="after-class" class="level2">
-<h2 class="anchored" data-anchor-id="after-class">After Class</h2>
-<ul>
-<li><i class="fa-solid fa-video" aria-hidden="true"></i> Running ordinal regression in R</li>
-</ul>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rrRrI9gElYA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
-</iframe>
+<p><i class="fa-solid fa-book" aria-hidden="true"></i> McCoach, D. B., &amp; Cintron, D. (2022). Introduction to Modern Modelling Methods (1st edition). SAGE Publications Ltd.</p>
+<p><a href="../readings/MLM_12.pdf">Chapters 4 and 5</a></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

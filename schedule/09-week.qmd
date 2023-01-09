@@ -1,0 +1,14 @@
+---
+title: "Week 11"
+subtitle: "SEM"
+date: 2023-04-10
+---
+## Before Class
+
+### Articles
+
+{{< fa book >}} McCoach, D. B., & Cintron, D. (2022). Introduction to Modern Modelling Methods (1st edition). SAGE Publications Ltd.
+
+[Chapters 4 and 5](/readings/MLM_12.pdf)
+
+

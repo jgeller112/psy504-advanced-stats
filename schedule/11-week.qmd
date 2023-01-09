@@ -1,0 +1,14 @@
+---
+title: "Week 11"
+subtitle: "Clustering"
+date: 2023-04-10
+---
+## Before Class
+
+### Articles
+
+{{< fa book >}} James, G., Witten, D., Hastie, T., & Tibshirani, R. (2013). An Introduction to Statistical Learning: With Applications in R. Springer.
+
+[Chapter 12 12.4-12.5](https://hastie.su.domains/ISLR2/ISLRv2_website.pdf)
+
+

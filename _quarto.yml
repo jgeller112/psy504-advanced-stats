@@ -56,6 +56,11 @@ website:
         - schedule/04-week.qmd
         - schedule/05-week.qmd
         - schedule/06-week.qmd
+        - schedule/08-week.qmd
+        - schedule/09-week.qmd
+        - schedule/10-week.qmd
+        - schedule/11-week.qmd
+        - schedule/12-week.qmd
         
     - title: "Assignments"
       style: "docked"

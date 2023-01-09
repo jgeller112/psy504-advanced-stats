@@ -1,28 +1,16 @@
 ---
-title: "Week 4"
-subtitle: "Ordinal Regression"
-date: 2023-02-20
+title: "Week 3"
+subtitle: "Missing Data Techniques"
+date: 2023-02-01
 ---
-
 ## Before Class
 
-### Articles
+-   {{< fa book >}} Baraldi, A. N., & Enders, C. K. (2010). [*An introduction to modern missing data analyses. Journal of School Psychology, 48(1), 5--37.* doi:10.1016/j.jsp.2009.10.00](https://www.uvm.edu/~statdhtx/StatPages/Missing_Data/Baraldi-Enders.html)10\]
 
-- The following articles use brms (which is a Bayesian package in R). There might be things you do not understand (e.g., priors). The output is very similar to lm outputs you have seen before. However, there are no p-values so it is common to only look at the 95% CIs to determine significance. 
+- [Quantitude Podcast.S4E08 Missing Data: The New State Of The Art With Craig Enders](https://quantitudepod.org/s4e08-craig-enders/)
 
-- {{< fa book >}}
-Bürkner P-C, Vuorre M. [Ordinal Regression Models in Psychology: A Tutorial](https://journals.sagepub.com/doi/epub/10.1177/2515245918823199). Advances in Methods and Practices in Psychological Science. 2019;2(1):77-101. doi:10.1177/2515245918823199
-
-### Videos
-
-{{< fa video >}}
-
-- Introduction to Ordinal regression in R 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jWIJ7P1G9P4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+- [Quantitude Podcast. S1E16: IF EPISODE=16 THEN EPISODE=-999](https://quantitudepod.org/s4e08-craig-enders/)
 
 ## After Class
 
-- {{< fa video >}} Running ordinal regression in R
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rrRrI9gElYA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+-   {{< fa book >}} Kabacoff, R. I. (2022). \*R* in Action\* chapter 18.

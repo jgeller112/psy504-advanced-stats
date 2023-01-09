@@ -1,0 +1,15 @@
+---
+title: "Week 12"
+subtitle: "MLM"
+date: 2023-04-17
+---
+## Before Class
+
+### Articles
+
+{{< fa book >}} McCoach, D. B., & Cintron, D. (2022). Introduction to Modern Modelling Methods (1st edition). SAGE Publications Ltd.
+
+[Chapters 1 and 2](/readings/MLM_12.pdf)
+
+
+

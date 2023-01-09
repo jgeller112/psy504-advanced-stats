@@ -14,13 +14,18 @@ Legler, P. R. and J. [Chapter 4 Poisson Regression](https://bookdown.org/roback/
 - {{< fa book >}}
 Winter, B., & Bürkner, P.-C. (2021). [Poisson regression for linguists: A tutorial introduction to modelling count data with brms](https://compass.onlinelibrary.wiley.com/doi/full/10.1111/lnc3.12439). Language and Linguistics Compass, 15(11), e12439. https://doi.org/10.1111/lnc3.12439
 
+- What is the relationship between the dependent variable (the count data) and the independent variables (predictors)?
+- How does the Poisson distribution differ from other distributions, such as the normal distribution?
+- How can we fit a Poisson regression model to count data and interpret the model parameters?
+- How can we assess the goodness-of-fit of a Poisson regression model, and how can we choose between different model specifications?
+- How can Poisson regression be used to model over-dispersed data, where the variance of the dependent variable is larger than the mean?
+
 ### Videos
 
 {{< fa video >}}
-
-- Introduction to Poisson regression in R 
+- Introduction to Poisson regression 
 <center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0XfXHYDYoBA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Obpz_Uvo2rQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <center>
 
 ## After Class

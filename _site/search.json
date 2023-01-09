@@ -305,7 +305,7 @@
     "href": "schedule/05-week.html",
     "title": "Week 5",
     "section": "",
-    "text": "Legler, P. R. and J. Chapter 4 Poisson Regression | Beyond Multiple Linear Regression.\n Winter, B., & Bürkner, P.-C. (2021). Poisson regression for linguists: A tutorial introduction to modelling count data with brms. Language and Linguistics Compass, 15(11), e12439. https://doi.org/10.1111/lnc3.12439\n\n\n\n\n\n\nIntroduction to Poisson regression in R"
+    "text": "Legler, P. R. and J. Chapter 4 Poisson Regression | Beyond Multiple Linear Regression.\n Winter, B., & Bürkner, P.-C. (2021). Poisson regression for linguists: A tutorial introduction to modelling count data with brms. Language and Linguistics Compass, 15(11), e12439. https://doi.org/10.1111/lnc3.12439\nWhat is the relationship between the dependent variable (the count data) and the independent variables (predictors)?\nHow does the Poisson distribution differ from other distributions, such as the normal distribution?\nHow can we fit a Poisson regression model to count data and interpret the model parameters?\nHow can we assess the goodness-of-fit of a Poisson regression model, and how can we choose between different model specifications?\nHow can Poisson regression be used to model over-dispersed data, where the variance of the dependent variable is larger than the mean?\n\n\n\n\n\n\nIntroduction to Poisson regression"
   },
   {
     "objectID": "schedule/05-week.html#after-class",

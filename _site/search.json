@@ -88,7 +88,7 @@
     "href": "schedule/index.html",
     "title": "Schedule",
     "section": "",
-    "text": "Here’s your roadmap for the semester!\n\n\n Readings should be completed before each class session\n\n\n Slides and other class materials will be added on the day of class\n\n\n Assignments are due at noon on the day they are due (unless otherwise stated)\n\n\n\n\n\nWeek\nDate\nTopic\nContent\nClass\nLabs\n\n\n\n\n\n\n\n\n\n\n\n\n1\n1/30/23\nIntroduction\n\n\n\n\n\n\n2/1/23\nCleaning data\n\n\n\n\n\n2\n2/6/23\nRobust methods: bootstrapping and permutation\n\n\n\n\n\n\n2/8/23\nLab 1\n\n\n\n\n\n3\n2/13/23\nMissing data\n\n\n\n\n\n\n2/15/23\nLab 2\n\n\n\n\n\n4\n2/20/23\nOrdinal Regression\n\n\n\n\n\n\n2/22/23\nLab 3\n\n\n\n\n\n5\n2/27/23\nPoisson regression\n\n\n\n\n\n\n3/1/23\nLab 3\n\n\n\n\n\n6\n3/6/23\nBayesian analysis\n\n\n\n\n\n\n3/8/23\nLab 4\n\n\n\n\n\n7\nSpring Break\n\n\n\n\n\n\n8\n3/20/23\nMediation\n\n\n\n\n\n\n3/22/23\nLab 5\n\n\n\n\n\n9\n3/27/23\nPath modeling/SEM\n\nfa\nbook-open-reader >}}](/schedule/06-week.qmd)\n\n\n\n3/29/23\nLab 6\n\n\n\n\n\n10\n4/3/23\nPCA\n\n\n\n\n\n\n4/5/23\nLab 7\n\n\n\n\n\n11\n4/10/23\nClustering: K-means/hierarichal clustering\n\n\n\n\n\n\n4/12/23\nLab 8\n\n\n\n\n\n12\n4/17/23\nMultilevel modeling\n\n\n\n\n\n\n4/19/23\nLab 9\n\n\n\n\n\n13\n4/24/23\nGrowth curve modeling (GCA)\n\n\n\n\n\n\n4/26/23\nLab 9\n\n\n\n\n\n14\nReading Week\n\n\n\n\n\n\n15\nFinals"
+    "text": "Here’s your roadmap for the semester!\n\n\n Readings should be completed before each class session\n\n\n Slides and other class materials will be added on the day of class\n\n\n Assignments are due at noon on the day they are due (unless otherwise stated)\n\n\n\n\n\nWeek\nDate\nTopic\nContent\nClass\nLabs\n\n\n\n\n\n\n\n\n\n\n\n\n1\n1/30/23\nIntroduction\n\n\n\n\n\n\n2/1/23\nCleaning data\n\n\n\n\n\n2\n2/6/23\nRobust methods: bootstrapping and permutation\n\n\n\n\n\n\n2/8/23\nLab 1\n\n\n\n\n\n3\n2/13/23\nMissing data\n\n\n\n\n\n\n2/15/23\nLab 2\n\n\n\n\n\n4\n2/20/23\nOrdinal Regression\n\n\n\n\n\n\n2/22/23\nLab 3\n\n\n\n\n\n5\n2/27/23\nPoisson regression\n\n\n\n\n\n\n3/1/23\nLab 3\n\n\n\n\n\n6\n3/6/23\nBayesian analysis\n\n\n\n\n\n\n3/8/23\nLab 4\n\n\n\n\n\n7\nSpring Break\n\n\n\n\n\n\n8\n3/20/23\nMediation\n\n\n\n\n\n\n3/22/23\nLab 5\n\n\n\n\n\n9\n3/27/23\nPath modeling/SEM\n\n\n\n\n\n\n3/29/23\nLab 6\n\n\n\n\n\n10\n4/3/23\nPCA\n\n\n\n\n\n\n4/5/23\nLab 7\n\n\n\n\n\n11\n4/10/23\nClustering: K-means/hierarichal clustering\n\n\n\n\n\n\n4/12/23\nLab 8\n\n\n\n\n\n12\n4/17/23\nMultilevel modeling\n\n\n\n\n\n\n4/19/23\nLab 9\n\n\n\n\n\n13\n4/24/23\nGrowth curve modeling (GCA)\n\n\n\n\n\n\n4/26/23\nLab 9\n\n\n\n\n\n14\nReading Week\n\n\n\n\n\n\n15\nFinals"
   },
   {
     "objectID": "schedule/schedule.html",
@@ -338,7 +338,7 @@
   {
     "objectID": "schedule/09-week.html",
     "href": "schedule/09-week.html",
-    "title": "Week 11",
+    "title": "Week 9",
     "section": "",
     "text": "McCoach, D. B., & Cintron, D. (2022). Introduction to Modern Modelling Methods (1st edition). SAGE Publications Ltd.\nChapters 4 and 5"
   },

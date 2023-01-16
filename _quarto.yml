@@ -70,7 +70,6 @@ website:
             - Assignments/index.qmd
         - section: "Preparation"
           contents:
-            - Assignments/Reading-report.qmd
             - Assignments/presentation-discussion.qmd
   page-footer:
     left: |

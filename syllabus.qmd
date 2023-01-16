@@ -8,14 +8,13 @@ sidebar: false
 
 As a discipline, statistics has given profound tools to the sciences. Statistics is our way of detecting patterns in the noisy universe. Traditionally, psychologists were limited to research questions that could be answered with classical statistical analyses, but without particularly intending to do so, psychologists have found themselves at the cutting age of statistical discovery in the 20th and 21st centuries. This is because we needed to adapt our tools to meet the demands of the complex nature of the phenomena we study. This course will give you the quantitative tools to ask and answer research questions that were impossible to test as recently as a decade ago. Specifically, we will cover the following topics as stand-alone modules:
 
-1.  Robust Methods: bootstrapping, permutation tests
-2.  Missing Data
-3.  Non-Gaussian statistics: Generalized:Linear Model, poisson regression, ordinal regression
-4.  Beyond Null Hypothesis Significance Testing (NHST): Structural equation models, Bayesian hypothesis testing
-5.  Process models: Mediation, multiple mediation, mediated moderation, moderated mediation, path analysis
-6.  Dimension reduction: Exploratory factor analysis, principal components analysis (PCA), confirmatory factor analysis (CFA)
-7.  Time-based analyses: Growth curve modeling
-8.  Meta-analysis
+1.Robust Methods: bootstrapping, permutation tests
+2.Missing Data
+3.Non-Gaussian statistics: poisson regression, ordinal regression
+4.Beyond Null Hypothesis Significance Testing (NHST): Structural equation models, Bayesian hypothesis testing
+5.Process models: Mediation, multiple mediation, path analysis
+6.Dimension reduction: principal components analysis (PCA), clustering 
+7. Time-based analyses: Growth curve modeling
 
 I place a strong emphasis on practical application. I believe you are more likely to learn and readily use these analyses in the future if you do them at least once now. Every lecture will have "challenge" demonstrations for you to try the analyses along with me. Every Wednesday there will be a lab going over the material covered that week. The lab assignments will help you build a personal library of example statistical scripts that you will hopefully find useful for years into the future. These lab assignments will be due at the end of class.
 
@@ -63,9 +62,9 @@ In addition, I will also assign articles (these will be posted on article)
 
 # Attendance Policy
 
-You\'re expected to come to class, having (1) carefully read the material and (2) completed the weekly reading report.
+You're expected to come to class, having (1) carefully read the material and (2) completed the weekly reading report.
 
-Attendance and participation are *crucial* to your success in this course. However, we\'re in the middle of a deadly global pandemic and *so many people* are getting sick. If you are sick or are incapable of participating meaningfully in class (e.g. you have stayed up all night and are going to fall asleep in class), please stay home. I will try my best to record in-class lectures (or record them at home).
+Attendance and participation are *crucial* to your success in this course. However, we're in the middle of a deadly global pandemic and *so many people* are getting sick. If you are sick or are incapable of participating meaningfully in class (e.g. you have stayed up all night and are going to fall asleep in class), please stay home. I will try my best to record in-class lectures (or record them at home).
 
 # Absences and Late Work
 
@@ -81,15 +80,15 @@ It is expected that you will bring your laptop to class. Please try to keep it c
 
 There will be no points associated with any of the assignments this semester. To receive a passing grade (A), all assignments must be turned in.
 
-## Reading Reports
+## Reading Summaries
 
 You should read all the assigned articles each week. Keep notes of the main arguments, methods, surprises, and shortcomings in each reading, think about how the readings connect to each other, and consider how they apply to your research.
 
 Before class on Mondays, you need to write a reading report about what you've read. This report is designed to (1) allow you to engage with the assigned readings, (2) help you practice high quality academic writing, and (3) help you be prepared for in-class discussions of the readings.
 
-Reading reports are due by 11:59 PM on the day before class via Canvas.
+Reading reports are due by 11:59 PM on Sunday before class via Canvas.
 
-## Student Mini-Presentations and Discussions 
+## Student Mini-Presentations and Discussions
 
 Every week (Monday) one of your peers will present an introduction to the method we will be discussing that week, based on the assigned reading for that week (you are to use the assigned articles to guide your presentation and discussion). Each presentation should be be (12-15 minutes) with a discussion \~10 minutes.
 
@@ -99,9 +98,7 @@ In these presentations, I would like:
 
 -   A clear overview of the topic: This should include a brief introduction to the topic, highlighting its relevance and importance in psychological research. You should also address assumptions of the methods, if any.
 
--   A review of key concepts and definitions: The student should provide a summary of the key concepts and definitions related to the topic, including any technical terms that may be unfamiliar to you or the class.
-
--   Examples and applications: To help peers' understand the practical implications of the topic, you should provide examples and applications of how the topic is used in psychology. This could include your own research or examples from the literature or the materials. If you wanted to walk through an example dataset, that is also welcome. I am going to be program agnostic here (use R, Python, SPSS, JASP, etc.) to do this.
+-   Examples and applications: To help peers' understand the practical implications of the topic, you should provide examples and applications of how the topic is used in psychology. This could include your own research or examples from the literature or the materials. If you wanted to walk through an example, that is also welcome. I am going to be program agnostic here (use R, Python, SPSS, JASP, etc.) to do this.
 
 -   A discussion of things you did not understand
 

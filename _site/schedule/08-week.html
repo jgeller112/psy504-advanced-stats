@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.189">
+<meta name="generator" content="quarto-1.2.269">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -93,13 +93,16 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../syllabus.html">Syllabus</a>
+    <a class="nav-link" href="../syllabus.html">
+ <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../schedule/index.html" aria-current="page">Schedule</a>
+    <a class="nav-link active" href="../schedule/index.html" aria-current="page">
+ <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../Assignments/index.html">Assignments</a>
+    <a class="nav-link" href="../Assignments/index.html">
+ <span class="menu-text">Assignments</span></a>
   </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
@@ -138,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../schedule/03-week.html" class="sidebar-item-text sidebar-link">Week 4</a>
+  <a href="../schedule/03-week.html" class="sidebar-item-text sidebar-link">Week 3</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -157,16 +160,13 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
         <li class="sidebar-item">
-  schedule/07-week.qmd
-  </li>
-        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../schedule/08-week.html" class="sidebar-item-text sidebar-link active">Week 8</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../schedule/09-week.html" class="sidebar-item-text sidebar-link">Week 11</a>
+  <a href="../schedule/09-week.html" class="sidebar-item-text sidebar-link">Week 9</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -223,6 +223,7 @@ ul.task-list li input[type="checkbox"] {
       <p class="date">March 20, 2023</p>
     </div>
   </div>
+  
     
   </div>
   
@@ -233,18 +234,20 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="before-class">Before Class</h2>
 <section id="articles" class="level3">
 <h3 class="anchored" data-anchor-id="articles">Articles</h3>
-<p><i class="fa-solid fa-book" aria-hidden="true"></i> Baron, R. M., &amp; Kenny, D. A. (1986). <a href="../readings/06-med/baron_kenny.pdf">The moderator–mediator variable distinction in social psychological research: Conceptual, strategic, and statistical considerations</a>. Journal of Personality and Social Psychology, 51, 1173-1182.</p>
 <ul>
-<li><p>What are the steps (i.e., equations, regression models) that comprise a mediation analysis?</p></li>
-<li><p>What are you looking to see in the output of these models to establish that mediation has occurred?</p></li>
-<li><p>How do you test for the overall significance of a mediational model?</p></li>
-<li><p>What is the difference between a mediation and a moderation (i.e., how do the interpretations of each differ)?</p></li>
-</ul>
-<p><i class="fa-solid fa-book" aria-hidden="true"></i> Zhao, X., Lynch, Jr., J. G., &amp; Chen, Q. (2010). <a href="../readings/06-med/med_bk.pdf">Reconsidering Baron and Kenny: Myths and truths about mediation analysis.</a>. Journal of Consumer Research, 37, 197-206)</p>
+<li><p><i class="fa-solid fa-book" aria-hidden="true"></i> Baron, R. M., &amp; Kenny, D. A. (1986). <a href="../readings/06-med/baron_kenny.pdf">The moderator–mediator variable distinction in social psychological research: Conceptual, strategic, and statistical considerations</a>. Journal of Personality and Social Psychology, 51, 1173-1182.</p>
 <ul>
-<li><p>identify at least three recommendations/assertions of Baron and Kenny (1986) that Zhao et al (2010) argue against. State Baron &amp; Kenny’s reasoning behind the original assertion but also the reasoning of Zhao et al when arguing the recommendation is wrong.</p></li>
+<li>What are the steps (i.e., equations, regression models) that comprise a mediation analysis?</li>
+<li>What are you looking to see in the output of these models to establish that mediation has occurred?</li>
+<li>How do you test for the overall significance of a mediational model?</li>
+<li>What is the difference between a mediation and a moderation (i.e., how do the interpretations of each differ)?</li>
+</ul></li>
+<li><p><i class="fa-solid fa-book" aria-hidden="true"></i> Zhao, X., Lynch, Jr., J. G., &amp; Chen, Q. (2010). <a href="../readings/06-med/med_bk.pdf">Reconsidering Baron and Kenny: Myths and truths about mediation analysis.</a>. Journal of Consumer Research, 37, 197-206)</p>
+<ul>
+<li><p>Identify at least three recommendations/assertions of Baron and Kenny (1986) that Zhao et al (2010) argue against. State Baron &amp; Kenny’s reasoning behind the original assertion but also the reasoning of Zhao et al when arguing the recommendation is wrong.</p></li>
 <li><p>What are the five types of mediation and nonmediation?</p></li>
 <li><p>What type of mediation can tell you whether the mediator is consistent with the causal model?</p></li>
+</ul></li>
 </ul>
 </section>
 <section id="video" class="level3">
@@ -310,7 +313,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -346,24 +366,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>

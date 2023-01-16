@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.189">
+<meta name="generator" content="quarto-1.2.269">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -93,13 +93,16 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../syllabus.html">Syllabus</a>
+    <a class="nav-link" href="../syllabus.html">
+ <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../schedule/index.html" aria-current="page">Schedule</a>
+    <a class="nav-link active" href="../schedule/index.html" aria-current="page">
+ <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../Assignments/index.html">Assignments</a>
+    <a class="nav-link" href="../Assignments/index.html">
+ <span class="menu-text">Assignments</span></a>
   </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
@@ -163,7 +166,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../schedule/09-week.html" class="sidebar-item-text sidebar-link">Week 11</a>
+  <a href="../schedule/09-week.html" class="sidebar-item-text sidebar-link">Week 9</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -219,6 +222,7 @@ ul.task-list li input[type="checkbox"] {
       <p class="date">February 27, 2023</p>
     </div>
   </div>
+  
     
   </div>
   
@@ -230,13 +234,18 @@ ul.task-list li input[type="checkbox"] {
 <section id="articles" class="level3">
 <h3 class="anchored" data-anchor-id="articles">Articles</h3>
 <ul>
-<li><p><i class="fa-solid fa-book" aria-hidden="true"></i> Legler, P. R. and J. <a href="https://bookdown.org/roback/bookdown-BeyondMLR/ch-poissonreg.html">Chapter 4 Poisson Regression</a> | Beyond Multiple Linear Regression.</p></li>
-<li><p><i class="fa-solid fa-book" aria-hidden="true"></i> Winter, B., &amp; Bürkner, P.-C. (2021). <a href="https://compass.onlinelibrary.wiley.com/doi/full/10.1111/lnc3.12439">Poisson regression for linguists: A tutorial introduction to modelling count data with brms</a>. Language and Linguistics Compass, 15(11), e12439. https://doi.org/10.1111/lnc3.12439</p></li>
-<li><p>What is the relationship between the dependent variable (the count data) and the independent variables (predictors)?</p></li>
+<li><p><i class="fa-solid fa-book" aria-hidden="true"></i></p></li>
+</ul>
+<p>Coxe, S., West, S. G., &amp; Aiken, L. S. (2009). <a href="../readings/count_data_poisson.pdf">The Analysis of Count Data: A Gentle Introduction to Poisson Regression and Its Alternatives</a>. Journal of Personality Assessment, 91(2), 121–136. https://doi.org/10.1080/00223890802634175</p>
+<ul>
+<li><p><i class="fa-solid fa-book" aria-hidden="true"></i> Winter, B., &amp; Bürkner, P.-C. (2021). <a href="https://compass.onlinelibrary.wiley.com/doi/full/10.1111/lnc3.12439">Poisson regression for linguists: A tutorial introduction to modelling count data with brms</a>. Language and Linguistics Compass, 15(11), e12439. https://doi.org/10.1111/lnc3.12439</p>
+<ul>
 <li><p>How does the Poisson distribution differ from other distributions, such as the normal distribution?</p></li>
-<li><p>How can we fit a Poisson regression model to count data and interpret the model parameters?</p></li>
-<li><p>How can we assess the goodness-of-fit of a Poisson regression model, and how can we choose between different model specifications?</p></li>
-<li><p>How can Poisson regression be used to model over-dispersed data, where the variance of the dependent variable is larger than the mean?</p></li>
+<li><p>How do we interpret the parameters of the poisson?</p></li>
+<li><p>What are the assumptions of Poisson regression?</p></li>
+<li><p>What is overdispersion?</p></li>
+<li><p>How is poisson related to the negative binomial?</p></li>
+</ul></li>
 </ul>
 </section>
 <section id="videos" class="level3">
@@ -253,9 +262,9 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="after-class" class="level2">
 <h2 class="anchored" data-anchor-id="after-class">After Class</h2>
-<p><i class="fa-solid fa-video" aria-hidden="true"></i></p>
 <ul>
-<li>Running Poisson regression in R</li>
+<li><p><i class="fa-solid fa-book" aria-hidden="true"></i> Kabacoff, R. I. (2022). *R* in Action* chapter 13.</p></li>
+<li><p><i class="fa-solid fa-video" aria-hidden="true"></i> Running Poisson regression in R</p></li>
 </ul>
 <center>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QPY4zuxs1W0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
@@ -311,7 +320,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -347,24 +373,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>

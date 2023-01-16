@@ -20,7 +20,7 @@ Here's your roadmap for the semester!
 
 <li><i class="fas fa-tv"></i> Slides and other class materials will be added on the day of class</li>
 
-<li><i class="fas fa pen-ruler"></i> Assignments are due at noon on the day they are due (unless otherwise stated)</li>
+<li><i class="fas fa pen-ruler"></i> Assignments are due at 11:00 P.M. on Friday (unless otherwise stated)</li>
 
 </ul>
 | Week  | Date         | Topic                                           | Content                                                   | Class                           | Labs                          |
@@ -32,9 +32,9 @@ Here's your roadmap for the semester!
 |       | 2/8/23       | Lab 1                                           |                                                           |                                 |        {{<   fa pen-ruler >}} |
 | 3     | 2/13/23      | Missing data                                    | [{{<    fa   book-open-reader >}}](/schedule/03-week.qmd) |        {{<   fa laptop-code >}} |                               |
 |       | 2/15/23      | Lab 2                                           |                                                           |                                 |        {{<   fa pen-ruler >}} |
-| 4     | 2/20/23      | Ordinal   Regression                            | [{{<    fa   book-open-reader >}}](/schedule/04-week.qmd) |        {{<   fa laptop-code >}} |                               |
+| 4     | 2/20/23      | Ordinal regression                            | [{{<    fa   book-open-reader >}}](/schedule/04-week.qmd) |        {{<   fa laptop-code >}} |                               |
 |       | 2/22/23      | Lab 3                                           |                                                           |                                 |        {{<   fa pen-ruler >}} |
-| 5     | 2/27/23      | Poisson   regression                            | [{{<    fa   book-open-reader >}}](/schedule/05-week.qmd) |        {{<   fa laptop-code >}} |                               |
+| 5     | 2/27/23      | Poisson  regression                            | [{{<    fa   book-open-reader >}}](/schedule/05-week.qmd) |        {{<   fa laptop-code >}} |                               |
 |       | 3/1/23       | Lab 3                                           |                                                           |                                 |        {{<   fa pen-ruler >}} |
 | 6     | 3/6/23       | Bayesian   analysis                             | [{{<    fa   book-open-reader >}}](/schedule/06-week.qmd) |        {{<   fa laptop-code >}} |                               |
 |       | 3/8/23       | Lab 4                                           |                                                           |                                 |        {{<   fa pen-ruler >}} |

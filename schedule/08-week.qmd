@@ -3,27 +3,24 @@ title: "Week 8"
 subtitle: "Mediation"
 date: 2023-03-20
 ---
-
 ## Before Class
 
 ### Articles
 
-{{< fa book >}} Baron, R. M., & Kenny, D. A. (1986). [The moderator–mediator variable distinction in social psychological research: Conceptual, strategic, and statistical considerations](/readings/06-med/baron_kenny.pdf). Journal of Personality and Social Psychology, 51, 1173-1182.
+- {{< fa book >}} Baron, R. M., & Kenny, D. A. (1986). [The moderator–mediator variable distinction in social psychological research: Conceptual, strategic, and statistical considerations](/readings/06-med/baron_kenny.pdf). Journal of Personality and Social Psychology, 51, 1173-1182.
 
-- What are the steps (i.e., equations, regression models) that comprise a mediation analysis?
-- What are you looking to see in the output of these models to establish that mediation has occurred?
+  - What are the steps (i.e., equations, regression models) that comprise a mediation analysis?
+  - What are you looking to see in the output of these models to establish that mediation has occurred?
+  - How do you test for the overall significance of a mediational model?
+  - What is the difference between a mediation and a moderation (i.e., how do the interpretations of each differ)?
 
-- How do you test for the overall significance of a mediational model?
+- {{< fa book >}} Zhao, X., Lynch, Jr., J. G., & Chen, Q. (2010). [Reconsidering Baron and Kenny: Myths and truths about mediation analysis.](/readings/06-med/med_bk.pdf). Journal of Consumer Research, 37, 197-206)
 
-- What is the difference between a mediation and a moderation (i.e., how do the interpretations of each differ)?
+  - Identify at least three recommendations/assertions of Baron and Kenny (1986) that Zhao et al (2010) argue against. State Baron & Kenny’s reasoning behind the original assertion but also the reasoning of Zhao et al when arguing the recommendation is wrong.
 
-{{< fa book >}} Zhao, X., Lynch, Jr., J. G., & Chen, Q. (2010). [Reconsidering Baron and Kenny: Myths and truths about mediation analysis.](/readings/06-med/med_bk.pdf). Journal of Consumer Research, 37, 197-206)
+  - What are the five types of mediation and nonmediation? 
 
-- identify at least three recommendations/assertions of Baron and Kenny (1986) that Zhao et al (2010) argue against. State Baron & Kenny’s reasoning behind the original assertion but also the reasoning of Zhao et al when arguing the recommendation is wrong.
-
-- What are the five types of mediation and nonmediation? 
-
-- What type of mediation can tell you whether the mediator is consistent with the causal model?
+  - What type of mediation can tell you whether the mediator is consistent with the causal model?
 
 ### Video
 

@@ -9,16 +9,21 @@ date: 2023-02-27
 ### Articles
 
 - {{< fa book >}} 
-Legler, P. R. and J. [Chapter 4 Poisson Regression](https://bookdown.org/roback/bookdown-BeyondMLR/ch-poissonreg.html) | Beyond Multiple Linear Regression.
+
+Coxe, S., West, S. G., & Aiken, L. S. (2009). [The Analysis of Count Data: A Gentle Introduction to Poisson Regression and Its Alternatives](/readings/count_data_poisson.pdf). Journal of Personality Assessment, 91(2), 121–136. https://doi.org/10.1080/00223890802634175
 
 - {{< fa book >}}
 Winter, B., & Bürkner, P.-C. (2021). [Poisson regression for linguists: A tutorial introduction to modelling count data with brms](https://compass.onlinelibrary.wiley.com/doi/full/10.1111/lnc3.12439). Language and Linguistics Compass, 15(11), e12439. https://doi.org/10.1111/lnc3.12439
 
-- What is the relationship between the dependent variable (the count data) and the independent variables (predictors)?
-- How does the Poisson distribution differ from other distributions, such as the normal distribution?
-- How can we fit a Poisson regression model to count data and interpret the model parameters?
-- How can we assess the goodness-of-fit of a Poisson regression model, and how can we choose between different model specifications?
-- How can Poisson regression be used to model over-dispersed data, where the variance of the dependent variable is larger than the mean?
+  - How does the Poisson distribution differ from other distributions, such as the normal distribution?
+  
+  - How do we interpret the parameters of the poisson?
+  
+  - What are the assumptions of Poisson regression?
+  
+  - What is overdispersion?
+    
+  - How is poisson related to the negative binomial?
 
 ### Videos
 
@@ -30,13 +35,14 @@ Winter, B., & Bürkner, P.-C. (2021). [Poisson regression for linguists: A tutor
 
 ## After Class
 
-{{< fa video >}}
+- {{< fa book >}} Kabacoff, R. I. (2022). \*R* in Action\* chapter 13.
 
-- Running Poisson regression in R 
+- {{< fa video >}} Running Poisson regression in R
 
 <center>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QPY4zuxs1W0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <center>
+
 <center>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WuWGXJvTda4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <center>

@@ -9,17 +9,17 @@ date: 2023-03-06
 
 - {{< fa book >}} Dienes, Z. (2008). [Bayes and the probability hypotheses](/readings/bayes.pdf)
 
-  - What is Bayes' Theorem and how is it used in statistical analysis?
-  - How does Bayesian statistical analysis differ from NHST?
-  - What affordances does Bayesian statistics provide that NHST does not?
-  - How do Bayesian models incorporate prior knowledge or beliefs about the data?
-  - What are some advantages and disadvantages of using Bayesian statistical methods?
-  - How do you make statistical inferences and predictions using Bayesian methods?
+    - What is Bayes' Theorem and how is it used in statistical analysis?
+    - How does Bayesian statistical analysis differ from NHST?
+    - What affordances does Bayesian statistics provide that NHST does not?
+   - How do Bayesian models incorporate prior knowledge or beliefs about the data?
+   - What are some advantages and disadvantages of using Bayesian statistical methods?
+   - How do you make statistical inferences and predictions using Bayesian methods?
   
 Jarosz, A. F., & Wiley, J. (2014). [What Are the Odds? A Practical Guide to Computing and Reporting Bayes Factors](https://docs.lib.purdue.edu/jps/vol7/iss1/2/). The Journal of Problem Solving, 7(1). 
 
   - What is a Bayes Factor?
-  - How do you calculate then?
+  - How do you calculate them?
   - How do we interpret Bayes Factors? 
 
 ### Video

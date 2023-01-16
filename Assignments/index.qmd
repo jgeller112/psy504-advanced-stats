@@ -7,14 +7,14 @@ You will get the most out of this seminar if you (1) attend regularly, (2) engag
 
 To help you do all this successfully, there are three assignments for this course: 
 
-- **Reading reports**: Before class on Monday, you should complete all the readings and write a short summary of what you read. **You should [follow this template and instructions](/Assignments/Reading-report.qmd).** These are due by 11:59 PM on the day before class
+- **Reading Questions**: Before class on Monday, you should complete all the readings and answer questions associated with the readings. These are due by 11:59 PM on the day before class
 
 - **Mini presentation and discussion leading**: Once during the semester, you will be responsible for preparing a presentation and leading the discussion for a class session. During the first day of class, I will provide a spreadsheet where you will select the week you want to be responsible for. [**Complete instructions and details for this assignment are here.**](/Assignments/presentation-discussion.qmd)
 
 - **Labs**: 
 Each week (Wednesday) we will have one corresponding lab exercise that will be started in class. The purpose is for you to get direct experience conducting the analyses that you learn. Each lab exercise will consist of several questions and will require R (will also accept Python) to answer the questions in a reproducible manner. All lab assignments must be reproducible (i.e., I can replicate the work you did without any errors). You may complete the labs by yourself or working with another person. If you work with another person, your work must obviously be your own.
 
-Ideally, you will finish labs in class. However, if you choose to finish at home, completed labs will be due at 6:00 p.m. on the Friday of that week. Please let me know if you need an extension.
+Ideally, you will finish labs in class. However, if you do not complete it in class, you can turn them in on Friday (due at 11:00 P.M.) Please let me know if you need an extension.
 
 ## Exams
 

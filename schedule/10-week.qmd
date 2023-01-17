@@ -11,8 +11,9 @@ date: 2023-04-03
 
 [Chapter 12 12.1-12.3](https://hastie.su.domains/ISLR2/ISLRv2_website.pdf)
 
-Pett, M. A., Lackey, N. R., & Sullivan, J. (2003). [Chapter 1: An Overview of Factor Analyis](). Making Sense of Factor Analysis: The Use of Factor Analysis for Instrument Development in Health Care Research (1st edition). SAGE Publications, Inc.
+Pett, M. A., Lackey, N. R., & Sullivan, J. (2003). [Chapter 1: An Overview of Factor Analyis](/readings/intro_fact.pdf). Making Sense of Factor Analysis: The Use of Factor Analysis for Instrument Development in Health Care Research (1st edition). SAGE Publications, Inc.
 
 ## After Class
 
 -   {{< fa book >}} Kabacoff, R. I. (2022). \*R* in Action\* chapter 14.
+- https://rpubs.com/danmirman/plotting_factor_analysis

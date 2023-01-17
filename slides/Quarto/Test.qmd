@@ -1,0 +1,154 @@
+---
+title: "Quarto"
+subtitle: "PSY 504: Advanced Statistics"
+author: "Jason Geller<br> Princeton University <br> Feburary 1, 2023"
+format: 
+  revealjs:
+    theme: [moon, pp.scss]
+    preview-links: auto
+    chalkboard: 
+      boardmarker-width: 5
+from: markdown+emoji
+execute:
+  echo: true
+---
+
+```{r}
+
+#install python
+library(reticulate)
+#install_miniconda()
+use_python("/Users/jasongeller/Library/r-miniconda-arm64/envs/r-reticulate/bin/python", required = TRUE)
+
+```
+
+## Formatting 
+
+# Header 1
+Using a single # gives you a really large header!
+
+## Header 2
+Using two gives you a slightly smaller header!
+
+### Header 3
+...and on
+
+#### Header 4
+...and on
+
+##### Header 5
+...and on
+
+##  Lists
+
+You may also want to use a bulleted list!
+
+- just
+- like
+- this
+- one
+
+Or maybe an ordered list!
+
+1. like
+2. this
+3. one
+
+To emphasize your point you might want to use *italics* or **bold**. 
+
+To have something appear as code (using a monospace font), surround everything that is code with ticks \`like this\`, so that it shows up `like this`.
+
+If you're the math-y type, you will be happy to know that you can write LaTeX in .qmd files as well! For a full line formula, use two \$\$ dollar signs at the begining and end of your LaTeX:
+
+```
+$$
+\frac{\partial f}{\partial y} = x + 2y
+$$
+```
+
+will appear as 
+$$
+\frac{\partial f}{\partial y} = x + 2y
+$$
+
+For in-line LaTeX just use one \$ in your text. For example, $x + \beta$
+
+You may also want to put a [link](https://www.google.com) to a website for reference. Or, insert an image!
+
+![Caption](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/national/gradient-descent-learning-rate.png)
+
+## Callout Blocks
+One really cool thing about markdown documents like Quarto is that you can use a **callout block**. These are helpful for two reasons:
+
+- call-out blocks highlight sections of text that interrupt the flow of your regular text. Maybe it's a definition, a warning, or a sidenote
+- when rendering your document to HTML, callout blocks are interactive and can be collapsed and opened. 
+---
+::: {.callout-warning}
+## My First Callout Block!
+Say things here
+:::
+
+## Callout Blocks
+
+- IF you're rendering to HTML (PDFs are not interactive and therefore cannot collapse callout blocks)
+
+- Use the `collapse="true"` argument in a callout to make the callout block not show unless the user clicks on it.
+
+::: {.callout-warning, collapse=TRUE}
+## Question
+- We want to *decrease* $f$, so what should we do to $x$ and $y$?
+- Which one should we decrease more? $x$ or $y$?
+:::
+
+::: {.callout-warning collapse="true"}
+## Answer
+We should *decrease* both $x$ and $y$, and we should decrease $y$ more becasue it has a bigger impact than $x$ at this specific point $(2,3)$.
+
+It turns out that we'll take a step in the direction $-\begin{bmatrix} 7 \\ 8 \end{bmatrix}$!
+
+But we'll save the details for CPSC 393...
+:::
+
+## Code Blocks
+One of the most useful things about markdown documents like this is that you can intersperse your writing with code!
+
+For example, this R code:
+
+```{r}
+# reticulate library allows you to run both
+# R and python in the same .qmd
+# file. Normally you do not 
+# need this
+library(reticulate)
+library(ggplot2)
+y <- 10
+x <- y + 5
+
+print(x,y)
+```
+
+or this python code:
+
+```{python}
+x = 10
+y = 2
+print(x + y)
+```
+
+## Notes
+
+- Generally all the code runs
+
+- One option is to use the `eval: false` argument when setting up your codeblock:
+
+```{python}
+#| eval: false
+print("Don't Run Me")
+```
+
+```{python}
+#| eval: true
+print("Do Run Me")
+```
+
+- This is useful for showing someone what code you used without needing to show them the output or comupute the code

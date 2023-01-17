@@ -11,4 +11,8 @@ da  te: 2023-04-10
 
 [Chapters 4 and 5](/readings/sem.pdf)
 
+  - Come up with a hypothetical path model. Represent it both pictorially and as a series of equations.
+  
+  - Describe how to enact the tracing rule used to calculate the magnitude of a particular indirect effect.
+
 

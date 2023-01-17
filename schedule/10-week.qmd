@@ -9,9 +9,9 @@ date: 2023-04-03
 
 {{< fa book >}} James, G., Witten, D., Hastie, T., & Tibshirani, R. (2013). An Introduction to Statistical Learning: With Applications in R. Springer.
 
-[Chapter 12 12.1-12.3](https://hastie.su.domains/ISLR2/ISLRv2_website.pdf)
+  - [Chapter 12 12.1-12.3](https://hastie.su.domains/ISLR2/ISLRv2_website.pdf)
 
-Pett, M. A., Lackey, N. R., & Sullivan, J. (2003). [Chapter 1: An Overview of Factor Analyis](/readings/intro_fact.pdf). Making Sense of Factor Analysis: The Use of Factor Analysis for Instrument Development in Health Care Research (1st edition). SAGE Publications, Inc.
+- {{< fa book >}}Pett, M. A., Lackey, N. R., & Sullivan, J. (2003). [Chapter 1: An Overview of Factor Analyis](/readings/intro_fact.pdf). Making Sense of Factor Analysis: The Use of Factor Analysis for Instrument Development in Health Care Research (1st edition). SAGE Publications, Inc.
 
 ## After Class
 

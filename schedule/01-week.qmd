@@ -1,8 +1,17 @@
 ---
 title: "Week 1"
-subtitle: "Tidying Data"
+subtitle: "Quarto"
 date: 2023-02-01
 ---
+
+-   Introduction to quarto and how to create website/blog
+
 ## Before Class
 
-- {{< fa book >}} [Tidy Data](https://vita.had.co.nz/papers/tidy-data.pdf)
+::: callout-important
+-   Install latest version of RStudio, [`v2022.07.1` or later](https://www.rstudio.com/products/rstudio/download/#download)
+
+-   Follow: <https://quarto.org/docs/get-started/hello/rstudio.html>
+
+-   Sign up for free github account
+:::

@@ -71,12 +71,6 @@ Kabacoff, R. I. (2022). R in Action, Third Edition: Data analysis and graphics w
 
 <center>![](rinaction.jpeg){width="319"}</center>
 
-# Recommended Text
-
-Pett, M. A., Lackey, N. R., & Sullivan, J. (2003). Making Sense of Factor Analysis: The Use of Factor Analysis for Instrument Development in Health Care Research (1st edition). SAGE Publications, Inc.
-
-<center>![](factor.jpg){width="400"}</center>
-
 # Class Format
 
 ## Lectures (Monday)

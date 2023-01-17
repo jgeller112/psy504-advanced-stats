@@ -13,6 +13,28 @@ execute:
   echo: true
 ---
 
+# Advanced Stats
+
+::: columns
+::: {.column width="50%"}
+![](buffet.jpeg){fig-align="center"}
+:::
+
+::: {.column width="50%"}
+-   Robust Methods
+
+-   Missing
+
+-   Mediation
+
+-   Path Analysis (SEM)
+
+-   MLM
+
+-   Clustering
+:::
+:::
+
 # Office Hours
 
 -   M 1:00 P.M.- 3:00 P.M.; W 1:00 P.M. - 2:00 P.M. :chair:
@@ -41,19 +63,19 @@ execute:
 
 McCoach, D. B., & Cintron, D. (2022). Introduction to Modern Modelling Methods (1st edition). SAGE Publications Ltd.
 
-<center>![](modelingbook.jpg){width="139"}</center>
+<center>![](modelingbook.jpg){width="278"}</center>
 
 # Recommended Text
 
 Kabacoff, R. I. (2022). R in Action, Third Edition: Data analysis and graphics with R and Tidyverse (3rd edition). Manning.
 
-<center>![](rinaction.jpeg){width="160"}</center>
+<center>![](rinaction.jpeg){width="319"}</center>
 
 # Recommended Text
 
 Pett, M. A., Lackey, N. R., & Sullivan, J. (2003). Making Sense of Factor Analysis: The Use of Factor Analysis for Instrument Development in Health Care Research (1st edition). SAGE Publications, Inc.
 
-<center>![](factor.jpg){width="200"}</center>
+<center>![](factor.jpg){width="400"}</center>
 
 # Class Format
 

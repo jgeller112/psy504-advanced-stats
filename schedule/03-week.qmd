@@ -23,4 +23,5 @@ date: 2023-02-01
 
 ## After Class
 
--   {{< fa book >}} Kabacoff, R. I. (2022). \*R* in Action\* chapter 18.
+- {{< fa book >}} Kabacoff, R. I. (2022). \*R* in Action\* [Chapter 18](https://books-library.net/files/books-library.net-10271851Vx7V9.pdf).
+

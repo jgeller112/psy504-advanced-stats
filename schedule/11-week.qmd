@@ -11,4 +11,8 @@ date: 2023-04-10
 
 [Chapter 12 12.4-12.5](https://hastie.su.domains/ISLR2/ISLRv2_website.pdf)
 
+## After Class
+
+- {{< fa book >}} Kabacoff, R. I. (2022). \*R* in Action\* [Chapter 16](https://books-library.net/files/books-library.net-10271851Vx7V9.pdf).
+
 

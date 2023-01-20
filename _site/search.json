@@ -60,14 +60,14 @@
     "href": "schedule/01-week.html",
     "title": "Week 1",
     "section": "",
-    "text": "Tidy Data"
+    "text": "Introduction to quarto and how to create website/blog"
   },
   {
     "objectID": "schedule/02-week.html",
     "href": "schedule/02-week.html",
     "title": "Week 2",
     "section": "",
-    "text": "Wehrens, R., Putter, H., & Buydens, L. (2000). The bootstrap: a tutorial. Chemometrics and Intelligent Laboratory Systems, 54, 35-52.\n\nWhen do you use a bootstrapping procedure? What purpose does it serve?\nHow is a bootstrapped sampling distribution generated?\nHow many bootstrap samples should you use?\nWhen should you bootstrap your actual data (“cases”) versus your prediction error (“residuals”)?\n\n Wilcox, R. R. (1998). How many discoveries have been lost by ignoring modern statistical methods?. American Psychologist, 53, 300—314.\n\nWhat are the statistical and theoretical problems associated with removing outliers?\nHow does skew affect your test?\nWhat are the solutions to these problems?\n\nLaFleur, B. J., & Greevy, R. A. (2009). Introduction to Permutation and Resampling-Based Hypothesis Tests∗. Journal of Clinical Child & Adolescent Psychology, 38(2), 286–294. https://doi.org/10.1080/15374410902740411\n\nHow do permutation tests differ from traditional statistical hypothesis tests?\nWhat assumptions underlie permutation tests?\nWhat steps underlie permutation tests?\nHow does the number of permutations affect the power and type I error rate of a permutation test?"
+    "text": "Fox.J. (2008). Applied Regression Analysis and Generalized Linear Models. SAGE Publications Inc. Chapter 21: Bootstrapping Regression Models.\n\nWhen do you use a bootstrapping procedure? What purpose does it serve?\nHow is a bootstrapped sampling distribution generated?\nHow many bootstrap samples should you use?\nWhen should you bootstrap your actual data (“cases”) versus your prediction error (“residuals”)?\n\n Wilcox, R. R. (1998). How many discoveries have been lost by ignoring modern statistical methods?. American Psychologist, 53, 300—314.\n\nWhat are the statistical and theoretical problems associated with removing outliers?\nHow does skew affect your test?\nWhat are the solutions to these problems?\n\n LaFleur, B. J., & Greevy, R. A. (2009). Introduction to Permutation and Resampling-Based Hypothesis Tests∗. Journal of Clinical Child & Adolescent Psychology, 38(2), 286–294. https://doi.org/10.1080/15374410902740411\n\nHow do permutation tests differ from traditional statistical hypothesis tests?\nWhat assumptions underlie permutation tests?\nWhat steps underlie permutation tests?\nHow does the number of permutations affect the power and type I error rate of a permutation test?"
   },
   {
     "objectID": "schedule/02-week.html#practice",
@@ -88,7 +88,7 @@
     "href": "schedule/index.html",
     "title": "Schedule",
     "section": "",
-    "text": "Here’s your roadmap for the semester!\n\n\n Readings should be completed before each class session\n\n\n Slides and other class materials will be added on the day of class\n\n\n Assignments are due at 11:00 P.M. on Friday (unless otherwise stated)\n\n\n\n\n\nWeek\nDate\nTopic\nContent\nClass\nLabs\n\n\n\n\n\n\n\n\n\n\n\n\n1\n1/30/23\nIntroduction\n\n\n\n\n\n\n2/1/23\nCleaning data\n\n\n\n\n\n2\n2/6/23\nRobust methods: bootstrapping and permutation\n\n\n\n\n\n\n2/8/23\nLab 1\n\n\n\n\n\n3\n2/13/23\nMissing data\n\n\n\n\n\n\n2/15/23\nLab 2\n\n\n\n\n\n4\n2/20/23\nOrdinal regression\n\n\n\n\n\n\n2/22/23\nLab 3\n\n\n\n\n\n5\n2/27/23\nPoisson regression\n\n\n\n\n\n\n3/1/23\nLab 3\n\n\n\n\n\n6\n3/6/23\nBayesian analysis\n\n\n\n\n\n\n3/8/23\nLab 4\n\n\n\n\n\n7\nSpring Break\n\n\n\n\n\n\n8\n3/20/23\nMediation\n\n\n\n\n\n\n3/22/23\nLab 5\n\n\n\n\n\n9\n3/27/23\nPath modeling/SEM\n\n\n\n\n\n\n3/29/23\nLab 6\n\n\n\n\n\n10\n4/3/23\nPCA\n\n\n\n\n\n\n4/5/23\nLab 7\n\n\n\n\n\n11\n4/10/23\nClustering: K-means/hierarichal clustering\n\n\n\n\n\n\n4/12/23\nLab 8\n\n\n\n\n\n12\n4/17/23\nMultilevel modeling\n\n\n\n\n\n\n4/19/23\nLab 9\n\n\n\n\n\n13\n4/24/23\nGrowth curve modeling (GCA)\n\n\n\n\n\n\n4/26/23\nLab 9\n\n\n\n\n\n14\nReading Week\n\n\n\n\n\n\n15\nFinals"
+    "text": "Here’s your roadmap for the semester!\n\n\n Readings should be completed before each class session\n\n\n Slides and other class materials will be added on the day of class\n\n\n Assignments are due at 11:00 P.M. on Friday (unless otherwise stated)\n\n\n\n\n\nWeek\nDate\nTopic\nContent\nClass\nLabs\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1\n1/30/23\nIntroduction\n\n\n\n\n\n\n\n2/1/23\nQuarto: Blogging and Website\n\n\n\n\n\n\n2\n2/6/23\nRobust methods: bootstrapping and permutation\n\n\n\n\n\n\n\n2/8/23\nLab 1\n\n\n\n\n\n\n3\n2/13/23\nMissing data\n\n\n\n\n\n\n\n2/15/23\nLab 2\n\n\n\n\n\n\n4\n2/20/23\nPolytomous Models: ordinal regression\n\n\n\n\n\n\n\n2/22/23\nLab 3\n\n\n\n\n\n\n5\n2/27/23\nPolytomous Models: multinomial regression\n\n\n\n\n\n\n\n3/1/23\nLab 4\n\n\n\n\n\n\n6\n3/6/23\nPoisson regression\n\n\n\n\n\n\n\n3/8/23\nLab 5\n\n\n\n\n\n\n7\nSpring Break\n\n\n\n\n\n\n\n8\n3/20/23\nBayesian analysis\n\n\n\n\n\n\n\n3/22/23\nLab 6\n\n\n\n\n\n\n9\n3/27/23\nMediation\n\n\n\n\n\n\n\n3/29/23\nLab 7\n\n\n\n\n\n\n10\n4/3/23\nPath modeling/SEM\n\n\n\n\n\n\n\n4/5/23\nLab 8\n\n\n\n\n\n\n11\n4/10/23\nUnsupervised Learning: PCA\n\n\n\n\n\n\n\n4/12/23\nLab 9\n\n\n\n\n\n\n12\n4/17/23\nUnsupervised Learning: Clustering\n\n\n\n\n\n\n\n4/19/23\nLab 10\n\n\n\n\n\n\n13\n4/24/23\nMultilevel modeling\n\n\n\n\n\n\n\n4/26/23\nLab 9\n\n\n\n\n\n\n14\nReading Week"
   },
   {
     "objectID": "schedule/schedule.html",
@@ -151,7 +151,7 @@
     "href": "syllabus.html#tutorial",
     "title": "Syllabus",
     "section": "Tutorial",
-    "text": "Tutorial\nFor your final project, you will create a tutorial explaining how to run a particular analysis in R or Python. This will involve finding data or using your own data. The final project gives you a chance to pursue a specific method discussed in class and apply it to your own data. For example, you could choose to write a tutorial on any R package or how to perform a statistical analysis.\nHere are some helpful links:\nhttps://quarto.org/docs/websites/\nhttps://crumplab.com/articles/blog/post_887_8_25_22_quartoblog/index.html\nThere is no final exam"
+    "text": "Tutorial\nFor your final project, you will create a tutorial explaining how to run a particular analysis in R or Python. This will involve finding data or using your own data. The final project gives you a chance to pursue a specific method discussed in class and apply it to your own data. For example, you could choose to write a tutorial on any R package or how to perform a statistical analysis.\nHere are some helpful links:\nThere is no final exam"
   },
   {
     "objectID": "syllabus.html#participation",
@@ -200,7 +200,7 @@
     "href": "schedule/03-week.html#after-class",
     "title": "Week 3",
     "section": "After Class",
-    "text": "After Class\n\n Kabacoff, R. I. (2022). *R* in Action* chapter 18."
+    "text": "After Class\n\n Kabacoff, R. I. (2022). *R* in Action* Chapter 18."
   },
   {
     "objectID": "schedule/03-week.html#during-class",
@@ -228,7 +228,7 @@
     "href": "schedule/02-week.html#after-class",
     "title": "Week 2",
     "section": "After Class",
-    "text": "After Class\n\n\n Kabacoff, R. I. (2022). *R* in Action* chapter 12."
+    "text": "After Class\n\n Kabacoff, R. I. (2022). *R* in Action*. Chapter 12."
   },
   {
     "objectID": "Assignments/index.html",
@@ -277,7 +277,7 @@
     "href": "syllabus.html#student-mini-presentations-and-discussions",
     "title": "Syllabus",
     "section": "Student Mini-Presentations and Discussions",
-    "text": "Student Mini-Presentations and Discussions\nEvery week (Monday) one of your peers will present an introduction to the method we will be discussing that week, based on the assigned reading for that week (you are to use the assigned articles to guide your presentation and discussion). Each presentation should be be (12-15 minutes) with a discussion ~10 minutes.\nAfter, I will take over and highlight how to use R to apply these methods to your data.\nIn these presentations, I would like:\n\nA clear overview of the topic: This should include a brief introduction to the topic, highlighting its relevance and importance in psychological research. You should also address assumptions of the methods, if any.\nExamples and applications: To help peers’ understand the practical implications of the topic, you should provide examples and applications of how the topic is used in psychology. This could include your own research or examples from the literature or the materials. If you wanted to walk through an example, that is also welcome. I am going to be program agnostic here (use R, Python, SPSS, JASP, etc.) to do this.\nA discussion of things you did not understand"
+    "text": "Student Mini-Presentations and Discussions\nEvery week (Monday) one of your peers will present an introduction to the method we will be discussing that week, based on the assigned reading for that week (you are to use the assigned articles to guide your presentation and discussion). Each presentation should be be (12-15 minutes) with a discussion ~10 minutes.\nAfter, I will take over and highlight how to use R to apply these methods to your data.\nIn these presentations, I would like:\n\nA clear overview of the topic: This should include a brief introduction to the topic, highlighting its relevance and importance in psychological research. You should also address assumptions of the methods, if any.\nExamples and applications: To help peers’ understand the practical implications of the topic, you should provide examples and applications of how the topic is used in psychology. This could include your own research or examples from the literature or the materials. If you wanted to walk through an example, that is also welcome. I am going to be program agnostic here (use R, Python, SPSS, JASP, etc.) to do this.\nA discussion of things you did not understand or general questions you had"
   },
   {
     "objectID": "schedule/04-week.html",
@@ -326,7 +326,7 @@
     "href": "schedule/10-week.html",
     "title": "Week 10",
     "section": "",
-    "text": "James, G., Witten, D., Hastie, T., & Tibshirani, R. (2013). An Introduction to Statistical Learning: With Applications in R. Springer.\nChapter 12 12.1-12.3\nPett, M. A., Lackey, N. R., & Sullivan, J. (2003). Chapter 1: An Overview of Factor Analyis. Making Sense of Factor Analysis: The Use of Factor Analysis for Instrument Development in Health Care Research (1st edition). SAGE Publications, Inc."
+    "text": "James, G., Witten, D., Hastie, T., & Tibshirani, R. (2013). An Introduction to Statistical Learning: With Applications in R. Springer.\n\nChapter 12 12.1-12.3\n\nPett, M. A., Lackey, N. R., & Sullivan, J. (2003). Chapter 1: An Overview of Factor Analyis. Making Sense of Factor Analysis: The Use of Factor Analysis for Instrument Development in Health Care Research (1st edition). SAGE Publications, Inc."
   },
   {
     "objectID": "schedule/12-week.html",
@@ -340,7 +340,7 @@
     "href": "schedule/09-week.html",
     "title": "Week 9",
     "section": "",
-    "text": "McCoach, D. B., & Cintron, D. (2022). Introduction to Modern Modelling Methods (1st edition). SAGE Publications Ltd.\nChapters 4 and 5"
+    "text": "McCoach, D. B., & Cintron, D. (2022). Introduction to Modern Modelling Methods (1st edition). SAGE Publications Ltd.\nChapters 4 and 5\n\nDescribe how to enact the tracing rule used to calculate the magnitude of a particular indirect effect.\nWhat is the purpose of SEM and how does it differ from other types of statistical models?\nWhat are the key components of an SEM model, including latent variables, observed variables, and paths between variables?\nHow do you specify an SEM model, including selecting the appropriate measurement model and structural model?\nHow do you evaluate the fit of an SEM model and what are some common fit indices used in SEM?\nHow do you interpret the results of an SEM analysis, including the path coefficients and factor loadings?\nWhat are some common assumptions of SEM and how can you assess whether these assumptions are met?\nHow do you handle missing data in SEM and what are the implications of missing data for SEM analysis?\nWhat are some common challenges and limitations of SEM and how can they be addressed?\nWhat are the best practices for reporting SEM results and how can you communicate your findings effectively?\nCome up with a hypothetical path model. Represent it both pictorially and as a series of equations."
   },
   {
     "objectID": "schedule/08-week.html",
@@ -368,7 +368,7 @@
     "href": "schedule/10-week.html#after-class",
     "title": "Week 10",
     "section": "After Class",
-    "text": "After Class\n\n Kabacoff, R. I. (2022). *R* in Action* chapter 14.\nhttps://rpubs.com/danmirman/plotting_factor_analysis"
+    "text": "After Class\n\n Kabacoff, R. I. (2022). *R* in Action* Chapter 14\nhttps://rpubs.com/danmirman/plotting_factor_analysis"
   },
   {
     "objectID": "syllabus.html#reading-summaries",
@@ -376,5 +376,40 @@
     "title": "Syllabus",
     "section": "Reading Summaries",
     "text": "Reading Summaries\nYou should read all the assigned articles each week. Keep notes of the main arguments, methods, surprises, and shortcomings in each reading, think about how the readings connect to each other, and consider how they apply to your research.\nBefore class on Mondays, you need to write a reading report about what you’ve read. This report is designed to (1) allow you to engage with the assigned readings, (2) help you practice high quality academic writing, and (3) help you be prepared for in-class discussions of the readings.\nReading reports are due by 11:59 PM on Sunday before class via Canvas."
+  },
+  {
+    "objectID": "schedule/01-week.html#before-class",
+    "href": "schedule/01-week.html#before-class",
+    "title": "Week 1",
+    "section": "Before Class",
+    "text": "Before Class\n\n\n\n\n\n\nImportant\n\n\n\n\nInstall latest version of RStudio, v2022.07.1 or later\nFollow: https://quarto.org/docs/get-started/hello/rstudio.html\nSign up for free github account"
+  },
+  {
+    "objectID": "schedule/08-week.html#want-to-read-more",
+    "href": "schedule/08-week.html#want-to-read-more",
+    "title": "Week 8",
+    "section": "Want to read more?",
+    "text": "Want to read more?\nFossum, J. L., & Montoya, A. K. (2021, December 7). When to Use Different Tests for Power Analysis and Data Analysis for Between-Subjects Mediation. https://doi.org/10.31234/osf.io/5tm2x"
+  },
+  {
+    "objectID": "schedule/11-week.html#after-class",
+    "href": "schedule/11-week.html#after-class",
+    "title": "Week 11",
+    "section": "After Class",
+    "text": "After Class\n\n Kabacoff, R. I. (2022). *R* in Action* Chapter 16."
+  },
+  {
+    "objectID": "schedule/05-02-week.html",
+    "href": "schedule/05-02-week.html",
+    "title": "Week 6",
+    "section": "",
+    "text": "McNulty, K. (2021). Handbook of Regression Modeling in People Analytics: With Examples in R and Python. Multinomial Regression.\n\nDescribe the difference between a stratified versus a multinomial approach to modeling an outcome with more than two nominal categories.\nDescribe how you would interpret the odds ratio of an input variable for a given category in a stratified modeling approach.\nDescribe what is meant by the ‘reference’ of a multinomial logistic regression model with at least three nominal outcome categories.\nDescribe how you would interpret the odds ratio of an input variable for a given category in a multinomial modeling approach.\nGiven a multinomial logistic regression model with outcome categories A, B, C and D and reference category A, describe two ways to determine the coefficients of a multinomial logistic regression model with reference category C.\nDescribe a process for safely simplifying a multinomial logistic regression model by removing input variables."
+  },
+  {
+    "objectID": "schedule/05-02-week.html#in-class",
+    "href": "schedule/05-02-week.html#in-class",
+    "title": "Week 6",
+    "section": "In-class",
+    "text": "In-class\nGeller, J., Toftness, A. R., Armstrong, P. I., Carpenter, S. K., Manz, C. L., Coffman, C. R., & Lamm, M. H. (2018). Study strategies and beliefs about learning as a function of academic achievement and achievement goals. Memory, 26(5), 683–690. https://doi.org/10.1080/09658211.2017.1397175"
   }
 ]

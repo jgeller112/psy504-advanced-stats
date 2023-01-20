@@ -97,9 +97,13 @@ Kabacoff, R. I. (2022). R in Action, Third Edition: Data analysis and graphics w
 
 # Assignments
 
-## Reading Summaries
+## Reading
 
-Before class on Monday, you need to write a reading summary about what you've read. For each topic, there are several questions you will need to answer (see website)
+-   It is expected you will read the articles assigned.
+
+    -   If I feel like no one is coming to class prepared I will make it mandatory
+
+-   
 
 ## Mini-lectures and discussions
 
@@ -123,8 +127,6 @@ Before class on Monday, you need to write a reading summary about what you've re
 
         -   Walk us through an example from one of the articles/readings
 
-            -   or your own
-
 ## Discussion
 
 -   2-3 discussion questions for the class to answer
@@ -143,7 +145,8 @@ Before class on Monday, you need to write a reading summary about what you've re
 
 ## Tutorial
 
--   The final project will require you to use one of the methods discussed in class to analyze data (your own or public) and write a short blog post walking us through the analysis
+-   The final project will require you to use one of the methods discussed in class to analyze data (your own or publicly available data) and write a short blog post walking us through the process (i.e., pre-processing, analysis, and interpretation of results).
+    -   **Will go over how to create Quarto blog/website on Wednesday**
 
 ## Precept Time
 
@@ -153,7 +156,7 @@ Before class on Monday, you need to write a reading summary about what you've re
 
         -   Speaker and workshop focused
 
-            -   No HW :blush:
+            -   No HW just readings to help orient you to the talks :blush:
 
 ## Grades
 
@@ -163,6 +166,8 @@ Before class on Monday, you need to write a reading summary about what you've re
 
 -   Self-evaluation
 
-    -   Write up of how you think you did this semester and what grade you deserve
+    -   Did you meet learning outcomes for the class?
+    -   Based on my feedback, how well did you think you did on assignments?
+    -   How much time outside of class did you prepare trying to prepare for the week?
 
 -   I have veto rights to change your assigned grade :)

@@ -1,0 +1,28 @@
+---
+title: "Week 6"
+subtitle: "Multinomial Regression"
+date: 2023-02-27
+---
+## Before Class
+
+### Articles
+
+- {{< fa book >}} McNulty, K. (2021). Handbook of Regression Modeling in People Analytics: With Examples in R and Python. [Multinomial Regression](https://peopleanalytics-regression-book.org/multinomial-logistic-regression-for-nominal-category-outcomes.html). 
+
+  - Describe the difference between a stratified versus a multinomial approach to modeling an outcome with more than two nominal categories.
+  
+  - Describe how you would interpret the odds ratio of an input variable for a given category in a stratified modeling approach.
+  
+  - Describe what is meant by the ‘reference’ of a multinomial logistic regression model with at least three nominal outcome categories.
+  
+  - Describe how you would interpret the odds ratio of an input variable for a given category in a multinomial modeling approach.
+  
+  - Given a multinomial logistic regression model with outcome categories A, B, C and D and reference category A, describe two ways to determine the coefficients of a multinomial logistic regression model with reference category C.
+  
+  - Describe a process for safely simplifying a multinomial logistic regression model by removing input variables.
+
+
+## In-class
+
+Geller, J., Toftness, A. R., Armstrong, P. I., Carpenter, S. K., Manz, C. L., Coffman, C. R., & Lamm, M. H. (2018). [Study strategies and beliefs about learning as a function of academic achievement and achievement goals](https://664ef278-1723-43c6-bbe1-3bd4e65a87fe.filesusr.com/ugd/f4b9f1_d943162f48864efa84cb44edf3b11fd7.pdf). Memory, 26(5), 683–690. https://doi.org/10.1080/09658211.2017.1397175
+

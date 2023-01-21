@@ -13,28 +13,6 @@ execute:
   echo: true
 ---
 
-# Advanced Stats
-
-::: columns
-::: {.column width="50%"}
-![](buffet.jpeg){fig-align="center"}
-:::
-
-::: {.column width="50%"}
--   Robust Methods
-
--   Missing
-
--   Mediation
-
--   Path Analysis (SEM)
-
--   MLM
-
--   Clustering
-:::
-:::
-
 # Office Hours
 
 -   M 1:00 P.M.- 3:00 P.M.; W 1:00 P.M. - 2:00 P.M. :chair:
@@ -63,13 +41,19 @@ execute:
 
 McCoach, D. B., & Cintron, D. (2022). Introduction to Modern Modelling Methods (1st edition). SAGE Publications Ltd.
 
-<center>![](modelingbook.jpg){width="278"}</center>
+<center>![](modelingbook.jpg){width="139"}</center>
 
 # Recommended Text
 
 Kabacoff, R. I. (2022). R in Action, Third Edition: Data analysis and graphics with R and Tidyverse (3rd edition). Manning.
 
-<center>![](rinaction.jpeg){width="319"}</center>
+<center>![](rinaction.jpeg){width="160"}</center>
+
+# Recommended Text
+
+Pett, M. A., Lackey, N. R., & Sullivan, J. (2003). Making Sense of Factor Analysis: The Use of Factor Analysis for Instrument Development in Health Care Research (1st edition). SAGE Publications, Inc.
+
+<center>![](factor.jpg){width="200"}</center>
 
 # Class Format
 
@@ -87,23 +71,17 @@ Kabacoff, R. I. (2022). R in Action, Third Edition: Data analysis and graphics w
 
 ## Assignments
 
--   Reading summaries
-
 -   Mini-lectures and discussions
 
 -   Labs
 
--   Tutorial Blog
+-   A blog post
 
 # Assignments
 
-## Reading
+## Reading 
 
--   It is expected you will read the articles assigned.
-
-    -   If I feel like no one is coming to class prepared I will make it mandatory
-
--   
+It is expected you will read the articles assigned.
 
 ## Mini-lectures and discussions
 
@@ -127,6 +105,8 @@ Kabacoff, R. I. (2022). R in Action, Third Edition: Data analysis and graphics w
 
         -   Walk us through an example from one of the articles/readings
 
+            -   or your own
+
 ## Discussion
 
 -   2-3 discussion questions for the class to answer
@@ -145,8 +125,7 @@ Kabacoff, R. I. (2022). R in Action, Third Edition: Data analysis and graphics w
 
 ## Tutorial
 
--   The final project will require you to use one of the methods discussed in class to analyze data (your own or publicly available data) and write a short blog post walking us through the process (i.e., pre-processing, analysis, and interpretation of results).
-    -   **Will go over how to create Quarto blog/website on Wednesday**
+-   The final project will require you to use one of the methods discussed in class to analyze data (your own or public) and write a short blog post walking us through the analysis
 
 ## Precept Time
 
@@ -156,7 +135,7 @@ Kabacoff, R. I. (2022). R in Action, Third Edition: Data analysis and graphics w
 
         -   Speaker and workshop focused
 
-            -   No HW just readings to help orient you to the talks :blush:
+            -   No HW :blush:
 
 ## Grades
 
@@ -166,8 +145,6 @@ Kabacoff, R. I. (2022). R in Action, Third Edition: Data analysis and graphics w
 
 -   Self-evaluation
 
-    -   Did you meet learning outcomes for the class?
-    -   Based on my feedback, how well did you think you did on assignments?
-    -   How much time outside of class did you prepare trying to prepare for the week?
+    -   Write up of how you think you did this semester and what grade you deserve
 
 -   I have veto rights to change your assigned grade :)

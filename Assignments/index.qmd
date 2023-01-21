@@ -7,8 +7,6 @@ You will get the most out of this seminar if you (1) attend regularly, (2) engag
 
 To help you do all this successfully, there are three assignments for this course: 
 
-- **Reading Questions**: Before class on Monday, you should complete all the readings and answer questions associated with the readings. These are due by 11:59 PM on the day before class
-
 - **Mini presentation and discussion leading**: Once during the semester, you will be responsible for preparing a presentation and leading the discussion for a class session. During the first day of class, I will provide a spreadsheet where you will select the week you want to be responsible for. [**Complete instructions and details for this assignment are here.**](/Assignments/presentation-discussion.qmd)
 
 - **Labs**: 

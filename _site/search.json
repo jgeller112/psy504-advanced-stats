@@ -151,14 +151,14 @@
     "href": "syllabus.html#tutorial",
     "title": "Syllabus",
     "section": "Tutorial",
-    "text": "Tutorial\nFor your final project, you will create a tutorial explaining how to run a particular analysis in R or Python. This will involve finding data or using your own data. The final project gives you a chance to pursue a specific method discussed in class and apply it to your own data. For example, you could choose to write a tutorial on any R package or how to perform a statistical analysis.\nHere are some helpful links:\nThere is no final exam"
+    "text": "Tutorial\nFor your final project, you will create a tutorial explaining how to run a particular analysis in R or Python. This will involve finding data or using your own data. The final project gives you a chance to pursue a specific method discussed in class and apply it to your own data.\nThere is no final exam 😊"
   },
   {
     "objectID": "syllabus.html#participation",
     "href": "syllabus.html#participation",
     "title": "Syllabus",
     "section": "Participation",
-    "text": "Participation\nIt is expected that you will come to class every prepared to discuss the material. This means you have read the pre-class materials and watch the pre-class videos."
+    "text": "Participation\nIt is expected that you will come to class having read the articles assigned and prepared to discuss the material."
   },
   {
     "objectID": "syllabus.html#stundent-weekly-presentations",
@@ -235,7 +235,7 @@
     "href": "Assignments/index.html",
     "title": "Assignments",
     "section": "",
-    "text": "You will get the most out of this seminar if you (1) attend regularly, (2) engage with the readings, and (3) write thoughtfully.\nTo help you do all this successfully, there are three assignments for this course:\n\nReading Questions: Before class on Monday, you should complete all the readings and answer questions associated with the readings. These are due by 11:59 PM on the day before class\nMini presentation and discussion leading: Once during the semester, you will be responsible for preparing a presentation and leading the discussion for a class session. During the first day of class, I will provide a spreadsheet where you will select the week you want to be responsible for. Complete instructions and details for this assignment are here.\nLabs: Each week (Wednesday) we will have one corresponding lab exercise that will be started in class. The purpose is for you to get direct experience conducting the analyses that you learn. Each lab exercise will consist of several questions and will require R (will also accept Python) to answer the questions in a reproducible manner. All lab assignments must be reproducible (i.e., I can replicate the work you did without any errors). You may complete the labs by yourself or working with another person. If you work with another person, your work must obviously be your own.\n\nIdeally, you will finish labs in class. However, if you do not complete it in class, you can turn them in on Friday (due at 11:00 P.M.) Please let me know if you need an extension."
+    "text": "You will get the most out of this seminar if you (1) attend regularly, (2) engage with the readings, and (3) write thoughtfully.\nTo help you do all this successfully, there are three assignments for this course:\n\nMini presentation and discussion leading: Once during the semester, you will be responsible for preparing a presentation and leading the discussion for a class session. During the first day of class, I will provide a spreadsheet where you will select the week you want to be responsible for. Complete instructions and details for this assignment are here.\nLabs: Each week (Wednesday) we will have one corresponding lab exercise that will be started in class. The purpose is for you to get direct experience conducting the analyses that you learn. Each lab exercise will consist of several questions and will require R (will also accept Python) to answer the questions in a reproducible manner. All lab assignments must be reproducible (i.e., I can replicate the work you did without any errors). You may complete the labs by yourself or working with another person. If you work with another person, your work must obviously be your own.\n\nIdeally, you will finish labs in class. However, if you do not complete it in class, you can turn them in on Friday (due at 11:00 P.M.) Please let me know if you need an extension."
   },
   {
     "objectID": "Assignments/index.html#exams",
@@ -305,7 +305,7 @@
     "href": "schedule/05-week.html",
     "title": "Week 5",
     "section": "",
-    "text": "Coxe, S., West, S. G., & Aiken, L. S. (2009). The Analysis of Count Data: A Gentle Introduction to Poisson Regression and Its Alternatives. Journal of Personality Assessment, 91(2), 121–136. https://doi.org/10.1080/00223890802634175\n\n Winter, B., & Bürkner, P.-C. (2021). Poisson regression for linguists: A tutorial introduction to modelling count data with brms. Language and Linguistics Compass, 15(11), e12439. https://doi.org/10.1111/lnc3.12439\n\nHow does the Poisson distribution differ from other distributions, such as the normal distribution?\nHow do we interpret the parameters of the poisson?\nWhat are the assumptions of Poisson regression?\nWhat is overdispersion?\nHow is poisson related to the negative binomial?\n\n\n\n\n\n\n\nIntroduction to Poisson regression"
+    "text": "Coxe, S., West, S. G., & Aiken, L. S. (2009). The Analysis of Count Data: A Gentle Introduction to Poisson Regression and Its Alternatives. Journal of Personality Assessment, 91(2), 121–136. https://doi.org/10.1080/00223890802634175\n Winter, B., & Bürkner, P.-C. (2021). Poisson regression for linguists: A tutorial introduction to modelling count data with brms. Language and Linguistics Compass, 15(11), e12439. https://doi.org/10.1111/lnc3.12439\n\nHow does the Poisson distribution differ from other distributions, such as the normal distribution?\nHow do we interpret the parameters of the poisson?\nWhat are the assumptions of Poisson regression?\nWhat is overdispersion?\nHow is poisson related to the negative binomial?\n\n\n\n\n\n\n\nIntroduction to Poisson regression"
   },
   {
     "objectID": "schedule/05-week.html#after-class",

@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Jason Geller, Ph.D.">
 <meta name="description" content="Explore advanced statistical methods in psychology">
 
 <title>Advanced Statistics in Psychology - Blog Example</title>
@@ -185,7 +186,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#numetalr" id="toc-numetalr" class="nav-link active" data-scroll-target="#numetalr">numetalR</a>
+  <li><a href="#numetalr" id="toc-numetalr" class="nav-link active" data-scroll-target="#numetalr">NuMetalR</a>
   <ul class="collapse">
   <li><a href="#paletteer" id="toc-paletteer" class="nav-link" data-scroll-target="#paletteer"><code>paletteer</code></a></li>
   <li><a href="#korn---its-on" id="toc-korn---its-on" class="nav-link" data-scroll-target="#korn---its-on">Korn - It’s On!</a></li>
@@ -196,6 +197,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#limp-bizkit---significant-other" id="toc-limp-bizkit---significant-other" class="nav-link" data-scroll-target="#limp-bizkit---significant-other">Limp Bizkit - Significant Other</a></li>
   <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><img src="images/LB-color.png" class="img-fluid"></a></li>
   <li><a href="#linkin-park---hybrid-theory" id="toc-linkin-park---hybrid-theory" class="nav-link" data-scroll-target="#linkin-park---hybrid-theory">Linkin Park - Hybrid Theory</a></li>
+  <li><a href="#slipknot---self-titled" id="toc-slipknot---self-titled" class="nav-link" data-scroll-target="#slipknot---self-titled">Slipknot - Self-titled</a></li>
   </ul></li>
   <li><a href="#r-package" id="toc-r-package" class="nav-link" data-scroll-target="#r-package">R Package</a></li>
   </ul>
@@ -213,6 +215,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jason Geller, Ph.D. </p>
+          </div>
+  </div>
     
   
     
@@ -222,7 +230,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </header>
 
 <section id="numetalr" class="level1">
-<h1>numetalR</h1>
+<h1>NuMetalR</h1>
 <p>It was recently announced that nu-metal pioneers, Korn, have partnered with a makeup company to turn their iconic 3rd record, <em>Follow The Leader</em>, into a color palette.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -257,10 +265,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="images/Korn.jpeg" class="img-fluid"></p>
 <p>Then you can read that file into a function from the package</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|message=false</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#|</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the color palette</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>colours_vector <span class="ot">&lt;-</span> <span class="fu">create_palette</span>(<span class="at">image_path =</span> image_path,                            <span class="at">number_of_colors =</span><span class="dv">10</span>,                           <span class="at">type_of_variable =</span> <span class="st">"categorical"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the color palette</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>colours_vector <span class="ot">&lt;-</span> <span class="fu">create_palette</span>(<span class="at">image_path =</span> image_path,                            <span class="at">number_of_colors =</span><span class="dv">10</span>,                           <span class="at">type_of_variable =</span> <span class="st">"categorical"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>decomposing image into RGB...</code></pre>
 </div>
@@ -319,7 +326,7 @@ optimising level of divergence between colours</code></pre>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>image_path <span class="ot">&lt;-</span>here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"Blog"</span>, <span class="st">"images"</span>,<span class="st">"fallen1.jpeg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|message=false</span></span>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># |message=false</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#|</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the color palette</span></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>colours_vector <span class="ot">&lt;-</span> <span class="fu">create_palette</span>(<span class="at">image_path =</span> image_path,                            <span class="at">number_of_colors =</span><span class="dv">10</span>,                            <span class="at">type_of_variable =</span> <span class="st">"categorical"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -373,10 +380,8 @@ optimising level of divergence between colours</code></pre>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>image_path <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"Blog"</span>, <span class="st">"images"</span>,<span class="st">"LB.jpeg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|message=false</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co">#|</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the color palette</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>colours_vector <span class="ot">&lt;-</span> <span class="fu">create_palette</span>(<span class="at">image_path =</span> image_path,                            <span class="at">number_of_colors =</span><span class="dv">10</span>,                            <span class="at">type_of_variable =</span> <span class="st">"categorical"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the color palette</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>colours_vector <span class="ot">&lt;-</span> <span class="fu">create_palette</span>(<span class="at">image_path =</span> image_path,                            <span class="at">number_of_colors =</span><span class="dv">10</span>,                            <span class="at">type_of_variable =</span> <span class="st">"categorical"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>decomposing image into RGB...</code></pre>
 </div>
@@ -398,12 +403,16 @@ optimising level of divergence between colours</code></pre>
 <p><img src="nu-metal_files/figure-html/unnamed-chunk-8-2.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>iris, <span class="fu">aes</span>(<span class="at">x=</span>Sepal.Length, <span class="at">y=</span>Sepal.Width, <span class="at">color=</span>Species)) <span class="sc">+</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">2</span>) <span class="sc">+</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values=</span>colours_vector[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="nu-metal_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="nu-metal_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -456,17 +465,40 @@ optimising level of divergence between colours</code></pre>
 </div>
 </div>
 </section>
+<section id="slipknot---self-titled" class="level2">
+<h2 class="anchored" data-anchor-id="slipknot---self-titled">Slipknot - Self-titled</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/slipknot.jpeg" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>image_path <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"Blog"</span>, <span class="st">"images"</span>,<span class="st">"slipknot.jpeg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+
+</div>
+<p><img src="images/slip_pal.png" class="img-fluid"></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>iris, <span class="fu">aes</span>(<span class="at">x=</span>Sepal.Length, <span class="at">y=</span>Sepal.Width, <span class="at">color=</span>Species)) <span class="sc">+</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values=</span>colours_vector[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="nu-metal_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
 </section>
 <section id="r-package" class="level1">
 <h1>R Package</h1>
-<p>I bundled all the hex codes in a package called [<code>NuMetalR (</code>https://github.com/jgeller112/NuMetalR).</p>
-<p>I use nu-paelettes to extract hex codes associated with band.</p>
+<p>I bundled all the hex codes in a package called <code>NuMetalR</code><a href="https://github.com/jgeller112/NuMetalR" class="uri">https://github.com/jgeller112/NuMetalR</a>.</p>
+<p>I use the function <code>nu-paelettes</code> to extract hex codes associated with a band.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"Blog"</span>, <span class="st">"R"</span>, <span class="st">"nu_palettes.R"</span>))</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>korn_color<span class="ot">=</span> <span class="fu">nu_palettes</span>(<span class="st">"korn"</span>)</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>korn_color</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"Blog"</span>, <span class="st">"R"</span>, <span class="st">"nu_palettes.R"</span>))</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>korn_color<span class="ot">=</span> <span class="fu">nu_palettes</span>(<span class="st">"korn"</span>)</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>korn_color</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "#D01809" "#EC3D09" "#830301" "#B95011" "#DDA547" "#D45F1D" "#EDCA79"
  [8] "#A4672A" "#AA5829" "#A4672A" "#FBE477"</code></pre>
@@ -474,11 +506,11 @@ optimising level of divergence between colours</code></pre>
 </div>
 <p><code>print.palette</code> prints out the actual colors from the hex codes.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print colors</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print.palette</span>(korn_color)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print colors</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print.palette</span>(korn_color)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="nu-metal_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
+<p><img src="nu-metal_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 

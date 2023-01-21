@@ -13,6 +13,14 @@ execute:
   echo: true
 ---
 
+## Hello Quarto
+
+> ### Quarto^®^ is an open-source scientific and technical publishing system built on [Pandoc](https://pandoc.org/)
+
+## Big Universe
+
+![](horst_quarto_schematic.png){fig-align="center"}
+
 # Formatting
 
 # Header 1
@@ -64,21 +72,48 @@ Or maybe an ordered list!
 
 -   To have something appear as code (using a monospace font), surround everything that is code with ticks \`like this\`, so that it shows up `like this`.
 
-## Mathematic Equations
+# Callout Blocks
 
--   Can write LaTeX in .qmd files as well! For a full line formula, use two \$\$ dollar signs at the begining and end of your LaTeX:
+::: callout-note
+Note that there are five types of callouts, including: 
+\`note\`, \`tip\`, \`warning\`, \`caution\`, and \`important\`.
+:::
 
-    <center>$$
-\frac{\partial f}{\partial y} = x + 2y
-$$</center>
+::: callout-note
+## Note
 
-will appear as:
+Note that there are five types of callouts, including: `note`, `tip`, `warning`, `caution`, and `important`.
+:::
 
-$$
-\frac{\partial f}{\partial y} = x + 2y
-$$
+::: callout-warning
+## Warning
 
-For in-line LaTeX just use one \$ in your text. For example, $x + \beta$
+Callouts provide a simple way to attract attention, for example, to this warning.
+:::
+
+::: callout-important
+## This is important
+
+Danger, callouts will really improve your writing.
+:::
+
+::: callout-tip
+## Tip with caption
+:::
+
+::: callout-caution
+## Caution, under construction
+
+Here is something under construction
+:::
+
+## Callout markdown syntax
+
+::: {.callout-caution collapse="true"}
+\## Expand To Learn About Collapse
+
+This is an example of a 'folded' caution callout that can be expanded by the user. You can use \`collapse="true"\` to collapse it by default or \`collapse="false"\` to make a collapsible callout that is expanded by default.
+:::
 
 # Callout Blocks
 
@@ -91,18 +126,6 @@ For in-line LaTeX just use one \$ in your text. For example, $x + \beta$
 
     Say things here
     :::
-
-# Callout Block
-
-::: callout-note
-Question - We want to *decrease* $f$, so what should we do to $x$ and $y$? - Which one should we decrease more? $x$ or $y$
-:::
-
-::: {.callout-caution collapse="true"}
-## Expand To Learn About Collapse
-
-This is an example of a 'folded' caution callout that can be expanded by the user. You can use **\`collapse="true"\`** to collapse it by default or **\`collapse="false"\`** to make a collapsible callout that is expanded by default.
-:::
 
 ## Code Blocks
 
@@ -123,11 +146,9 @@ x <- y + 5
 print(x,y)
 ```
 
-## Notes
+## Code Chunks
 
--   Generally all the code runs
-
--   One option is to use the `eval: false` argument when setting up your codeblock:
+-   `{r, eval=TRUE}` has been replaced with `#|eval=TRUE`
 
 ```{r}
 #|eval: false
@@ -138,6 +159,18 @@ print("Don't Run Me")
 #|eval: true
 print("Don't Run Me")
 ```
+
+## Tabsets
+
+Split up and flip between sections of a page, alternative to just two columns
+
+::: panel-tabset
+## Element 1
+
+## Element 2
+
+## 
+:::
 
 # Building a Website with Quarto
 
@@ -158,7 +191,7 @@ print("Don't Run Me")
 
 3.  You should see a pop-up menu
 
-4.  Choose \"New Directory\"
+4.  Choose "New Directory"
 :::
 
 ::: {.column width="50%"}
@@ -180,7 +213,7 @@ print("Don't Run Me")
 
 ## Build
 
-1.  Go to the \"build\" tab in the top right hand corner, and press \"Render website\".
+1.  Go to the "build" tab in the top right hand corner, and press "Render website".
 
 ![](build.png){fig-align="center"}
 
@@ -206,7 +239,7 @@ You can see all of the files in your project by clicking on the files tab:
 
 ## Index
 
--   Clicking on \"index.qmd\" should open the file in the R studio text editor (on the left)
+-   Clicking on "index.qmd" should open the file in the R studio text editor (on the left)
 
 -   Give it a new name and delete the default text
 
@@ -216,7 +249,7 @@ You can see all of the files in your project by clicking on the files tab:
 
 ![](new_blog.png){fig-align="center"}
 
-# You have made your first blog! 
+# You have made your first blog!
 
 ## Share it on Github
 
@@ -224,7 +257,7 @@ You can see all of the files in your project by clicking on the files tab:
 
 2.  Go to preferences and sign in to your Github.com account
 
-3.  \"Add\" your blog project folder to Github Desktop
+3.  "Add" your blog project folder to Github Desktop
 
 4.  Publish to github.com and uncheck private repository (if you want other people to see it.)
 
@@ -234,9 +267,8 @@ You can see all of the files in your project by clicking on the files tab:
 
 -   To change the output directory from `_site` to `docs` open up `_quarto.yml`, and add the line `output-dir: docs` just like this:
 
-```{=html}
 <!-- -->
-```
+
     project:
       type: website
       output-dir: docs
@@ -249,30 +281,17 @@ You can see all of the files in your project by clicking on the files tab:
 
     \- `_quarto.yml`
 
-    -    Metadata
+    -   Metadata
 
-            project:
-              output-dir: _output
+        project: output-dir: \_output
 
-            toc: true
-            number-sections: true
-            bibliography: references.bib  
-              
-            format:
-              html:
-                css: styles.css
-                html-math-method: katex
-              pdf:
-                documentclass: report
-                margin-left: 30mm
-                margin-right: 30mm
+        toc: true number-sections: true bibliography: references.bib
+
+        format: html: css: styles.css html-math-method: katex pdf: documentclass: report margin-left: 30mm margin-right: 30mm
 
 ## Side Bar
 
-website**:**
-sidebar**:**
-style**:** "docked"
-search**:** true
+website**:** sidebar**:** style**:** "docked" search**:** true
 
 ::: columns
 ::: {.column width="50%"}
@@ -286,10 +305,7 @@ search**:** true
 
 ## Side Bar
 
-website**:**
-sidebar**:**
-style**:** "floating"
-search**:** true
+website**:** sidebar**:** style**:** "floating" search**:** true
 
 ::: columns
 ::: {.column width="50%"}

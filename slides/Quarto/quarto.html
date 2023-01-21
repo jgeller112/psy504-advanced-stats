@@ -402,6 +402,20 @@ Jason Geller<br> Princeton University <br> Feburary 1, 2023
 </div>
 
 </section>
+<section id="hello-quarto" class="slide level2">
+<h2>Hello Quarto</h2>
+<blockquote>
+<h3 id="quarto-is-an-open-source-scientific-and-technical-publishing-system-built-on-pandoc">Quarto<sup>®</sup> is an open-source scientific and technical publishing system built on <a href="https://pandoc.org/">Pandoc</a></h3>
+<p>. . .</p>
+</blockquote>
+<blockquote>
+<p>You can weave together narrative text and code to produce elegantly formatted output as documents, web pages, blog posts, books and more.</p>
+</blockquote>
+</section>
+<section id="big-universe" class="slide level2">
+<h2>Big Universe</h2>
+
+<img data-src="https://github.com/jthomasmock/quarto-2hr-webinar/blob/master/materials/images/horst_quarto_schematic.png" class="r-stretch"></section>
 <section id="formatting" class="title-slide slide level1 center">
 <h1>Formatting</h1>
 
@@ -446,29 +460,115 @@ Jason Geller<br> Princeton University <br> Feburary 1, 2023
 </ol>
 </div>
 </div>
-<p>##</p>
+</section>
+<section id="emphasis" class="slide level2">
+<h2>Emphasis</h2>
 <ul>
 <li><p>To emphasize your point you might want to use <em>italics</em> or <strong>bold</strong>.</p></li>
 <li><p>To have something appear as code (using a monospace font), surround everything that is code with ticks `like this`, so that it shows up <code>like this</code>.</p></li>
 </ul>
-</section>
-<section id="mathematic-equations" class="slide level2">
-<h2>Mathematic Equations</h2>
-<ul>
-<li><p>Can write LaTeX in .qmd files as well! For a full line formula, use two $$ dollar signs at the begining and end of your LaTeX:</p>
-<center>
-<p><span class="math display">\[
-\frac{\partial f}{\partial y} = x + 2y
-\]</span></p>
-</center></li>
-</ul>
-<p>will appear as:</p>
-<p><span class="math display">\[
-\frac{\partial f}{\partial y} = x + 2y
-\]</span></p>
-<p>For in-line LaTeX just use one $ in your text. For example, <span class="math inline">\(x + \beta\)</span></p>
 </section></section>
+<section>
 <section id="callout-blocks" class="title-slide slide level1 center">
+<h1>Callout Blocks</h1>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Note that there are five types of callouts, including: `note`, `tip`, `warning`, `caution`, and `important`.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Note that there are five types of callouts, including: <code>note</code>, <code>tip</code>, <code>warning</code>, <code>caution</code>, and <code>important</code>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-warning callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p>Callouts provide a simple way to attract attention, for example, to this warning.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-important callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>This is important</strong></p>
+</div>
+<div class="callout-content">
+<p>Danger, callouts will really improve your writing.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip with caption</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+<div class="callout callout-caution callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Caution, under construction</strong></p>
+</div>
+<div class="callout-content">
+<p>Here is something under construction</p>
+</div>
+</div>
+</div>
+</section>
+<section id="callout-markdown-syntax" class="slide level2">
+<h2>Callout markdown syntax</h2>
+<div class="callout callout-caution callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Danger</strong></p>
+</div>
+<div class="callout-content">
+<p>## Expand To Learn About Collapse</p>
+<p>This is an example of a ‘folded’ caution callout that can be expanded by the user. You can use `collapse=“true”` to collapse it by default or `collapse=“false”` to make a collapsible callout that is expanded by default.</p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="callout-blocks-1" class="title-slide slide level1 center">
 <h1>Callout Blocks</h1>
 <ul>
 <li><p>Call-out blocks highlight sections of text that interrupt the flow of your regular text. Maybe it’s a definition, a warning, or a sidenote</p></li>
@@ -487,37 +587,6 @@ Jason Geller<br> Princeton University <br> Feburary 1, 2023
 </div>
 </div></li>
 </ul>
-</section>
-
-<section>
-<section id="callout-block" class="title-slide slide level1 center">
-<h1>Callout Block</h1>
-<div class="callout callout-note callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p>Question - We want to <em>decrease</em> <span class="math inline">\(f\)</span>, so what should we do to <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>? - Which one should we decrease more? <span class="math inline">\(x\)</span> or <span class="math inline">\(y\)</span></p>
-</div>
-</div>
-</div>
-<div class="callout callout-caution callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Expand To Learn About Collapse</strong></p>
-</div>
-<div class="callout-content">
-<p>This is an example of a ‘folded’ caution callout that can be expanded by the user. You can use <strong>`collapse=“true”`</strong> to collapse it by default or <strong>`collapse=“false”`</strong> to make a collapsible callout that is expanded by default.</p>
-</div>
-</div>
-</div>
 </section>
 <section id="code-blocks" class="slide level2">
 <h2>Code Blocks</h2>
@@ -541,11 +610,10 @@ Jason Geller<br> Princeton University <br> Feburary 1, 2023
 </div>
 </div>
 </section>
-<section id="notes" class="slide level2">
-<h2>Notes</h2>
+<section id="code-chunks" class="slide level2">
+<h2>Code Chunks</h2>
 <ul>
-<li><p>Generally all the code runs</p></li>
-<li><p>One option is to use the <code>eval: false</code> argument when setting up your codeblock:</p></li>
+<li><code>{r, eval=TRUE}</code> has been replaced with <code>#|eval=TRUE</code></li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">#|eval: false</span></span>
@@ -559,6 +627,24 @@ Jason Geller<br> Princeton University <br> Feburary 1, 2023
 <span id="cb5-2"><a href="#cb5-2"></a><span class="fu">print</span>(<span class="st">"Don't Run Me"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Don't Run Me"</code></pre>
+</div>
+</div>
+</section>
+<section id="tabsets" class="slide level2">
+<h2>Tabsets</h2>
+<p>Split up and flip between sections of a page, alternative to just two columns</p>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Element 1</a></li><li><a href="#tabset-1-2">Element 2</a></li><li><a href="#tabset-1-3"></a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+
+</div>
+<div id="tabset-1-2">
+
+</div>
+<div id="tabset-1-3">
+
+</div>
 </div>
 </div>
 </section></section>
@@ -584,7 +670,7 @@ Jason Geller<br> Princeton University <br> Feburary 1, 2023
 <li><p>Open up R studio.</p></li>
 <li><p>Choose File -&gt; New Project</p></li>
 <li><p>You should see a pop-up menu</p></li>
-<li><p>Choose "New Directory"</p></li>
+<li><p>Choose “New Directory”</p></li>
 </ol>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
@@ -610,7 +696,7 @@ Jason Geller<br> Princeton University <br> Feburary 1, 2023
 <section id="build" class="slide level2">
 <h2>Build</h2>
 <ol type="1">
-<li>Go to the "build" tab in the top right hand corner, and press "Render website".</li>
+<li>Go to the “build” tab in the top right hand corner, and press “Render website”.</li>
 </ol>
 
 <img data-src="build.png" class="r-stretch quarto-figure-center"></section>
@@ -637,7 +723,7 @@ Jason Geller<br> Princeton University <br> Feburary 1, 2023
 <section id="index" class="slide level2">
 <h2>Index</h2>
 <ul>
-<li><p>Clicking on "index.qmd" should open the file in the R studio text editor (on the left)</p></li>
+<li><p>Clicking on “index.qmd” should open the file in the R studio text editor (on the left)</p></li>
 <li><p>Give it a new name and delete the default text</p>
 <p><img data-src="index.png"></p></li>
 </ul>
@@ -656,7 +742,7 @@ Jason Geller<br> Princeton University <br> Feburary 1, 2023
 <ol type="1">
 <li><p>Open up Github Desktop</p></li>
 <li><p>Go to preferences and sign in to your Github.com account</p></li>
-<li><p>"Add" your blog project folder to Github Desktop</p></li>
+<li><p>“Add” your blog project folder to Github Desktop</p></li>
 <li><p>Publish to github.com and uncheck private repository (if you want other people to see it.)</p></li>
 <li><p>You should now be able to see your new repository in your github.com profile, which means you should be able to see a copy of your blog files in the repository.</p></li>
 </ol>

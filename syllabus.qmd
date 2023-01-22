@@ -60,7 +60,7 @@ In addition, I will also assign articles (these will be posted [here](/schedule)
 
 You're expected to come to class, having (1) carefully read the material and (2) completed the weekly reading report.
 
-Attendance and participation are *crucial* to your success in this course. However, we're in the middle of a deadly global pandemic and *so many people* are getting sick. If you are sick or are incapable of participating meaningfully in class (e.g. you have stayed up all night and are going to fall asleep in class), please stay home. I will try my best to record in-class lectures (or record them at home).
+Attendance and participation are *crucial* to your success in this course. However, we're in the middle of a deadly global pandemic and *so many people* are getting sick. If you are sick or are incapable of participating meaningfully in class (e.g., you have stayed up all night and are going to fall asleep in class), please stay home. I will try my best to record in-class lectures (or record them at home).
 
 # Absences and Late Work
 
@@ -76,7 +76,14 @@ It is expected that you will bring your laptop to class. Please try to keep it c
 
 There will be no points associated with any of the assignments this semester. To receive a passing grade (A), all assignments must be turned in.
 
-## Student Mini-Presentations and Discussions
+## Annotations
+
+Every week there will be an assigned reading.
+You will be expected to read the weekly reading before class, so we can discuss it. Each week you will contribute to a collaborative annotation of the reading on
+Canvas. This is done via hypothes.is—simply add comments directly to the
+reading via the link on Canvas. It’s important for me to have a sense of what is troubling you so we can address it in class.
+
+## Student Mini-Lectures and Discussions
 
 Every week (Monday) one of your peers will present an introduction to the method we will be discussing that week, based on the assigned reading for that week (you are to use the assigned articles to guide your presentation and discussion). Each presentation should be be (12-15 minutes) with a discussion \~10 minutes.
 
@@ -86,7 +93,7 @@ In these presentations, I would like:
 
 -   A clear overview of the topic: This should include a brief introduction to the topic, highlighting its relevance and importance in psychological research. You should also address assumptions of the methods, if any.
 
--   Examples and applications: To help peers' understand the practical implications of the topic, you should provide examples and applications of how the topic is used in psychology. This could include your own research or examples from the literature or the materials. If you wanted to walk through an example, that is also welcome. I am going to be program agnostic here (use R, Python, SPSS, JASP, etc.) to do this.
+- Examples and applications: To help peers' understand the practical implications of the topic, you should provide examples and applications of how the topic is used in psychology. This could include your own research or examples from the literature or the materials. If you wanted to walk through an example, that is also welcome. I am going to be program agnostic here (use R, Python, SPSS, JASP, etc.) to do this.
 
 - A discussion of things you did not understand or general questions you had 
 

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.2.313">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -191,7 +191,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#paletteer" id="toc-paletteer" class="nav-link" data-scroll-target="#paletteer"><code>paletteer</code></a></li>
   <li><a href="#korn---its-on" id="toc-korn---its-on" class="nav-link" data-scroll-target="#korn---its-on">Korn - It’s On!</a></li>
   </ul></li>
-  <li><a href="#other-nu-metal-artists" id="toc-other-nu-metal-artists" class="nav-link" data-scroll-target="#other-nu-metal-artists">Other Nu-Metal Artists</a>
+  <li><a href="#other-nu-metal-album-classics" id="toc-other-nu-metal-album-classics" class="nav-link" data-scroll-target="#other-nu-metal-album-classics">Other Nu-Metal Album Classics</a>
   <ul class="collapse">
   <li><a href="#evanescence---fallen" id="toc-evanescence---fallen" class="nav-link" data-scroll-target="#evanescence---fallen">Evanescence - Fallen</a></li>
   <li><a href="#limp-bizkit---significant-other" id="toc-limp-bizkit---significant-other" class="nav-link" data-scroll-target="#limp-bizkit---significant-other">Limp Bizkit - Significant Other</a></li>
@@ -265,7 +265,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="images/Korn.jpeg" class="img-fluid"></p>
 <p>Then you can read that file into a function from the package</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|</span></span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|message: FALSE</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the color palette</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>colours_vector <span class="ot">&lt;-</span> <span class="fu">create_palette</span>(<span class="at">image_path =</span> image_path,                            <span class="at">number_of_colors =</span><span class="dv">10</span>,                           <span class="at">type_of_variable =</span> <span class="st">"categorical"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -311,8 +311,8 @@ optimising level of divergence between colours</code></pre>
 </div>
 </section>
 </section>
-<section id="other-nu-metal-artists" class="level1">
-<h1>Other Nu-Metal Artists</h1>
+<section id="other-nu-metal-album-classics" class="level1">
+<h1>Other Nu-Metal Album Classics</h1>
 <p>I decided to do this with a few other popular artists from my childhood. Let’s do a <em>Fallen</em> palette.</p>
 <section id="evanescence---fallen" class="level2">
 <h2 class="anchored" data-anchor-id="evanescence---fallen">Evanescence - Fallen</h2>
@@ -326,7 +326,7 @@ optimising level of divergence between colours</code></pre>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>image_path <span class="ot">&lt;-</span>here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"Blog"</span>, <span class="st">"images"</span>,<span class="st">"fallen1.jpeg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># |message=false</span></span>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|message: false</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#|</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the color palette</span></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>colours_vector <span class="ot">&lt;-</span> <span class="fu">create_palette</span>(<span class="at">image_path =</span> image_path,                            <span class="at">number_of_colors =</span><span class="dv">10</span>,                            <span class="at">type_of_variable =</span> <span class="st">"categorical"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -430,8 +430,8 @@ optimising level of divergence between colours</code></pre>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>image_path <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"Blog"</span>, <span class="st">"images"</span>,<span class="st">"LP.jpeg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|message=false</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co">#|</span></span>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|message: false</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co">#|eval: FALSE</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the color palette</span></span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>colours_vector <span class="ot">&lt;-</span> <span class="fu">create_palette</span>(<span class="at">image_path =</span> image_path,                            <span class="at">number_of_colors =</span><span class="dv">10</span>,                            <span class="at">type_of_variable =</span> <span class="st">"categorical"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -507,8 +507,7 @@ optimising level of divergence between colours</code></pre>
 <p><code>print.palette</code> prints out the actual colors from the hex codes.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print colors</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print.palette</span>(korn_color)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print.palette</span>(korn_color)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="nu-metal_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
 </div>

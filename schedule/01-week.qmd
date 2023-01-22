@@ -11,6 +11,8 @@ date: 2023-02-01
 ::: callout-important
 -   Install latest version of RStudio, [`v2022.07.1` or later](https://www.rstudio.com/products/rstudio/download/#download)
 
+-   Install Quarto: https://quarto.org/docs/download/
+
 -   Follow: <https://quarto.org/docs/get-started/hello/rstudio.html>
 
 -   Sign up for free github account

@@ -123,8 +123,6 @@ ggplot(data=iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species)) +
   scale_color_manual(values=colours_vector[1:3])
 ```
 
-## 
-
 ## Linkin Park - Hybrid Theory
 
 ![](images/LP.jpeg){fig-align="center"}

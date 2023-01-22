@@ -42,7 +42,7 @@ website:
         file: schedule/index.qmd
       - text: "Assignments"
         file: Assignments/index.qmd
-      - file: Blog/nu-metal.qmd
+      - file: _site/Blog/nu-metal.html
       
   sidebar:
     - title: "Schedule"

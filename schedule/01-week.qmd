@@ -13,7 +13,13 @@ date: 2023-02-01
 
 -   Install Quarto: https://quarto.org/docs/download/
 
--   Follow: <https://quarto.org/docs/get-started/hello/rstudio.html>
+    -   Follow: <https://quarto.org/docs/get-started/hello/rstudio.html>
 
 -   Sign up for free github account
+
+-   Install Github Desktop: <https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop>
+
+-   Install Git: <https://git-scm.com/downloads>
+
+-   Make sure RStudio recognized Git: <https://happygitwithr.com/rstudio-see-git.html#rstudio-see-git>
 :::

@@ -1,6 +1,6 @@
 ---
 title: "PSY 504: Advanced Statistics"
-subtitle: "Advanced statistical methods in psychology"
+subtitle: "Advanced Statistical Methods in Psychology"
 details: |
   PSYCH 504  • Spring 2023<br>Princeton University
 sidebar: false

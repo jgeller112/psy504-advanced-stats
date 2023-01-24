@@ -27,7 +27,7 @@ execute:
 
 -   Generalized linear models
 
--   Meditation
+-   Mediation
 
 -   Path analysis (SEM)
 
@@ -39,21 +39,21 @@ execute:
 :::
 :::
 
-## Prior Knowledge
+## Prerequisites
 
 <br>
 
 <br>
 
--   If you were in PSY 505, you have what you need :).
+![](psy503.png){fig-align="center"}
 
--   If not, good grasp of linear modeling and R.
+-   If not, a good grasp of linear modeling and R.
 
 ## Student Learning Outcomes
 
--   Make informed decisions on appropriate analyses
+-   Make informed decisions on the appropriate analyses
 
--   Run analyses in R
+-   Run and code analyses in R
 
 -   Interpret output and summarize results of the analyses
 
@@ -85,7 +85,7 @@ execute:
 
 # Assignments
 
-## Annotations
+## Reading Annotations
 
 ::: columns
 ::: {.column width="50%"}
@@ -101,15 +101,11 @@ execute:
 :::
 :::
 
-## Mini-lectures and discussions
-
--   10-15 minutes with a discussion \~10 minutes
-
 ## Mini-lectures
 
--   Using the assigned readings:
+-   Using the assigned readings
 
-    -   High level overview of the topic:
+    -   High level overview of the topic
 
         -   A brief introduction
 
@@ -123,9 +119,7 @@ execute:
 
         -   Walk us through an example from one of the articles/readings
 
-## Discussion
-
--   2-3 discussion questions for the class to answer
+    -   A few questions for the class
 
 ## Labs
 
@@ -133,7 +127,7 @@ execute:
 
     -   Lab should be completed in RMD/QMD or Jypter Notebook (**reproducible**)
 
-        -   If you want to check your work with SPSS/JASP/JAMOVI I will allow this
+        -   Labs should be pushed to your Github account
 
         -   Should be able to turn it in by end of class
 
@@ -212,7 +206,7 @@ Speaker and workshop focused
 
 ## Survey
 
--   Go here: <https://docs.google.com/spreadsheets/d/1DmVNF5bdJ3xbF4w8OhTYWRfo1pnYp1rKqLrmeNHEMnw/edit?usp=sharing>
+-   Go [here](https://docs.google.com/spreadsheets/d/1DmVNF5bdJ3xbF4w8OhTYWRfo1pnYp1rKqLrmeNHEMnw/edit?usp=sharing)
 
     -   Rank order preference
 

@@ -85,7 +85,7 @@ Canvas. This is done via hypothes.is—simply add comments directly to the readi
 
 ## Student Mini-Lectures and Discussions
 
-Every week (Monday) one of your peers will present an introduction to the method we will be discussing that week, based on the assigned reading for that week (you are to use the assigned articles to guide your presentation and discussion). Each presentation should be be (12-15 minutes) with a discussion \~10 minutes.
+Every week (Monday) one of your peers will present an introduction to the method we will be discussing that week, based on the assigned reading for that week (you are to use the assigned articles to guide your presentation and discussion). Each presentation should be be (15-20 minutes). 
 
 After, I will take over and highlight how to use R to apply these methods to your data.
 
@@ -95,7 +95,7 @@ In these presentations, I would like:
 
 - Examples and applications: To help peers' understand the practical implications of the topic, you should provide examples and applications of how the topic is used in psychology. This could include your own research or examples from the literature or the materials. If you wanted to walk through an example, that is also welcome. I am going to be program agnostic here (use R, Python, SPSS, JASP, etc.) to do this.
 
-- A discussion of things you did not understand or general questions you had 
+- A discussion of things you did not understand or you had general questions about. 
 
 ## Labs/Exercises
 

@@ -1,5 +1,5 @@
 ---
-title: "Introduction"
+title: "Welcome"
 subtitle: "PSY 504: Advanced Statistics"
 author: "Jason Geller<br> Princeton University <br> Janurary 30, 2023"
 format: 
@@ -13,7 +13,7 @@ execute:
   echo: true
 ---
 
-# Advanced Stats
+# Advanced Statistics
 
 ::: columns
 ::: {.column width="50%"}
@@ -23,25 +23,126 @@ execute:
 ::: {.column width="50%"}
 -   Robust Methods
 
--   Missing
+-   Missing Data
 
--   Mediation
+-   Generalized linear models
 
--   Path Analysis (SEM)
+-   Meditation
 
--   MLM
+-   Path analysis (SEM)
+
+-   PCA
 
 -   Clustering
+
+-   MLM
 :::
 :::
+
+## Prior Knowledge
+
+<br>
+
+<br>
+
+-   If you were in PSY 505, you have what you need :).
+
+-   If not, good grasp of linear modeling and R.
 
 ## Student Learning Outcomes
 
-1.  Make informed decisions on appropriate analyses
+-   Make informed decisions on appropriate analyses
 
-2.  Run analyses in R
+-   Run analyses in R
 
-3.  Interpret output and summarize results of the analyses
+-   Interpret output and summarize results of the analyses
+
+## Assignments
+
+-   Reading annotations
+
+-   Mini-lectures and discussions
+
+-   Labs
+
+-   Tutorial Blog
+
+## Grades
+
+-   Default grade is an A
+
+    -   Engage with material and turn in all assignments
+
+-   Self-evaluation
+
+    -   Did you meet learning outcomes for the class?
+
+    -   Did you turn in all your assignments?
+
+    -   Based on my feedback, how well did you think you did on assignments?
+
+    -   How much time outside of class did spend preparing for class?
+
+# Assignments
+
+## Annotations
+
+::: columns
+::: {.column width="50%"}
+-   Every week you will submit annotations via hypothe.is platform
+
+-   Collaborative note taking
+
+-   I've included questions to guide your reading on the course website
+:::
+
+::: {.column width="50%"}
+![](annotations.png)
+:::
+:::
+
+## Mini-lectures and discussions
+
+-   10-15 minutes with a discussion \~10 minutes
+
+## Mini-lectures
+
+-   Using the assigned readings:
+
+    -   High level overview of the topic:
+
+        -   A brief introduction
+
+        -   Relevance and importance in psychological research
+
+        -   How does it tie back to other concepts
+
+    -   Examples and applications
+
+        -   Own research
+
+        -   Walk us through an example from one of the articles/readings
+
+## Discussion
+
+-   2-3 discussion questions for the class to answer
+
+## Labs
+
+-   Every week (Wednesday) we will have a lab activity covering material from that week
+
+    -   Lab should be completed in RMD/QMD or Jypter Notebook (**reproducible**)
+
+        -   If you want to check your work with SPSS/JASP/JAMOVI I will allow this
+
+        -   Should be able to turn it in by end of class
+
+            -   Have until end of the week (Friday)
+
+## Tutorial
+
+-   The final project will require you to use one of the methods discussed in class to analyze data (your own or publicly available data) and write a short blog post walking us through the process (i.e., pre-processing, analysis, and interpretation of results).
+    -   **Will go over how to create Quarto blog/website on Wednesday**
 
 # Attendance
 
@@ -99,89 +200,22 @@ Kabacoff, R. I. (2022). R in Action, Third Edition: Data analysis and graphics w
 
     -   Also a time to seek clarification on topics from me or your classmates
 
-## Assignments
-
--   Reading summaries
-
--   Mini-lectures and discussions
-
--   Labs
-
--   Tutorial Blog
-
-# Assignments
-
-## Reading
-
--   It is expected you will read the articles assigned.
-
-    -   If I feel like no one is coming to class prepared I will make it mandatory
-
--   
-
-## Mini-lectures and discussions
-
--   10-15 minutes with a discussion \~10 minutes
-
-## Mini-lectures
-
--   Using the assigned readings:
-
-    -   High level overview of the topic:
-
-        -   A brief introduction
-
-        -   Relevance and importance in psychological research
-
-        -   How does it tie back to other concepts
-
-    -   Examples and applications
-
-        -   Own research
-
-        -   Walk us through an example from one of the articles/readings
-
-## Discussion
-
--   2-3 discussion questions for the class to answer
-
-## Labs
-
--   Every week (Wednesday) we will have a lab activity covering material from that week
-
-    -   Lab should be completed in RMD/QMD or Jypter Notebook (**reproducible**)
-
-        -   If you want to check your work with SPSS/JASP/JAMOVI I will allow this
-
-        -   Should be able to turn it in by end of class
-
-            -   Have until end of the week (Friday)
-
-## Tutorial
-
--   The final project will require you to use one of the methods discussed in class to analyze data (your own or publicly available data) and write a short blog post walking us through the process (i.e., pre-processing, analysis, and interpretation of results).
-    -   **Will go over how to create Quarto blog/website on Wednesday**
-
 ## Precept Time
 
 -   PSY 505
 
     -   Tuesdays 11:00 A.M. - 1:00 P.M.
 
-        -   Speaker and workshop focused
+Speaker and workshop focused
 
-            -   No HW just readings to help orient you to the talks :blush:
+-   No HW just readings to help orient you to the talks :blush:
 
-## Grades
+## Survey
 
--   A more holistic approach to grading
+-   Go here: <https://docs.google.com/spreadsheets/d/1DmVNF5bdJ3xbF4w8OhTYWRfo1pnYp1rKqLrmeNHEMnw/edit?usp=sharing>
 
-    -   Ungrading
+    -   Rank order preference
 
--   Self-evaluation
+    -   Will try to give your #1 choice
 
-    -   Did you meet learning outcomes for the class?
-    -   Based on my feedback, how well did you think you did on assignments?
-    -   How much time outside of class didou spend preparing for class
-
--   I have veto rights to change your assigned grade :)
+        -   At least top 3 :blush:

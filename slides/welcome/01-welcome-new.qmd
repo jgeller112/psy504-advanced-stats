@@ -13,7 +13,11 @@ execute:
   echo: true
 ---
 
-# Advanced Statistics
+# PSY 504: Advanced Statistics
+
+![](wonka.jpeg){fig-align="center" width="1068"}
+
+# PSY 504: Advanced Statistics
 
 ::: columns
 ::: {.column width="50%"}
@@ -47,7 +51,7 @@ execute:
 
 ![](psy503.png){fig-align="center"}
 
--   If not, a good grasp of linear modeling and R.
+-   If not, a good grasp of linear modeling and R
 
 ## Student Learning Outcomes
 
@@ -57,11 +61,15 @@ execute:
 
 -   Interpret output and summarize results of the analyses
 
+-   Effectively communicate results from statistical analyses to a general audience
+
+-   Use Quarto to write reproducible reports and GitHub for version control and collaboration\
+
 ## Assignments
 
 -   Reading annotations
 
--   Mini-lectures and discussions
+-   Mini-lectures
 
 -   Labs
 
@@ -162,7 +170,7 @@ execute:
 
     -   Send announcements
 
-    -   Retrieve assignments
+    -   Post readings for annotations
 
     -   Answer and send emails
 
@@ -202,7 +210,11 @@ Kabacoff, R. I. (2022). R in Action, Third Edition: Data analysis and graphics w
 
 Speaker and workshop focused
 
--   No HW just readings to help orient you to the talks :blush:
+No HW just readings to help orient you to the talks :blush:
+
+### Class Support
+
+-    Any general questions about course content or assignments should be posted on the class [GitHub ](https://github.com/jgeller112/psy504-advanced-stats/issues)Issues. There is a chance another student has already asked a similar question, so please check the other posts before adding a new question. If you know the answer to a question posted in the discussion forum, I encourage you to respond!
 
 ## Survey
 

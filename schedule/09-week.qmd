@@ -33,3 +33,10 @@ da  te: 2023-04-10
   
   - Come up with a hypothetical path model. Represent it both pictorially and as a series of equations.
 
+### Videos
+
+- {{< fa video >}}SEM basics 
+
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GJu-E6PGl8w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<center>

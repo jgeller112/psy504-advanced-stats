@@ -25,7 +25,7 @@ Here's your roadmap for the semester!
 </ul>
 |     Week  |     Date         |     Topic                                         | Class Materials                                  | Class PDFs | Peer Leader |
 |-----------|------------------|---------------------------------------------------|--------------------------------------------------|------------|-------------|
-|     1     |     1/30/23      | Introduction                                      |                                                  |            |  [{{<   fa tv   >}}](/slides/welcome/01-welcome-new.html)            |
+|     1     |     1/30/23      | Introduction                                      |                                                  |            |  [{{<   fa tv   >}}](/slides/welcome/01-welcome-syllabus.html)            |
 |           | 2/1/23           | Cleaning data                                     |                                                  |            |             |
 |     2     |     2/6/23       |     Robust methods: bootstrapping and permutation |     [{{<   fa book   >}}](/schedule/02-week.qmd) |          |             |
 |           | 2/8/23           | Lab 1                                             |                                                  |            |             |

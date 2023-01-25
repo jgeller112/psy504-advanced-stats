@@ -4,7 +4,7 @@ subtitle: "PSY 504: Advanced Statistics"
 author: "Jason Geller<br> Princeton University <br> Janurary 30, 2023"
 format: 
   revealjs:
-    theme: [moon, pp.scss]
+    theme: [serif, pp.scss]
     preview-links: auto
     chalkboard: 
       boardmarker-width: 5
@@ -13,11 +13,11 @@ execute:
   echo: true
 ---
 
-# PSY 504: Advanced Statistics
+## PSY 504: Advanced Statistics
 
 ![](wonka.jpeg){fig-align="center" width="1068"}
 
-# PSY 504: Advanced Statistics
+## PSY 504: Advanced Statistics
 
 ::: columns
 ::: {.column width="50%"}
@@ -212,7 +212,7 @@ Speaker and workshop focused
 
 No HW just readings to help orient you to the talks :blush:
 
-### Class Support
+## Class Support
 
 -    Any general questions about course content or assignments should be posted on the class [GitHub ](https://github.com/jgeller112/psy504-advanced-stats/issues)Issues. There is a chance another student has already asked a similar question, so please check the other posts before adding a new question. If you know the answer to a question posted in the discussion forum, I encourage you to respond!
 

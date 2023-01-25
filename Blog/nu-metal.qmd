@@ -30,6 +30,8 @@ It is pretty simple to use. I will show you how.
 First, you need to save the location of the image file:
 
 ```{r}
+#| message= FALSE
+#| 
 library(here) # relative path
 library(paletter) # package to
 library(ggplot2)
@@ -44,6 +46,7 @@ image_path <- here::here("Blog", "images", "Korn.jpeg")
 Then you can read that file into a function from the package
 
 ```{r}
+#| message= FALSE
 # Get the color palette
 colours_vector <- create_palette(image_path = image_path,                            number_of_colors =10,                           type_of_variable = "categorical")
 ```
@@ -58,7 +61,7 @@ So here we have a color palette associated with the album *Follow The Leader.* L
 
 ```{r}
 #| fig-align: "center"
-#| 
+
 ggplot(data=iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species)) +
   geom_point(size=2) +
   scale_color_manual(values=colours_vector[1:3])
@@ -82,8 +85,8 @@ image_path <-here::here("Blog", "images","fallen1.jpeg")
 ```
 
 ```{r}
-#|message: false
-#| echo: false
+#| message= FALSE
+#| 
 # Get the color palette
 colours_vector <- create_palette(image_path = image_path,                            number_of_colors =10,                            type_of_variable = "categorical")
 
@@ -109,7 +112,7 @@ image_path <- here::here("Blog", "images","LB.jpeg")
 ```
 
 ```{r}
-#| echo: false
+#| message= FALSE
 # Get the color palette
 colours_vector <- create_palette(image_path = image_path,                            number_of_colors =10,                            type_of_variable = "categorical")
 ```
@@ -133,7 +136,8 @@ image_path <- here::here("Blog", "images","LP.jpeg")
 ```
 
 ```{r}
-#| echo: false
+#| message= FALSE
+
 # Get the color palette
 colours_vector <- create_palette(image_path = image_path,                            number_of_colors =10,                            type_of_variable = "categorical")
 ```
@@ -158,7 +162,8 @@ image_path <- here::here("Blog", "images","slipknot.jpeg")
 ```
 
 ```{r}
-
+#| message= FALSE
+#| 
 colours_vector <- create_palette(image_path = image_path,                            number_of_colors =10,                            type_of_variable = "categorical")
 ```
 

@@ -11,7 +11,7 @@ da  te: 2023-04-10
 
 [Chapters 4 and 5](/readings/sem.pdf)
 
-  - Describe how to enact the tracing rule used to calculate the magnitude of a particular indirect effect.
+  - What is SEM?
 
   - What is the purpose of SEM and how does it differ from other types of statistical models?
 
@@ -19,7 +19,7 @@ da  te: 2023-04-10
 
   - How do you specify an SEM model, including selecting the appropriate measurement model and structural model?
 
-  - How do you evaluate the fit of an SEM model and what are some common fit indices used in SEM?
+  - How do you evaluate the fit (goodness) of an SEM model and what are some common fit indices used in SEM?
 
   - How do you interpret the results of an SEM analysis, including the path coefficients and factor loadings?
 
@@ -31,7 +31,6 @@ da  te: 2023-04-10
 
   - What are the best practices for reporting SEM results and how can you communicate your findings effectively?
   
-  - Come up with a hypothetical path model. Represent it both pictorially and as a series of equations.
 
 ### Videos
 

@@ -23,7 +23,7 @@ date: 2023-02-14
   - How does skew affect your test?
   - What are the solutions to these problems?
 
-- {{< fa book >}} LaFleur, B. J., & Greevy, R. A. (2009). [Introduction to Permutation and Resampling-Based Hypothesis Tests∗.](/readings/03-week-robust_methods/lafleur2009.pdf) Journal of Clinical Child & Adolescent Psychology, 38(2), 286–294. https://doi.org/10.1080/15374410902740411
+- {{< fa book >}} LaFleur, B. J., & Greevy, R. A. (2009). [Introduction to Permutation and Resampling-Based Hypothesis Tests](/readings/03-week-robust_methods/lafleur2009.pdf). Journal of Clinical Child & Adolescent Psychology, 38(2), 286–294. https://doi.org/10.1080/15374410902740411
 
   - How do permutation tests differ from traditional statistical hypothesis tests?
 
@@ -49,9 +49,9 @@ date: 2023-02-14
 <center>
 ## During Class 
 
-Will go through this paper in class
+- Will go through this paper in class
 
-- Rousselet, G. A., Pernet, C. R., & Wilcox, R. R. (2021). [The Percentile Bootstrap: A Primer With Step-by-Step Instructions in R](/readings/03-week-robust_methods/rtutorial_boot.pdf). Advances in Methods and Practices in Psychological Science, 4(1), 2515245920911881. https://doi.org/10.1177/2515245920911881
+  - Rousselet, G. A., Pernet, C. R., & Wilcox, R. R. (2021). [The Percentile Bootstrap: A Primer With Step-by-Step Instructions in R](/readings/03-week-robust_methods/rtutorial_boot.pdf). Advances in Methods and Practices in Psychological Science, 4(1), 2515245920911881. https://doi.org/10.1177/2515245920911881
 
 ## After Class
 

@@ -212,7 +212,7 @@ Speaker and workshop focused
 
 No HW just readings to help orient you to the talks :blush:
 
-## Class Support
+## Class Questions
 
 -   Any general questions about course content or assignments should be posted on the class [GitHub](https://github.com/jgeller112/psy504-advanced-stats/issues)Issues. There is a chance another student has already asked a similar question, so please check the other posts before adding a new question. If you know the answer to a question posted in the discussion forum, I encourage you to respond!
 

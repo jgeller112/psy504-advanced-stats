@@ -97,7 +97,7 @@ execute:
 
 ::: columns
 ::: {.column width="50%"}
--   Every week you will submit annotations via hypothe.is platform
+-   Every week you will annotate articles via hypothe.is platform
 
 -   Collaborative note taking
 
@@ -117,17 +117,17 @@ execute:
 
     -   A brief introduction
 
-    -   Relevance and importance in psychological research
+    -   Important concepts
 
-    -   How does it tie back to other concepts
-
-    -   Limitations/advantages
+    -   limitations/advantages
 :::
 
 ::: {.column width="50%"}
--   Examples and applications
+-   Relevance to psychology
 
-    -   Walk us through an example from one of the articles/readings
+    -   Examples and applications
+
+        -   Walk us through an example from one of the articles/readings or your own work
 
 -   A few questions for the class
 :::
@@ -139,15 +139,16 @@ execute:
 
     -   Lab should be completed in RMD/QMD or Jypter Notebook (**reproducible**)
 
-        -   Labs should be pushed to your Github account
+        -   Labs will be pushed to Github repository
 
         -   Should be able to turn it in by end of class
 
-            -   Have until end of the week (Friday)
+            -   Have until end of the week
 
-## Tutorial
+## Tutorial/Blog Post
 
--   The final project will require you to use one of the methods discussed in class to analyze data (your own or publicly available data) and write a short blog post walking us through the process (i.e., pre-processing, analysis, and interpretation of results).
+-   The final project will require you to use one of the methods discussed in class to analyze data (your own or publicly available data) and write a short blog post walking us through the process (i.e., pre-processing, analysis, and interpretation of results)
+
     -   **Will go over how to create Quarto blog/website on Wednesday**
 
 # Attendance
@@ -166,11 +167,9 @@ execute:
 
 # Course Content
 
--   Readings, Assignments, and Schedule:
+-   <https://psy504-advanced-stats.netlify.app/>
 
-    -   https://psy504-advanced-stats.netlify.app/
-
--   I will use Github to host Labs
+-   I will use Github to host labs
 
 -   I will use Canvas to:
 
@@ -179,8 +178,6 @@ execute:
     -   Post readings for annotations
 
     -   Answer and send emails
-
--   I will post html and PDF versions of slides day of class (on website)
 
 # Recommended Text
 
@@ -216,11 +213,15 @@ Kabacoff, R. I. (2022). R in Action, Third Edition: Data analysis and graphics w
 
 Speaker and workshop focused
 
-No HW just readings to help orient you to the talks :blush:
+No HW or papers
 
 ## Class Questions
 
--   Any general questions about course content or assignments should be posted on the class [GitHub](https://github.com/jgeller112/psy504-advanced-stats/issues)Issues. There is a chance another student has already asked a similar question, so please check the other posts before adding a new question. If you know the answer to a question posted in the discussion forum, I encourage you to respond!
+-   Any general questions about course content or assignments should be posted on the class [GitHub](https://github.com/jgeller112/psy504-advanced-stats/issues) Issues. There is a chance another student has already asked a similar question, so please check the other posts before adding a new question. If you know the answer to a question posted in the discussion forum, I encourage you to respond!
+
+## Schedule
+
+<https://psy504-advanced-stats.netlify.app/schedule/>
 
 ## Survey
 

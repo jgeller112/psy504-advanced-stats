@@ -47,8 +47,6 @@ execute:
 
 <br>
 
-<br>
-
 ![](psy503.png){fig-align="center"}
 
 -   If not, a good grasp of linear modeling and R

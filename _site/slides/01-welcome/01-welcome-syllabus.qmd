@@ -77,9 +77,7 @@ execute:
 
 ## Grades
 
--   Default grade is an A
-
-    -   Engage with material and turn in all assignments
+-   No points associated with assignments
 
 -   Self-evaluation
 

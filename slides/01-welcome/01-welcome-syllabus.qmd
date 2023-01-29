@@ -1,7 +1,7 @@
 ---
 title: "Welcome Back!"
 subtitle: "PSY 504: Advanced Statistics"
-author: "Jason Geller<br> Princeton University <br> Janurary 30, 2023"
+author: "Jason Geller, Ph.D.<br> Princeton University <br> Janurary 30, 2023"
 format: 
   revealjs:
     theme: [serif, pp.scss]

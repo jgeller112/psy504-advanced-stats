@@ -1,7 +1,7 @@
 ---
-title: "Welcome"
+title: "Welcome Back!"
 subtitle: "PSY 504: Advanced Statistics"
-author: "Jason Geller<br> Princeton University <br> Janurary 30, 2023"
+author: "Jason Geller, Ph.D.<br> Princeton University <br> Janurary 30, 2023"
 format: 
   revealjs:
     theme: [serif, pp.scss]
@@ -77,11 +77,6 @@ execute:
 
 ## Grades
 
--   No points
-
-```{=html}
-<!-- -->
-```
 -   Default grade is an A
 
     -   Engage with material and turn in all assignments
@@ -104,34 +99,39 @@ execute:
 ::: {.column width="50%"}
 -   Every week you will submit annotations via hypothe.is platform
 
--   Collaborative note-taking
+-   Collaborative note taking
 
 -   I've included questions to guide your reading on the course website
 :::
 
 ::: {.column width="50%"}
-![](annotations.png){fig-align="center" width="38.36in"}
+![](annotations.png)
 :::
 :::
 
-## Mini-lectures
+## Mini-lectures/Discussion
 
--   Using the assigned readings
+::: columns
+::: {.column width="50%"}
+-   High level overview of the topic
 
-    -   High level overview of the topic
+    -   A brief introduction
 
-        -   A brief introduction
+    -   Relevance and importance in psychological research
 
-        -   Relevance and importance in psychological research
+    -   How does it tie back to other concepts
 
-        -   How does it tie back to other concepts
+    -   Limitations/advantages
+:::
 
-    -   Examples and applications
+::: {.column width="50%"}
+-   Examples and applications
 
-        -   Walk us through an example from one of the articles/readings or own reserch
-        -   
+    -   Walk us through an example from one of the articles/readings
 
-    -   A few questions for the class
+-   A few questions for the class
+:::
+:::
 
 ## Labs
 
@@ -170,6 +170,8 @@ execute:
 
     -   https://psy504-advanced-stats.netlify.app/
 
+-   I will use Github to host Labs
+
 -   I will use Canvas to:
 
     -   Send announcements
@@ -178,7 +180,7 @@ execute:
 
     -   Answer and send emails
 
--   I will post html versions of slides day of class (on website). PDFs will also be uploaded.
+-   I will post html and PDF versions of slides day of class (on website)
 
 # Recommended Text
 
@@ -212,13 +214,13 @@ Kabacoff, R. I. (2022). R in Action, Third Edition: Data analysis and graphics w
 
     -   Tuesdays 11:00 A.M. - 1:00 P.M.
 
--   Speakers and workshops
+Speaker and workshop focused
 
--   **No HW just readings to help orient you to the talks**
+No HW just readings to help orient you to the talks :blush:
 
-## Course Questions
+## Class Questions
 
--   Any general questions about course content or assignments should be posted on the class [GitHub](https://github.com/jgeller112/psy504-advanced-stats/issues) Issues. There is a chance another student has already asked a similar question, so please check the other posts before adding a new question. If you know the answer to a question posted in the discussion forum, I encourage you to respond!
+-   Any general questions about course content or assignments should be posted on the class [GitHub](https://github.com/jgeller112/psy504-advanced-stats/issues)Issues. There is a chance another student has already asked a similar question, so please check the other posts before adding a new question. If you know the answer to a question posted in the discussion forum, I encourage you to respond!
 
 ## Survey
 

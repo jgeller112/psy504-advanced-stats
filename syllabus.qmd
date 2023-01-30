@@ -91,9 +91,9 @@ After, I will take over and highlight how to use R to apply these methods to you
 
 In these presentations, I would like:
 
-- A clear overview of the topic: This should include a brief introduction to the topic, highlighting its relevance and importance in psychological research. You should also address assumptions of the methods, if any.
+- A clear overview of the topic: This should include a brief introduction to the topic, highlighting its relevance and importance in psychological research. You should also address limitations, if any.
 
-- Examples and applications: To help peers' understand the practical implications of the topic, you should provide examples and applications of how the topic is used in psychology. This could include your own research or examples from the literature or the materials. If you wanted to walk through an example, that is also welcome. I am going to be program agnostic here (use R, Python, SPSS, JASP, etc.) to do this.
+- Examples and applications: To help peers' understand the practical implications of the topic, you should provide examples and applications of how the topic is used in psychology. This could include your own research or examples from the literature. If you wanted to walk through an example, that is also welcome. I am going to be program agnostic here (use R, Python, SPSS, JASP, etc.) to do this.
 
 - A discussion of things you did not understand or you had general questions about. 
 
@@ -117,6 +117,5 @@ It is expected that you will come to class having read the articles assigned and
 
 At the end of the semester, you will assign yourself the final grade. You will provide a self-evaluation as whether you met the learning outcomes for the course and how well you think you did on assignments and the final project. I have veto rights to change your assigned grade :). 
 
-# Schedule
+# [Schedule](/schedule/index.qmd)
 
-**subject to change**

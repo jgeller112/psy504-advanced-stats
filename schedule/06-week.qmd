@@ -16,12 +16,12 @@ date: 2023-03-06
    - What are some advantages and disadvantages of using Bayesian statistical methods?
    - How do you make statistical inferences and predictions using Bayesian methods?
   
-Jarosz, A. F., & Wiley, J. (2014). [What Are the Odds? A Practical Guide to Computing and Reporting Bayes Factors](https://docs.lib.purdue.edu/jps/vol7/iss1/2/). The Journal of Problem Solving, 7(1). 
+- {{< fa book >}}Jarosz, A. F., & Wiley, J. (2014). [What Are the Odds? A Practical Guide to Computing and Reporting Bayes Factors](https://docs.lib.purdue.edu/jps/vol7/iss1/2/). The Journal of Problem Solving, 7(1). 
 
   - What is a Bayes Factor?
   - How do you calculate them?
   - How do we interpret Bayes Factors? 
-
+  
 ### Video
 
 - {{< fa video >}} What is Bayes?

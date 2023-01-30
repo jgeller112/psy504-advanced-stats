@@ -16,15 +16,13 @@ execute:
 
 # Hello Quarto
 
--   Quarto is the next generation of RMarkdown
-
--   FOR EVERYONE!
-
-    ## Quarto
-
 > ### Quarto^®^ is an open-source scientific and technical publishing system built on [Pandoc](https://pandoc.org/)
 
 ## Big Universe
+
+-   Quarto is the next generation of RMarkdown
+
+-   FOR EVERYONE!
 
 ![](horst_quarto_schematic.png){fig-align="center"}
 

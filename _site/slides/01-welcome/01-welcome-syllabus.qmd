@@ -43,17 +43,9 @@ execute:
 :::
 :::
 
-## Prerequisites
-
-<br>
-
-![](psy503.png){fig-align="center"}
-
--   If not, a good grasp of linear modeling and R
-
 ## Student Learning Outcomes
 
--   Make informed decisions on the appropriate analyses
+-   Make informed analytic decisions
 
 -   Run and code analyses in R
 

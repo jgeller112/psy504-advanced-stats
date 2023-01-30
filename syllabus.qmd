@@ -34,9 +34,15 @@ The main prerequisite for this course is PSY 503.
 
 At the end of the course, students will be able to:
 
-1.  Make decisions regarding the most appropriate methods to use in addressing conceptual issues using a given data sets.
-2.  Conduct the analyses using R.
-3.  Write a summary of the results of the analyses.
+- Make informed analytic decisions
+
+- Run and code analyses in R
+
+- Interpret output and summarize results of the analyses
+
+- Effectively communicate results from statistical analyses to a general audience
+
+- Use Quarto to write reproducible reports and GitHub for version control and collaboration
 
 # Office Hours
 
@@ -85,7 +91,7 @@ Canvas. This is done via hypothes.is—simply add comments directly to the readi
 
 ## Student Mini-Lectures and Discussions
 
-Every week (Monday) one of your peers will present an introduction to the method we will be discussing that week, based on the assigned reading for that week (you are to use the assigned articles to guide your presentation and discussion). Each presentation should be be (15-20 minutes). 
+Every week (Monday) one of your peers will present an introduction to the method we will be discussing that week, based on the assigned reading for that week (you are to use the assigned articles to guide your presentation and discussion). Each presentation should be be (~20 minutes). 
 
 After, I will take over and highlight how to use R to apply these methods to your data.
 

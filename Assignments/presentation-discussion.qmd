@@ -10,7 +10,7 @@ When it is your turn to present and lead the discussion, you should do the follo
 
 For your presentation, you should create either (1) a PowerPoint slideshow or (2) a summary handout. 
 
-Your 12-15 minute presentation should include the following:
+Your ~20 minute presentation should include the following:
 
 - A clear overview of the topic: This should include a brief introduction to the topic, highlighting its relevance and importance in psychological research. You should also address assumptions/pros/cons of the methods, if any.  
 
@@ -19,16 +19,6 @@ Your 12-15 minute presentation should include the following:
   - E.g., What are the 4 steps in the Barron and Kenny model of mediation? What does it mean to have data missing as MCAR?
 
 - Examples and applications: To help peers' understand the practical implications of the topic, you should provide examples and applications of how the topic is used in psychology. This could include your own research or examples from the literature or the materials. If you wanted to walk through an example, that is also welcome. I am going to be program agnostic here (use whatever you are most comfortable with: R, Python, SPSS, JASP, etc.).  
-- A discussion of things you did not understand
 
-### Discussion leading
+- Lingering questions
 
-After your presentation, you'll help lead a 10-minute discussion with the entire class. **Don't worry!**—this does not mean that you need to teach the class! Create a list of 4–6 questions that your classmates can discuss. These should be broad and more abstract (i.e. don't ask things like "What did Author X say on p. 113?"). 
-
-Here are some good sample questions that you can adapt:
-
-- How can you relate the concepts and ideas in the readings to your research?
-
-- What are the practical implications of the readings?
-
-- What are some issues with or critiques of the readings' methods?

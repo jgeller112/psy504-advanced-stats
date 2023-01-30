@@ -1,25 +1,36 @@
 ---
 title: "Introduction to Quarto/How to Make a Blog"
 subtitle: "PSY 504: Advanced Statistics"
-author: "Jason Geller<br> Princeton University <br> Feburary 1, 2023"
+author: "Jason Geller, Ph.D.<br> Princeton University <br> Feburary 1, 2023"
 format: 
   revealjs:
-    theme: [moon, pp.scss]
+    theme: [pp.scss]
     preview-links: auto
     chalkboard: 
       boardmarker-width: 5
 from: markdown+emoji
 execute:
+  eval: true
   echo: true
 ---
 
-## Hello Quarto
+# Hello Quarto
+
+-   Quarto is the next generation of RMarkdown
+
+-   FOR EVERYONE!
+
+    ## Quarto
 
 > ### Quarto^®^ is an open-source scientific and technical publishing system built on [Pandoc](https://pandoc.org/)
 
 ## Big Universe
 
 ![](horst_quarto_schematic.png){fig-align="center"}
+
+## What is a Quatro?
+
+![](samplesheet.jpeg){fig-align="center"}
 
 # Formatting
 
@@ -74,9 +85,20 @@ Or maybe an ordered list!
 
 # Callout Blocks
 
+-   Call-out blocks highlight sections of text that interrupt the flow of your regular text. Maybe it's a definition, a warning, or a sidenote
+
+-   When rendering your document to HTML, callout blocks are interactive and can be collapsed and opened.
+
+    ::: callout-warning
+    ## My First Callout Block!
+
+    Say things here
+    :::
+
+# Callout Blocks
+
 ::: callout-note
-Note that there are five types of callouts, including: 
-\`note\`, \`tip\`, \`warning\`, \`caution\`, and \`important\`.
+Note that there are five types of callouts, including: \`note\`, \`tip\`, \`warning\`, \`caution\`, and \`important\`.
 :::
 
 ::: callout-note
@@ -84,6 +106,8 @@ Note that there are five types of callouts, including:
 
 Note that there are five types of callouts, including: `note`, `tip`, `warning`, `caution`, and `important`.
 :::
+
+# Callout Blocks
 
 ::: callout-warning
 ## Warning
@@ -107,6 +131,8 @@ Danger, callouts will really improve your writing.
 Here is something under construction
 :::
 
+# Callout Blocks
+
 ## Callout markdown syntax
 
 ::: {.callout-caution collapse="true"}
@@ -114,18 +140,6 @@ Here is something under construction
 
 This is an example of a 'folded' caution callout that can be expanded by the user. You can use \`collapse="true"\` to collapse it by default or \`collapse="false"\` to make a collapsible callout that is expanded by default.
 :::
-
-# Callout Blocks
-
--   Call-out blocks highlight sections of text that interrupt the flow of your regular text. Maybe it's a definition, a warning, or a sidenote
-
--   When rendering your document to HTML, callout blocks are interactive and can be collapsed and opened.
-
-    ::: callout-warning
-    ## My First Callout Block!
-
-    Say things here
-    :::
 
 ## Code Blocks
 
@@ -148,15 +162,15 @@ print(x,y)
 
 ## Code Chunks
 
--   `{r, eval=TRUE}` has been replaced with `#|eval=TRUE`
+-   `{r, eval=TRUE}` has been replaced with `#| eval = TRUE`
 
 ```{r}
-#|eval: false
+#| eval = FALSE
 print("Don't Run Me")
 ```
 
 ```{r}
-#|eval: true
+#| eval = TRUE
 print("Don't Run Me")
 ```
 
@@ -166,6 +180,18 @@ Split up and flip between sections of a page, alternative to just two columns
 
 ::: panel-tabset
 ## Element 1
+
+```{r}
+
+#| fig.width: 8
+#| fig.heigh: 4
+
+library(ggplot2)
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess", se = FALSE)
+
+```
 
 ## Element 2
 
@@ -267,8 +293,9 @@ You can see all of the files in your project by clicking on the files tab:
 
 -   To change the output directory from `_site` to `docs` open up `_quarto.yml`, and add the line `output-dir: docs` just like this:
 
+```{=html}
 <!-- -->
-
+```
     project:
       type: website
       output-dir: docs

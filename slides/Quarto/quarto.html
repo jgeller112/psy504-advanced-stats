@@ -474,8 +474,13 @@ Jason Geller, Ph.D.<br> Princeton University <br> Feburary 1, 2023
 <li><p>To have something appear as code (using a monospace font), surround everything that is code with ticks `like this`, so that it shows up <code>like this</code>.</p></li>
 </ul>
 </section></section>
+<section>
 <section id="callout-blocks" class="title-slide slide level1 center">
 <h1>Callout Blocks</h1>
+
+</section>
+<section id="callout-blocks-1" class="slide level2">
+<h2>Callout Blocks</h2>
 <ul>
 <li><p>Call-out blocks highlight sections of text that interrupt the flow of your regular text. Maybe it’s a definition, a warning, or a sidenote</p></li>
 <li><p>When rendering your document to HTML, callout blocks are interactive and can be collapsed and opened.</p>
@@ -493,9 +498,8 @@ Jason Geller, Ph.D.<br> Princeton University <br> Feburary 1, 2023
 </div>
 </div></li>
 </ul>
-</section>
-
-<section id="callout-blocks-1" class="title-slide slide level1 center">
+</section></section>
+<section id="callout-blocks-2" class="title-slide slide level1 center">
 <h1>Callout Blocks</h1>
 <div class="callout callout-note callout-captioned callout-style-default">
 <div class="callout-body">
@@ -525,7 +529,8 @@ Jason Geller, Ph.D.<br> Princeton University <br> Feburary 1, 2023
 </div>
 </section>
 
-<section id="callout-blocks-2" class="title-slide slide level1 center">
+<section>
+<section id="callout-blocks-3" class="title-slide slide level1 center">
 <h1>Callout Blocks</h1>
 <div class="callout callout-warning callout-captioned callout-style-default">
 <div class="callout-body">
@@ -580,12 +585,6 @@ Jason Geller, Ph.D.<br> Princeton University <br> Feburary 1, 2023
 </div>
 </div>
 </section>
-
-<section>
-<section id="callout-blocks-3" class="title-slide slide level1 center">
-<h1>Callout Blocks</h1>
-
-</section>
 <section id="callout-markdown-syntax" class="slide level2">
 <h2>Callout markdown syntax</h2>
 <div class="callout callout-caution callout-captioned callout-style-default">
@@ -594,10 +593,9 @@ Jason Geller, Ph.D.<br> Princeton University <br> Feburary 1, 2023
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Danger</strong></p>
+<p><strong>Expand To Learn About Collapse</strong></p>
 </div>
 <div class="callout-content">
-<p>## Expand To Learn About Collapse</p>
 <p>This is an example of a ‘folded’ caution callout that can be expanded by the user. You can use `collapse=“true”` to collapse it by default or `collapse=“false”` to make a collapsible callout that is expanded by default.</p>
 </div>
 </div>
@@ -647,17 +645,11 @@ Jason Geller, Ph.D.<br> Princeton University <br> Feburary 1, 2023
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Element 1</a></li><li><a href="#tabset-1-2">Element 2</a></li><li><a href="#tabset-1-3"></a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">#| fig.width: 8</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="co">#| fig.heigh: 4</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb6-5"><a href="#cb6-5"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(Temp, Ozone)) <span class="sc">+</span> </span>
-<span id="cb6-6"><a href="#cb6-6"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb6-7"><a href="#cb6-7"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img data-src="quarto_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
-</div>
+<div class="cell" data-fig.heigh="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(Temp, Ozone)) <span class="sc">+</span> </span>
+<span id="cb6-3"><a href="#cb6-3"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-1-2">
@@ -768,8 +760,8 @@ Jason Geller, Ph.D.<br> Princeton University <br> Feburary 1, 2023
 <li><p>You should now be able to see your new repository in your github.com profile, which means you should be able to see a copy of your blog files in the repository.</p></li>
 </ol>
 </section>
-<section id="qmd-changes" class="slide level2">
-<h2>QMD Changes</h2>
+<section id="qmd-changes-for-github-site" class="slide level2">
+<h2>QMD Changes for Github Site</h2>
 <ul>
 <li>To change the output directory from <code>_site</code> to <code>docs</code> open up <code>_quarto.yml</code>, and add the line <code>output-dir: docs</code> just like this:</li>
 </ul>
@@ -779,20 +771,36 @@ Jason Geller, Ph.D.<br> Princeton University <br> Feburary 1, 2023
   output-dir: docs</code></pre>
 <ul>
 <li><p>Should see a new docs folder</p></li>
-<li><p>Push your changes to github so that your repository, and activate the github pages option under your repository settings.</p>
-<h2 id="config-file">Config File</h2>
-<p>- <code>_quarto.yml</code></p>
+<li><p>Push your changes to github so that your repository, and activate the github pages option under your repository settings.</p></li>
+</ul>
+</section>
+<section id="config-file" class="slide level2">
+<h2>Config File</h2>
+<ul>
+<li><p><code>_quarto.yml</code></p>
 <ul>
 <li><p>Metadata</p>
-<p>project: output-dir: _output</p>
-<p>toc: true number-sections: true bibliography: references.bib</p>
-<p>format: html: css: styles.css html-math-method: katex pdf: documentclass: report margin-left: 30mm margin-right: 30mm</p></li>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource {project:} number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href="#cb8-1"></a>  output-dir: _output</span>
+<span id="cb8-2"><a href="#cb8-2"></a></span>
+<span id="cb8-3"><a href="#cb8-3"></a>toc: true</span>
+<span id="cb8-4"><a href="#cb8-4"></a>number-sections: true</span>
+<span id="cb8-5"><a href="#cb8-5"></a>bibliography: references.bib  </span>
+<span id="cb8-6"><a href="#cb8-6"></a></span>
+<span id="cb8-7"><a href="#cb8-7"></a>format:</span>
+<span id="cb8-8"><a href="#cb8-8"></a>  html:</span>
+<span id="cb8-9"><a href="#cb8-9"></a>    css: styles.css</span>
+<span id="cb8-10"><a href="#cb8-10"></a>    html-math-method: katex</span>
+<span id="cb8-11"><a href="#cb8-11"></a>  pdf:</span>
+<span id="cb8-12"><a href="#cb8-12"></a>    documentclass: report</span>
+<span id="cb8-13"><a href="#cb8-13"></a>    margin-left: 30mm</span>
+<span id="cb8-14"><a href="#cb8-14"></a>    margin-right: 30mm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul></li>
 </ul>
 </section>
 <section id="side-bar" class="slide level2">
 <h2>Side Bar</h2>
-<p>website<strong>:</strong> sidebar<strong>:</strong> style<strong>:</strong> “docked” search<strong>:</strong> true</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource {website:} number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href="#cb9-1"></a>  sidebar:"doc"</span>
+<span id="cb9-2"><a href="#cb9-2"></a>    search: true</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
@@ -809,12 +817,11 @@ Jason Geller, Ph.D.<br> Princeton University <br> Feburary 1, 2023
 </section>
 <section id="side-bar-1" class="slide level2">
 <h2>Side Bar</h2>
-<p>website<strong>:</strong> sidebar<strong>:</strong> style<strong>:</strong> “floating” search<strong>:</strong> true</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource {website:} number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a href="#cb10-1"></a>  sidebar:"floating"</span>
+<span id="cb10-2"><a href="#cb10-2"></a>    search: true</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="columns">
 <div class="column" style="width:50%;">
-<ul>
-<li>Floating</li>
-</ul>
+<p>floating</p>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -823,7 +830,23 @@ Jason Geller, Ph.D.<br> Princeton University <br> Feburary 1, 2023
 </div>
 </div>
 </div>
+</section></section>
+<section>
+<section id="github-in-rstudio" class="title-slide slide level1 center">
+<h1>Github in RStudio</h1>
+
 </section>
+<section id="github-in-rstudio-1" class="slide level2">
+<h2>Github in RStudio</h2>
+<ul>
+<li><p>Get SSH key</p>
+<p><img data-src="ssh_key.png"></p></li>
+</ul>
+</section>
+<section id="github-in-rstudio-2" class="slide level2">
+<h2>Github in RStudio</h2>
+
+<img data-src="github_key.png" class="r-stretch quarto-figure-center"></section>
 <section id="you-can-do-more" class="slide level2">
 <h2>You can do more!</h2>
 <ul>
@@ -831,10 +854,16 @@ Jason Geller, Ph.D.<br> Princeton University <br> Feburary 1, 2023
 <li><p>Publish them by rendering the website on your computer, and pushing your changes to Github.com</p></li>
 </ul>
 </section>
+<section id="presentations" class="slide level2">
+<h2>Presentations</h2>
+<ul>
+<li>https://quarto.org/docs/presentations/</li>
+</ul>
+</section>
 <section id="make-a-professional-website" class="slide level2">
 <h2>Make a Professional Website</h2>
 <ul>
-<li>More information here: https://quarto.org/docs/websites/</li>
+<li>https://quarto.org/docs/websites/</li>
 </ul>
 <div class="footer footer-default">
 

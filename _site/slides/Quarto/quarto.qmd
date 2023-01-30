@@ -85,11 +85,13 @@ Or maybe an ordered list!
 
 # Callout Blocks
 
+## Callout Blocks
+
 -   Call-out blocks highlight sections of text that interrupt the flow of your regular text. Maybe it's a definition, a warning, or a sidenote
 
 -   When rendering your document to HTML, callout blocks are interactive and can be collapsed and opened.
 
-    ::: callout-warning
+    ::: {.callout-warning collapse="true"}
     ## My First Callout Block!
 
     Say things here
@@ -131,12 +133,10 @@ Danger, callouts will really improve your writing.
 Here is something under construction
 :::
 
-# Callout Blocks
-
 ## Callout markdown syntax
 
 ::: {.callout-caution collapse="true"}
-\## Expand To Learn About Collapse
+# Expand To Learn About Collapse
 
 This is an example of a 'folded' caution callout that can be expanded by the user. You can use \`collapse="true"\` to collapse it by default or \`collapse="false"\` to make a collapsible callout that is expanded by default.
 :::
@@ -182,7 +182,7 @@ Split up and flip between sections of a page, alternative to just two columns
 ## Element 1
 
 ```{r}
-
+#| eval: FALSE
 #| fig.width: 8
 #| fig.heigh: 4
 
@@ -195,7 +195,7 @@ ggplot(airquality, aes(Temp, Ozone)) +
 
 ## Element 2
 
-## 
+# 
 :::
 
 # Building a Website with Quarto
@@ -289,7 +289,7 @@ You can see all of the files in your project by clicking on the files tab:
 
 5.  You should now be able to see your new repository in your github.com profile, which means you should be able to see a copy of your blog files in the repository.
 
-## QMD Changes
+## QMD Changes for Github Site
 
 -   To change the output directory from `_site` to `docs` open up `_quarto.yml`, and add the line `output-dir: docs` just like this:
 
@@ -304,21 +304,37 @@ You can see all of the files in your project by clicking on the files tab:
 
 -   Push your changes to github so that your repository, and activate the github pages option under your repository settings.
 
-    ## Config File
+## Config File
 
-    \- `_quarto.yml`
+-   `_quarto.yml`
 
     -   Metadata
 
-        project: output-dir: \_output
+        ```{project:}
+          output-dir: _output
 
-        toc: true number-sections: true bibliography: references.bib
+        toc: true
+        number-sections: true
+        bibliography: references.bib  
+          
+        format:
+          html:
+            css: styles.css
+            html-math-method: katex
+          pdf:
+            documentclass: report
+            margin-left: 30mm
+            margin-right: 30mm
 
-        format: html: css: styles.css html-math-method: katex pdf: documentclass: report margin-left: 30mm margin-right: 30mm
+        ```
 
 ## Side Bar
 
-website**:** sidebar**:** style**:** "docked" search**:** true
+```{website:}
+  sidebar:"doc"
+    search: true
+
+```
 
 ::: columns
 ::: {.column width="50%"}
@@ -332,11 +348,14 @@ website**:** sidebar**:** style**:** "docked" search**:** true
 
 ## Side Bar
 
-website**:** sidebar**:** style**:** "floating" search**:** true
+```{website:}
+  sidebar:"floating"
+    search: true
+```
 
 ::: columns
 ::: {.column width="50%"}
--   Floating
+floating
 :::
 
 ::: {.column width="50%"}
@@ -344,12 +363,28 @@ website**:** sidebar**:** style**:** "floating" search**:** true
 :::
 :::
 
+# Github in RStudio
+
+## Github in RStudio
+
+-   Get SSH key
+
+    ![](ssh_key.png)
+
+## Github in RStudio
+
+![](github_key.png){fig-align="center"}
+
 ## You can do more!
 
 -   Make new posts by copying an existing one.
 
 -   Publish them by rendering the website on your computer, and pushing your changes to Github.com
 
+## Presentations
+
+-   https://quarto.org/docs/presentations/
+
 ## Make a Professional Website
 
--   More information here: https://quarto.org/docs/websites/
+-   https://quarto.org/docs/websites/

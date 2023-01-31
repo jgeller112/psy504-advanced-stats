@@ -22,11 +22,11 @@ execute:
 
 ## Big Universe
 
--   R Markdown for EVERYONE
+- RMarkdown for EVERYONE
 
 ![](horst_quarto_schematic.png){fig-align="center"}
 
-## What is a Quatro?
+## What is a Quarto?
 
 ![](samplesheet.jpeg){fig-align="center"}
 

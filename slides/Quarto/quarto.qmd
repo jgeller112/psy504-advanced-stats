@@ -79,6 +79,30 @@ You may also want to use a bulleted list!
 
 -   To have something appear as code (using a monospace font), surround everything that is code with ticks \`like this\`, so that it shows up `like this`.
 
+## Code Blocks
+
+-   One of the most useful things about markdown documents like this is that you can intersperse your writing with code!
+
+For example, this R code:
+
+```{r}
+# reticulate library allows you to run both 
+# R and python in the same .qmd
+library(reticulate)
+#install_miniconda() # to install python
+
+```
+
+
+```{python}
+
+fruits = ['apple', 'banana', 'cherry']
+
+fruits[0]
+
+```
+
+
 # Callout Blocks
 
 ## Callout Blocks
@@ -132,29 +156,6 @@ Here is something under construction
 
 This is an example of a 'folded' caution callout that can be expanded by the user. You can use \`collapse="true"\` to collapse it by default or \`collapse="false"\` to make a collapsible callout that is expanded by default.
 :::
-
-## Code Blocks
-
--   One of the most useful things about markdown documents like this is that you can intersperse your writing with code!
-
-For example, this R code:
-
-```{r}
-# reticulate library allows you to run both 
-# R and python in the same .qmd
-library(reticulate)
-#install_miniconda() # to install python
-
-```
-
-
-```{python}
-
-fruits = ['apple', 'banana', 'cherry']
-
-fruits[0]
-
-```
 
 ## Code Chunks
 

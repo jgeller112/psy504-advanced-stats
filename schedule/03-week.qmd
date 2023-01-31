@@ -7,7 +7,7 @@ date: 2023-02-01
 
 ### Articles
 
-- {{< fa book >}} Baraldi, A. N., & Enders, C. K. (2010). [An introduction to modern missing data analyses](/readings/week1-missing_data/varaldi2010.pdf). Journal of School Psychology, 48(1), 5-37. doi:10.1016/j.jsp.2009.10.00]
+- {{< fa book >}} Baraldi, A. N., & Enders, C. K. (2010). [An introduction to modern missing data analyses](/readings/week1-missing_data/baraldi2010.pdf). Journal of School Psychology, 48(1), 5-37. doi:10.1016/j.jsp.2009.10.00]
 
 - What are some common methods for handling missing data in statistical analyses?
 

@@ -404,7 +404,10 @@ Jason Geller, Ph.D.<br> Princeton University <br> Feburary 1, 2023
 </section>
 <section>
 <section id="hello-quarto" class="title-slide slide level1 center">
-<h1>Hello Quarto</h1>
+<h1>Hello Quarto!</h1>
+<ul>
+<li>Quarto is the next generation of RMarkdown</li>
+</ul>
 <blockquote>
 <h3 id="quarto-is-an-open-source-scientific-and-technical-publishing-system-built-on-pandoc">Quarto<sup>®</sup> is an open-source scientific and technical publishing system built on <a href="https://pandoc.org/">Pandoc</a></h3>
 </blockquote>
@@ -412,8 +415,7 @@ Jason Geller, Ph.D.<br> Princeton University <br> Feburary 1, 2023
 <section id="big-universe" class="slide level2">
 <h2>Big Universe</h2>
 <ul>
-<li><p>Quarto is the next generation of RMarkdown</p></li>
-<li><p>FOR EVERYONE!</p></li>
+<li>R Markdown for EVERYONE</li>
 </ul>
 
 <img data-src="horst_quarto_schematic.png" class="r-stretch quarto-figure-center"></section>
@@ -457,7 +459,6 @@ Jason Geller, Ph.D.<br> Princeton University <br> Feburary 1, 2023
 <li>one</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<p>Or maybe an ordered list!</p>
 <ol type="1">
 <li><p>like</p></li>
 <li><p>this</p></li>
@@ -500,19 +501,6 @@ Jason Geller, Ph.D.<br> Princeton University <br> Feburary 1, 2023
 </section></section>
 <section id="callout-blocks-2" class="title-slide slide level1 center">
 <h1>Callout Blocks</h1>
-<div class="callout callout-note callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p>Note that there are five types of callouts, including: `note`, `tip`, `warning`, `caution`, and `important`.</p>
-</div>
-</div>
-</div>
 <div class="callout callout-note callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -609,16 +597,17 @@ Jason Geller, Ph.D.<br> Princeton University <br> Feburary 1, 2023
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># reticulate library allows you to run both</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="co"># R and python in the same .qmd</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co"># file. Normally you do not </span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># need this</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">library</span>(reticulate)</span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-7"><a href="#cb1-7"></a>y <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb1-8"><a href="#cb1-8"></a>x <span class="ot">&lt;-</span> y <span class="sc">+</span> <span class="dv">5</span></span>
-<span id="cb1-9"><a href="#cb1-9"></a></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="fu">print</span>(x,y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(reticulate)</span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co">#install_miniconda() # to install python</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a>fruits <span class="op">=</span> [<span class="st">'apple'</span>, <span class="st">'banana'</span>, <span class="st">'cherry'</span>]</span>
+<span id="cb2-4"><a href="#cb2-4"></a></span>
+<span id="cb2-5"><a href="#cb2-5"></a>fruits[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 15</code></pre>
+<pre><code>'apple'</code></pre>
 </div>
 </div>
 </section>
@@ -628,10 +617,10 @@ Jason Geller, Ph.D.<br> Princeton University <br> Feburary 1, 2023
 <li><code>{r, eval=TRUE}</code> has been replaced with <code>#| eval = TRUE</code></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">print</span>(<span class="st">"Don't Run Me"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">print</span>(<span class="st">"Don't Run Me"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">print</span>(<span class="st">"Don't Run Me"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">print</span>(<span class="st">"Don't Run Me"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Don't Run Me"</code></pre>
 </div>
@@ -645,10 +634,10 @@ Jason Geller, Ph.D.<br> Princeton University <br> Feburary 1, 2023
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="cell" data-fig.heigh="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(Temp, Ozone)) <span class="sc">+</span> </span>
-<span id="cb6-3"><a href="#cb6-3"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(Temp, Ozone)) <span class="sc">+</span> </span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb7-4"><a href="#cb7-4"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-1-2">
@@ -780,27 +769,27 @@ Jason Geller, Ph.D.<br> Princeton University <br> Feburary 1, 2023
 <li><p><code>_quarto.yml</code></p>
 <ul>
 <li><p>Metadata</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource {project:} number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href="#cb8-1"></a>  output-dir: _output</span>
-<span id="cb8-2"><a href="#cb8-2"></a></span>
-<span id="cb8-3"><a href="#cb8-3"></a>toc: true</span>
-<span id="cb8-4"><a href="#cb8-4"></a>number-sections: true</span>
-<span id="cb8-5"><a href="#cb8-5"></a>bibliography: references.bib  </span>
-<span id="cb8-6"><a href="#cb8-6"></a></span>
-<span id="cb8-7"><a href="#cb8-7"></a>format:</span>
-<span id="cb8-8"><a href="#cb8-8"></a>  html:</span>
-<span id="cb8-9"><a href="#cb8-9"></a>    css: styles.css</span>
-<span id="cb8-10"><a href="#cb8-10"></a>    html-math-method: katex</span>
-<span id="cb8-11"><a href="#cb8-11"></a>  pdf:</span>
-<span id="cb8-12"><a href="#cb8-12"></a>    documentclass: report</span>
-<span id="cb8-13"><a href="#cb8-13"></a>    margin-left: 30mm</span>
-<span id="cb8-14"><a href="#cb8-14"></a>    margin-right: 30mm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource {project:} number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href="#cb9-1"></a>  output-dir: _output</span>
+<span id="cb9-2"><a href="#cb9-2"></a></span>
+<span id="cb9-3"><a href="#cb9-3"></a>toc: true</span>
+<span id="cb9-4"><a href="#cb9-4"></a>number-sections: true</span>
+<span id="cb9-5"><a href="#cb9-5"></a>bibliography: references.bib  </span>
+<span id="cb9-6"><a href="#cb9-6"></a></span>
+<span id="cb9-7"><a href="#cb9-7"></a>format:</span>
+<span id="cb9-8"><a href="#cb9-8"></a>  html:</span>
+<span id="cb9-9"><a href="#cb9-9"></a>    css: styles.css</span>
+<span id="cb9-10"><a href="#cb9-10"></a>    html-math-method: katex</span>
+<span id="cb9-11"><a href="#cb9-11"></a>  pdf:</span>
+<span id="cb9-12"><a href="#cb9-12"></a>    documentclass: report</span>
+<span id="cb9-13"><a href="#cb9-13"></a>    margin-left: 30mm</span>
+<span id="cb9-14"><a href="#cb9-14"></a>    margin-right: 30mm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul></li>
 </ul>
 </section>
 <section id="side-bar" class="slide level2">
 <h2>Side Bar</h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource {website:} number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href="#cb9-1"></a>  sidebar:"doc"</span>
-<span id="cb9-2"><a href="#cb9-2"></a>    search: true</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource {website:} number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a href="#cb10-1"></a>  sidebar:"doc"</span>
+<span id="cb10-2"><a href="#cb10-2"></a>    search: true</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
@@ -817,8 +806,8 @@ Jason Geller, Ph.D.<br> Princeton University <br> Feburary 1, 2023
 </section>
 <section id="side-bar-1" class="slide level2">
 <h2>Side Bar</h2>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource {website:} number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a href="#cb10-1"></a>  sidebar:"floating"</span>
-<span id="cb10-2"><a href="#cb10-2"></a>    search: true</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource {website:} number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a href="#cb11-1"></a>  sidebar:"floating"</span>
+<span id="cb11-2"><a href="#cb11-2"></a>    search: true</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>floating</p>

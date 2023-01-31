@@ -14,15 +14,15 @@ execute:
   echo: true
 ---
 
-# Hello Quarto
+# Hello Quarto!
+
+-   Quarto is the next generation of RMarkdown
 
 > ### Quarto^®^ is an open-source scientific and technical publishing system built on [Pandoc](https://pandoc.org/)
 
 ## Big Universe
 
--   Quarto is the next generation of RMarkdown
-
--   FOR EVERYONE!
+-   R Markdown for EVERYONE
 
 ![](horst_quarto_schematic.png){fig-align="center"}
 
@@ -65,8 +65,6 @@ You may also want to use a bulleted list!
 :::
 
 ::: {.column width="50%"}
-Or maybe an ordered list!
-
 1.  like
 
 2.  this
@@ -96,10 +94,6 @@ Or maybe an ordered list!
     :::
 
 # Callout Blocks
-
-::: callout-note
-Note that there are five types of callouts, including: \`note\`, \`tip\`, \`warning\`, \`caution\`, and \`important\`.
-:::
 
 ::: callout-note
 ## Note
@@ -146,16 +140,20 @@ This is an example of a 'folded' caution callout that can be expanded by the use
 For example, this R code:
 
 ```{r}
-# reticulate library allows you to run both
+# reticulate library allows you to run both 
 # R and python in the same .qmd
-# file. Normally you do not 
-# need this
 library(reticulate)
-library(ggplot2)
-y <- 10
-x <- y + 5
+#install_miniconda() # to install python
 
-print(x,y)
+```
+
+
+```{python}
+
+fruits = ['apple', 'banana', 'cherry']
+
+fruits[0]
+
 ```
 
 ## Code Chunks
@@ -291,9 +289,8 @@ You can see all of the files in your project by clicking on the files tab:
 
 -   To change the output directory from `_site` to `docs` open up `_quarto.yml`, and add the line `output-dir: docs` just like this:
 
-```{=html}
 <!-- -->
-```
+
     project:
       type: website
       output-dir: docs
@@ -308,13 +305,13 @@ You can see all of the files in your project by clicking on the files tab:
 
     -   Metadata
 
-        ```{project:}
+        ``` {project:}
           output-dir: _output
 
         toc: true
         number-sections: true
         bibliography: references.bib  
-          
+
         format:
           html:
             css: styles.css
@@ -323,15 +320,13 @@ You can see all of the files in your project by clicking on the files tab:
             documentclass: report
             margin-left: 30mm
             margin-right: 30mm
-
         ```
 
 ## Side Bar
 
-```{website:}
+``` {website:}
   sidebar:"doc"
     search: true
-
 ```
 
 ::: columns
@@ -346,7 +341,7 @@ You can see all of the files in your project by clicking on the files tab:
 
 ## Side Bar
 
-```{website:}
+``` {website:}
   sidebar:"floating"
     search: true
 ```

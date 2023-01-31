@@ -8,12 +8,12 @@ date: 2023-02-20
 
 ### Articles
 
-**The R package brms (which is a Bayesian data analysis package) is used for some of the papers below. While it is a Bayesian technique, the output is simialr to In class, I will show you how to use R to perform this analysis.
+**The R package brms (which is a Bayesian data analysis package) is used in the papers below. While it is a Bayesian technique, the output is similar to a regression output.** 
 
-- {{< fa book >}}
-Bürkner P-C, Vuorre M. [Ordinal Regression Models in Psychology: A Tutorial](https://journals.sagepub.com/doi/epub/10.1177/2515245918823199). Advances in Methods and Practices in Psychological Science. 2019;2(1):77-101. doi:10.1177/2515245918823199
 
-Veríssimo, J. (2021). [Analysis of rating scales: A pervasive problem in bilingualism research and a solution with Bayesian ordinal models](https://files.osf.io/v1/resources/4m2ap/providers/osfstorage/6013ef9a75226b05015161a6?action=download&direct&version=2). Bilingualism: Language and Cognition, 24(5), 842-848. doi:10.1017/S1366728921000316
+- {{< fa book >}} Bürkner P-C, Vuorre M. [Ordinal Regression Models in Psychology: A Tutorial](https://journals.sagepub.com/doi/epub/10.1177/2515245918823199). Advances in Methods and Practices in Psychological Science. 2019;2(1):77-101. doi:10.1177/2515245918823199
+
+- {{< fa book >}} Veríssimo, J. (2021). [Analysis of rating scales: A pervasive problem in bilingualism research and a solution with Bayesian ordinal models](https://files.osf.io/v1/resources/4m2ap/providers/osfstorage/6013ef9a75226b05015161a6?action=download&direct&version=2). Bilingualism: Language and Cognition, 24(5), 842-848. doi:10.1017/S1366728921000316
 
   - Describe what is meant by an ordinal variable 
   

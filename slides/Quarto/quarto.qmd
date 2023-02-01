@@ -22,7 +22,7 @@ execute:
 
 ## Big Universe
 
-- RMarkdown for EVERYONE
+-   RMarkdown for EVERYONE
 
 ![](horst_quarto_schematic.png){fig-align="center"}
 
@@ -93,7 +93,6 @@ library(reticulate)
 
 ```
 
-
 ```{python}
 
 fruits = ['apple', 'banana', 'cherry']
@@ -101,7 +100,6 @@ fruits = ['apple', 'banana', 'cherry']
 fruits[0]
 
 ```
-
 
 # Callout Blocks
 
@@ -151,7 +149,7 @@ Here is something under construction
 
 ## Callout markdown syntax
 
-::: {.callout-caution collapse="true"}
+::: {.callout-caution collapse="false"}
 # Expand To Learn About Collapse
 
 This is an example of a 'folded' caution callout that can be expanded by the user. You can use \`collapse="true"\` to collapse it by default or \`collapse="false"\` to make a collapsible callout that is expanded by default.

@@ -584,10 +584,6 @@ a <- sum(uu*uu*uu) / (6 * sum(uu*uu))^1.5
 
 ```
 ---
-# Jacknifing
-
-
----
 # BCa In R
 
 $$\begin{align*}
@@ -652,9 +648,9 @@ class: middle
 
 1. Find statistic of interest
   
-$$H_0$$ = Drug has no effect
+$H_0$ = Drug has no effect
 
-$$H_1$$ = Drug has an effect
+$H_1$ = Drug has an effect
 
 ---
 # Permutation Tests
@@ -772,7 +768,7 @@ results
 ---
 # Plot Histogram
 
-```{r, echo=FALSE, fig.align='center', out.width="100%"}
+```{r, echo=FALSE, fig.align='center', out.width="80%"}
 #plot bootstraps with histogram
 hist(means)
 ```
@@ -919,7 +915,7 @@ p
 
 ]
 ---
-## Illustrate 2 groups
+## Mean Differences
 
 ```{r}
 # bootstrap data use function from simpleboot
@@ -937,7 +933,7 @@ boot.ci(boot.res, type = "perc") # get percentile bootstrap CI
 
 - Research Question: 
 
-  - Are smaller chillies hotter than longer chillies?
+  - Are smaller pepper hotter than longer peppers?
   
   - Pepper Joe measured the length and heat of 85 chillies peppers
   
@@ -995,16 +991,134 @@ class: middle
 ```{r}
 g_control <- c(87,90,82,77,71,81,77,79,84,86,78,84,86,69,81,75,70,76,75,93) 
 g_drug <- c(74,67,81,61,64,75,81,81,81,67,72,78,83,85,56,78,77,80,79,74) # our statistic of interest here is the difference between means
-stat_obs <- mean(g_control) - mean(g_drug)
 
-stat_obs
+df <- cbind(g_control,g_drug) %>%
+  as.data.frame() %>%
+  pivot_longer(g_control:g_drug, names_to = "Group", values_to = "Value")
 
-  
+# get mean diff 
+mean_diff <- df %>% 
+  group_by(Group) %>%
+  summarise(mean_group = mean(Value)) %>%
+  summarise(mean_diff=diff(mean_group))
+
 ```
 ---
-# Permutations 
+# One Perm
 
 ```{r}
+one.perm <- df   %>%
+  mutate(perm_treatment = sample(Group, size = n(), replace = FALSE)) 
+
+one.perm
+
+```
+---
+# Permutation: Calculate Test Statistic on Permuted Data
+
+
+```{r}
+
+perm.diff <- one.perm %>%
+  group_by(perm_treatment) %>%
+  summarise(mean = mean(Value))%>%
+  summarise(diff_group = diff(mean))
+
+
+```
+
+---
+# Now Many Times
+
+```{r}
+library(infer)
+
+sample_size <- nrow(df)
+perm_reps   <- 10000
+
+many.perm <- df    %>%
+  rep_sample_n(size = sample_size, replace = FALSE, reps = perm_reps) %>%
+  mutate(perm_treatment = sample(Group, size = n(), replace = FALSE))  %>%
+  group_by(replicate, perm_treatment)
+
+many.perm
+
+
+```
+
+
+---
+```{r}
+
+many.perm.means <- many.perm %>%
+  summarise(mean_group = mean(Value), .groups = "drop")%>%
+  group_by(replicate)
+
+many.perm.means
+
+
+
+```
+
+---
+# CALCULATE THE TEST STATISTIC (DIFFERENCE IN PERMUTED GROUP MEANS) 
+
+.pull-left[
+```{r}
+many.perm.diffs <- many.perm.means %>%
+  summarise(diff_value = diff(mean_group))
+```
+]
+
+.pull-right[
+
+```{r, fig.align='center'}
+ggplot(many.perm.diffs, aes(x = diff_value)) +
+  geom_histogram(bins = 32, color = "white")+
+  labs(title = "Permuted sampling distribution")
+```
+
+]
+---
+# P-value
+
+.pull-left[
+
+```{r, echo=TRUE}
+
+many.perm.diffs_1 <- many.perm.diffs %>% 
+  mutate(abs_obs_dif = abs(pull(mean_diff)), # diff from our sample
+         abs_perm_dif = abs(diff_value), # permutations diffs
+         as_or_more_extreme = abs_perm_dif >= abs_obs_dif) # count how many
+
+```
+
+```{r}
+# get pvalue
+mean(many.perm.diffs_1$as_or_more_extreme)
+
+```
+
+]
+
+.pull-right[
+```{r, echo=FALSE, fig.align='center', out.width="100%"}
+# Plot the permuted distribution
+ggplot(many.perm.diffs_1, aes(x = diff_value, fill = as_or_more_extreme )) +
+  geom_histogram()    +  
+  scale_fill_manual(values = c("grey","black")) +
+  theme_light()               +
+  theme(legend.position = "bottom")             + 
+  labs(title = "Permuted distribution") 
+
+```
+]
+---
+# Permutations Base R
+
+```{r}
+
+stat_obs <- mean(g_control)-mean(g_drug)
 n_perm = 10000 # how many simulated experiments?
 stat_perm = array(NA, n_perm) # create a list to store our permutation test values 
 g_control_n = length(g_control) # length of g_control var
@@ -1024,8 +1138,6 @@ stat_perm[i] <- mean(perm_control) - mean(perm_drug)
 
 ---
 # Histogram 
-
-.pull-left[
 ```{r, echo=TRUE, fig.align='center', out.width="100%"}
 
 # visualize the empirical permutation distribution of our statistic of interest
@@ -1042,26 +1154,7 @@ p_perm1 <- length(which(stat_perm <= -1*abs(stat_obs))) / n_perm
 p_perm2 <- p_perm0 + p_perm1
 
 ```
-]
 
-.pull-right[
-```{r, echo=FALSE, fig.align='center', out.width="100%"}
-
-# visualize the empirical permutation distribution of our statistic of interest
-
-x=hist(stat_perm, 50, xlab="mean(control) - mean(drug)", main="Permutation Test")
-abline(v=stat_obs, col="red", lwd=2)
-abline(v=-stat_obs, col="red", lwd=2)
-# how many times in the permutation tests did we observe a stat_perm bigger than or smaller than the stat_obs?
-p_perm0 <- length(which(stat_perm >= abs(stat_obs))) / n_perm
-
-p_perm1 <- length(which(stat_perm <= -1*abs(stat_obs))) / n_perm
-
-p_perm2 <- p_perm0 + p_perm1
-
-x
-```
-]
 
 ---
 # `Permuco` R Package
@@ -1069,15 +1162,10 @@ x
 - No need to calculate by hand!
 
 ```{r}
-
 library(permuco)
-
 #lmperm() # linear models
 #aovperm() # anova models
 #perm.lmer() # lmms
-
-g_control <- c(87,90,82,77,71,81,77,79,84,86,78,84,86,69,81,75,70,76,75,93) 
-g_drug <- c(74,67,81,61,64,75,81,81,81,67,72,78,83,85,56,78,77,80,79,74) # our statistic of interest here is the difference between means
 
 d <- data.frame(control=g_control, drug=g_drug) %>%
   pivot_longer(control:drug, names_to = "group")

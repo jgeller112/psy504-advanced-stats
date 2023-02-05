@@ -12,14 +12,11 @@ execute:
 
 -   If you are fitting a model, display the model output in a neatly formatted table. (The `tidy` and `kable` functions can help!)
 
-```{=html}
-<!-- -->
-```
 -   If you are creating a plot, use clear labels for all axes, titles, etc.
 
 -   Commit and push your work to GitHub regularly, at least after each exercise. Write short and informative commit messages.
 
--   When you\'re done, we should be able to knit the final version of the QMD in your GitHub
+-   When you're done, we should be able to knit the final version of the QMD in your GitHub as a HTML.
 
     ```{r}
     #| message: false
@@ -35,28 +32,27 @@ execute:
 
 ## Robust Correlations
 
-1.  Load dataset:
+Use the `stars` data in `robustbase`. The first variable is the logarithm of the effective temperature at the surface of the star (Te) and the second one is the logarithm of its light intencity (L/L_0L/L0​).
+
+1.  
 
     ```{r}
     stars<-robustbase::starsCYG
-
     ```
 
-a\. Plot the data and describe the pattern seen. What is Pearson's r?
+    a\. Plot the data and describe the pattern seen. What is Pearson's *r*?
 
-b\. Re-run the correlation, but this time use the winsorized r (20%). Do this manually and with the correlation::correlation function.
+    b\. Re-run the correlation, but this time use the winsorized r (20%). Do this manually and then with the correlation::correlation function from `easystats`.
 
-c\. Re-run with the percentage-bend correlation.
-
-d\. Compare the correlations.
+    d\. Compare the correlations.
 
 ## Bootstrapping and Permutations
 
-2.  For the following data: \[8.453532, 10.025041, 11.495339, 9.367600, 8.333229, 9.788753, 10.883344, 10.543059, 9.869095, 10.799819\]:
+2.  For the following data: \[8.453532, 10.025041, 11.495339, 9.367600, 8.333229, 9.788753, 10.883344, 10.543059, 9.869095, 10.799819\]
 
-    a\. Bootstrap the mean and plot the histogram.
+    a\. Bootstrap the mean (using the `boot` package) and plot the histogram with `ggplot2`
 
-    b\. Bootstrap the median and plot the histogram.
+    b\. Bootstrap the median (using the `boot` package) and plot the histogram with `ggplot2`
 
     c\. For the mean bootstraps, find its mean and 95% Confidence Intervals (Percentile and BCa)
 
@@ -72,11 +68,13 @@ d\. Compare the correlations.
 
     c\. Subtract a) from b).
 
-    d\. Bootstrap c) with replacement (pdiff1) and plot the histogram (should be centered about zero).
+    d\. Bootstrap c) with replacement (pdiff1) and plot the histogram with `ggplot2`.
 
     e\. Calculate the 95% Confidence Intervals (BCa). What can you infer from this?
 
-    f\. Plot bootstrap mean along with 95% CIs
+    f\. Plot bootstrap mean along with 95% CIs (with `ggplot2`)
+
+    e\. Write up these results.
 
 4.  Using the state.x77 data.
 
@@ -88,7 +86,7 @@ d\. Compare the correlations.
 
     d\. What, if any, differences are there?
 
-5.  Load this data frame:
+5.  Run:
 
 ```{r}
 dat <- tibble(group = rep(c("A", "B"), each = 50),
@@ -98,13 +96,13 @@ dat <- tibble(group = rep(c("A", "B"), each = 50),
 
 ```
 
-a\. Let\'s give every participant a participant number by adding a new column to `dat`.
+a\. Let's give every participant a participant number by adding a new column to `dat`.
 
 b\. Calculate the original mean difference between the groups
 
 c\. Permute the group labels
 
-d\. Create the Null-Hypothesis Distribution (NHD) for the Difference (1000x)
+d\. Create the Null-Hypothesis Distribution (NHD) for the Difference (10000x)
 
 e\. Compare the Observed Mean Difference to the NHD (is *p* \< .05?)
 
@@ -128,8 +126,6 @@ e\. Compare the Observed Mean Difference to the NHD (is *p* \< .05?)
 7.  Suppose we have the following data frame in R that contains information on the hours studied and exam score received by 20 students in some class:
 
 ```{r}
-
-#create data frame
 df <- data.frame(hours=c(1, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4,
                          4, 5, 5, 5, 6, 6, 7, 7, 8),
                  score=c(67, 68, 74, 70, 71, 75, 80, 70, 84, 72,
@@ -141,7 +137,7 @@ a\. Use the [lm()](https://www.statology.org/lm-function-in-r/) function to fit 
 
 b\. Interpret the results
 
-c\. Check heteroskadascity assumption (include the plot).
+c\. Check heteroskedasticity assumption (include the plot).
 
 d\. Rerun the lm you saved above, but with robust standard errors now
 

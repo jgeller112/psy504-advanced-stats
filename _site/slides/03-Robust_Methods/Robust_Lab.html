@@ -128,13 +128,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="instructions" class="level2">
 <h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
 <ul>
-<li>If you are fitting a model, display the model output in a neatly formatted table. (The <code>tidy</code> and <code>kable</code> functions can help!)</li>
-</ul>
-<!-- -->
-<ul>
+<li><p>If you are fitting a model, display the model output in a neatly formatted table. (The <code>tidy</code> and <code>kable</code> functions can help!)</p></li>
 <li><p>If you are creating a plot, use clear labels for all axes, titles, etc.</p></li>
 <li><p>Commit and push your work to GitHub regularly, at least after each exercise. Write short and informative commit messages.</p></li>
-<li><p>When you're done, we should be able to knit the final version of the QMD in your GitHub</p>
+<li><p>When you’re done, we should be able to knit the final version of the QMD in your GitHub</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(robustbase) <span class="co"># star data</span></span>
@@ -147,23 +144,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="robust-correlations" class="level2">
 <h2 class="anchored" data-anchor-id="robust-correlations">Robust Correlations</h2>
+<p>Use the <code>stars</code> data in <code>robustbase</code>. The first variable is the logarithm of the effective temperature at the surface of the star (Te) and the second one is the logarithm of its light intencity (L/L_0L/L0​).</p>
 <ol type="1">
-<li><p>Load dataset:</p>
-<div class="cell">
+<li><div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>stars<span class="ot">&lt;-</span>robustbase<span class="sc">::</span>starsCYG</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></li>
+</div>
+<p>a. Plot the data and describe the pattern seen. What is Pearson’s <em>r</em>?</p>
+<p>b. Re-run the correlation, but this time use the winsorized r (20%). Do this manually and then with the correlation::correlation function from <code>easystats</code>.</p>
+<p>d. Compare the correlations</p></li>
 </ol>
-<p>a. Plot the data and describe the pattern seen. What is Pearson’s r?</p>
-<p>b. Re-run the correlation, but this time use the winsorized r (20%). Do this manually and with the correlation::correlation function.</p>
-<p>c. Re-run with the percentage-bend correlation.</p>
-<p>d. Compare the correlations.</p>
 </section>
 <section id="bootstrapping-and-permutations" class="level2">
 <h2 class="anchored" data-anchor-id="bootstrapping-and-permutations">Bootstrapping and Permutations</h2>
 <ol start="2" type="1">
-<li><p>For the following data: [8.453532, 10.025041, 11.495339, 9.367600, 8.333229, 9.788753, 10.883344, 10.543059, 9.869095, 10.799819]:</p>
-<p>a. Bootstrap the mean and plot the histogram.</p>
-<p>b. Bootstrap the median and plot the histogram.</p>
+<li><p>For the following data: [8.453532, 10.025041, 11.495339, 9.367600, 8.333229, 9.788753, 10.883344, 10.543059, 9.869095, 10.799819]</p>
+<p>a. Bootstrap the mean (using the <code>boot</code> package) and plot the histogram with <code>ggplot2</code></p>
+<p>b. Bootstrap the median (using the <code>boot</code> package) and plot the histogram with <code>ggplot2</code></p>
 <p>c. For the mean bootstraps, find its mean and 95% Confidence Intervals (Percentile and BCa)</p>
 <p>d. For the median bootstraps, find its mean and 95% Confidence Intervals (Percentile and BCa)</p>
 <p>e. Plot bootstrap mean and median along with 95% CIs</p></li>
@@ -173,9 +169,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <p>b. Calculate the mean of the paired differences (Xpdiff0)</p>
 <p>c. Subtract a) from b).</p>
-<p>d. Bootstrap c) with replacement (pdiff1) and plot the histogram (should be centered about zero).</p>
+<p>d. Bootstrap c) with replacement (pdiff1) and plot the histogram with <code>ggplot2</code>.</p>
 <p>e. Calculate the 95% Confidence Intervals (BCa). What can you infer from this?</p>
-<p>f. Plot bootstrap mean along with 95% CIs</p></li>
+<p>f. Plot bootstrap mean along with 95% CIs (with <code>ggplot2</code>)</p></li>
 <li><p>Using the state.x77 data.</p>
 <p>a. Fit a linear model: lm(Murder~Population + Illiteracy + Income + Frost)</p>
 <p>b. Interpret the findings and check if assumptions have been met. Comment on what assumptions were violated</p>
@@ -188,7 +184,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">Y =</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">15</span>),</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="dv">110</span>, <span class="dv">15</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>a. Let's give every participant a participant number by adding a new column to <code>dat</code>.</p>
+<p>a. Let’s give every participant a participant number by adding a new column to <code>dat</code>.</p>
 <p>b. Calculate the original mean difference between the groups</p>
 <p>c. Permute the group labels</p>
 <p>d. Create the Null-Hypothesis Distribution (NHD) for the Difference (1000x)</p>
@@ -220,15 +216,14 @@ dbl (2): pnum, errors
 <li>Suppose we have the following data frame in R that contains information on the hours studied and exam score received by 20 students in some class:</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#create data frame</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">hours=</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">4</span>,</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                         <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">7</span>, <span class="dv">8</span>),</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">score=</span><span class="fu">c</span>(<span class="dv">67</span>, <span class="dv">68</span>, <span class="dv">74</span>, <span class="dv">70</span>, <span class="dv">71</span>, <span class="dv">75</span>, <span class="dv">80</span>, <span class="dv">70</span>, <span class="dv">84</span>, <span class="dv">72</span>,</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>                         <span class="dv">88</span>, <span class="dv">75</span>, <span class="dv">95</span>, <span class="dv">75</span>, <span class="dv">99</span>, <span class="dv">78</span>, <span class="dv">99</span>, <span class="dv">65</span>, <span class="dv">96</span>, <span class="dv">70</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">hours=</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">4</span>,</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                         <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">7</span>, <span class="dv">8</span>),</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">score=</span><span class="fu">c</span>(<span class="dv">67</span>, <span class="dv">68</span>, <span class="dv">74</span>, <span class="dv">70</span>, <span class="dv">71</span>, <span class="dv">75</span>, <span class="dv">80</span>, <span class="dv">70</span>, <span class="dv">84</span>, <span class="dv">72</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>                         <span class="dv">88</span>, <span class="dv">75</span>, <span class="dv">95</span>, <span class="dv">75</span>, <span class="dv">99</span>, <span class="dv">78</span>, <span class="dv">99</span>, <span class="dv">65</span>, <span class="dv">96</span>, <span class="dv">70</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>a. Use the <a href="https://www.statology.org/lm-function-in-r/">lm()</a> function to fit a regression model in R that uses <strong>hours</strong> as the predictor variable and <strong>score</strong> as the response variable</p>
 <p>b. Interpret the results</p>
-<p>c. Check heteroskadascity assumption (include the plot).</p>
+<p>c. Check heteroskedasticity assumption (include the plot).</p>
 <p>d. Rerun the lm you saved above, but with robust standard errors now</p>
 <p>e. What differences do you notice between the regular regression and the regression with robust SEs applied?</p>
 </section>

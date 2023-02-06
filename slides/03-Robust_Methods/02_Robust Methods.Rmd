@@ -655,6 +655,7 @@ $H_1$ = Drug has an effect
 ---
 # Permutation Tests
 
+
 - Simulate the null
 
     - Randomly reconstitute the two groups, disregarding their original group membership (**EXCHANGABILITY**)
@@ -679,7 +680,7 @@ knitr::include_url("https://www.jwilber.me/permutationtest/")
 
 - Pros: 
 
-  - Makes very limited assumptions about distribution
+  - Makes very limited assumptions
 
 - Cons: 
 

@@ -610,7 +610,7 @@ class: middle
   
   - Does not rely on classical probability distributions
 
-1. Find statistic of interest
+- Find statistic of interest
   
 `\(H_0\)` = Drug has no effect
 
@@ -619,15 +619,16 @@ class: middle
 ---
 # Permutation Tests
 
-2. Simulate the null
+- Simulate the null
 
-    - Exchangeability (randomly sampling)
+    - Randomly reconstitute the two groups, disregarding their original group membership (**EXCHANGABILITY**)
     
-      - Shuffle conditions 
+      - Random without replacement
   
-3. Do it many times (10,000)
+- Do it many times (10,000)
 
     - How many times did you get a test statistic as large or larger? 
+      - *p*-value
     
 ---
 # Demonstration
@@ -984,18 +985,6 @@ class: middle
 
 # Permutation Tests
 
----
-# Hypothesis Testing - Two Sample
-
-- Simulate the null hypothesis (that drug and control labels are random)
-
-  - Throw both groups into a bucket
-  
-  - Randomly reconstitute the two groups, disregarding their original group membership (**EXCHANGABILITY**)  
-  
-  - *(Resample without replacement)*
-  
-  - Recompute the statistic of interest
 ---
 # Hypothesis Testing - Two Sample
 

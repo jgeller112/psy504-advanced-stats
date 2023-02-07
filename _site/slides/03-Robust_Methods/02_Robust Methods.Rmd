@@ -1126,7 +1126,7 @@ ggplot(many.perm.diffs_1, aes(x = diff_value, fill = as_or_more_extreme )) +
 ---
 # Step 2 
 
-```{r, fig.align='center', out.width="80%"}
+```{r, fig.align='center', out.width="50%"}
 null_distn %>%
   visualize() +shade_p_value(obs_stat = df_diff, direction = "two-sided")
 ```
@@ -1166,7 +1166,7 @@ stat_perm[i] <- mean(perm_control) - mean(perm_drug)
 
 ---
 # Histogram 
-```{r, echo=TRUE, fig.align='center', out.width="100%"}
+```{r, echo=TRUE, fig.align='center', out.width="50%"}
 
 # visualize the empirical permutation distribution of our statistic of interest
 

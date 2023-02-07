@@ -498,7 +498,7 @@ class: middle
 &lt;img src="images/bootstrap.jpg" width="100%" style="display: block; margin: auto;" /&gt;
 ]
 ---
-# Bias Corrected and Accelerated (Bca) bootstrap confidence intervals  
+# Bias Corrected and Accelerated (Bca) Bootstrap Confidence Intervals  
 
 - Percentile method good when using robust estimates, but... 
 
@@ -511,7 +511,7 @@ class: middle
   - **If original sample is skewed the bootstrap will be as well**
 
 ---
-# Bias Corrected and Accelerated (Bca) bootstrap confidence intervals
+# Bias Corrected and Accelerated (Bca) Bootstrap Confidence Intervals
 
 - Bias-correction
 
@@ -579,7 +579,7 @@ class: middle
 ---
 # Bootstrapping Pros
 
-1. You can use it to determine the probability of observing values of variables that come from any distribution
+- You can use it to determine the probability of observing values of variables that come from any distribution
 
   - Including times when you have no clue which distribution describes your variable and you don’t even want to guess
 
@@ -587,11 +587,11 @@ class: middle
 
 ---
 
-2. The lack of assumptions about a variable’s distribution makes the bootstrapped probability estimates more accurate
+- The lack of assumptions about a variable’s distribution makes the bootstrapped probability estimates more accurate
 
   - Far better than trying to pigeon-hole data into a distribution that doesn’t describe them
 
-3. Minimizes the influence of outliers without trivializing the inferential value of them (when using robust estimators like bca)
+- Minimizes the influence of outliers without trivializing the inferential value of them (when using robust estimators like bca)
 
 ---
 # Bootstrapping Cons
@@ -651,7 +651,7 @@ knitr::include_url("https://www.jwilber.me/permutationtest/")
 
   1. Permutation tests are inefficient compared to asymptotic tests. When you have only a few observations, it might be impossible to control alpha at the level you want and still do a permutation test
 
-  2. You have to assume that both samples have the exact same distribution (same shape, center, and spread) not just the same value for one parameter 
+  2. You have to assume that both samples have the exact same distribution not just the same value for one parameter 
 
   3. A permutation test assumes that the only difference between the two groups is the random assignment
 
@@ -1002,13 +1002,15 @@ df &lt;- cbind(g_control,g_drug) %&gt;%
 mean_diff &lt;- df %&gt;% 
   group_by(Group) %&gt;%
   summarise(mean_group = mean(Value)) %&gt;%
-  summarise(mean_diff=diff(mean_group))
+  summarise(mean_diff=diff(mean_group)) # this will give you one value the mean diff value
 ```
 ---
-# One Perm
+# One Permutation Example
 
 
 ```r
+# Example of doing one permutation
+# use sample function
 one.perm &lt;- df   %&gt;%
   mutate(perm_treatment = sample(Group, size = n(), replace = FALSE)) 
 
@@ -1101,29 +1103,18 @@ one.perm
 </table>
 
 ---
-# Permutation: Calculate Test Statistic on Permuted Data
-
-
-
-```r
-perm.diff &lt;- one.perm %&gt;%
-  group_by(perm_treatment) %&gt;%
-  summarise(mean = mean(Value))%&gt;%
-  summarise(diff_group = diff(mean))
-```
-
----
-# Now Many Times
+# Now Do This Many Times
 
 
 ```r
 library(infer)
 
-sample_size &lt;- nrow(df)
-perm_reps   &lt;- 10000
+sample_size &lt;- nrow(df) # length of dataset
+perm_reps   &lt;- 10000 # number of permutations you want to do
 
 many.perm &lt;- df    %&gt;%
-  rep_sample_n(size = sample_size, replace = FALSE, reps = perm_reps) %&gt;%
+  # this function is in the infer package. What it is doing is creating 
+  rep_sample_n(size = sample_size, replace = FALSE, reps = perm_reps) %&gt;% 
   mutate(perm_treatment = sample(Group, size = n(), replace = FALSE))  %&gt;%
   group_by(replicate, perm_treatment)
 
@@ -1180,7 +1171,7 @@ many.perm.means
 ```
 
 ---
-# CALCULATE THE TEST STATISTIC (DIFFERENCE IN PERMUTED GROUP MEANS) 
+# Calcuate Test Statistic
 
 .pull-left[
 
@@ -1199,11 +1190,11 @@ ggplot(many.perm.diffs, aes(x = diff_value)) +
   labs(title = "Permuted sampling distribution")
 ```
 
-&lt;img src="02_Robust-Methods_files/figure-html/unnamed-chunk-51-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="02_Robust-Methods_files/figure-html/unnamed-chunk-50-1.png" width="100%" style="display: block; margin: auto;" /&gt;
 
 ]
 ---
-# P-value
+# *p*-value
 
 .pull-left[
 
@@ -1211,8 +1202,8 @@ ggplot(many.perm.diffs, aes(x = diff_value)) +
 ```r
 many.perm.diffs_1 &lt;- many.perm.diffs %&gt;% 
   mutate(abs_obs_dif = abs(pull(mean_diff)), # diff from our sample
-         abs_perm_dif = abs(diff_value), # permutations diffs
-         as_or_more_extreme = abs_perm_dif &gt;= abs_obs_dif) # count how many
+         abs_perm_dif = abs(diff_value), #diffs from  permutations
+         as_or_more_extreme = abs_perm_dif &gt;= abs_obs_dif) # count how many are as or more extreme
 ```
 
 
@@ -1228,8 +1219,60 @@ mean(many.perm.diffs_1$as_or_more_extreme)
 ]
 
 .pull-right[
-&lt;img src="02_Robust-Methods_files/figure-html/unnamed-chunk-54-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="02_Robust-Methods_files/figure-html/unnamed-chunk-53-1.png" width="100%" style="display: block; margin: auto;" /&gt;
 ]
+---
+# Let's do this using less code :)
+
+- `infer` package (https://infer.netlify.app/)
+
+- Step 1
+
+
+```r
+# use df above
+# take df above specify what you want 
+ df_diff  &lt;- df          %&gt;% 
+  specify(Value ~ Group) %&gt;%
+  calculate(stat = "diff in means")
+```
+
+---
+# Step 2 
+
+- Create the null hypothesis
+
+
+```r
+ null_distn  &lt;- df   %&gt;% 
+  specify(Value ~ Group) %&gt;%
+   hypothesize(null = "independence") %&gt;%
+   generate(reps = 10000, type = "permute") %&gt;%
+   calculate(stat = "diff in means")
+```
+
+---
+# Step 2 
+
+
+```r
+null_distn %&gt;%
+  visualize() +shade_p_value(obs_stat = df_diff, direction = "two-sided")
+```
+
+&lt;img src="02_Robust-Methods_files/figure-html/unnamed-chunk-56-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+---
+# Step 3
+
+- Calculate p value
+
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-57">
+<col><tr>
+<th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">p_value</th></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0.0284</td></tr>
+</table>
+
 ---
 # Permutations Base R
 
@@ -1264,7 +1307,7 @@ abline(v=stat_obs, col="red", lwd=2)
 abline(v=-stat_obs, col="red", lwd=2)
 ```
 
-&lt;img src="02_Robust-Methods_files/figure-html/unnamed-chunk-56-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="02_Robust-Methods_files/figure-html/unnamed-chunk-59-1.png" width="100%" style="display: block; margin: auto;" /&gt;
 
 ```r
 # how many times in the permutation tests did we observe a stat_perm bigger than or smaller than the stat_obs?
@@ -1300,10 +1343,10 @@ permuco::lmperm(value~group,data=d,np=10000)
 ## Resampling test using freedman_lane to handle nuisance variables and 10000 permutations.
 ##             Estimate Std. Error t value parametric Pr(&gt;|t|) resampled Pr(&lt;t)
 ## (Intercept)    80.05      1.624  49.283           4.762e-36                 
-## groupdrug      -5.35      2.297  -2.329           2.528e-02           0.0123
+## groupdrug      -5.35      2.297  -2.329           2.528e-02           0.0122
 ##             resampled Pr(&gt;t) resampled Pr(&gt;|t|)
 ## (Intercept)                                    
-## groupdrug             0.9888             0.0258
+## groupdrug             0.9898             0.0251
 ```
 ---
 # Summary

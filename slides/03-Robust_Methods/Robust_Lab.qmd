@@ -23,16 +23,20 @@ execute:
     #| 
     library(tidyverse)
     library(robustbase) # star data
-    library(boot) # boot strapping
-    library(correlation) # get different correlatios
+    library(boot) # bootstrapping
+    library(correlation) # get different correlations
     library(permuco) # run permutation tests
-    library(parameters)
+    library(parameters) # SE
+    library(data.table) # fread 
+    library(infer) # sample_rep_n function
+    library(palmerpenguins) # penguins dataset
+
 
     ```
 
 ## Robust Correlations
 
-Use the `stars` data in `robustbase`. The first variable is the logarithm of the effective temperature at the surface of the star (Te) and the second one is the logarithm of its light intencity (L/L_0L/L0​).
+Use the `stars` data in `robustbase`. This data looks at the relationship between temperature at the surface of a star and the light intensity.
 
 1.  
 
@@ -44,7 +48,7 @@ Use the `stars` data in `robustbase`. The first variable is the logarithm of the
 
     b\. Re-run the correlation, but this time use the winsorized r (20%). Do this manually and then with the correlation::correlation function from `easystats`.
 
-    d\. Compare the correlations.
+    c\. Compare the correlations.
 
 ## Bootstrapping and Permutations
 
@@ -54,11 +58,9 @@ Use the `stars` data in `robustbase`. The first variable is the logarithm of the
 
     b\. Bootstrap the median (using the `boot` package) and plot the histogram with `ggplot2`
 
-    c\. For the mean bootstraps, find its mean and 95% Confidence Intervals (Percentile and BCa)
+    c\. For the mean bootstraps, plot the 95% Confidence Intervals (Percentile and BCa)
 
-    d\. For the median bootstraps, find its mean and 95% Confidence Intervals (Percentile and BCa)
-
-    e\. Plot bootstrap mean and median along with 95% CIs
+    d\. For the median bootstraps, plot the 95% Confidence Intervals (Percentile and BCa)
 
 3.  You want to test whether the following paired samples are significantly different from one another: pre = \[22,25,17,24,16,29,20,23,19,20\], post = \[18,21,16,22,19,24,17,21,23,18\]. Often researchers would run a paired sampled t-test, but you are concerned the data does not follow a normal distribution.
 
@@ -76,33 +78,32 @@ Use the `stars` data in `robustbase`. The first variable is the logarithm of the
 
     e\. Write up these results.
 
-4.  Using the state.x77 data.
+4.  Pepper Joe measured the length and heat of 85 chili peppers. He wants to know if smaller peppers are hotter than longer peppers.
 
-    a\. Fit a linear model: lm(Murder\~Population + Illiteracy + Income + Frost)
+    ```{r}
+    #read data.table to read in
+    chili<- fread("/Users/jasongeller/Documents/03-Robust_Methods/data/chillis.csv")
+    ```
 
-    b\. Interpret the findings and check if assumptions have been met. Comment on what assumptions were violated
+5.  Some species display sexual size dimorphism -- in which one sex is on average larger than the other. Such a pattern can tell us about the species\' ecology and mating habits. Do penguins display this sex difference in size? To start to answer thus, let\'s look at a subset of the palmerpenguins data set, which I\'ll call `my_penguins`.
 
-    c\. Now run a lm permutation test and interpret the findings
+    ```{r}
+    my_penguins <- penguins %>% 
+      filter(species == "Adelie",
+             !is.na(sex), 
+             island == "Torgersen") 
+    my_penguins
+    ```
 
-    d\. What, if any, differences are there?
+a\. First let\'s visualize body size by sex
 
-5.  Run:
+a\. Let's give every penguin a participant number by adding a new column to `my_penguins`.
 
-```{r}
-dat <- tibble(group = rep(c("A", "B"), each = 50),
-               Y = c(rnorm(50, 100, 15),
-                     rnorm(50, 110, 15)))
+b\. Calculate the original mean difference between sex
 
+c\. Permute the group labels (10000x)
 
-```
-
-a\. Let's give every participant a participant number by adding a new column to `dat`.
-
-b\. Calculate the original mean difference between the groups
-
-c\. Permute the group labels
-
-d\. Create the Null-Hypothesis Distribution (NHD) for the Difference (10000x)
+d\. Plot the Null-Hypothesis Distribution (NHD) for the Difference
 
 e\. Compare the Observed Mean Difference to the NHD (is *p* \< .05?)
 

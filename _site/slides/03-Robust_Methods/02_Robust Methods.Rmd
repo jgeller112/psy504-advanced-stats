@@ -533,7 +533,7 @@ knitr::include_graphics("images/bootstrap.jpg")
 ```
 ]
 ---
-# Bias Corrected and Accelerated (Bca) bootstrap confidence intervals  
+# Bias Corrected and Accelerated (Bca) Bootstrap Confidence Intervals  
 
 - Percentile method good when using robust estimates, but... 
 
@@ -546,7 +546,7 @@ knitr::include_graphics("images/bootstrap.jpg")
   - **If original sample is skewed the bootstrap will be as well**
 
 ---
-# Bias Corrected and Accelerated (Bca) bootstrap confidence intervals
+# Bias Corrected and Accelerated (Bca) Bootstrap Confidence Intervals
 
 - Bias-correction
 
@@ -615,7 +615,7 @@ class: middle
 ---
 # Bootstrapping Pros
 
-1. You can use it to determine the probability of observing values of variables that come from any distribution
+- You can use it to determine the probability of observing values of variables that come from any distribution
 
   - Including times when you have no clue which distribution describes your variable and you don’t even want to guess
 
@@ -623,11 +623,11 @@ class: middle
 
 ---
 
-2. The lack of assumptions about a variable’s distribution makes the bootstrapped probability estimates more accurate
+- The lack of assumptions about a variable’s distribution makes the bootstrapped probability estimates more accurate
 
   - Far better than trying to pigeon-hole data into a distribution that doesn’t describe them
 
-3. Minimizes the influence of outliers without trivializing the inferential value of them (when using robust estimators like bca)
+- Minimizes the influence of outliers without trivializing the inferential value of them (when using robust estimators like bca)
 
 ---
 # Bootstrapping Cons
@@ -686,7 +686,7 @@ knitr::include_url("https://www.jwilber.me/permutationtest/")
 
   1. Permutation tests are inefficient compared to asymptotic tests. When you have only a few observations, it might be impossible to control alpha at the level you want and still do a permutation test
 
-  2. You have to assume that both samples have the exact same distribution (same shape, center, and spread) not just the same value for one parameter 
+  2. You have to assume that both samples have the exact same distribution not just the same value for one parameter 
 
   3. A permutation test assumes that the only difference between the two groups is the random assignment
 
@@ -990,13 +990,16 @@ df <- cbind(g_control,g_drug) %>%
 mean_diff <- df %>% 
   group_by(Group) %>%
   summarise(mean_group = mean(Value)) %>%
-  summarise(mean_diff=diff(mean_group))
+  summarise(mean_diff=diff(mean_group)) # this will give you one value the mean diff value
 
 ```
 ---
-# One Perm
+# One Permutation Example
 
 ```{r}
+
+# Example of doing one permutation
+# use sample function
 one.perm <- df   %>%
   mutate(perm_treatment = sample(Group, size = n(), replace = FALSE)) 
 
@@ -1004,30 +1007,17 @@ one.perm
 
 ```
 ---
-# Permutation: Calculate Test Statistic on Permuted Data
-
-
-```{r}
-
-perm.diff <- one.perm %>%
-  group_by(perm_treatment) %>%
-  summarise(mean = mean(Value))%>%
-  summarise(diff_group = diff(mean))
-
-
-```
-
----
-# Now Many Times
+# Now Do This Many Times
 
 ```{r}
 library(infer)
 
-sample_size <- nrow(df)
-perm_reps   <- 10000
+sample_size <- nrow(df) # length of dataset
+perm_reps   <- 10000 # number of permutations you want to do
 
 many.perm <- df    %>%
-  rep_sample_n(size = sample_size, replace = FALSE, reps = perm_reps) %>%
+  # this function is in the infer package. What it is doing is creating 
+  rep_sample_n(size = sample_size, replace = FALSE, reps = perm_reps) %>% 
   mutate(perm_treatment = sample(Group, size = n(), replace = FALSE))  %>%
   group_by(replicate, perm_treatment)
 
@@ -1051,7 +1041,7 @@ many.perm.means
 ```
 
 ---
-# CALCULATE THE TEST STATISTIC (DIFFERENCE IN PERMUTED GROUP MEANS) 
+# Calcuate Test Statistic
 
 .pull-left[
 ```{r}
@@ -1062,7 +1052,7 @@ many.perm.diffs <- many.perm.means %>%
 
 .pull-right[
 
-```{r, fig.align='center'}
+```{r, fig.align='center', out.width="100%"}
 ggplot(many.perm.diffs, aes(x = diff_value)) +
   geom_histogram(bins = 32, color = "white")+
   labs(title = "Permuted sampling distribution")
@@ -1070,7 +1060,7 @@ ggplot(many.perm.diffs, aes(x = diff_value)) +
 
 ]
 ---
-# P-value
+# *p*-value
 
 .pull-left[
 
@@ -1078,8 +1068,8 @@ ggplot(many.perm.diffs, aes(x = diff_value)) +
 
 many.perm.diffs_1 <- many.perm.diffs %>% 
   mutate(abs_obs_dif = abs(pull(mean_diff)), # diff from our sample
-         abs_perm_dif = abs(diff_value), # permutations diffs
-         as_or_more_extreme = abs_perm_dif >= abs_obs_dif) # count how many
+         abs_perm_dif = abs(diff_value), #diffs from  permutations
+         as_or_more_extreme = abs_perm_dif >= abs_obs_dif) # count how many are as or more extreme
 
 ```
 
@@ -1103,6 +1093,54 @@ ggplot(many.perm.diffs_1, aes(x = diff_value, fill = as_or_more_extreme )) +
 
 ```
 ]
+---
+# Let's do this using less code :)
+
+- `infer` package (https://infer.netlify.app/)
+
+- Step 1
+
+```{r}
+# use df above
+# take df above specify what you want 
+ df_diff  <- df          %>% 
+  specify(Value ~ Group) %>%
+  calculate(stat = "diff in means")
+```
+
+---
+# Step 2 
+
+- Create the null hypothesis
+
+```{r}
+
+ null_distn  <- df   %>% 
+  specify(Value ~ Group) %>%
+   hypothesize(null = "independence") %>%
+   generate(reps = 10000, type = "permute") %>%
+   calculate(stat = "diff in means")
+
+```
+
+---
+# Step 2 
+
+```{r, fig.align='center', out.width="80%"}
+null_distn %>%
+  visualize() +shade_p_value(obs_stat = df_diff, direction = "two-sided")
+```
+---
+# Step 3
+
+- Calculate p value
+
+```{r, echo=FALSE}
+
+null_distn %>%
+  get_p_value(obs_stat = df_diff, direction = "two-sided")
+
+```
 ---
 # Permutations Base R
 

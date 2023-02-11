@@ -66,9 +66,10 @@ Load these packages:
 ```r
 library(tidyverse) 
 library(ggmice) #graph missing data
-library(mice) # missing dat 
-library(naniar) # missing data visualization
+library(mice) # dealing and visualizing missing data
+library(naniar) # missing data + visualization
 library(finalfit)# missing data visualization
+library(NHANES) # get dataset we are working with 
 ```
 ---
 # `nhanes` Data
@@ -95,13 +96,13 @@ library(finalfit)# missing data visualization
 ]
 
 .pull-right[
-- `age`: Age group (1=20-39, 2=40-59, 3=60+)
+- `age`: age group (1=20-39, 2=40-59, 3=60+)
 
-- `bmi`: Body mass index (kg/m**2)
+- `bmi`: body mass index (kg/m**2)
 
-- `hyp`: Hypertensive (1=no,2=yes)
+- `hyp`: hypertensive (1=no,2=yes)
 
-- `chl`: Total serum cholesterol (mg/dL)
+- `chl`: total serum cholesterol (mg/dL)
 ]
 ---
 # Exploratory Data Analysis (EDA)

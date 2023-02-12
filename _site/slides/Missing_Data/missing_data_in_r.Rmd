@@ -109,10 +109,11 @@ library(finalfit)
 - Diagnosing missing data mechanisms in R 
   
 - Missing data methods in R 
-    - Listwise Deletion
-    - Casewise Deletion
-    - Nonconditional and Conditional Imputation
-    - Multiple Imputation
+
+    - Listwise deletion
+    - Casewise deletion
+    - Nonconditional and conditional imputation
+    - Multiple imputation
     
 ---
 # Packages
@@ -127,11 +128,11 @@ Load these packages:
 
 ```{r, warning = F, message = F}
 library(tidyverse) 
+library(broom) #tidy statistics
 library(ggmice) #graph missing data
 library(mice) # dealing and visualizing missing data
 library(naniar) # missing data + visualization
 library(finalfit)# missing data visualization
-library(NHANES) # get dataset we are working with 
 
 ```
 ---
@@ -265,7 +266,7 @@ head(bind_shadow(nhanes))
 library(finalfit)
 
 explanatory = c("hyp", "age")
-dependent = "chl" 
+dependent = "bmi" 
 
 misspairs <- nhanes %>%
   missing_pairs(explanatory, dependent)
@@ -318,8 +319,7 @@ parameters::model_parameters(nhanes_r_glm)
 ```{r}
 model <- t.test(age~bmi_1,data=nhanes_r)
 
-parameters::model_parameters(model)
-
+tidy(model)
 ```
 ---
 class: middle
@@ -349,7 +349,7 @@ nhanes %>%
 
 - Pros: 
 
-  - Produces the correct parameter estimates if missingness is ignorable
+  - Produces the correct parameter estimates if missingness is MCAR
   
   - If not, biased 
   
@@ -368,16 +368,12 @@ nhanes
 ```
 ---
 # Casewise Deletion: Pros and Cons
-<br>
-<br>
-<br>
 
 Pros: 
 
 - Avoids data loss
 
 - Non-biased
-
   - Only for MCAR
 
 Cons: 
@@ -427,10 +423,9 @@ sd(d_mean_imp)
 ```
 ]
 ---
-
 class: center middle
 
-# DONT DO THIS 
+# DONT DO THIS! 
 
 ---
 # Conditional Imputation (Regression)
@@ -503,6 +498,7 @@ m=5
 # impute several data sets
 imp <- mice(nhanes, m = m, seed = 24415, method="pmm", print = FALSE)
 
+
 ```
 
 - What is `imp`?
@@ -561,6 +557,8 @@ $$
 #fit the model to each set of imputaed data
 
 fit <- with(data = imp, expr = lm(bmi ~ age))
+
+fit
 ```
 
 ---
@@ -569,7 +567,7 @@ fit <- with(data = imp, expr = lm(bmi ~ age))
 ```{r}
 #combine the results
 result <- pool(fit)
-knitr::kable(tidy(result), format="html")
+tidy(result)
 ```
 
 ---
@@ -585,7 +583,6 @@ ggmice(imp, aes(x = .imp, y = bmi)) +
   labs(x = "Imputation number")
 
 ```
-
 ---
 # Distinguish Between NMAR and MAR
 
@@ -594,9 +591,9 @@ ggmice(imp, aes(x = .imp, y = bmi)) +
 - It's complicated
 
   - Not many good techniques
-
-    - Try and track down the missing data
-    - Collect more data for explaining missingness
+  - Try and track down the missing data
+  - Auxiliary variables
+  - Collect more data for explaining missingness
 ---
 # Reporting Missing Data
 
@@ -616,7 +613,6 @@ The *percentage of missing values* across the nine variables varied between *0 a
 - *Software*
 - *Complete-case analysis*
 ---
-
 <br>
 <br>
 
@@ -624,4 +620,4 @@ The *percentage of missing values* across the nine variables varied between *0 a
 
 - Read Chapter 18 in *R in Action* 
 
-- Lab on Wednesday
+- Missing lab on Wednesday

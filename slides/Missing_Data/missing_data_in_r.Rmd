@@ -241,7 +241,8 @@ background-size: 40%
 
 – Create a dummy coded variable where 1 = score missing and 0 = score not missing on missing variable
 
-- If related, MAR
+- If these variables are related to other variables in dataset
+  - MAR
 
 ```{r}
 nhanes_r <- nhanes %>%

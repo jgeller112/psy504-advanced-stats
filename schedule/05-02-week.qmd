@@ -7,6 +7,8 @@ date: 2023-02-27
 
 ### Articles
 
+{{< fa book >}} https://bookdown.org/chua/ber642_advanced_regression/multinomial-logistic-regression.html#introduction-to-multinomial-logistic-regression
+
 - {{< fa book >}} McNulty, K. (2021). Handbook of Regression Modeling in People Analytics: With Examples in R and Python. [Multinomial Regression](https://peopleanalytics-regression-book.org/multinomial-logistic-regression-for-nominal-category-outcomes.html). 
 
   - Describe the difference between a stratified versus a multinomial approach to modeling an outcome with more than two nominal categories.

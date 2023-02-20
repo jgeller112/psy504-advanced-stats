@@ -470,32 +470,90 @@ if test is violated, there are a few options:
   
 - Adjacent category model
 
+- Multinomial regression
+
 ---
 ## Test proporitional odds assumption
 
-- Work it into the model
+- Partial proportion odds model
 
 
 ```r
 ols_nom = clm(apply ~ pared + public + gpa,nominal = ~ public, data=dat, link = "logit")
 
-tidy(ols_nom)
+knitr::kable(tidy(ols_nom))
 ```
 
-```
-## # A tibble: 7 × 6
-##   term                                  estim…¹ std.e…² stati…³  p.value coef.…⁴
-##   &lt;chr&gt;                                   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;  
-## 1 unlikely|somewhat likely.(Intercept)    2.17    0.780   2.78   5.48e-3 interc…
-## 2 somewhat likely|very likely.(Interce…   4.41    0.809   5.45   4.96e-8 interc…
-## 3 unlikely|somewhat likely.public1        0.235   0.305   0.770  4.41e-1 interc…
-## 4 somewhat likely|very likely.public1    -0.573   0.411  -1.40   1.63e-1 interc…
-## 5 pared1                                  1.06    0.267   3.97   7.25e-5 locati…
-## 6 public1                                NA      NA      NA     NA       locati…
-## 7 gpa                                     0.611   0.261   2.34   1.92e-2 locati…
-## # … with abbreviated variable names ¹​estimate, ²​std.error, ³​statistic,
-## #   ⁴​coef.type
-```
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; term &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; estimate &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; std.error &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; statistic &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; p.value &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; coef.type &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; unlikely|somewhat likely.(Intercept) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.1658541 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.7798055 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.7774287 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0054791 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; intercept &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; somewhat likely|very likely.(Intercept) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.4106044 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.8088948 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5.4526304 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; intercept &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; unlikely|somewhat likely.public1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2350037 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.3052548 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.7698608 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4413825 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; intercept &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; somewhat likely|very likely.public1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.5732669 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4106292 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -1.3960695 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1626936 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; intercept &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; pared1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.0576327 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2665412 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.9679900 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000725 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; location &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; public1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; location &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; gpa &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.6105983 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2607849 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.3413870 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0192122 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; location &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
 ---
 ## Test ordinal assumptions

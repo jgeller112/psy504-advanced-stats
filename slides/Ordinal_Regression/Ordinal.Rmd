@@ -433,16 +433,18 @@ if test is violated, there are a few options:
   
 - Adjacent category model
 
+- Multinomial regression
+
 ---
 ## Test proporitional odds assumption
 
-- Work it into the model
+- Partial proportion odds model
 
 ```{r}
 
 ols_nom = clm(apply ~ pared + public + gpa,nominal = ~ public, data=dat, link = "logit")
 
-tidy(ols_nom)
+knitr::kable(tidy(ols_nom))
 
 ```
 

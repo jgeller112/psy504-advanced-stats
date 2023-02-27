@@ -34,9 +34,18 @@ class: center, middle, inverse, title-slide
 
 
 
+## Outline
 
+- Introduce multinomial logistic regression
+
+- Interpret model coefficients
+
+- Inference for a coefficient βjk
+
+---
 &lt;img src="ordmult.jpeg" width="80%" style="display: block; margin: auto;" /&gt;
 ---
+
 ## Multinomial Logistic Regression
 
 - In ordinal regression: 
@@ -187,6 +196,9 @@ library(ggeffects) # visualization
 
 health_m &lt;- multinom(HealthGen ~ PhysActive + Age, 
                      data = nhanes_adult)
+
+
+summary(health_m)
 ```
 
 - Put `results = "hide"` in the code chunk header to suppress convergence output 
@@ -340,6 +352,32 @@ The model equation for the log-odds a person rates themselves as having "Good" h
 
 - The odds a 0 year old person who doesn't do physical activity rates themselves as having poor health vs. excellent health are 7.316 `(exp(1.99))`. 
 
+
+
+```r
+nhanes_adult %&gt;%
+  mutate(age_center=datawizard::center(Age))
+```
+
+```
+## # A tibble: 6,465 × 6
+##    HealthGen Education        Age PhysActive obs_num age_center
+##    &lt;fct&gt;     &lt;fct&gt;          &lt;int&gt; &lt;fct&gt;        &lt;int&gt; &lt;dw_trnsf&gt;
+##  1 Good      High School       34 No               1 -13.615159
+##  2 Good      High School       34 No               2 -13.615159
+##  3 Good      High School       34 No               3 -13.615159
+##  4 Good      Some College      49 No               4   1.384841
+##  5 Vgood     College Grad      45 Yes              5  -2.615159
+##  6 Vgood     College Grad      45 Yes              6  -2.615159
+##  7 Vgood     College Grad      45 Yes              7  -2.615159
+##  8 Vgood     Some College      66 Yes              8  18.384841
+##  9 Vgood     College Grad      58 Yes              9  10.384841
+## 10 Fair      9 - 11th Grade    54 Yes             10   6.384841
+## # … with 6,455 more rows
+## # ℹ Use `print(n = ...)` to see more rows
+```
+
+
 - Those reporting no physical activity are more likely to report Good vs. Excellent health
 
 --
@@ -425,7 +463,7 @@ contrast(coefs, "revpairwise", by = "contrast") %&gt;%
 ---
 ## Calculating probabilities
 
-For categories `\(2,\ldots,K\)`, the probability that the `\(i^{th}\)` observation is in the `\(j^{th}\)` category is
+For categories `\(2,\ldots,K\)`, the probability that the `\(i^{th}\)` observation is in the `\(j^{th}\)` category is:
 
 `$$\hat{\pi}_{ij} = \frac{\exp\{\hat{\beta}_{0j} + \hat{\beta}_{1j}x_{i1} + \dots + \hat{\beta}_{pj}x_{ip}\}}{1 + \sum\limits_{k=2}^K \exp\{\hat{\beta}_{0k} + \hat{\beta}_{1k}x_{i1} + \dots \hat{\beta}_{pk}x_{ip}\}}$$`
 &lt;br&gt; 
@@ -468,17 +506,17 @@ ggemmeans(health_m, terms=c("PhysActive")) %&gt;%
 ```r
 pred_probs_plot &lt;- ggemmeans(health_m, terms=c("PhysActive")) %&gt;%   ggplot(., aes(x = x, y = predicted, fill = response.level)) + 
   geom_bar(stat = "identity" ) +
-    geom_text(aes(label = round(predicted, 3)), color="white", position = position_fill(vjust = 0.5),size=3)  + 
+    geom_text(aes(label = round(predicted, 3)), color="white", position = position_fill(vjust = 0.5),size=5)  + 
   easy_add_legend_title("Response") + 
   labs(x="Physical Health", "Predicted Probablity") + 
-  easy_all_text_size(size=45) +
+  theme(text = element_text(size = 30)) +  
   scale_fill_viridis(discrete = TRUE)
 ```
 
 ]
 
 .pull-right[
-&lt;img src="multinom_files/figure-html/unnamed-chunk-18-1.png" width="100%" /&gt;
+&lt;img src="multinom_files/figure-html/unnamed-chunk-19-1.png" width="100%" /&gt;
 
 ]
 
@@ -486,7 +524,7 @@ pred_probs_plot &lt;- ggemmeans(health_m, terms=c("PhysActive")) %&gt;%   ggplot
 ---
 # Plot predicted probabilities: `Age`
 
-&lt;img src="multinom_files/figure-html/unnamed-chunk-19-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+&lt;img src="multinom_files/figure-html/unnamed-chunk-20-1.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 ---
 class: middle, center
@@ -717,22 +755,19 @@ contrast(coefs, "revpairwise", by = "contrast") %&gt;%
 
 ---
 ## Predicted Probabilities: `Education`
-.pull-left[
+
 
 ```r
 plot_edu &lt;- ggemmeans(model_full, terms=c("Education")) %&gt;%
   ggplot(aes(x = x, y = predicted, fill = response.level))  +  
   geom_bar(stat = "identity" ) + 
-   geom_text(aes(label = round(predicted, 3)), color="white", position = position_fill(vjust = 0.5),size=3) + 
+   geom_text(aes(label = round(predicted, 3)), color="white", position = position_fill(vjust = 0.5),size=5) + 
   easy_add_legend_title("Response") + 
   labs(x="Education", "Predicted Probablity") + 
-  easy_all_text_size(size=20) + 
-   scale_fill_viridis(discrete = TRUE)
+  scale_fill_viridis(discrete = TRUE)
 ```
-]
-
-.pull-right[
-&lt;img src="multinom_files/figure-html/unnamed-chunk-29-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+---
+&lt;img src="multinom_files/figure-html/unnamed-chunk-30-1.png" width="50%" style="display: block; margin: auto;" /&gt;
 ]
 ---
 class: middle, center
@@ -788,7 +823,6 @@ The .vocab[empirical logit] is the log of the observed odds
 Then, we can create a plot of the empirical logit versus the mean value of the predictor in each interval.
 
 ---
-
 ## Empirical logit plot in R (quantitative predictor)
 
 
@@ -803,7 +837,7 @@ emplogitplot1(Excellent ~ Age, data = nhanes_adult, ngroups = 5, main = "Excelle
 
 .pull-right[
 
-&lt;img src="multinom_files/figure-html/unnamed-chunk-32-1.png" width="100%" /&gt;
+&lt;img src="multinom_files/figure-html/unnamed-chunk-33-1.png" width="100%" /&gt;
 ]
 
 ---
@@ -826,9 +860,9 @@ oddsratio_to_d()
 
 - Report full model results
   - `\(\chi^2\)` test
-  - Age, `\(\chi^2 (4)\)` = 19.30, *p* &lt; .05
-  - PhysActive, `\(\chi^2 (4)\)` = 242.63, *p* &lt; .05 
-  - Education, `\(\chi^2 (16)\)` = 489.13, *p* &lt; .05 
+    - Age, `\(\chi^2 (4)\)` = 19.30, *p* &lt; .05
+    - PhysActive, `\(\chi^2 (4)\)` = 242.63, *p* &lt; .05 
+    - Education, `\(\chi^2 (16)\)` = 489.13, *p* &lt; .05 
     
 - Model fit: `\(R^2\)`
 
@@ -837,11 +871,12 @@ oddsratio_to_d()
 
 - Significant differences between all levels of self-reported health and variables of interest
   
-  - Table with included ORs
+  - Table with included ORs (see next slide for example)
+  
   - Figure showing predicted probabilities
 
 ---
-# Table
+## OR table (Geller et a., 2017)
 
 &lt;img src="oddsratios.png" width="100%" style="display: block; margin: auto;" /&gt;
 

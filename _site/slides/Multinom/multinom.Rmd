@@ -77,8 +77,7 @@ style_solarized_dark(
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
-knitr::opts_chunk$set(
-  fig.width=20, fig.height=12, fig.retina=4,
+knitr::opts_chunk$set(fig.retina=4,
   out.width = "90%",
   tidy.opts=list(width.cutoff=80),tidy=TRUE, 
   cache = FALSE,
@@ -94,13 +93,22 @@ knitr::knit_hooks$set(source = function(x, options) {
   hook_source(x, options)
 })
 ```
+## Outline
 
+- Introduce multinomial logistic regression
+
+- Interpret model coefficients
+
+- Inference for a coefficient βjk
+
+---
 ```{r, echo=FALSE, fig.align="center", out.width="80%"}
 
 knitr::include_graphics("ordmult.jpeg")
 
 ```
 ---
+
 ## Multinomial Logistic Regression
 
 - In ordinal regression: 
@@ -260,6 +268,9 @@ library(ggeffects) # visualization
 health_m <- multinom(HealthGen ~ PhysActive + Age, 
                      data = nhanes_adult)
 
+
+summary(health_m)
+
 ```
 
 - Put `results = "hide"` in the code chunk header to suppress convergence output 
@@ -268,6 +279,7 @@ health_m <- multinom(HealthGen ~ PhysActive + Age,
 ## Output results
 
 ```{r echo = T, eval = T}
+
 model_parameters(health_m, exponentiate = FALSE)%>%  filter(Response=="Fair") %>%
   kable(digits = 3, format = "markdown")
 ```
@@ -328,6 +340,8 @@ $$\log\Big(\frac{\hat{\pi}_{Fair}}{\hat{\pi}_{Excellent}}\Big) = \color{Red}{.91
 ```{r echo = T, eval = T}
 model_parameters(health_m, exponentiate = FALSE)%>%  filter(Response=="Good") %>%
   kable(digits = 3, format = "markdown")
+
+
 ```
 ---
 
@@ -378,6 +392,13 @@ $$\log\Big(\frac{\hat{\pi}_{Good}}{\hat{\pi}_{Excellent}}\Big) = \color{Red}{1.9
 
 - The odds a 0 year old person who doesn't do physical activity rates themselves as having poor health vs. excellent health are `r round(exp(1.99),3)` `(exp(1.99))`. 
 
+
+```{r}
+nhanes_adult %>%
+  mutate(age_center=datawizard::center(Age))
+```
+
+
 - Those reporting no physical activity are more likely to report Good vs. Excellent health
 
 --
@@ -393,6 +414,8 @@ $$\log\Big(\frac{\hat{\pi}_{Good}}{\hat{\pi}_{Excellent}}\Big) = \color{Red}{1.9
 
 nhanes_adult %>%
   mutate(HealthGen = relevel(as.factor(HealthGen), ref= "Poor")) %>% dplyr::select(HealthGen)
+
+
 ```
 
 ---
@@ -442,7 +465,7 @@ contrast(coefs, "revpairwise", by = "contrast") %>%
 ---
 ## Calculating probabilities
 
-For categories $2,\ldots,K$, the probability that the $i^{th}$ observation is in the $j^{th}$ category is
+For categories $2,\ldots,K$, the probability that the $i^{th}$ observation is in the $j^{th}$ category is:
 
 $$\hat{\pi}_{ij} = \frac{\exp\{\hat{\beta}_{0j} + \hat{\beta}_{1j}x_{i1} + \dots + \hat{\beta}_{pj}x_{ip}\}}{1 + \sum\limits_{k=2}^K \exp\{\hat{\beta}_{0k} + \hat{\beta}_{1k}x_{i1} + \dots \hat{\beta}_{pk}x_{ip}\}}$$
 <br> 
@@ -468,17 +491,17 @@ ggemmeans(health_m, terms=c("PhysActive")) %>%
 ```{r}
 pred_probs_plot <- ggemmeans(health_m, terms=c("PhysActive")) %>%   ggplot(., aes(x = x, y = predicted, fill = response.level)) + 
   geom_bar(stat = "identity" ) +
-    geom_text(aes(label = round(predicted, 3)), color="white", position = position_fill(vjust = 0.5),size=3)  + 
+    geom_text(aes(label = round(predicted, 3)), color="white", position = position_fill(vjust = 0.5),size=5)  + 
   easy_add_legend_title("Response") + 
   labs(x="Physical Health", "Predicted Probablity") + 
-  easy_all_text_size(size=45) +
+  theme(text = element_text(size = 30)) +  
   scale_fill_viridis(discrete = TRUE)
 ```
 
 ]
 
 .pull-right[
-```{r, echo=FALSE, fig.aligh = "center", out.width="100%", fig.width=16, fig.height=12}
+```{r, echo=FALSE, fig.aligh = "center", out.width="100%"}
 
 pred_probs_plot
 
@@ -490,7 +513,7 @@ pred_probs_plot
 ---
 # Plot predicted probabilities: `Age`
 
-```{r, echo=FALSE, fig.align='center', out.width="60%"}
+```{r, echo=FALSE, fig.align='center', out.width="50%"}
 
 stack <- plot(effect("Age", health_m), style="stacked")
 
@@ -616,23 +639,20 @@ contrast(coefs, "revpairwise", by = "contrast") %>%
 
 ---
 ## Predicted Probabilities: `Education`
-.pull-left[
+
 ```{r}
 plot_edu <- ggemmeans(model_full, terms=c("Education")) %>%
   ggplot(aes(x = x, y = predicted, fill = response.level))  +  
   geom_bar(stat = "identity" ) + 
-   geom_text(aes(label = round(predicted, 3)), color="white", position = position_fill(vjust = 0.5),size=3) + 
+   geom_text(aes(label = round(predicted, 3)), color="white", position = position_fill(vjust = 0.5),size=5) + 
   easy_add_legend_title("Response") + 
   labs(x="Education", "Predicted Probablity") + 
-  easy_all_text_size(size=20) + 
-   scale_fill_viridis(discrete = TRUE)
+  scale_fill_viridis(discrete = TRUE)
 
 
 ```
-]
-
-.pull-right[
-```{r, echo=FALSE, fig.align='center', out.width="100%", fig.width=16, fig.height=12}
+---
+```{r, echo=FALSE, fig.align='center', out.width="50%", fig.retina=4}
 
 plot_edu
 
@@ -665,7 +685,6 @@ nhanes_adult <- nhanes_adult %>%
          Poor = factor(if_else(HealthGen == "Poor", "1", "0"))
   )
 
-
 ```
 
 ---
@@ -694,7 +713,6 @@ $$\text{logit}(\hat{p}) = \log\Big(\frac{\hat{p}+0.5}{1 - \hat{p}+0.5}\Big) = \l
 Then, we can create a plot of the empirical logit versus the mean value of the predictor in each interval.
 
 ---
-
 ## Empirical logit plot in R (quantitative predictor)
 
 
@@ -736,9 +754,9 @@ oddsratio_to_d()
 
 - Report full model results
   - $\chi^2$ test
-  - Age, $\chi^2 (4)$ = 19.30, *p* < .05
-  - PhysActive, $\chi^2 (4)$ = 242.63, *p* < .05 
-  - Education, $\chi^2 (16)$ = 489.13, *p* < .05 
+    - Age, $\chi^2 (4)$ = 19.30, *p* < .05
+    - PhysActive, $\chi^2 (4)$ = 242.63, *p* < .05 
+    - Education, $\chi^2 (16)$ = 489.13, *p* < .05 
     
 - Model fit: $R^2$
 
@@ -747,11 +765,12 @@ oddsratio_to_d()
 
 - Significant differences between all levels of self-reported health and variables of interest
   
-  - Table with included ORs
+  - Table with included ORs (see next slide for example)
+  
   - Figure showing predicted probabilities
 
 ---
-# Table
+## OR table (Geller et a., 2017)
 
 ```{r, echo=FALSE, fig.align="center", out.width="100%"}
 

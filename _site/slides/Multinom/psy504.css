@@ -76,7 +76,7 @@ font-size: 80%;
 /* Two-column layout */
 .left-column {
   color: #777;
-  width: 50%;
+  width: 30%;
   height: 92%;
   float: left;
 }
@@ -84,8 +84,9 @@ font-size: 80%;
   color: #000;
 }
 .right-column {
-  width: 60%;
+  width: 100%;
   float: right;
+  height: 92%;
   padding-top: 1em;
 }
 .center {

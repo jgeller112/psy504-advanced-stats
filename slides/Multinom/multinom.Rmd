@@ -78,7 +78,7 @@ style_solarized_dark(
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 knitr::opts_chunk$set(
-  #fig.width=20, fig.height=12, fig.retina=4,
+  fig.width=20, fig.height=12, fig.retina=4,
   out.width = "90%",
   tidy.opts=list(width.cutoff=80),tidy=TRUE, 
   cache = FALSE,
@@ -490,9 +490,11 @@ pred_probs_plot
 ---
 # Plot predicted probabilities: `Age`
 
-```{r, echo=FALSE, fig.align='center', fig.width=12, fig.height=16, out.width="50%"}
-ggemmeans(health_m, terms=c("Age")) %>%
-  plot()
+```{r, echo=FALSE, fig.align='center', out.width="60%"}
+
+stack <- plot(effect("Age", health_m), style="stacked")
+
+stack
 ```
 
 ---
@@ -674,7 +676,7 @@ The .vocab[empirical logit] is the log of the observed odds
 .eq[
 **Empirical logit**
 
-$$\text{logit}(\hat{p}) = \log\Big(\frac{\hat{p}}{1 - \hat{p}}\Big) = \log\Big(\frac{\# \text{Yes}}{\# \text{No}}\Big)$$ 
+$$\text{logit}(\hat{p}) = \log\Big(\frac{\hat{p}+0.5}{1 - \hat{p}+0.5}\Big) = \log\Big(\frac{\# \text{Yes}}{\# \text{No}}\Big)$$ 
 ]
 ---
 ## Calculating empirical logit (quantitative predictor)

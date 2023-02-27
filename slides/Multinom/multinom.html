@@ -24,7 +24,7 @@ class: center, middle, inverse, title-slide
 ### Princeton University
 ]
 .date[
-### Updated:2023-02-26
+### Updated:2023-02-27
 ]
 
 ---
@@ -166,12 +166,12 @@ nhanes_impu=complete(mice(nhanes_adult, m=5))
 ---
 ## Exploratory data analysis
 
-&lt;img src="multinom_files/figure-html/unnamed-chunk-6-1.png" width="40%" style="display: block; margin: auto;" /&gt;
+&lt;img src="multinom_files/figure-html/unnamed-chunk-6-1.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 ---
 ## Exploratory data analysis
 
-&lt;img src="multinom_files/figure-html/unnamed-chunk-7-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="multinom_files/figure-html/unnamed-chunk-7-1.png" width="80%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -486,7 +486,7 @@ pred_probs_plot &lt;- ggemmeans(health_m, terms=c("PhysActive")) %&gt;%   ggplot
 ---
 # Plot predicted probabilities: `Age`
 
-&lt;img src="multinom_files/figure-html/unnamed-chunk-19-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="multinom_files/figure-html/unnamed-chunk-19-1.png" width="60%" style="display: block; margin: auto;" /&gt;
 
 ---
 class: middle, center
@@ -770,7 +770,7 @@ The .vocab[empirical logit] is the log of the observed odds
 .eq[
 **Empirical logit**
 
-`$$\text{logit}(\hat{p}) = \log\Big(\frac{\hat{p}}{1 - \hat{p}}\Big) = \log\Big(\frac{\# \text{Yes}}{\# \text{No}}\Big)$$` 
+`$$\text{logit}(\hat{p}) = \log\Big(\frac{\hat{p}+0.5}{1 - \hat{p}+0.5}\Big) = \log\Big(\frac{\# \text{Yes}}{\# \text{No}}\Big)$$` 
 ]
 ---
 ## Calculating empirical logit (quantitative predictor)

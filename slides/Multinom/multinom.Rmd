@@ -657,7 +657,7 @@ plot_edu <- ggemmeans(model_full, terms=c("Education")) %>%
 plot_edu
 
 ```
-]
+
 ---
 class: middle, center
 
@@ -770,7 +770,7 @@ oddsratio_to_d()
   - Figure showing predicted probabilities
 
 ---
-## OR table (Geller et a., 2017)
+## OR table (Geller et al., 2017)
 
 ```{r, echo=FALSE, fig.align="center", out.width="100%"}
 

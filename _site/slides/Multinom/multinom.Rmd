@@ -778,6 +778,20 @@ knitr::include_graphics("oddsratios.png")
 
 ```
 
+---
+# Advanced Applications
 
+- Multilevel multinomial models
+
+  - brms
+  - `mclogit` https://cran.r-project.org/web/packages/mclogit/mclogit.pdf
+  
+```{r, eval=FALSE}
+
+#takes long time to run use cmdstanr to speed up models
+health_m <- brm(HealthGen ~ PhysActive + Age, family=categorical, cores = 4, chains = 4, backend = "cmdstanr", 
+                     data = nhanes_adult)
+
+```
 
 

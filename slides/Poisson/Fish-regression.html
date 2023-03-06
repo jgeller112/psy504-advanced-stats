@@ -88,7 +88,7 @@ Let `\(Y\)` be the number of events in a given unit of time or space. Then `\(Y\
 The annual number of earthquakes registering at least 2.5 on the Richter Scale and having an epicenter within 40 miles of downtown Memphis follows a Poisson distribution with mean 6.5. **What is the probability there will be 3 or fewer such earthquakes next year?**
 
 --
-`$$P(Y=y|\lambda) = \frac{e^{-6.5}10^0} {0!}+
+`$$P(Y&lt;=y) = \frac{e^{-6.5}10^0} {0!}+
 \frac{e^{-6.5}10^1} {1!} + 
  \frac{e^{-6.5}10^2} {2!} + 
   \frac{e^{-6.5}10^3} {3!}$$`
@@ -115,7 +115,7 @@ ppois(3, 6.5)
 
 --
 
-`$$P(Y=y|\lambda)= \frac{e^{-10}10^8} {8*7*6*5*4*3*2*1}$$`
+`$$P(Y=y)= \frac{e^{-10}10^8} {8*7*6*5*4*3*2*1}$$`
 
 ```r
 prob &lt;- (exp(-10) * 10^8) / factorial(8)
@@ -151,7 +151,7 @@ class: middle, inverse
 
 **Response**: 
 
-  - Number of fixations (visits) to each face
+  - Number of fixations to each face
 
 - **Predictors**: 
 
@@ -164,8 +164,7 @@ class: middle, inverse
 
 
 ```r
-#####PUT ON GIT
-hh_data &lt;- read_csv(here::here("data", "tobii_aoi_study1.csv"))
+hh_data &lt;- read_csv("https://raw.githubusercontent.com/jgeller112/psy504-advanced-stats/main/slides/Poisson/data/tobii_aoi_study1.csv")
 ```
 
 
@@ -234,7 +233,6 @@ The goal is to model `\(\lambda\)`, the expected number of fixations on faces, a
 We might be tempted to try a linear model `$$\lambda_i = \beta_0 + \beta_1x_{i1} + \beta_2x_{i2} + \dots + \beta_px_{ip}$$`
 
 --
-
 This model won't work because...
 
 - It could produce negative values of `\(\lambda\)` for certain values of the predictors 
@@ -257,6 +255,17 @@ If `\(Y_i \sim Poisson\)` with `\(\lambda = \lambda_i\)` for the given values `\
 - `\(\lambda\)` determines the mean and variance, so we don't need to estimate a separate error term 
 
 ---
+## Assumptions for Poisson regression 
+
+**Poisson response**: The response variable is a count per unit of time or space, described by a Poisson distribution, at each level of the predictor(s)
+
+**Independence**: The observations must be independent of one another
+
+**Linearity**: The log of the mean rate, `\(\log(\lambda)\)`, must be a linear function of the predictor(s)
+
+**Mean = Variance**: The mean must equal the variance
+
+---
 ## Poisson vs. multiple linear regression 
 
 &lt;div class="figure" style="text-align: center"&gt;
@@ -265,24 +274,6 @@ If `\(Y_i \sim Poisson\)` with `\(\lambda = \lambda_i\)` for the given values `\
 &lt;/div&gt;
 
 .footnote[From [BMLR Figure 4.1](https://bookdown.org/roback/bookdown-BeyondMLR/ch-poissonreg.html#a-graphical-look-at-poisson-regression)]
-
----
-## Assumptions for Poisson regression 
-
-.pull-left[
-**Poisson response**: The response variable is a count per unit of time or space, described by a Poisson distribution, at each level of the predictor(s)
-
-**Independence**: The observations must be independent of one another
-
-**Linearity**: The log of the mean rate, `\(\log(\lambda)\)`, must be a linear function of the predictor(s)
-
-**Mean = Variance**: The mean must equal the variance
-]
-
-.pull-right[
-&lt;img src="Fish-regression_files/figure-html/unnamed-chunk-13-1.png" width="100%" style="display: block; margin: auto;" /&gt;
-
-]
 
 ---
 
@@ -344,7 +335,7 @@ tidy(model1_cont, exponentiate = FALSE, conf.int =TRUE) %&gt;% kable(digits = 3,
 
 - Incidence rate ratios (IRR)
 
-  - The IRR for a one-unit change in `\(x_i\)` is exp($b_i$)
+  - The IRR for a one-unit change in `\(x_i\)` is exp `\((\beta)\)`
 
   - The coefficient tells you how changes in X affect the rate at which Y occurs
   
@@ -506,7 +497,7 @@ ggemmeans(model1, terms=c("Group", "emotion")) %&gt;%
   plot()
 ```
 
-&lt;img src="Fish-regression_files/figure-html/unnamed-chunk-28-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+&lt;img src="Fish-regression_files/figure-html/unnamed-chunk-27-1.png" width="60%" style="display: block; margin: auto;" /&gt;
 ---
 ## Model 2: Add interaction
 
@@ -550,6 +541,9 @@ anova(model1_cont, model2, test="chisq")
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
 
+--
+
+- ✅ Yes! 
 ---
 ## Interaction: `Group*emotion` 
 
@@ -573,11 +567,10 @@ emmeans(model1, specs=c("Group", "emotion"), regrid = "response") %&gt;% pairs(.
 
 
 ```r
-##
 performance::check_model(model2, check = c("pp_check", "outliers", "overdispersion"))
 ```
 
-&lt;img src="Fish-regression_files/figure-html/unnamed-chunk-32-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+&lt;img src="Fish-regression_files/figure-html/unnamed-chunk-31-1.png" width="60%" style="display: block; margin: auto;" /&gt;
 
 ---
 class: middle, inverse
@@ -585,8 +578,7 @@ class: middle, inverse
 ## Goodness-of-fit
 
 ---
-  
-## Pearson residuals
+  ## Pearson residuals
 
 We can calculate two types of residuals for Poisson regression: Pearson residuals and deviance residuals  
 
@@ -631,7 +623,10 @@ where
 
 `$$\text{deviance} \sim \chi^2_{df}$$` 
 
-  where `\(df\)` is the model's residual degrees of freedom
+- `\(df\)` represent the number of independent pieces of information in the data that are available to estimate the model parameters
+
+.small[deviance is an index of underlying variation, if smaller or close to df the model fit is good]
+
 ---
 ## Model 1: Goodness-of-fit calculations
 
@@ -858,7 +853,7 @@ tidy(m.nb.c) %&gt;%
 
 - Same as Poisson (show expected counts)
 
-&lt;img src="Fish-regression_files/figure-html/unnamed-chunk-41-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+&lt;img src="Fish-regression_files/figure-html/unnamed-chunk-40-1.png" width="60%" style="display: block; margin: auto;" /&gt;
 ---
 ## Effect sizes
 

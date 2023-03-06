@@ -119,7 +119,7 @@ kable(data,format="html")
 The annual number of earthquakes registering at least 2.5 on the Richter Scale and having an epicenter within 40 miles of downtown Memphis follows a Poisson distribution with mean 6.5. **What is the probability there will be 3 or fewer such earthquakes next year?**
 
 --
-$$P(Y=y) = \frac{e^{-6.5}10^0} {0!}+
+$$P(Y<=y) = \frac{e^{-6.5}10^0} {0!}+
 \frac{e^{-6.5}10^1} {1!} + 
  \frac{e^{-6.5}10^2} {2!} + 
   \frac{e^{-6.5}10^3} {3!}$$
@@ -172,7 +172,7 @@ include_graphics("faces.png")
 
 **Response**: 
 
-  - Number of fixations (visits) to each face
+  - Number of fixations to each face
 
 - **Predictors**: 
 
@@ -184,8 +184,7 @@ include_graphics("faces.png")
 ## The data 
 
 ```{r}
-#####PUT ON GIT
-hh_data <- read_csv(here::here("data", "tobii_aoi_study1.csv"))
+hh_data <- read_csv("https://raw.githubusercontent.com/jgeller112/psy504-advanced-stats/main/slides/Poisson/data/tobii_aoi_study1.csv")
 ```
 
 ```{r}
@@ -242,7 +241,6 @@ The goal is to model $\lambda$, the expected number of fixations on faces, as a 
 We might be tempted to try a linear model $$\lambda_i = \beta_0 + \beta_1x_{i1} + \beta_2x_{i2} + \dots + \beta_px_{ip}$$
 
 --
-
 This model won't work because...
 
 - It could produce negative values of $\lambda$ for certain values of the predictors 
@@ -263,6 +261,17 @@ $$\log(\lambda_i) = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \dots + \beta_p 
 - Each observation can have a different value of $\lambda$ based on its value of the predictors $x_1, \ldots, x_p$
 
 - $\lambda$ determines the mean and variance, so we don't need to estimate a separate error term 
+
+---
+## Assumptions for Poisson regression 
+
+**Poisson response**: The response variable is a count per unit of time or space, described by a Poisson distribution, at each level of the predictor(s)
+
+**Independence**: The observations must be independent of one another
+
+**Linearity**: The log of the mean rate, $\log(\lambda)$, must be a linear function of the predictor(s)
+
+**Mean = Variance**: The mean must equal the variance
 
 ---
 ## Poisson vs. multiple linear regression 
@@ -337,26 +346,6 @@ grid.arrange(ols_assume, pois_assume, ncol = 2)
 ```
 
 .footnote[From [BMLR Figure 4.1](https://bookdown.org/roback/bookdown-BeyondMLR/ch-poissonreg.html#a-graphical-look-at-poisson-regression)]
-
----
-## Assumptions for Poisson regression 
-
-.pull-left[
-**Poisson response**: The response variable is a count per unit of time or space, described by a Poisson distribution, at each level of the predictor(s)
-
-**Independence**: The observations must be independent of one another
-
-**Linearity**: The log of the mean rate, $\log(\lambda)$, must be a linear function of the predictor(s)
-
-**Mean = Variance**: The mean must equal the variance
-]
-
-.pull-right[
-```{r echo = F, out.width = "100%"}
-pois_assume
-```
-
-]
 
 ---
 
@@ -559,6 +548,9 @@ tidy(model2) %>%
 anova(model1_cont, model2, test="chisq")
 ```
 
+--
+
+- `r emo::ji("check")` Yes! 
 ---
 ## Interaction: `Group*emotion` 
 
@@ -576,7 +568,6 @@ emmeans(model1, specs=c("Group", "emotion"), regrid = "response") %>% pairs(., b
 ## Assumptions
 
 ```{r, fig.align="center", out.width="60%"}
-##
 performance::check_model(model2, check = c("pp_check", "outliers", "overdispersion"))
 
 ```
@@ -587,8 +578,7 @@ class: middle, inverse
 ## Goodness-of-fit
 
 ---
-  
-## Pearson residuals
+  ## Pearson residuals
 
 We can calculate two types of residuals for Poisson regression: Pearson residuals and deviance residuals  
 
@@ -633,7 +623,10 @@ $$\text{sign}(y_i - \hat{\lambda}_i)  =  \begin{cases}
 
 $$\text{deviance} \sim \chi^2_{df}$$ 
 
-  where $df$ is the model's residual degrees of freedom
+- $df$ represent the number of independent pieces of information in the data that are available to estimate the model parameters
+
+.small[deviance is an index of underlying variation, if smaller or close to df the model fit is good]
+
 ---
 ## Model 1: Goodness-of-fit calculations
 

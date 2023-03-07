@@ -23,6 +23,11 @@ Winter, B., & Bürkner, P.-C. (2021). [Poisson regression for linguists: A tutor
   - What is overdispersion?
     
   - How is poisson related to the negative binomial?
+  
+### Optional
+
+Ryan, W. H., Evers, E. R. K., & Moore, D. A. (2021). [Poisson Regressions: A Little Fishy](/readings/collabra_2021_fishy.pdf). Collabra: Psychology, 7(1), 27242. https://doi.org/10.1525/collabra.27242
+
 
 ### Videos
 

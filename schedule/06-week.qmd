@@ -22,6 +22,11 @@ date: 2023-03-06
   - How do you calculate them?
   - How do we interpret Bayes Factors? 
   
+### Optional
+- {{< fa book >}} https://bookdown.org/marklhc/notes_bookdown/markov-chain-monte-carlo.html
+
+  - Really nice explanation of MCMC 
+
 ### Video
 
 - {{< fa video >}} What is Bayes?
@@ -41,3 +46,5 @@ date: 2023-03-06
 - JASP has some nice Bayesian implementations
 
 [Bayesian Regression in JASP ](https://www.youtube.com/watch?v=QRJ05uZs58w)
+
+

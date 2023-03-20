@@ -139,7 +139,7 @@ include_graphics("images/gen.jpg")
 
 ```
 ---
-## Bayes therom
+## Bayes' therom
 
 $$\begin{align}
 \underbrace{ p(\theta \mid \text{data})}_{\substack{\text{Posterior beliefs}}} \,\,\, = \,\,\,

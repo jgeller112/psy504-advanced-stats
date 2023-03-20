@@ -515,14 +515,14 @@ kable(diagnostic_posterior(brm_class1), digits=3)
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; b_avgView &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 10127.575 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10189.58 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0.001 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; b_Intercept &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 9925.065 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.063 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10340.71 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.064 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -554,14 +554,14 @@ kable(diagnostic_posterior(brm_class1), digits=3)
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; b_avgView &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 10127.575 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10189.58 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0.001 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; b_Intercept &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 9925.065 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.063 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10340.71 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.064 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -711,14 +711,14 @@ describe_posterior(
 ## 
 ## Parameter   | Median |  Mean |   MAP |         95% CI |     pd |          ROPE | % in ROPE |  Rhat |      ESS
 ## -------------------------------------------------------------------------------------------------------------
-## (Intercept) |  55.74 | 55.83 | 55.14 | [43.49, 68.56] |   100% | [-1.80, 1.80] |        0% | 1.000 |  9925.00
-## avgView     |   0.47 |  0.47 |  0.46 | [ 0.23,  0.70] | 99.99% | [-1.80, 1.80] |      100% | 1.000 | 10128.00
+## (Intercept) |  55.75 | 55.73 | 55.82 | [42.84, 68.51] |   100% | [-1.80, 1.80] |        0% | 1.000 | 10341.00
+## avgView     |   0.47 |  0.47 |  0.45 | [ 0.23,  0.71] | 99.99% | [-1.80, 1.80] |      100% | 1.000 | 10190.00
 ## 
 ## # Fixed effects sigma
 ## 
 ## Parameter | Median |  Mean |   MAP |         95% CI |   pd |          ROPE | % in ROPE |  Rhat |     ESS
 ## --------------------------------------------------------------------------------------------------------
-## sigma     |  14.99 | 15.15 | 14.46 | [11.92, 19.55] | 100% | [-1.80, 1.80] |        0% | 1.000 | 9031.00
+## sigma     |  15.00 | 15.19 | 14.51 | [11.91, 19.66] | 100% | [-1.80, 1.80] |        0% | 1.000 | 9102.00
 ```
 
 ---
@@ -806,8 +806,8 @@ BF
 ## 
 ## Parameter   |       BF
 ## ----------------------
-## (Intercept) | 9.28e+06
-## avgView     |     5.49
+## (Intercept) | 7.44e+07
+## avgView     |     8.96
 ## 
 ## * Evidence Against The Null: 0
 ```
@@ -848,50 +848,50 @@ sample_prior="yes")
    &lt;td style="text-align:left;"&gt; cond &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; (Intercept) &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 55.947 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 8.264 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 39.916 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 72.774 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 55.991 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8.226 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 39.818 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 72.098 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; fixed &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; cond &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; avgView &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.464 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.143 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.179 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.749 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.463 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.141 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.178 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.741 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; fixed &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; cond &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; sync_cont &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.208 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 6.152 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -11.825 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 12.298 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.231 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.261 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -12.193 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12.278 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; ran_pars &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; cond &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Residual &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; sd__Observation &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 15.377 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 2.023 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 12.114 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 19.953 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15.364 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.995 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12.013 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 19.809 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; ran_pars &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; cond &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Residual &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; prior_sigma__NA.NA.prior_sigma &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 13.307 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 15.737 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.441 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 50.719 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 13.140 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16.310 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.460 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 48.444 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -926,15 +926,15 @@ describe_posterior(
 ## 
 ## Parameter   | Median |  Mean |   MAP |          95% CI |     pd |          ROPE | % in ROPE |  Rhat |     ESS
 ## -------------------------------------------------------------------------------------------------------------
-## (Intercept) |  55.80 | 55.95 | 55.28 | [ 39.92, 72.77] |   100% | [-1.80, 1.80] |        0% | 1.002 | 3003.00
-## avgView     |   0.46 |  0.46 |  0.49 | [  0.18,  0.75] | 99.92% | [-1.80, 1.80] |      100% | 1.002 | 3086.00
-## sync_cont   |   0.07 |  0.21 | -0.63 | [-11.82, 12.30] | 50.42% | [-1.80, 1.80] |    25.58% | 1.001 | 3486.00
+## (Intercept) |  56.05 | 55.99 | 56.82 | [ 39.82, 72.10] |   100% | [-1.80, 1.80] |        0% | 1.000 | 3013.00
+## avgView     |   0.46 |  0.46 |  0.45 | [  0.18,  0.74] |   100% | [-1.80, 1.80] |      100% | 1.000 | 2919.00
+## sync_cont   |   0.34 |  0.23 |  0.53 | [-12.19, 12.28] | 52.48% | [-1.80, 1.80] |    24.13% | 1.000 | 3180.00
 ## 
 ## # Fixed effects sigma
 ## 
 ## Parameter | Median |  Mean |   MAP |          95% CI |   pd |          ROPE | % in ROPE |  Rhat |     ESS
 ## ---------------------------------------------------------------------------------------------------------
-## sigma     |  15.12 | 15.38 | 14.77 | [ 12.11, 19.95] | 100% | [-1.80, 1.80] |        0% | 0.999 | 3216.00
+## sigma     |  15.19 | 15.36 | 15.15 | [ 12.01, 19.81] | 100% | [-1.80, 1.80] |        0% | 1.000 | 3082.00
 ```
 
 ---
@@ -996,9 +996,9 @@ em_syn
 &lt;tbody&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Async - Sync &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -0.2359695 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -12.58108 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 11.10508 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.2086467 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -12.57245 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12.26421 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1023,9 +1023,9 @@ BF
 ## 
 ## Parameter   |       BF
 ## ----------------------
-## (Intercept) | 4.30e+03
-## avgView     |     1.55
-## sync_cont   |    0.634
+## (Intercept) | 2.46e+04
+## avgView     |     2.93
+## sync_cont   |    0.614
 ## 
 ## * Evidence Against The Null: 0
 ```
@@ -1056,7 +1056,7 @@ bayesfactor_models(brm_class1, brm_class2)
 ## Bayes Factors for Model Comparison
 ## 
 ##     Model     BF
-## [2] avgView 1.62
+## [2] avgView 1.63
 ## 
 ## * Against Denominator: [1] avgView + sync
 ## *   Bayes Factor Type: marginal likelihoods (bridgesampling)
@@ -1080,12 +1080,13 @@ bayesfactor_models(brm_class1, brm_class2)
 report_bayes=report::report(brm_class1)
 ```
 1. Include which prior settings were used
-2. Justify the prior settings (particularly for informed priors in a testing scenario) Discuss the robustness of the result. 
+2. Justify the prior settings (particularly for informed priors in a testing scenario) 
 3. Include a plot of the prior and posterior distribution
 4. Report the posterior mean/median and x% credible interva
 5. Include which prior settings were used
 6. If relevant, report the results from both estimation and hypothesis testing 
 7. Include BFs for model comparisons or parameters
+8. Include model convergence diagnostics (trace plot, `\(\hatR\)`, ESS)
 
 ---
 ## Bayesian pros 

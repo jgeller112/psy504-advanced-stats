@@ -680,7 +680,7 @@ plot(density(x))
 ---
 ## Visualize prior predictive distribution
 
-- Make sure prior distribution makes sensible predictions
+- Make sure prior distribution makes sensible predictions (if using informative priors)
 
 .pull-left[
 ```{r, warning=F, message=F, results='hide'}
@@ -983,12 +983,13 @@ bayesfactor_models(brm_class1, brm_class2)
 report_bayes=report::report(brm_class1)
 ```
 1. Include which prior settings were used
-2. Justify the prior settings (particularly for informed priors in a testing scenario) Discuss the robustness of the result. 
+2. Justify the prior settings (particularly for informed priors in a testing scenario) 
 3. Include a plot of the prior and posterior distribution
 4. Report the posterior mean/median and x% credible interva
 5. Include which prior settings were used
 6. If relevant, report the results from both estimation and hypothesis testing 
 7. Include BFs for model comparisons or parameters
+8. Include model convergence diagnostics (trace plot, $\hatR$, ESS)
 
 ---
 ## Bayesian pros 

@@ -164,14 +164,15 @@ tidy(model2, digit=3)
 
 -   Add in the b (M --\> Y) and c' **(direct)** paths: X + M \--\> Y
 
+  -   c' Path: $b = -0.61, t(237) = -4.77, p < .001$
+
+  -   b Path: $b = 0.26, t(237) = 3.09, p = .002$
+
+
 ```{r}
 model3 <- lm(exam ~ facebook + previous, data = master)
-tidy(model3)
+tidy(model3, digits=3)
 ```
-
--   c' Path: $b = -0.61, t(237) = -4.77, p < .001$
-
--   b Path: $b = 0.26, t(237) = 3.09, p = .002$
 
 ## Mediation: interpretation
 

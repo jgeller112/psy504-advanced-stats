@@ -573,11 +573,13 @@ Jason Geller, PH.D.
 <section id="mediation-b-c-path" class="slide level2">
 <h2>Mediation: b, c’ path</h2>
 <ul>
-<li>Add in the b (M –&gt; Y) and c’ <strong>(direct)</strong> paths: X + M --&gt; Y</li>
+<li><p>Add in the b (M –&gt; Y) and c’ <strong>(direct)</strong> paths: X + M --&gt; Y</p></li>
+<li><p>c’ Path: <span class="math inline">\(b = -0.61, t(237) = -4.77, p &lt; .001\)</span></p></li>
+<li><p>b Path: <span class="math inline">\(b = 0.26, t(237) = 3.09, p = .002\)</span></p></li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>model3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(exam <span class="sc">~</span> facebook <span class="sc">+</span> previous, <span class="at">data =</span> master)</span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">tidy</span>(model3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">tidy</span>(model3, <span class="at">digits=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-7">
@@ -593,10 +595,6 @@ Jason Geller, PH.D.
 
 </div>
 </div>
-<ul>
-<li><p>c’ Path: <span class="math inline">\(b = -0.61, t(237) = -4.77, p &lt; .001\)</span></p></li>
-<li><p>b Path: <span class="math inline">\(b = 0.26, t(237) = 3.09, p = .002\)</span></p></li>
-</ul>
 </section>
 <section id="mediation-interpretation" class="slide level2">
 <h2>Mediation: interpretation</h2>
@@ -937,8 +935,8 @@ boot(data = finaldata, statistic = indirectmed, R = nboot, formula2 = allformula
 
 
 Bootstrap Statistics :
-       original       bias    std. error
-t1* -0.05471237 -0.001748992  0.03933562</code></pre>
+       original      bias    std. error
+t1* -0.05471237 0.002485043  0.03627197</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>med_results<span class="sc">$</span>boot.ci <span class="co"># only normal # need bca</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -950,7 +948,7 @@ boot.ci(boot.out = bootresults, conf = conf_level, type = "norm")
 
 Intervals : 
 Level      Normal        
-95%   (-0.1301,  0.0241 )  
+95%   (-0.1283,  0.0139 )  
 Calculations and Intervals on Original Scale</code></pre>
 </div>
 </div>
@@ -1093,7 +1091,7 @@ Indirect effect index:
 - confidence interval:
   - method: Monte Carlo (5000 iterations)
   - level: 0.05 
-  - CI: [-0.126; -0.00445]
+  - CI: [-0.128; -0.00327]
 
 Fitted models:
 
@@ -1186,39 +1184,39 @@ Parameter Estimates:
 
   Standard errors                            Bootstrap
   Number of requested bootstrap draws              500
-  Number of successful bootstrap draws             496
+  Number of successful bootstrap draws             499
 
 Regressions:
                    Estimate  Std.Err  z-value  P(&gt;|z|) ci.lower ci.upper
   bmi ~                                                                 
-    tvhours   (b1)    0.092    0.129    0.714    0.476   -0.154    0.349
-    cellhours (b2)    0.234    0.127    1.839    0.066   -0.015    0.485
-    age       (cp)    0.038    0.127    0.300    0.764   -0.280    0.245
+    tvhours   (b1)    0.092    0.129    0.713    0.476   -0.171    0.351
+    cellhours (b2)    0.234    0.137    1.708    0.088   -0.065    0.501
+    age       (cp)    0.038    0.129    0.297    0.767   -0.302    0.204
   tvhours ~                                                             
-    age       (a1)    0.018    0.046    0.386    0.700   -0.074    0.122
+    age       (a1)    0.018    0.047    0.382    0.702   -0.065    0.143
   cellhours ~                                                           
-    age       (a2)    0.040    0.064    0.623    0.533   -0.037    0.213
+    age       (a2)    0.040    0.071    0.559    0.576   -0.043    0.236
 
 Covariances:
                    Estimate  Std.Err  z-value  P(&gt;|z|) ci.lower ci.upper
  .tvhours ~~                                                            
-   .cellhours         0.460    0.079    5.848    0.000    0.309    0.619
+   .cellhours         0.460    0.076    6.064    0.000    0.312    0.616
 
 Variances:
                    Estimate  Std.Err  z-value  P(&gt;|z|) ci.lower ci.upper
-   .bmi              15.280    1.569    9.739    0.000   12.174   18.400
-   .tvhours           1.872    0.072   25.852    0.000    1.726    2.008
-   .cellhours         1.523    0.086   17.688    0.000    1.338    1.676
+   .bmi              15.280    1.580    9.672    0.000   12.268   18.434
+   .tvhours           1.872    0.072   26.059    0.000    1.734    2.010
+   .cellhours         1.523    0.087   17.565    0.000    1.347    1.685
 
 Defined Parameters:
                    Estimate  Std.Err  z-value  P(&gt;|z|) ci.lower ci.upper
-    indirect1         0.002       NA                     -0.010    0.019
-    indirect2         0.009       NA                     -0.010    0.066
-    total             0.049       NA                     -0.254    0.256
-    total_indirect    0.011       NA                     -0.013    0.072
-    prop_med_1        0.041       NA                     -1.190    0.741
-    prop_med_2        0.195       NA                     -2.056    1.766
-    prop_med          0.222       NA                     -2.396    2.139</code></pre>
+    indirect1         0.002       NA                     -0.010    0.023
+    indirect2         0.009       NA                     -0.011    0.076
+    total             0.049       NA                     -0.256    0.214
+    total_indirect    0.011       NA                     -0.014    0.078
+    prop_med_1        0.041       NA                     -0.717    0.586
+    prop_med_2        0.195       NA                     -1.234    1.951
+    prop_med          0.222       NA                     -4.059    1.661</code></pre>
 </div>
 </div>
 </section>
@@ -1301,7 +1299,7 @@ Indirect effect index:
 - confidence interval:
   - method: Monte Carlo (5000 iterations)
   - level: 0.05 
-  - CI: [0.163; 0.874]
+  - CI: [0.158; 0.867]
 
 Fitted models:
 

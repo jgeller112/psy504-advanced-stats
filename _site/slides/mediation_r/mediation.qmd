@@ -1,7 +1,9 @@
 ---
 title: "Mediation Analysis in R"
+subtitle: "Princeton University"
 author: "Jason Geller, PH.D."
-footer: "PSY 504"
+date: 'Updated:`r Sys.Date()`'
+footer: "PSY 504: Advanced Statitsics"
 format: 
   revealjs:
     theme: psy504.css
@@ -82,8 +84,6 @@ library(broom) # tidy regression models
 library(boot) # bootstrapping
 library(MeMoBootR) # mediation analysis
 library(JSmediation) # mediation analysis
-library(mediation) # mediation analysis
-library(mma) # example dataset
 library(lavaan) # SEM and mediation 
 ```
 
@@ -93,7 +93,7 @@ library(lavaan) # SEM and mediation
 #| message: false
 #| warning: false
 #| 
-master <- read_csv("/Users/jasongeller/Documents/Mediation/data/mediation.csv")
+master <- read_csv("https://raw.githubusercontent.com/jgeller112/psy504-advanced-stats/main/slides/mediation_r/data/mediation.csv")
 master <- na.omit(master)
 
 head(master[-1])
@@ -107,17 +107,26 @@ head(master[-1])
 ## Regression 1
 
 -   Predicting the mediator from the predictor variable
--   X -\> M
+-   X -\> Y
+-   c: total path
 
 ## Regression 2
 
 -   Predicting the outcome from the predictor variable
--   X -\> Y
+
+-   X -\> M
+
+-   a path
 
 ## Regression 3
 
 -   Predicting the outcome from both the predictor variable and the mediator
+
 -   X+M→Y
+
+-   b path
+
+-   c' (c-prime) path
 :::
 
 ## Classical approach - Baron & Kenny (1986)
@@ -164,24 +173,24 @@ tidy(model2, digit=3)
 
 -   Add in the b (M --\> Y) and c' **(direct)** paths: X + M \--\> Y
 
-```{r}
-model3 <- lm(exam ~ facebook + previous, data = master)
-tidy(model3)
-```
-
 -   c' Path: $b = -0.61, t(237) = -4.77, p < .001$
 
 -   b Path: $b = 0.26, t(237) = 3.09, p = .002$
+
+```{r}
+model3 <- lm(exam ~ facebook + previous, data = master)
+tidy(model3, digits=3)
+```
 
 ## Mediation: interpretation
 
 -   Facebook usage negatively impacts exam scores (c path = -.66)
 
--   Previous study time negatively impacts facebook time (a path = -.21)
+-   Facebook time negatively impacts previous study time (a path = -.21)
 
 -   Controlling for Facebook time, previous experience positively impacts exam scores (b path = .26)
 
--   Controlling for previous studying, Facebook time positively impacts exam scores (c' path = -0.61)
+-   Controlling for previous studying, Facebook time negatively impacts exam scores (c' path = -0.61)
 
 ## Testing mediation: Sobel test
 
@@ -193,7 +202,7 @@ tidy(model3)
 
     -   If the indirect effect is larger than the error, we would conclude that the addition of the M variable changed the c path.
 
-## Sobel Test
+## Aroian Test
 
 ```{r}
 #aroian sobel
@@ -208,7 +217,7 @@ pnorm(abs(zscore), lower.tail = F)*2
 
 ```
 
-## Sobel test
+## Aroian test
 
 ```{r}
 library(bda)
@@ -216,7 +225,7 @@ library(bda)
 mediation.test(master$previous,master$facebook,master$exam)
 ```
 
--   *Z* = 1.94, p = .076
+-   *Z* = -1.71, p = .09
 
     -   *We would conclude that no mediation had occurred.*
 
@@ -225,7 +234,7 @@ mediation.test(master$previous,master$facebook,master$exam)
 -   Assumes indirect effect is normally distributed
     -   It is not!
 
-        -   It is slightly skewed and leptokurtic
+        -   It is skewed and leptokurtic
 
 ::: columns
 ::: {.column width="50%"}
@@ -307,7 +316,7 @@ med_results <- mediation1(y = "exam",
 
 ## Mediation: MeMoBoot
 
--   The MeMoBootR package gives you data screening, each step of the mediation, and the bootstrapping results!
+-   The MeMoBootR package (developed by Erin Buchanon) gives you data screening, each step of the mediation, and the bootstrapping results!
 
     -   The data screening does not include accuracy or missing data, so that should be completed first.
 
@@ -389,7 +398,12 @@ med_results$p.value
 
 ```{r}
 med_results$boot.results
-med_results$boot.ci # only normal # need bca
+```
+
+## Bootstrapping
+
+```{r}
+med_results$boot.ci
 ```
 
 ## Mediation visualization
@@ -409,7 +423,7 @@ med_results$diagram
 
 library(flexplot) # mediation plot
 
-mediate_plot(exam~facebook + previous,data=master)
+mediate_plot(exam~previous +facebook,data=master)
 
 ```
 
@@ -477,14 +491,25 @@ model_fit_with_index
 
 ## Multiple Mediators
 
+::: columns
+::: {.column width="50%"}
 -   Test the influence of multiple mediator
 
-    -   Specific indirect effect
-        -   X -\> M_1 -\> Y
+-   Specific indirect effect
 
-        -   X -\> M_2 -\> Y
-    -   Total indirect effect
-        -   Overall influence of mediators
+    -   X -\> M_1 -\> Y
+
+    -   X -\> M_2 -\> Y
+
+-   Total indirect effect
+
+    -   Overall influence of mediators
+:::
+
+::: {.column width="50%"}
+![](sem.webp)
+:::
+:::
 
 ## Multiple mediators: Example
 
@@ -494,9 +519,10 @@ model_fit_with_index
 #| fig.align: center
 #| fig.width=8
 #| fig.height=4
-library(mma) # get dataset
-data("weight_behavior")
-weight_behavior <- drop_na(weight_behavior) 
+
+weight_behavior <-
+  read_csv("https://raw.githubusercontent.com/jgeller112/psy504-advanced-stats/main/slides/mediation_r/data/weight.csv") %>%
+  drop_na() 
 ```
 
 ```{r}
@@ -589,8 +615,8 @@ $$
 with $M_{2i}$​−\$M1\_{1i}​\$ the difference score between DV conditions for the mediator variable for the *i*th observation,
 
 $$
-Y_{2i} - Y_{1i} = c'_{31} + b_{32}(M_{2i}-M_{1i}) + d_{33}[0.5(M_{2i}+M_{1i}) - 0.5(\bar{M_1 + M_2})]
-$$
+Y_{2i} - Y_{1i} = c'_{31} + b_{32}(M_{2i}-M_{1i}) + d_{33}[0.5(M_{2i}+M_{1i}) - 0.5(\bar{M_1}+ M_2})]
+$$ Where we have the mediator diff and mean_diff
 
 ## Within-participant mediation
 
@@ -625,11 +651,7 @@ model_fit_with_index
 
         -   Bootstrapping
 
-## Write-up
-
--   State your hypothesis and your statistical test
-
-    -   How indirect effect was tested and number of bootstraps
+## Write-up: Simple mediation
 
 -   a, b paths
 
@@ -639,16 +661,17 @@ model_fit_with_index
 
 -   Indirect effect
 
--   Path diagram
+-   Sobel/Arioan, Bootstrapping (# bootstrapped samples)
+
+-   Figure of path diagram
 
     -   Create in PPT 😱
+    -   Use DiagrammeR
 
-## Example write-up: Simple mediation
+## Write up: Multiple mediators
 
-The mediation analysis was conducted using the R package memobootR (Buchanon) with a bootstrapping procedure to estimate the indirect effect of Facebook usable on exam scores through studying time. The model included facebook usage as the predictor, exam score as the outcome, and study time as the mediator. The significance of the indirect effect was tested using bias-corrected bootstrap confidence intervals (bca CIs) based on 10,000 bootstrap samples.
+-   Include all indirect effects
 
-## Example write-up
+-   Total indirect effect
 
-The results indicate a significant total effect between facebook use and exam scores (b = -0.661, SE = 0.128, t(236) = 5.16, p \< .001). There was also a significant direct effect (c') on facebook use and exam score while holding studying time constant (b = -0.606, SE = 0.127, t(237) = 4.77, p \< .001). The a path (b = -.21, SE = 0.097, t(237) = 2.17, p = .031) and b (b = 0.26, SE = 0.084, t(237) = 3.09, p \< .001) paths were both significant. The indirect effect was also significant (indirect effect = -0.05, 95% CI \[-0.18, -0.01\]) indicating that previous knowledge/studying mediated the relationship between Facebook use and exam scores.
-
-## Example write-up: Multiple mediators
+-   Proportion mediated

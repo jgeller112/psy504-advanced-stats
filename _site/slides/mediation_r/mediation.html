@@ -391,6 +391,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Mediation Analysis in R</h1>
+  <p class="subtitle">Princeton University</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -400,6 +401,7 @@ Jason Geller, PH.D.
 </div>
 </div>
 
+  <p class="date">3/26/23</p>
 </section>
 <section class="slide level2">
 
@@ -445,15 +447,13 @@ Jason Geller, PH.D.
 <span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(boot) <span class="co"># bootstrapping</span></span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="fu">library</span>(MeMoBootR) <span class="co"># mediation analysis</span></span>
 <span id="cb1-5"><a href="#cb1-5"></a><span class="fu">library</span>(JSmediation) <span class="co"># mediation analysis</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="fu">library</span>(mediation) <span class="co"># mediation analysis</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="fu">library</span>(mma) <span class="co"># example dataset</span></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="fu">library</span>(lavaan) <span class="co"># SEM and mediation </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="fu">library</span>(lavaan) <span class="co"># SEM and mediation </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="load-data" class="slide level2">
 <h2>Load data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>master <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"/Users/jasongeller/Documents/Mediation/data/mediation.csv"</span>)</span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>master <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/jgeller112/psy504-advanced-stats/main/slides/mediation_r/data/mediation.csv"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2"></a>master <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(master)</span>
 <span id="cb2-3"><a href="#cb2-3"></a></span>
 <span id="cb2-4"><a href="#cb2-4"></a><span class="fu">head</span>(master[<span class="sc">-</span><span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -490,19 +490,23 @@ Jason Geller, PH.D.
 <div id="tabset-1-1">
 <ul>
 <li>Predicting the mediator from the predictor variable</li>
-<li>X -&gt; M</li>
+<li>X -&gt; Y</li>
+<li>c: total path</li>
 </ul>
 </div>
 <div id="tabset-1-2">
 <ul>
-<li>Predicting the outcome from the predictor variable</li>
-<li>X -&gt; Y</li>
+<li><p>Predicting the outcome from the predictor variable</p></li>
+<li><p>X -&gt; M</p></li>
+<li><p>a path</p></li>
 </ul>
 </div>
 <div id="tabset-1-3">
 <ul>
-<li>Predicting the outcome from both the predictor variable and the mediator</li>
-<li>X+M→Y</li>
+<li><p>Predicting the outcome from both the predictor variable and the mediator</p></li>
+<li><p>X+M→Y</p></li>
+<li><p>b path</p></li>
+<li><p>c’ (c-prime) path</p></li>
 </ul>
 </div>
 </div>
@@ -573,11 +577,13 @@ Jason Geller, PH.D.
 <section id="mediation-b-c-path" class="slide level2">
 <h2>Mediation: b, c’ path</h2>
 <ul>
-<li>Add in the b (M –&gt; Y) and c’ <strong>(direct)</strong> paths: X + M --&gt; Y</li>
+<li><p>Add in the b (M –&gt; Y) and c’ <strong>(direct)</strong> paths: X + M --&gt; Y</p></li>
+<li><p>c’ Path: <span class="math inline">\(b = -0.61, t(237) = -4.77, p &lt; .001\)</span></p></li>
+<li><p>b Path: <span class="math inline">\(b = 0.26, t(237) = 3.09, p = .002\)</span></p></li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>model3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(exam <span class="sc">~</span> facebook <span class="sc">+</span> previous, <span class="at">data =</span> master)</span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">tidy</span>(model3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">tidy</span>(model3, <span class="at">digits=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-7">
@@ -593,18 +599,14 @@ Jason Geller, PH.D.
 
 </div>
 </div>
-<ul>
-<li><p>c’ Path: <span class="math inline">\(b = -0.61, t(237) = -4.77, p &lt; .001\)</span></p></li>
-<li><p>b Path: <span class="math inline">\(b = 0.26, t(237) = 3.09, p = .002\)</span></p></li>
-</ul>
 </section>
 <section id="mediation-interpretation" class="slide level2">
 <h2>Mediation: interpretation</h2>
 <ul>
 <li><p>Facebook usage negatively impacts exam scores (c path = -.66)</p></li>
-<li><p>Previous study time negatively impacts facebook time (a path = -.21)</p></li>
+<li><p>Facebook time negatively impacts previous study time (a path = -.21)</p></li>
 <li><p>Controlling for Facebook time, previous experience positively impacts exam scores (b path = .26)</p></li>
-<li><p>Controlling for previous studying, Facebook time positively impacts exam scores (c’ path = -0.61)</p></li>
+<li><p>Controlling for previous studying, Facebook time negatively impacts exam scores (c’ path = -0.61)</p></li>
 </ul>
 </section>
 <section id="testing-mediation-sobel-test" class="slide level2">
@@ -618,8 +620,8 @@ Jason Geller, PH.D.
 </ul></li>
 </ul>
 </section>
-<section id="sobel-test" class="slide level2">
-<h2>Sobel Test</h2>
+<section id="aroian-test" class="slide level2">
+<h2>Aroian Test</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">#aroian sobel</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a>a <span class="ot">&lt;-</span> <span class="fu">coef</span>(model2)[<span class="dv">2</span>]</span>
@@ -640,8 +642,8 @@ Jason Geller, PH.D.
 </div>
 </div>
 </section>
-<section id="sobel-test-1" class="slide level2">
-<h2>Sobel test</h2>
+<section id="aroian-test-1" class="slide level2">
+<h2>Aroian test</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">library</span>(bda)</span>
 <span id="cb10-2"><a href="#cb10-2"></a><span class="co">#conducts sobel test</span></span>
@@ -660,20 +662,20 @@ Jason Geller, PH.D.
 </div>
 </div>
 <ul>
-<li><p><em>Z</em> = 1.94, p = .076</p>
+<li><p><em>Z</em> = -1.71, p = .09</p>
 <ul>
 <li><em>We would conclude that no mediation had occurred.</em></li>
 </ul></li>
 </ul>
 </section>
-<section id="sobel-test-2" class="slide level2">
+<section id="sobel-test" class="slide level2">
 <h2>Sobel test</h2>
 <ul>
 <li>Assumes indirect effect is normally distributed
 <ul>
 <li><p>It is not!</p>
 <ul>
-<li>It is slightly skewed and leptokurtic</li>
+<li>It is skewed and leptokurtic</li>
 </ul></li>
 </ul></li>
 </ul>
@@ -770,7 +772,7 @@ Jason Geller, PH.D.
 <section id="mediation-memoboot" class="slide level2">
 <h2>Mediation: MeMoBoot</h2>
 <ul>
-<li><p>The MeMoBootR package gives you data screening, each step of the mediation, and the bootstrapping results!</p>
+<li><p>The MeMoBootR package (developed by Erin Buchanon) gives you data screening, each step of the mediation, and the bootstrapping results!</p>
 <ul>
 <li>The data screening does not include accuracy or missing data, so that should be completed first.</li>
 </ul></li>
@@ -938,9 +940,14 @@ boot(data = finaldata, statistic = indirectmed, R = nboot, formula2 = allformula
 
 Bootstrap Statistics :
        original       bias    std. error
-t1* -0.05471237 -0.001748992  0.03933562</code></pre>
+t1* -0.05471237 0.0007078593  0.03709139</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>med_results<span class="sc">$</span>boot.ci <span class="co"># only normal # need bca</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="bootstrapping-1" class="slide level2">
+<h2>Bootstrapping</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>med_results<span class="sc">$</span>boot.ci</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>BOOTSTRAP CONFIDENCE INTERVAL CALCULATIONS
 Based on 1000 bootstrap replicates
@@ -950,7 +957,7 @@ boot.ci(boot.out = bootresults, conf = conf_level, type = "norm")
 
 Intervals : 
 Level      Normal        
-95%   (-0.1301,  0.0241 )  
+95%   (-0.1281,  0.0173 )  
 Calculations and Intervals on Original Scale</code></pre>
 </div>
 </div>
@@ -961,16 +968,16 @@ Calculations and Intervals on Original Scale</code></pre>
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>med_results<span class="sc">$</span>diagram</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="mediation_files/figure-revealjs/unnamed-chunk-24-1.png" width="960" class="r-stretch"></section>
+<img data-src="mediation_files/figure-revealjs/unnamed-chunk-25-1.png" width="960" class="r-stretch"></section>
 <section id="mediation-visualization-1" class="slide level2">
 <h2>Mediation visualization</h2>
 <div class="cell" data-fig.aign="center">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">library</span>(flexplot) <span class="co"># mediation plot</span></span>
 <span id="cb33-2"><a href="#cb33-2"></a></span>
-<span id="cb33-3"><a href="#cb33-3"></a><span class="fu">mediate_plot</span>(exam<span class="sc">~</span>facebook <span class="sc">+</span> previous,<span class="at">data=</span>master)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-3"><a href="#cb33-3"></a><span class="fu">mediate_plot</span>(exam<span class="sc">~</span>previous <span class="sc">+</span>facebook,<span class="at">data=</span>master)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="mediation_files/figure-revealjs/unnamed-chunk-25-1.png" width="960" class="r-stretch"></section>
+<img data-src="mediation_files/figure-revealjs/unnamed-chunk-26-1.png" width="960" class="r-stretch"></section>
 <section id="jsmediation" class="slide level2">
 <h2>JSmediation</h2>
 <ul>
@@ -1034,7 +1041,7 @@ Fitted models:
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>first_model <span class="ot">&lt;-</span> <span class="fu">extract_model</span>(mediation_fit, <span class="at">step =</span> <span class="dv">1</span>)</span>
 <span id="cb37-2"><a href="#cb37-2"></a>performance<span class="sc">::</span><span class="fu">check_model</span>(first_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="mediation_files/figure-revealjs/unnamed-chunk-28-1.png" width="768"></p>
+<p><img data-src="mediation_files/figure-revealjs/unnamed-chunk-29-1.png" width="768"></p>
 </div>
 </div>
 </div>
@@ -1043,7 +1050,7 @@ Fitted models:
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>second_model <span class="ot">&lt;-</span> <span class="fu">extract_model</span>(mediation_fit, <span class="at">step =</span> <span class="dv">2</span>)</span>
 <span id="cb38-2"><a href="#cb38-2"></a>performance<span class="sc">::</span><span class="fu">check_model</span>(second_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="mediation_files/figure-revealjs/unnamed-chunk-29-1.png" width="768"></p>
+<p><img data-src="mediation_files/figure-revealjs/unnamed-chunk-30-1.png" width="768"></p>
 </div>
 </div>
 </div>
@@ -1052,7 +1059,7 @@ Fitted models:
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>third_model <span class="ot">&lt;-</span> <span class="fu">extract_model</span>(mediation_fit, <span class="at">step =</span> <span class="dv">3</span>)</span>
 <span id="cb39-2"><a href="#cb39-2"></a>performance<span class="sc">::</span><span class="fu">check_model</span>(third_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="mediation_files/figure-revealjs/unnamed-chunk-30-1.png" width="768"></p>
+<p><img data-src="mediation_files/figure-revealjs/unnamed-chunk-31-1.png" width="768"></p>
 </div>
 </div>
 </div>
@@ -1093,7 +1100,7 @@ Indirect effect index:
 - confidence interval:
   - method: Monte Carlo (5000 iterations)
   - level: 0.05 
-  - CI: [-0.126; -0.00445]
+  - CI: [-0.125; -0.00355]
 
 Fitted models:
 
@@ -1105,20 +1112,24 @@ Fitted models:
 </section>
 <section id="multiple-mediators" class="slide level2">
 <h2>Multiple Mediators</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <ul>
-<li><p>Test the influence of multiple mediator</p>
-<ul>
-<li>Specific indirect effect
+<li><p>Test the influence of multiple mediator</p></li>
+<li><p>Specific indirect effect</p>
 <ul>
 <li><p>X -&gt; M_1 -&gt; Y</p></li>
 <li><p>X -&gt; M_2 -&gt; Y</p></li>
 </ul></li>
-<li>Total indirect effect
+<li><p>Total indirect effect</p>
 <ul>
 <li>Overall influence of mediators</li>
 </ul></li>
-</ul></li>
 </ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="sem.webp"></p>
+</div>
+</div>
 </section>
 <section id="multiple-mediators-example" class="slide level2">
 <h2>Multiple mediators: Example</h2>
@@ -1127,12 +1138,13 @@ Fitted models:
 <span id="cb42-2"><a href="#cb42-2"></a><span class="co">#| fig.align: center</span></span>
 <span id="cb42-3"><a href="#cb42-3"></a><span class="co">#| fig.width=8</span></span>
 <span id="cb42-4"><a href="#cb42-4"></a><span class="co">#| fig.height=4</span></span>
-<span id="cb42-5"><a href="#cb42-5"></a><span class="fu">library</span>(mma) <span class="co"># get dataset</span></span>
-<span id="cb42-6"><a href="#cb42-6"></a><span class="fu">data</span>(<span class="st">"weight_behavior"</span>)</span>
-<span id="cb42-7"><a href="#cb42-7"></a>weight_behavior <span class="ot">&lt;-</span> <span class="fu">drop_na</span>(weight_behavior) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb42-5"><a href="#cb42-5"></a></span>
+<span id="cb42-6"><a href="#cb42-6"></a>weight_behavior <span class="ot">&lt;-</span></span>
+<span id="cb42-7"><a href="#cb42-7"></a>  <span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/jgeller112/psy504-advanced-stats/main/slides/mediation_r/data/weight.csv"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb42-8"><a href="#cb42-8"></a>  <span class="fu">drop_na</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
-<img data-src="mediation_files/figure-revealjs/unnamed-chunk-33-1.png" width="768" class="r-stretch quarto-figure-center"></section>
+<img data-src="mediation_files/figure-revealjs/unnamed-chunk-34-1.png" width="768" class="r-stretch quarto-figure-center"></section>
 <section id="lavaan" class="slide level2">
 <h2>Lavaan</h2>
 <ul>
@@ -1175,7 +1187,7 @@ Fitted models:
   Optimization method                           NLMINB
   Number of model parameters                         9
 
-  Number of observations                           567
+  Number of observations                           543
 
 Model Test User Model:
                                                       
@@ -1186,39 +1198,39 @@ Parameter Estimates:
 
   Standard errors                            Bootstrap
   Number of requested bootstrap draws              500
-  Number of successful bootstrap draws             496
+  Number of successful bootstrap draws             499
 
 Regressions:
                    Estimate  Std.Err  z-value  P(&gt;|z|) ci.lower ci.upper
   bmi ~                                                                 
-    tvhours   (b1)    0.092    0.129    0.714    0.476   -0.154    0.349
-    cellhours (b2)    0.234    0.127    1.839    0.066   -0.015    0.485
-    age       (cp)    0.038    0.127    0.300    0.764   -0.280    0.245
+    tvhours   (b1)    0.120    0.131    0.910    0.363   -0.144    0.378
+    cellhours (b2)    0.217    0.131    1.655    0.098   -0.028    0.478
+    age       (cp)    0.026    0.135    0.190    0.850   -0.314    0.226
   tvhours ~                                                             
-    age       (a1)    0.018    0.046    0.386    0.700   -0.074    0.122
+    age       (a1)    0.017    0.045    0.380    0.704   -0.074    0.111
   cellhours ~                                                           
-    age       (a2)    0.040    0.064    0.623    0.533   -0.037    0.213
+    age       (a2)    0.041    0.068    0.604    0.546   -0.040    0.229
 
 Covariances:
                    Estimate  Std.Err  z-value  P(&gt;|z|) ci.lower ci.upper
  .tvhours ~~                                                            
-   .cellhours         0.460    0.079    5.848    0.000    0.309    0.619
+   .cellhours         0.473    0.074    6.349    0.000    0.317    0.613
 
 Variances:
                    Estimate  Std.Err  z-value  P(&gt;|z|) ci.lower ci.upper
-   .bmi              15.280    1.569    9.739    0.000   12.174   18.400
-   .tvhours           1.872    0.072   25.852    0.000    1.726    2.008
-   .cellhours         1.523    0.086   17.688    0.000    1.338    1.676
+   .bmi              15.273    1.527   10.003    0.000   12.495   18.702
+   .tvhours           1.883    0.074   25.467    0.000    1.728    2.027
+   .cellhours         1.512    0.090   16.789    0.000    1.314    1.709
 
 Defined Parameters:
                    Estimate  Std.Err  z-value  P(&gt;|z|) ci.lower ci.upper
-    indirect1         0.002       NA                     -0.010    0.019
-    indirect2         0.009       NA                     -0.010    0.066
-    total             0.049       NA                     -0.254    0.256
-    total_indirect    0.011       NA                     -0.013    0.072
-    prop_med_1        0.041       NA                     -1.190    0.741
-    prop_med_2        0.195       NA                     -2.056    1.766
-    prop_med          0.222       NA                     -2.396    2.139</code></pre>
+    indirect1         0.002       NA                     -0.012    0.022
+    indirect2         0.009       NA                     -0.008    0.068
+    total             0.037       NA                     -0.263    0.263
+    total_indirect    0.011       NA                     -0.011    0.073
+    prop_med_1        0.074       NA                     -0.551    0.461
+    prop_med_2        0.257       NA                     -1.387    1.921
+    prop_med          0.299       NA                     -2.072    1.622</code></pre>
 </div>
 </div>
 </section>
@@ -1228,7 +1240,7 @@ Defined Parameters:
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="fu">statisticalDiagram</span>(<span class="fl">4.2</span>,<span class="at">labels=</span>labels,<span class="at">fit=</span>fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="mediation_files/figure-revealjs/unnamed-chunk-36-1.png" width="960" class="r-stretch"></section>
+<img data-src="mediation_files/figure-revealjs/unnamed-chunk-37-1.png" width="960" class="r-stretch"></section>
 <section id="within-participant-mediation" class="slide level2">
 <h2>Within-participant mediation</h2>
 <ul>
@@ -1242,7 +1254,7 @@ Defined Parameters:
 </ul></li>
 </ul>
 
-<img data-src="mediation_files/figure-revealjs/unnamed-chunk-37-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
+<img data-src="mediation_files/figure-revealjs/unnamed-chunk-38-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
 <section id="within-participant-mediation-1" class="slide level2">
 <h2>Within-participant mediation</h2>
 <p><span class="math display">\[
@@ -1254,8 +1266,8 @@ M_{2i}-M_{1i} = a_{21}
 \]</span></p>
 <p>with <span class="math inline">\(M_{2i}\)</span>​−$M1_{1i}​$ the difference score between DV conditions for the mediator variable for the <em>i</em>th observation,</p>
 <p><span class="math display">\[
-Y_{2i} - Y_{1i} = c'_{31} + b_{32}(M_{2i}-M_{1i}) + d_{33}[0.5(M_{2i}+M_{1i}) - 0.5(\bar{M_1 + M_2})]
-\]</span></p>
+Y_{2i} - Y_{1i} = c'_{31} + b_{32}(M_{2i}-M_{1i}) + d_{33}[0.5(M_{2i}+M_{1i}) - 0.5(\bar{M_1}+ M_2})]
+\]</span> Where we have the mediator diff and mean_diff</p>
 </section>
 <section id="within-participant-mediation-2" class="slide level2">
 <h2>Within-participant mediation</h2>
@@ -1301,7 +1313,7 @@ Indirect effect index:
 - confidence interval:
   - method: Monte Carlo (5000 iterations)
   - level: 0.05 
-  - CI: [0.163; 0.874]
+  - CI: [0.157; 0.865]
 
 Fitted models:
 
@@ -1326,35 +1338,30 @@ Fitted models:
 </ul></li>
 </ul>
 </section>
-<section id="write-up" class="slide level2">
-<h2>Write-up</h2>
+<section id="write-up-simple-mediation" class="slide level2">
+<h2>Write-up: Simple mediation</h2>
 <ul>
-<li><p>State your hypothesis and your statistical test</p>
-<ul>
-<li>How indirect effect was tested and number of bootstraps</li>
-</ul></li>
 <li><p>a, b paths</p></li>
 <li><p>Direct effect (c’)</p></li>
 <li><p>Total effect (c)</p></li>
 <li><p>Indirect effect</p></li>
-<li><p>Path diagram</p>
+<li><p>Sobel/Arioan, Bootstrapping (# bootstrapped samples)</p></li>
+<li><p>Figure of path diagram</p>
 <ul>
 <li>Create in PPT 😱</li>
+<li>Use DiagrammeR</li>
 </ul></li>
 </ul>
 </section>
-<section id="example-write-up-simple-mediation" class="slide level2">
-<h2>Example write-up: Simple mediation</h2>
-<p>The mediation analysis was conducted using the R package memobootR (Buchanon) with a bootstrapping procedure to estimate the indirect effect of Facebook usable on exam scores through studying time. The model included facebook usage as the predictor, exam score as the outcome, and study time as the mediator. The significance of the indirect effect was tested using bias-corrected bootstrap confidence intervals (bca CIs) based on 10,000 bootstrap samples.</p>
-</section>
-<section id="example-write-up" class="slide level2">
-<h2>Example write-up</h2>
-<p>The results indicate a significant total effect between facebook use and exam scores (b = -0.661, SE = 0.128, t(236) = 5.16, p &lt; .001). There was also a significant direct effect (c’) on facebook use and exam score while holding studying time constant (b = -0.606, SE = 0.127, t(237) = 4.77, p &lt; .001). The a path (b = -.21, SE = 0.097, t(237) = 2.17, p = .031) and b (b = 0.26, SE = 0.084, t(237) = 3.09, p &lt; .001) paths were both significant. The indirect effect was also significant (indirect effect = -0.05, 95% CI [-0.18, -0.01]) indicating that previous knowledge/studying mediated the relationship between Facebook use and exam scores.</p>
-</section>
-<section id="example-write-up-multiple-mediators" class="slide level2">
-<h2>Example write-up: Multiple mediators</h2>
+<section id="write-up-multiple-mediators" class="slide level2">
+<h2>Write up: Multiple mediators</h2>
+<ul>
+<li><p>Include all indirect effects</p></li>
+<li><p>Total indirect effect</p></li>
+<li><p>Proportion mediated</p></li>
+</ul>
 <div class="footer footer-default">
-<p>PSY 504</p>
+<p>PSY 504: Advanced Statitsics</p>
 </div>
 </section>
     </div>

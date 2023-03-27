@@ -3,7 +3,7 @@ title: "Mediation Analysis in R"
 subtitle: "Princeton University"
 author: "Jason Geller, PH.D."
 date: 'Updated:`r Sys.Date()`'
-footer: "PSY 504: Advanced Statitsics"
+footer: "PSY 504: Advanced Statistics"
 format: 
   revealjs:
     theme: psy504.css

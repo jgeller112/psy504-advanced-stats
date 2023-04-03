@@ -170,7 +170,7 @@ library(pacman)
 
 ![](exoendo.png){fig-align="center"}
 
--    `Y~X + Residual`
+-   `Y~X + Residual`
 
 -   Here that is `Endogenous ~ Exogenous + disturbance`
 
@@ -200,6 +200,8 @@ library(pacman)
 ## Cheat sheet
 
 ![](terms.png){fig-align="center"}
+
+-   Also here: https://davidakenny.net/cm/basics.htm
 
 ## Path models
 
@@ -306,27 +308,15 @@ library(pacman)
 
 -   Let's play a game
 
-::: columns
-::: {.column width="50%"}
-![](https://i0.wp.com/www.nightmarishconjurings.com/wp-content/uploads/2019/01/26231180_160236294601241_3129438233170987821_n.jpg?resize=640%252C358&ssl=1){fig-align="center"}
-:::
+    ::: columns
+    ::: {.column width="50%"}
+    ![](game.png)
+    :::
 
-::: {.column width="50%"}
-![](https://github.com/doomlab/learnSEM/blob/master/vignettes/pictures/lecture_evals.png?raw=true){fig-align="center"}
-:::
-:::
-
-???
-
-|     |                                                   |
-|-----|---------------------------------------------------|
-|     | \- Possible = \$\\frac{4 \\times (4+1)}{2} = 10\$ |
-|     | \- Estimated:                                     |
-|     | \- 4 regressions                                  |
-|     | \- 2 error variances                              |
-|     | \- 2 variances                                    |
-|     | \- 1 covariance                                   |
-|     | \- DF = 10 - 9 = 1                                |
+    ::: {.column width="50%"}
+    ![](evals.png)
+    :::
+    :::
 
 ## SEM steps
 
@@ -343,7 +333,7 @@ library(pacman)
 -   Justify each path that is present and absent
 -   What are the hypothesized relationships?(ivs, dvs, mediators, moderators)
 
-## Example data
+## Example data (Ingram et al., 2000)
 
 -   What makes someone apply to graduate school?
 
@@ -359,14 +349,14 @@ library(pacman)
     -   Perceived control over admission (**perceived.control)**
 
 ```{r}
-grad <- read.csv(here::here("data", "graduate.school.csv")) %>% 
+grad <- read.csv("https://raw.githubusercontent.com/jgeller112/psy504-advanced-stats/main/slides/SEM/data/graduate.school.csv") %>% 
   dplyr::select(-job.opportunities)
 
-grad1<-read.csv(here::here("data", "graduate.school.csv"))
+grad1<-read.csv("https://raw.githubusercontent.com/jgeller112/psy504-advanced-stats/main/slides/SEM/data/graduate.school.csv")
 
 ```
 
-## Model
+## Model\`
 
 ![](model.png){fig-align="center"}
 
@@ -395,8 +385,6 @@ p_load("lavaan", "semPlot")
 -   Declare equations for every endogenous variable in your model
 
 -   Declare indirect and covariances
-
--   Syntax
 
     -   \`\~\` indicates a regression
 
@@ -521,6 +509,8 @@ diagram = semPaths(fit, whatLabels="std", nodeLabels = labels, layout=locations,
 
     -   Tell you what the chi-square change would be if you added the path suggested
 
+    -   Can make your model better
+
         -   Potential for HARKING!
         -   Be transparent
 
@@ -624,14 +614,13 @@ anova(fit, grad_analysis_constrained) %>% knitr::kable(., digits = 3)
 
     -   If so compare models with AIC or BIC
 
+        -   $\Delta{BIC}$ (log odds of model with lower BIC)
+
+            -   \>6 strong evidence for model
+
     -   If not, choose model that fits
 
--   Use AIC or BIC (not chi-square difference)
-
-    -   $\Delta{BIC}$ (log odds of model with lower BIC)
-        -   \>6 strong evidence for model
-
--   Use `compare_performance()` from `easystats`
+    -   Use `compare_performance()` from `easystats`
 :::
 :::
 
@@ -639,18 +628,18 @@ anova(fit, grad_analysis_constrained) %>% knitr::kable(., digits = 3)
 
 ## Write-up: Nested models
 
-We wanted to see if the data fit Ajzen\'s (1985) Theory of planned behavior (\"Unconstrained Model,\" Figure 1) better than a constrained model that posits no relationship between external pressure and intention to apply to graduate school (\"Constrained Model,\" Figure 2). The constrained model fit the data well, SRMR = .03, RMSEA = 0, 90% CI \[0, 0.18\], CFI = 1, AIC = 2000.42, BIC = 2012.98. A Likelihood Ratio test of the two models suggested that the models fit the data equally well, $\chi^2$ (1) = 0.95, p = 0.33. Thus, we trimmed this path in the interest of parsimony. 
+We wanted to see if the data fit Ajzen's (1985) Theory of planned behavior ("Unconstrained Model," Figure 1) better than a constrained model that posits no relationship between external pressure and intention to apply to graduate school ("Constrained Model," Figure 2). The constrained model fit the data well, SRMR = .03, RMSEA = 0, 90% CI \[0, 0.18\], CFI = 1, AIC = 2000.42, BIC = 2012.98. A Likelihood Ratio test of the two models suggested that the models fit the data equally well, $\chi^2$ (1) = 0.95, p = 0.33. Thus, we trimmed this path in the interest of parsimony. 
 
-## Write-up: Non-nested 
+## Write-up: Non-nested
 
-We also compared a non-nested model that considered the strongest pathway of our originally hypothesized model in the context of job opportunities (\"Opportunities Model,\" Figure 3). The opportunities model had good absolute and relative goodness of fit but the relative badness of fit was poor, SRMR = .05, RMSEA =0.28, 90% CI \[0.13, 0.44\], CFI = 0.96, AIC = 1502.77, BIC = 1519.52. Comparing the Opportunities Model to the Hypothesized Model (Figure 1) using BIC (Kass & Raftery, 1995) reveals that the evidence strongly favors the Opportunities Model, $BIC_{Hypothesized}$ = 2040.69, ΔBIC= 521.
+We also compared a non-nested model that considered the strongest pathway of our originally hypothesized model in the context of job opportunities ("Opportunities Model," Figure 3). The opportunities model had good absolute and relative goodness of fit but the relative badness of fit was poor, SRMR = .05, RMSEA =0.28, 90% CI \[0.13, 0.44\], CFI = 0.96, AIC = 1502.77, BIC = 1519.52. Comparing the Opportunities Model to the Hypothesized Model (Figure 1) using BIC (Kass & Raftery, 1995) reveals that the evidence strongly favors the Opportunities Model, $BIC_{Hypothesized}$ = 2040.69, ΔBIC= 521.
 
 ## Practical issues
 
 -   Sample size: for parameter estimates to be accurate, you should have large samples
 -   How many? Hard to say, but often hundreds are necessary
--   http://web.pdx.edu/\~newsomj/semclass/ho_sample%20size.pdf
--   https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4334479/
+    -   http://web.pdx.edu/\~newsomj/semclass/ho_sample%20size.pdf
+    -   https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4334479/
 
 ## Practical issues
 
@@ -662,10 +651,11 @@ We also compared a non-nested model that considered the strongest pathway of our
 ## Assumptions
 
 -   All assumptions for linear models apply to SEM
+    -   Normality
 -   There are robust estimators one can use
     -   Sattorra-Bentler
         -   `sem(test="satorra.bentler")`
 
 ## Acknowledgments
 
--   Thanks to Elizabeth Page-Gould and Chris Groves for graciously providing some of the content I used here
+-   Thanks to Elizabeth Page-Gould, Chris Groves, and Erin Buchanan for graciously providing some of the content I used here

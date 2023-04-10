@@ -440,16 +440,26 @@ fit <- sem(grad_model, se="bootstrap", data=grad)
     ::: {.column width="50%"}
     -   Badness of fit
 
-        -   RMSEA
+        -   $RMSEA = \sqrt{\frac{\delta}{df(n-1)}}$
+
+        -   
 
             -   Measures how much worse the data fits the model from the just identified model
 
     -   Relative goodness of fit
 
         -   CFI or Tucker Lewis Index
+
             -   Measures how much better the model fits than the null model (all paths=0)
     :::
     :::
+
+```{=html}
+<!-- -->
+```
+-   $CFI=\frac{\delta(\mbox{Baseline}) – \delta(\mbox{User})}{\delta(\mbox{Baseline})}$
+
+    $TLI= \frac{\mbox{min}(\chi^2(\mbox{Baseline})/df(\mbox{Baseline}),1)-\mbox{min}(\chi^2(\mbox{User})/df(\mbox{User}),1)}{\mbox{min}(\chi^2(\mbox{Baseline})/df(\mbox{Baseline}),1)-1}$
 
 ## Run SEM
 

@@ -842,6 +842,25 @@ KMO = \frac{\Sigma(r)^2}{\Sigma(r)^2 + \Sigma(r_p)^2}
 </section>
 <section id="fitting-factor-model-of-factors-2" class="slide level2">
 <h2>Fitting factor model: # of factors</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>number_items <span class="ot">&lt;-</span> <span class="fu">fa.parallel</span>(data, <span class="at">fa=</span><span class="st">"fa"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+<div class="cell-output cell-output-stdout">
+<pre><code>Parallel analysis suggests that the number of factors =  6  and the number of components =  NA </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co">#eigenvalues &gt; 1 and &gt; .7</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="fu">sum</span>(number_items<span class="sc">$</span>fa.values <span class="sc">&gt;=</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">sum</span>(number_items<span class="sc">$</span>fa.values <span class="sc">&gt;=</span> .<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+</div>
+<img data-src="FA_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
+<section id="fitting-factor-model-of-factors-3" class="slide level2">
+<h2>Fitting factor model: # of factors</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
@@ -856,7 +875,7 @@ KMO = \frac{\Sigma(r)^2}{\Sigma(r)^2 + \Sigma(r_p)^2}
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">fa.parallel</span>(data, <span class="at">fa=</span><span class="st">"fa"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="FA_files/figure-revealjs/unnamed-chunk-9-1.png" width="960"></p>
+<p><img data-src="FA_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Parallel analysis suggests that the number of factors =  6  and the number of components =  NA </code></pre>
@@ -880,7 +899,7 @@ KMO = \frac{\Sigma(r)^2}{\Sigma(r)^2 + \Sigma(r_p)^2}
 <span id="cb19-4"><a href="#cb19-4"></a><span class="fu">n_factors</span>(data) <span class="sc">%&gt;%</span> <span class="fu">plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="FA_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
+<img data-src="FA_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
 <section id="extracting-factor-loadings" class="slide level2">
 <h2>Extracting factor loadings</h2>
 <div class="columns">
@@ -906,8 +925,12 @@ KMO = \frac{\Sigma(r)^2}{\Sigma(r)^2 + \Sigma(r_p)^2}
 <span id="cb20-4"><a href="#cb20-4"></a><span class="co"># fm is principle axis</span></span>
 <span id="cb20-5"><a href="#cb20-5"></a>efa <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">fa</span>(data, <span class="at">nfactors =</span> <span class="dv">5</span>, <span class="at">rotate=</span><span class="st">"none"</span>, <span class="at">fm=</span><span class="st">"pa"</span>)</span>
 <span id="cb20-6"><a href="#cb20-6"></a><span class="co">#use pca instead</span></span>
+<<<<<<< HEAD
 <span id="cb20-7"><a href="#cb20-7"></a><span class="do">###fm="pca")</span></span>
 <span id="cb20-8"><a href="#cb20-8"></a>efa <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">fa</span>(data, <span class="at">nfactors =</span> <span class="dv">5</span>, <span class="at">rotate=</span><span class="st">"none"</span>, <span class="at">fm=</span><span class="st">"principal"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+=======
+<span id="cb20-7"><a href="#cb20-7"></a><span class="do">###fm="pca")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
 </div>
 <p><img data-src="images/IMG_2416.jpeg"></p>
 </div>
@@ -1043,7 +1066,7 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
 <span id="cb23-2"><a href="#cb23-2"></a><span class="fu">fa.diagram</span>(efa)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="FA_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"></section>
+<img data-src="FA_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"></section>
 <section id="rotation" class="slide level2">
 <h2>Rotation</h2>
 <ul>
@@ -1396,7 +1419,7 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
 <span id="cb26-3"><a href="#cb26-3"></a><span class="fu">fa.diagram</span>(efa_obs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="FA_files/figure-revealjs/unnamed-chunk-17-1.png" width="960" class="r-stretch"></section>
+<img data-src="FA_files/figure-revealjs/unnamed-chunk-18-1.png" width="960" class="r-stretch"></section>
 <section id="what-makes-a-good-factor" class="slide level2">
 <h2>What makes a good factor?</h2>
 <ul>
@@ -1474,7 +1497,7 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="FA_files/figure-revealjs/unnamed-chunk-20-1.png" width="960"></p>
+<p><img data-src="FA_files/figure-revealjs/unnamed-chunk-21-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1498,12 +1521,20 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>table<span class="sc">$</span>ind_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
+<<<<<<< HEAD
 <div id="djbwzpwuqq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+=======
+<div id="qfchpvocnf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
+<<<<<<< HEAD
 :where(#djbwzpwuqq) .gt_table {
+=======
+:where(#qfchpvocnf) .gt_table {
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1528,7 +1559,11 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   border-left-color: #D3D3D3;
 }
 
+<<<<<<< HEAD
 :where(#djbwzpwuqq) .gt_heading {
+=======
+:where(#qfchpvocnf) .gt_heading {
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1540,12 +1575,20 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   border-right-color: #D3D3D3;
 }
 
+<<<<<<< HEAD
 :where(#djbwzpwuqq) .gt_caption {
+=======
+:where(#qfchpvocnf) .gt_caption {
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
+<<<<<<< HEAD
 :where(#djbwzpwuqq) .gt_title {
+=======
+:where(#qfchpvocnf) .gt_title {
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1557,7 +1600,11 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   border-bottom-width: 0;
 }
 
+<<<<<<< HEAD
 :where(#djbwzpwuqq) .gt_subtitle {
+=======
+:where(#qfchpvocnf) .gt_subtitle {
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1569,13 +1616,21 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   border-top-width: 0;
 }
 
+<<<<<<< HEAD
 :where(#djbwzpwuqq) .gt_bottom_border {
+=======
+:where(#qfchpvocnf) .gt_bottom_border {
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
+<<<<<<< HEAD
 :where(#djbwzpwuqq) .gt_col_headings {
+=======
+:where(#qfchpvocnf) .gt_col_headings {
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1590,7 +1645,11 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   border-right-color: #D3D3D3;
 }
 
+<<<<<<< HEAD
 :where(#djbwzpwuqq) .gt_col_heading {
+=======
+:where(#qfchpvocnf) .gt_col_heading {
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1610,7 +1669,11 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   overflow-x: hidden;
 }
 
+<<<<<<< HEAD
 :where(#djbwzpwuqq) .gt_column_spanner_outer {
+=======
+:where(#qfchpvocnf) .gt_column_spanner_outer {
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1622,6 +1685,7 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   padding-right: 4px;
 }
 
+<<<<<<< HEAD
 :where(#djbwzpwuqq) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
@@ -1631,6 +1695,17 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
 }
 
 :where(#djbwzpwuqq) .gt_column_spanner {
+=======
+:where(#qfchpvocnf) .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+:where(#qfchpvocnf) .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+:where(#qfchpvocnf) .gt_column_spanner {
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1642,7 +1717,11 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   width: 100%;
 }
 
+<<<<<<< HEAD
 :where(#djbwzpwuqq) .gt_group_heading {
+=======
+:where(#qfchpvocnf) .gt_group_heading {
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1668,7 +1747,11 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   text-align: left;
 }
 
+<<<<<<< HEAD
 :where(#djbwzpwuqq) .gt_empty_group_heading {
+=======
+:where(#qfchpvocnf) .gt_empty_group_heading {
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1683,6 +1766,7 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   vertical-align: middle;
 }
 
+<<<<<<< HEAD
 :where(#djbwzpwuqq) .gt_from_md > :first-child {
   margin-top: 0;
 }
@@ -1692,6 +1776,17 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
 }
 
 :where(#djbwzpwuqq) .gt_row {
+=======
+:where(#qfchpvocnf) .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+:where(#qfchpvocnf) .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+:where(#qfchpvocnf) .gt_row {
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1710,7 +1805,11 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   overflow-x: hidden;
 }
 
+<<<<<<< HEAD
 :where(#djbwzpwuqq) .gt_stub {
+=======
+:where(#qfchpvocnf) .gt_stub {
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1723,7 +1822,11 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   padding-right: 5px;
 }
 
+<<<<<<< HEAD
 :where(#djbwzpwuqq) .gt_stub_row_group {
+=======
+:where(#qfchpvocnf) .gt_stub_row_group {
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1737,11 +1840,19 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   vertical-align: top;
 }
 
+<<<<<<< HEAD
 :where(#djbwzpwuqq) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
 :where(#djbwzpwuqq) .gt_summary_row {
+=======
+:where(#qfchpvocnf) .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+:where(#qfchpvocnf) .gt_summary_row {
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1751,16 +1862,28 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   padding-right: 5px;
 }
 
+<<<<<<< HEAD
 :where(#djbwzpwuqq) .gt_first_summary_row {
+=======
+:where(#qfchpvocnf) .gt_first_summary_row {
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
+<<<<<<< HEAD
 :where(#djbwzpwuqq) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
 :where(#djbwzpwuqq) .gt_last_summary_row {
+=======
+:where(#qfchpvocnf) .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+:where(#qfchpvocnf) .gt_last_summary_row {
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1770,7 +1893,11 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
+<<<<<<< HEAD
 :where(#djbwzpwuqq) .gt_grand_summary_row {
+=======
+:where(#qfchpvocnf) .gt_grand_summary_row {
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1780,7 +1907,11 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   padding-right: 5px;
 }
 
+<<<<<<< HEAD
 :where(#djbwzpwuqq) .gt_first_grand_summary_row {
+=======
+:where(#qfchpvocnf) .gt_first_grand_summary_row {
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1790,11 +1921,19 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   border-top-color: #D3D3D3;
 }
 
+<<<<<<< HEAD
 :where(#djbwzpwuqq) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
 :where(#djbwzpwuqq) .gt_table_body {
+=======
+:where(#qfchpvocnf) .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+:where(#qfchpvocnf) .gt_table_body {
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1803,7 +1942,11 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
+<<<<<<< HEAD
 :where(#djbwzpwuqq) .gt_footnotes {
+=======
+:where(#qfchpvocnf) .gt_footnotes {
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1817,7 +1960,11 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   border-right-color: #D3D3D3;
 }
 
+<<<<<<< HEAD
 :where(#djbwzpwuqq) .gt_footnote {
+=======
+:where(#qfchpvocnf) .gt_footnote {
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1826,7 +1973,11 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   padding-right: 5px;
 }
 
+<<<<<<< HEAD
 :where(#djbwzpwuqq) .gt_sourcenotes {
+=======
+:where(#qfchpvocnf) .gt_sourcenotes {
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1840,7 +1991,11 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   border-right-color: #D3D3D3;
 }
 
+<<<<<<< HEAD
 :where(#djbwzpwuqq) .gt_sourcenote {
+=======
+:where(#qfchpvocnf) .gt_sourcenote {
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1848,6 +2003,7 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   padding-right: 5px;
 }
 
+<<<<<<< HEAD
 :where(#djbwzpwuqq) .gt_left {
   text-align: left;
 }
@@ -1857,10 +2013,22 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
 }
 
 :where(#djbwzpwuqq) .gt_right {
+=======
+:where(#qfchpvocnf) .gt_left {
+  text-align: left;
+}
+
+:where(#qfchpvocnf) .gt_center {
+  text-align: center;
+}
+
+:where(#qfchpvocnf) .gt_right {
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
+<<<<<<< HEAD
 :where(#djbwzpwuqq) .gt_font_normal {
   font-weight: normal;
 }
@@ -1878,17 +2046,41 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
 }
 
 :where(#djbwzpwuqq) .gt_footnote_marks {
+=======
+:where(#qfchpvocnf) .gt_font_normal {
+  font-weight: normal;
+}
+
+:where(#qfchpvocnf) .gt_font_bold {
+  font-weight: bold;
+}
+
+:where(#qfchpvocnf) .gt_font_italic {
+  font-style: italic;
+}
+
+:where(#qfchpvocnf) .gt_super {
+  font-size: 65%;
+}
+
+:where(#qfchpvocnf) .gt_footnote_marks {
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
+<<<<<<< HEAD
 :where(#djbwzpwuqq) .gt_asterisk {
+=======
+:where(#qfchpvocnf) .gt_asterisk {
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
   font-size: 100%;
   vertical-align: 0;
 }
 
+<<<<<<< HEAD
 :where(#djbwzpwuqq) .gt_indent_1 {
   text-indent: 5px;
 }
@@ -1906,6 +2098,25 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
 }
 
 :where(#djbwzpwuqq) .gt_indent_5 {
+=======
+:where(#qfchpvocnf) .gt_indent_1 {
+  text-indent: 5px;
+}
+
+:where(#qfchpvocnf) .gt_indent_2 {
+  text-indent: 10px;
+}
+
+:where(#qfchpvocnf) .gt_indent_3 {
+  text-indent: 15px;
+}
+
+:where(#qfchpvocnf) .gt_indent_4 {
+  text-indent: 20px;
+}
+
+:where(#qfchpvocnf) .gt_indent_5 {
+>>>>>>> 088216e880303063887c0c61010664398bf61f1a
   text-indent: 25px;
 }
 </style>
@@ -2225,7 +2436,7 @@ MR4 =~ O1 + O2 + O3 + O4 + O5</code></pre>
 <span id="cb37-4"><a href="#cb37-4"></a>performance<span class="sc">::</span><span class="fu">compare_performance</span>(big5, big6, <span class="at">verbose =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-26">
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-27">
 <colgroup><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup><tbody><tr>
 <th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Name</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Model</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Chi2</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Chi2_df</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">p_Chi2</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Baseline</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Baseline_df</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">p_Baseline</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">GFI</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">AGFI</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">NFI</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">NNFI</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">CFI</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">RMSEA</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">RMSEA_CI_low</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">RMSEA_CI_high</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">p_RMSEA</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">RMR</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">SRMR</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">RFI</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">PNFI</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">IFI</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">RNI</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Loglikelihood</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">AIC</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">AIC_wt</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">BIC</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">BIC_wt</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">BIC_adjusted</th></tr>
 <tr>

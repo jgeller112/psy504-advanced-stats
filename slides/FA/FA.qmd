@@ -415,6 +415,18 @@ fviz_screeplot(res.pca, addlabels=TRUE)
 
 ## Fitting factor model: \# of factors
 
+```{r}
+
+number_items <- fa.parallel(data, fa="fa")
+
+#eigenvalues > 1 and > .7
+sum(number_items$fa.values >= 1)
+sum(number_items$fa.values >= .7)
+
+```
+
+## Fitting factor model: \# of factors
+
 ::: columns
 ::: {.column width="50%"}
 -   Parallel analysis

@@ -836,6 +836,25 @@ KMO = \frac{\Sigma(r)^2}{\Sigma(r)^2 + \Sigma(r_p)^2}
 </section>
 <section id="fitting-factor-model-of-factors-2" class="slide level2">
 <h2>Fitting factor model: # of factors</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>number_items <span class="ot">&lt;-</span> <span class="fu">fa.parallel</span>(data, <span class="at">fa=</span><span class="st">"fa"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+<div class="cell-output cell-output-stdout">
+<pre><code>Parallel analysis suggests that the number of factors =  6  and the number of components =  NA </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co">#eigenvalues &gt; 1 and &gt; .7</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="fu">sum</span>(number_items<span class="sc">$</span>fa.values <span class="sc">&gt;=</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">sum</span>(number_items<span class="sc">$</span>fa.values <span class="sc">&gt;=</span> .<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+</div>
+<img data-src="FA_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
+<section id="fitting-factor-model-of-factors-3" class="slide level2">
+<h2>Fitting factor model: # of factors</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
@@ -848,9 +867,9 @@ KMO = \frac{\Sigma(r)^2}{\Sigma(r)^2 + \Sigma(r_p)^2}
 </ul>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">fa.parallel</span>(data, <span class="at">fa=</span><span class="st">"fa"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">fa.parallel</span>(data, <span class="at">fa=</span><span class="st">"fa"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="FA_files/figure-revealjs/unnamed-chunk-9-1.png" width="960"></p>
+<p><img data-src="FA_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Parallel analysis suggests that the number of factors =  6  and the number of components =  NA </code></pre>
@@ -868,13 +887,13 @@ KMO = \frac{\Sigma(r)^2}{\Sigma(r)^2 + \Sigma(r_p)^2}
 </ul></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co">#| fig.align: "center"</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a><span class="co">#| </span></span>
-<span id="cb13-3"><a href="#cb13-3"></a><span class="fu">library</span>(parameters)</span>
-<span id="cb13-4"><a href="#cb13-4"></a><span class="fu">n_factors</span>(data) <span class="sc">%&gt;%</span> <span class="fu">plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co">#| fig.align: "center"</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="co">#| </span></span>
+<span id="cb19-3"><a href="#cb19-3"></a><span class="fu">library</span>(parameters)</span>
+<span id="cb19-4"><a href="#cb19-4"></a><span class="fu">n_factors</span>(data) <span class="sc">%&gt;%</span> <span class="fu">plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="FA_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
+<img data-src="FA_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
 <section id="extracting-factor-loadings" class="slide level2">
 <h2>Extracting factor loadings</h2>
 <div class="columns">
@@ -894,13 +913,13 @@ KMO = \frac{\Sigma(r)^2}{\Sigma(r)^2 + \Sigma(r_p)^2}
 </ul>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">library</span>(parameters)</span>
-<span id="cb14-2"><a href="#cb14-2"></a><span class="co"># nfactor number of factors from par analysis</span></span>
-<span id="cb14-3"><a href="#cb14-3"></a><span class="co"># rotate rotation method </span></span>
-<span id="cb14-4"><a href="#cb14-4"></a><span class="co"># fm is principle axis</span></span>
-<span id="cb14-5"><a href="#cb14-5"></a>efa <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">fa</span>(data, <span class="at">nfactors =</span> <span class="dv">5</span>, <span class="at">rotate=</span><span class="st">"none"</span>, <span class="at">fm=</span><span class="st">"pa"</span>)</span>
-<span id="cb14-6"><a href="#cb14-6"></a><span class="co">#use pca instead</span></span>
-<span id="cb14-7"><a href="#cb14-7"></a><span class="do">###fm="pca")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">library</span>(parameters)</span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="co"># nfactor number of factors from par analysis</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a><span class="co"># rotate rotation method </span></span>
+<span id="cb20-4"><a href="#cb20-4"></a><span class="co"># fm is principle axis</span></span>
+<span id="cb20-5"><a href="#cb20-5"></a>efa <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">fa</span>(data, <span class="at">nfactors =</span> <span class="dv">5</span>, <span class="at">rotate=</span><span class="st">"none"</span>, <span class="at">fm=</span><span class="st">"pa"</span>)</span>
+<span id="cb20-6"><a href="#cb20-6"></a><span class="co">#use pca instead</span></span>
+<span id="cb20-7"><a href="#cb20-7"></a><span class="do">###fm="pca")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><img data-src="images/IMG_2416.jpeg"></p>
 </div>
@@ -967,8 +986,8 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
 <section id="variance-accounted-for" class="slide level2">
 <h2>Variance accounted for</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>efa<span class="sc">$</span>Vaccounted <span class="sc">%&gt;%</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>efa<span class="sc">$</span>Vaccounted <span class="sc">%&gt;%</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <table>
@@ -1032,11 +1051,11 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
 <section id="path-diagram" class="slide level2">
 <h2>Path diagram</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>efa <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">fa</span>(data, <span class="at">nfactors =</span> <span class="dv">5</span>, <span class="at">rotate=</span><span class="st">"none"</span>, <span class="at">fm=</span><span class="st">"pa"</span>)</span>
-<span id="cb17-2"><a href="#cb17-2"></a><span class="fu">fa.diagram</span>(efa)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>efa <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">fa</span>(data, <span class="at">nfactors =</span> <span class="dv">5</span>, <span class="at">rotate=</span><span class="st">"none"</span>, <span class="at">fm=</span><span class="st">"pa"</span>)</span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="fu">fa.diagram</span>(efa)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="FA_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"></section>
+<img data-src="FA_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"></section>
 <section id="rotation" class="slide level2">
 <h2>Rotation</h2>
 <ul>
@@ -1091,21 +1110,21 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
 <section id="rotation-4" class="slide level2">
 <h2>Rotation</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co">#change rotate arg to desired rotation</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a><span class="co">#orthogonal rotation</span></span>
-<span id="cb18-3"><a href="#cb18-3"></a>efa_or <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">fa</span>(data, <span class="at">nfactors =</span> <span class="dv">5</span>, <span class="at">rotate=</span><span class="st">"varimax"</span>, <span class="at">fm=</span><span class="st">"pca"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-4"><a href="#cb18-4"></a>   <span class="fu">model_parameters</span>(<span class="at">sort =</span> <span class="cn">TRUE</span>, <span class="at">threshold =</span> <span class="st">"max"</span>)</span>
-<span id="cb18-5"><a href="#cb18-5"></a></span>
-<span id="cb18-6"><a href="#cb18-6"></a><span class="co"># correlated factor rotation</span></span>
-<span id="cb18-7"><a href="#cb18-7"></a>efa_obs <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">fa</span>(data, <span class="at">nfactors =</span> <span class="dv">5</span>, <span class="at">rotate=</span><span class="st">"oblimin"</span>, <span class="at">fm=</span><span class="st">"pa"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-8"><a href="#cb18-8"></a>   <span class="fu">model_parameters</span>(<span class="at">sort =</span> <span class="cn">TRUE</span>, <span class="at">threshold =</span> <span class="st">"max"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co">#change rotate arg to desired rotation</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="co">#orthogonal rotation</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a>efa_or <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">fa</span>(data, <span class="at">nfactors =</span> <span class="dv">5</span>, <span class="at">rotate=</span><span class="st">"varimax"</span>, <span class="at">fm=</span><span class="st">"pca"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb24-4"><a href="#cb24-4"></a>   <span class="fu">model_parameters</span>(<span class="at">sort =</span> <span class="cn">TRUE</span>, <span class="at">threshold =</span> <span class="st">"max"</span>)</span>
+<span id="cb24-5"><a href="#cb24-5"></a></span>
+<span id="cb24-6"><a href="#cb24-6"></a><span class="co"># correlated factor rotation</span></span>
+<span id="cb24-7"><a href="#cb24-7"></a>efa_obs <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">fa</span>(data, <span class="at">nfactors =</span> <span class="dv">5</span>, <span class="at">rotate=</span><span class="st">"oblimin"</span>, <span class="at">fm=</span><span class="st">"pa"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb24-8"><a href="#cb24-8"></a>   <span class="fu">model_parameters</span>(<span class="at">sort =</span> <span class="cn">TRUE</span>, <span class="at">threshold =</span> <span class="st">"max"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="rotation-5" class="slide level2">
 <h2>Rotation</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>efa_obs <span class="sc">%&gt;%</span></span>
-<span id="cb19-2"><a href="#cb19-2"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>efa_obs <span class="sc">%&gt;%</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <table>
@@ -1384,12 +1403,12 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
 <li>After rotation</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>efa_obs <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">fa</span>(data, <span class="at">nfactors =</span> <span class="dv">5</span>, <span class="at">rotate=</span><span class="st">"oblimin"</span>, <span class="at">fm=</span><span class="st">"pa"</span>) </span>
-<span id="cb20-2"><a href="#cb20-2"></a></span>
-<span id="cb20-3"><a href="#cb20-3"></a><span class="fu">fa.diagram</span>(efa_obs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>efa_obs <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">fa</span>(data, <span class="at">nfactors =</span> <span class="dv">5</span>, <span class="at">rotate=</span><span class="st">"oblimin"</span>, <span class="at">fm=</span><span class="st">"pa"</span>) </span>
+<span id="cb26-2"><a href="#cb26-2"></a></span>
+<span id="cb26-3"><a href="#cb26-3"></a><span class="fu">fa.diagram</span>(efa_obs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="FA_files/figure-revealjs/unnamed-chunk-17-1.png" width="960" class="r-stretch"></section>
+<img data-src="FA_files/figure-revealjs/unnamed-chunk-18-1.png" width="960" class="r-stretch"></section>
 <section id="what-makes-a-good-factor" class="slide level2">
 <h2>What makes a good factor?</h2>
 <ul>
@@ -1425,7 +1444,7 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
 <li><p>Can use them in multiple regression!</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>efa_obs <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">fa</span>(data, <span class="at">nfactors =</span> <span class="dv">5</span>, <span class="at">rotate=</span><span class="st">"oblimin"</span>, <span class="at">fm=</span><span class="st">"pa"</span>, <span class="at">scores=</span><span class="st">"regression"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>efa_obs <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">fa</span>(data, <span class="at">nfactors =</span> <span class="dv">5</span>, <span class="at">rotate=</span><span class="st">"oblimin"</span>, <span class="at">fm=</span><span class="st">"pa"</span>, <span class="at">scores=</span><span class="st">"regression"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="factor-scores-1" class="slide level2">
@@ -1438,36 +1457,36 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># correlated rotation</span></span>
-<span id="cb22-2"><a href="#cb22-2"></a>efa_obs <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">fa</span>(data, <span class="at">nfactors =</span> <span class="dv">5</span>, <span class="at">rotate=</span><span class="st">"oblimin"</span>, <span class="at">fm=</span><span class="st">"pa"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb22-3"><a href="#cb22-3"></a>   <span class="fu">model_parameters</span>(<span class="at">sort =</span> <span class="cn">TRUE</span>, <span class="at">threshold =</span> <span class="st">"max"</span>)</span>
-<span id="cb22-4"><a href="#cb22-4"></a></span>
-<span id="cb22-5"><a href="#cb22-5"></a>efa_plot <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(efa_obs) <span class="sc">%&gt;%</span></span>
-<span id="cb22-6"><a href="#cb22-6"></a>  <span class="fu">pivot_longer</span>(PA2<span class="sc">:</span>PA4) <span class="sc">%&gt;%</span></span>
-<span id="cb22-7"><a href="#cb22-7"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>Complexity, <span class="sc">-</span>Uniqueness) <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="st">"Loadings"</span> <span class="ot">=</span> value, <span class="st">"Personality"</span> <span class="ot">=</span> name)</span>
-<span id="cb22-8"><a href="#cb22-8"></a></span>
-<span id="cb22-9"><a href="#cb22-9"></a></span>
-<span id="cb22-10"><a href="#cb22-10"></a><span class="co">#For each test, plot the loading as length and fill color of a bar</span></span>
-<span id="cb22-11"><a href="#cb22-11"></a><span class="co"># note that the length will be the absolute value of the loading but the </span></span>
-<span id="cb22-12"><a href="#cb22-12"></a><span class="co"># fill color will be the signed value, more on this below</span></span>
-<span id="cb22-13"><a href="#cb22-13"></a>efa_fact_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(efa_plot, <span class="fu">aes</span>(Variable, <span class="fu">abs</span>(Loadings), <span class="at">fill=</span>Loadings)) <span class="sc">+</span> </span>
-<span id="cb22-14"><a href="#cb22-14"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Personality, <span class="at">nrow=</span><span class="dv">1</span>) <span class="sc">+</span> <span class="co">#place the factors in separate facets</span></span>
-<span id="cb22-15"><a href="#cb22-15"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>) <span class="sc">+</span> <span class="co">#make the bars</span></span>
-<span id="cb22-16"><a href="#cb22-16"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span> <span class="co">#flip the axes so the test names can be horizontal  </span></span>
-<span id="cb22-17"><a href="#cb22-17"></a>  <span class="co">#define the fill color gradient: blue=positive, red=negative</span></span>
-<span id="cb22-18"><a href="#cb22-18"></a>  <span class="fu">scale_fill_gradient2</span>(<span class="at">name =</span> <span class="st">"Loading"</span>, </span>
-<span id="cb22-19"><a href="#cb22-19"></a>                       <span class="at">high =</span> <span class="st">"blue"</span>, <span class="at">mid =</span> <span class="st">"white"</span>, <span class="at">low =</span> <span class="st">"red"</span>, </span>
-<span id="cb22-20"><a href="#cb22-20"></a>                       <span class="at">midpoint=</span><span class="dv">0</span>, <span class="at">guide=</span>F) <span class="sc">+</span></span>
-<span id="cb22-21"><a href="#cb22-21"></a>  <span class="fu">ylab</span>(<span class="st">"Loading Strength"</span>) <span class="sc">+</span> <span class="co">#improve y-axis label</span></span>
-<span id="cb22-22"><a href="#cb22-22"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size=</span><span class="dv">12</span>) <span class="co">#use a black-and0white theme with set font size</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="co"># correlated rotation</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a>efa_obs <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">fa</span>(data, <span class="at">nfactors =</span> <span class="dv">5</span>, <span class="at">rotate=</span><span class="st">"oblimin"</span>, <span class="at">fm=</span><span class="st">"pa"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb28-3"><a href="#cb28-3"></a>   <span class="fu">model_parameters</span>(<span class="at">sort =</span> <span class="cn">TRUE</span>, <span class="at">threshold =</span> <span class="st">"max"</span>)</span>
+<span id="cb28-4"><a href="#cb28-4"></a></span>
+<span id="cb28-5"><a href="#cb28-5"></a>efa_plot <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(efa_obs) <span class="sc">%&gt;%</span></span>
+<span id="cb28-6"><a href="#cb28-6"></a>  <span class="fu">pivot_longer</span>(PA2<span class="sc">:</span>PA4) <span class="sc">%&gt;%</span></span>
+<span id="cb28-7"><a href="#cb28-7"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>Complexity, <span class="sc">-</span>Uniqueness) <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="st">"Loadings"</span> <span class="ot">=</span> value, <span class="st">"Personality"</span> <span class="ot">=</span> name)</span>
+<span id="cb28-8"><a href="#cb28-8"></a></span>
+<span id="cb28-9"><a href="#cb28-9"></a></span>
+<span id="cb28-10"><a href="#cb28-10"></a><span class="co">#For each test, plot the loading as length and fill color of a bar</span></span>
+<span id="cb28-11"><a href="#cb28-11"></a><span class="co"># note that the length will be the absolute value of the loading but the </span></span>
+<span id="cb28-12"><a href="#cb28-12"></a><span class="co"># fill color will be the signed value, more on this below</span></span>
+<span id="cb28-13"><a href="#cb28-13"></a>efa_fact_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(efa_plot, <span class="fu">aes</span>(Variable, <span class="fu">abs</span>(Loadings), <span class="at">fill=</span>Loadings)) <span class="sc">+</span> </span>
+<span id="cb28-14"><a href="#cb28-14"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Personality, <span class="at">nrow=</span><span class="dv">1</span>) <span class="sc">+</span> <span class="co">#place the factors in separate facets</span></span>
+<span id="cb28-15"><a href="#cb28-15"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>) <span class="sc">+</span> <span class="co">#make the bars</span></span>
+<span id="cb28-16"><a href="#cb28-16"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span> <span class="co">#flip the axes so the test names can be horizontal  </span></span>
+<span id="cb28-17"><a href="#cb28-17"></a>  <span class="co">#define the fill color gradient: blue=positive, red=negative</span></span>
+<span id="cb28-18"><a href="#cb28-18"></a>  <span class="fu">scale_fill_gradient2</span>(<span class="at">name =</span> <span class="st">"Loading"</span>, </span>
+<span id="cb28-19"><a href="#cb28-19"></a>                       <span class="at">high =</span> <span class="st">"blue"</span>, <span class="at">mid =</span> <span class="st">"white"</span>, <span class="at">low =</span> <span class="st">"red"</span>, </span>
+<span id="cb28-20"><a href="#cb28-20"></a>                       <span class="at">midpoint=</span><span class="dv">0</span>, <span class="at">guide=</span>F) <span class="sc">+</span></span>
+<span id="cb28-21"><a href="#cb28-21"></a>  <span class="fu">ylab</span>(<span class="st">"Loading Strength"</span>) <span class="sc">+</span> <span class="co">#improve y-axis label</span></span>
+<span id="cb28-22"><a href="#cb28-22"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size=</span><span class="dv">12</span>) <span class="co">#use a black-and0white theme with set font size</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>efa_fact_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>efa_fact_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="FA_files/figure-revealjs/unnamed-chunk-20-1.png" width="960"></p>
+<p><img data-src="FA_files/figure-revealjs/unnamed-chunk-21-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1478,25 +1497,25 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
 <section id="table-fa" class="slide level2">
 <h2>Table FA</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">source</span>(<span class="st">"https://raw.githubusercontent.com/franciscowilhelm/r-collection/master/fa_table.R"</span>)</span>
-<span id="cb24-2"><a href="#cb24-2"></a></span>
-<span id="cb24-3"><a href="#cb24-3"></a>efa_obs <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">fa</span>(data, <span class="at">nfactors =</span> <span class="dv">5</span>, <span class="at">rotate=</span><span class="st">"oblimin"</span>, <span class="at">fm=</span><span class="st">"pa"</span>)</span>
-<span id="cb24-4"><a href="#cb24-4"></a></span>
-<span id="cb24-5"><a href="#cb24-5"></a>table<span class="ot">&lt;-</span> <span class="fu">fa_table</span>(efa_obs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">source</span>(<span class="st">"https://raw.githubusercontent.com/franciscowilhelm/r-collection/master/fa_table.R"</span>)</span>
+<span id="cb30-2"><a href="#cb30-2"></a></span>
+<span id="cb30-3"><a href="#cb30-3"></a>efa_obs <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">fa</span>(data, <span class="at">nfactors =</span> <span class="dv">5</span>, <span class="at">rotate=</span><span class="st">"oblimin"</span>, <span class="at">fm=</span><span class="st">"pa"</span>)</span>
+<span id="cb30-4"><a href="#cb30-4"></a></span>
+<span id="cb30-5"><a href="#cb30-5"></a>table<span class="ot">&lt;-</span> <span class="fu">fa_table</span>(efa_obs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="fa-table" class="slide level2">
 <h2>FA table</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>table<span class="sc">$</span>ind_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>table<span class="sc">$</span>ind_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="meqklmgzxb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="qfchpvocnf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#meqklmgzxb) .gt_table {
+:where(#qfchpvocnf) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1521,7 +1540,7 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   border-left-color: #D3D3D3;
 }
 
-:where(#meqklmgzxb) .gt_heading {
+:where(#qfchpvocnf) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1533,12 +1552,12 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#meqklmgzxb) .gt_caption {
+:where(#qfchpvocnf) .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-:where(#meqklmgzxb) .gt_title {
+:where(#qfchpvocnf) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1550,7 +1569,7 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   border-bottom-width: 0;
 }
 
-:where(#meqklmgzxb) .gt_subtitle {
+:where(#qfchpvocnf) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1562,13 +1581,13 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   border-top-width: 0;
 }
 
-:where(#meqklmgzxb) .gt_bottom_border {
+:where(#qfchpvocnf) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#meqklmgzxb) .gt_col_headings {
+:where(#qfchpvocnf) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1583,7 +1602,7 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#meqklmgzxb) .gt_col_heading {
+:where(#qfchpvocnf) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1603,7 +1622,7 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   overflow-x: hidden;
 }
 
-:where(#meqklmgzxb) .gt_column_spanner_outer {
+:where(#qfchpvocnf) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1615,15 +1634,15 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   padding-right: 4px;
 }
 
-:where(#meqklmgzxb) .gt_column_spanner_outer:first-child {
+:where(#qfchpvocnf) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#meqklmgzxb) .gt_column_spanner_outer:last-child {
+:where(#qfchpvocnf) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#meqklmgzxb) .gt_column_spanner {
+:where(#qfchpvocnf) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1635,7 +1654,7 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   width: 100%;
 }
 
-:where(#meqklmgzxb) .gt_group_heading {
+:where(#qfchpvocnf) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1661,7 +1680,7 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   text-align: left;
 }
 
-:where(#meqklmgzxb) .gt_empty_group_heading {
+:where(#qfchpvocnf) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1676,15 +1695,15 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   vertical-align: middle;
 }
 
-:where(#meqklmgzxb) .gt_from_md > :first-child {
+:where(#qfchpvocnf) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#meqklmgzxb) .gt_from_md > :last-child {
+:where(#qfchpvocnf) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#meqklmgzxb) .gt_row {
+:where(#qfchpvocnf) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1703,7 +1722,7 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   overflow-x: hidden;
 }
 
-:where(#meqklmgzxb) .gt_stub {
+:where(#qfchpvocnf) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1716,7 +1735,7 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   padding-right: 5px;
 }
 
-:where(#meqklmgzxb) .gt_stub_row_group {
+:where(#qfchpvocnf) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1730,11 +1749,11 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   vertical-align: top;
 }
 
-:where(#meqklmgzxb) .gt_row_group_first td {
+:where(#qfchpvocnf) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#meqklmgzxb) .gt_summary_row {
+:where(#qfchpvocnf) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1744,16 +1763,16 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   padding-right: 5px;
 }
 
-:where(#meqklmgzxb) .gt_first_summary_row {
+:where(#qfchpvocnf) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#meqklmgzxb) .gt_first_summary_row.thick {
+:where(#qfchpvocnf) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#meqklmgzxb) .gt_last_summary_row {
+:where(#qfchpvocnf) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1763,7 +1782,7 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#meqklmgzxb) .gt_grand_summary_row {
+:where(#qfchpvocnf) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1773,7 +1792,7 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   padding-right: 5px;
 }
 
-:where(#meqklmgzxb) .gt_first_grand_summary_row {
+:where(#qfchpvocnf) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1783,11 +1802,11 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   border-top-color: #D3D3D3;
 }
 
-:where(#meqklmgzxb) .gt_striped {
+:where(#qfchpvocnf) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#meqklmgzxb) .gt_table_body {
+:where(#qfchpvocnf) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1796,7 +1815,7 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#meqklmgzxb) .gt_footnotes {
+:where(#qfchpvocnf) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1810,7 +1829,7 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#meqklmgzxb) .gt_footnote {
+:where(#qfchpvocnf) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1819,7 +1838,7 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   padding-right: 5px;
 }
 
-:where(#meqklmgzxb) .gt_sourcenotes {
+:where(#qfchpvocnf) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1833,7 +1852,7 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#meqklmgzxb) .gt_sourcenote {
+:where(#qfchpvocnf) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1841,64 +1860,64 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
   padding-right: 5px;
 }
 
-:where(#meqklmgzxb) .gt_left {
+:where(#qfchpvocnf) .gt_left {
   text-align: left;
 }
 
-:where(#meqklmgzxb) .gt_center {
+:where(#qfchpvocnf) .gt_center {
   text-align: center;
 }
 
-:where(#meqklmgzxb) .gt_right {
+:where(#qfchpvocnf) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#meqklmgzxb) .gt_font_normal {
+:where(#qfchpvocnf) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#meqklmgzxb) .gt_font_bold {
+:where(#qfchpvocnf) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#meqklmgzxb) .gt_font_italic {
+:where(#qfchpvocnf) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#meqklmgzxb) .gt_super {
+:where(#qfchpvocnf) .gt_super {
   font-size: 65%;
 }
 
-:where(#meqklmgzxb) .gt_footnote_marks {
+:where(#qfchpvocnf) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#meqklmgzxb) .gt_asterisk {
+:where(#qfchpvocnf) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#meqklmgzxb) .gt_indent_1 {
+:where(#qfchpvocnf) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#meqklmgzxb) .gt_indent_2 {
+:where(#qfchpvocnf) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#meqklmgzxb) .gt_indent_3 {
+:where(#qfchpvocnf) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#meqklmgzxb) .gt_indent_4 {
+:where(#qfchpvocnf) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#meqklmgzxb) .gt_indent_5 {
+:where(#qfchpvocnf) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2166,22 +2185,22 @@ Cumulative Var 0.190 0.282 0.346 0.396 0.436</code></pre>
 <li><p>Partition data training and test data</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># to have reproducible result, we will also set seed here so that similar</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a><span class="co"># portions of the data are used each time we run the following code</span></span>
-<span id="cb26-3"><a href="#cb26-3"></a>partitions <span class="ot">&lt;-</span> datawizard<span class="sc">::</span><span class="fu">data_partition</span>(data, <span class="at">training_proportion =</span> <span class="fl">0.7</span>, <span class="at">seed =</span> <span class="dv">111</span>)</span>
-<span id="cb26-4"><a href="#cb26-4"></a>training <span class="ot">&lt;-</span> partitions<span class="sc">$</span>p_0<span class="fl">.7</span></span>
-<span id="cb26-5"><a href="#cb26-5"></a>test <span class="ot">&lt;-</span> partitions<span class="sc">$</span>test</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="co"># to have reproducible result, we will also set seed here so that similar</span></span>
+<span id="cb32-2"><a href="#cb32-2"></a><span class="co"># portions of the data are used each time we run the following code</span></span>
+<span id="cb32-3"><a href="#cb32-3"></a>partitions <span class="ot">&lt;-</span> datawizard<span class="sc">::</span><span class="fu">data_partition</span>(data, <span class="at">training_proportion =</span> <span class="fl">0.7</span>, <span class="at">seed =</span> <span class="dv">111</span>)</span>
+<span id="cb32-4"><a href="#cb32-4"></a>training <span class="ot">&lt;-</span> partitions<span class="sc">$</span>p_0<span class="fl">.7</span></span>
+<span id="cb32-5"><a href="#cb32-5"></a>test <span class="ot">&lt;-</span> partitions<span class="sc">$</span>test</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="cfa-in-lavaan" class="slide level2">
 <h2>CFA in Lavaan</h2>
 <p>Let’s compare the big6 to the big5</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>structure_big5 <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">fa</span>(training, <span class="at">nfactors =</span> <span class="dv">5</span>, <span class="at">rotate =</span> <span class="st">"oblimin"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb27-2"><a href="#cb27-2"></a>  <span class="fu">efa_to_cfa</span>()</span>
-<span id="cb27-3"><a href="#cb27-3"></a></span>
-<span id="cb27-4"><a href="#cb27-4"></a><span class="co"># Investigate how the models look</span></span>
-<span id="cb27-5"><a href="#cb27-5"></a>structure_big5</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>structure_big5 <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">fa</span>(training, <span class="at">nfactors =</span> <span class="dv">5</span>, <span class="at">rotate =</span> <span class="st">"oblimin"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb33-2"><a href="#cb33-2"></a>  <span class="fu">efa_to_cfa</span>()</span>
+<span id="cb33-3"><a href="#cb33-3"></a></span>
+<span id="cb33-4"><a href="#cb33-4"></a><span class="co"># Investigate how the models look</span></span>
+<span id="cb33-5"><a href="#cb33-5"></a>structure_big5</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Latent variables
 MR2 =~ N1 + N2 + N3 + N4 + N5
@@ -2195,10 +2214,10 @@ MR4 =~ O1 + O2 + O3 + O4 + O5</code></pre>
 <section id="cfa-in-lavaan-1" class="slide level2">
 <h2>CFA in Lavaan</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>structure_big6 <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">fa</span>(training, <span class="at">nfactors =</span> <span class="dv">6</span>, <span class="at">rotate =</span> <span class="st">"oblimin"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb29-2"><a href="#cb29-2"></a>  <span class="fu">efa_to_cfa</span>()</span>
-<span id="cb29-3"><a href="#cb29-3"></a></span>
-<span id="cb29-4"><a href="#cb29-4"></a>structure_big6</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>structure_big6 <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">fa</span>(training, <span class="at">nfactors =</span> <span class="dv">6</span>, <span class="at">rotate =</span> <span class="st">"oblimin"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a>  <span class="fu">efa_to_cfa</span>()</span>
+<span id="cb35-3"><a href="#cb35-3"></a></span>
+<span id="cb35-4"><a href="#cb35-4"></a>structure_big6</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Latent variables
 MR2 =~ N1 + N2 + N3 + N5
@@ -2212,13 +2231,13 @@ MR4 =~ O1 + O2 + O3 + O4 + O5</code></pre>
 <section id="fit-and-compare-models" class="slide level2">
 <h2>Fit and compare models</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>big5 <span class="ot">&lt;-</span> <span class="fu">suppressWarnings</span>(lavaan<span class="sc">::</span><span class="fu">cfa</span>(structure_big5, <span class="at">data =</span> test))</span>
-<span id="cb31-2"><a href="#cb31-2"></a>big6 <span class="ot">&lt;-</span> <span class="fu">suppressWarnings</span>(lavaan<span class="sc">::</span><span class="fu">cfa</span>(structure_big6, <span class="at">data =</span> test))</span>
-<span id="cb31-3"><a href="#cb31-3"></a></span>
-<span id="cb31-4"><a href="#cb31-4"></a>performance<span class="sc">::</span><span class="fu">compare_performance</span>(big5, big6, <span class="at">verbose =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>big5 <span class="ot">&lt;-</span> <span class="fu">suppressWarnings</span>(lavaan<span class="sc">::</span><span class="fu">cfa</span>(structure_big5, <span class="at">data =</span> test))</span>
+<span id="cb37-2"><a href="#cb37-2"></a>big6 <span class="ot">&lt;-</span> <span class="fu">suppressWarnings</span>(lavaan<span class="sc">::</span><span class="fu">cfa</span>(structure_big6, <span class="at">data =</span> test))</span>
+<span id="cb37-3"><a href="#cb37-3"></a></span>
+<span id="cb37-4"><a href="#cb37-4"></a>performance<span class="sc">::</span><span class="fu">compare_performance</span>(big5, big6, <span class="at">verbose =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-26">
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-27">
 <colgroup><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup><tbody><tr>
 <th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Name</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Model</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Chi2</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Chi2_df</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">p_Chi2</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Baseline</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Baseline_df</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">p_Baseline</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">GFI</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">AGFI</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">NFI</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">NNFI</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">CFI</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">RMSEA</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">RMSEA_CI_low</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">RMSEA_CI_high</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">p_RMSEA</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">RMR</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">SRMR</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">RFI</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">PNFI</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">IFI</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">RNI</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Loglikelihood</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">AIC</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">AIC_wt</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">BIC</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">BIC_wt</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">BIC_adjusted</th></tr>
 <tr>

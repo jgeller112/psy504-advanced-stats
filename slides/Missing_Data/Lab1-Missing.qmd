@@ -29,10 +29,21 @@ d <- brandsma %>%
 
 ```{r}
 
+d %>%
+  skimr::skim() 
+
+
+vis_miss(d)
 
 ```
 
-3.  Missing data dummies
+3.  Missing data patterns with `md.pattern()`
+    -   Use the `naniar fucntion plot_pattern()` function to do a missing data pattern analysis. Adjust the code from lecture to do a similar analysis with variables `iqv`, `ses`, `lpr` and `lpo`. Run the code both ways, with `plot = FALSE` and `plot = TRUE`.
+
+    -   In a sentence or two, tell me how many cases showed the most popular pattern and describe to me what that pattern is.
+
+    -   Also, according to the `md.pattern()` results, which variable had the largest number of missing observations?
+4.  Missing data dummies
 
 All variables in `d` have missing observations, with the exception of `pup`, the participant id number. In lecture and in the text, we learned that we can make dummy variables to indicate whether we have missingness in a given column. So let's do that:
 
@@ -43,13 +54,15 @@ All variables in `d` have missing observations, with the exception of `pup`, the
 
 ```
 
-4.Missing data patterns with `md.pattern()`
+4.Missing data patterns with `plot_pattern()`
 
--   Use the `mice::md.pattern()` function to do a missing data pattern analysis. Adjust the code from lecture to do a similar analysis with variables `iqv`, `ses`, `lpr` and `lpo`. Run the code both ways, with `plot = FALSE` and `plot = TRUE`.
+-   Use the `naniar function plot_pattern()` function to do a missing data pattern analysis. Adjust the code from lecture to do a similar analysis with variables `iqv`, `ses`, `lpr` and `lpo`. Run the code both ways, with `plot = FALSE` and `plot = TRUE`.
 
 -   In a sentence or two, tell me how many cases showed the most popular pattern and describe to me what that pattern is.
 
--   Also, according to the `md.pattern()` results, which variable had the largest number of missing observations?
+-   Also, according to the `plot_pattern()` results, which variable had the largest number of missing observations?
+
+-   What pattern do you see in the missing data?
 
 5\. Missing data patterns with your `r` dummies
 
@@ -111,13 +124,7 @@ d %>%
    # mice function visualize data
 ```
 
-## 7. Simple Impute
-
-Impute with the `d` data set and save the results as
-
-`imp1`
-
-## 8. Listwise deletion
+## 7. Listwise deletion
 
 -   Get rid of all the NAs
 
@@ -129,7 +136,7 @@ Impute with the `d` data set and save the results as
 
 -   Interpret these results
 
-## 9. Mean Impute
+## 8. Mean Impute
 
 -   Impute the missing data with the mean for each missing variable (set m = 1).
 
@@ -137,13 +144,16 @@ Impute with the `d` data set and save the results as
 
 -   Run the lm model again and store it as `mean_missing`
 
-We will come back to these models at the end.
+```{=html}
+<!-- -->
+```
+-   Interpret these results
 
-## 10. Regression impute
+## 9. Regression imputation
 
--   Impute the missing data with a regression approach
+-   Impute the missing data with a regression approach (set m = 1).
 
--   Save the data as `regression_lm`
+-   Save the analysis as `regression_lm`
 
 -   Use complete() to get the dataset
 
@@ -153,21 +163,13 @@ We will come back to these models at the end.
 
 It may not look like it, but we went along with a lot of default settings with that last bit of code and we made at least one major goof. Let's inspect the damage.
 
-1.  Use the `str()` function to get an overview of the contents in your `imp1` object.
+-   Use the `str()` function to get an overview of the contents in your `imp1` object.
 
-2.  You may have noticed there's a lot of stuff in there. Let's take a more focused look by executing `imp1$method`.
+-   You may have noticed there's a lot of stuff in there. Let's take a more focused look by executing `imp1$method`.
 
-3.  We didn't emphasize this in class, but there are several ways to do multiple imputation. By default, the `mice()` function used the *predictive mean matching* method, which is the same as setting `method = "ppm"`
+-   With the last two bullets in mind, notice how we used the `pup` variable in the imputation formulas. Since `pup` is just a participant id number, this is a really bad idea. We're injecting random noise into our data.
 
-4.  Next execute `imp1$predictorMatrix`. van Buuren explained how to interpret this in Section 6.3.2.
-
-5.  Next execute `imp1$formulas`. These are the linear regression formulas `mice()` used to impute the missing values.
-
-6.  With the last two bullets in mind, notice how we used the `pup` variable in the imputation formulas. Since `pup` is just a participant id number, this is a really bad idea. We're injecting random noise into our data.
-
-7.  Also notice that we used all four `r` dummy variables in the imputation formulas and we even had imputation formulas for the dummy variables themselves. This is also a really bad idea. I know the definition of what a variable is is getting a little hazy, here. But hopefully you are building an intuition that the four `r` dummy variables are different in nature from the original variables they were based on.
-
-8.  Execute `imp1$loggedEvents`. van Buuren covered how to interpret this in Section 6.3.2. In short, our four `r` dummies caused problems and the nature of those problems is displayed in this output. Don't go too far down the rabbit hole on this one. Just notice that we have problems.
+-   Also notice that we used all four `r` dummy variables in the imputation formulas and we even had imputation formulas for the dummy variables themselves. This is also a really bad idea. I know the definition of what a variable is is getting a little hazy, here. But hopefully you are building an intuition that the four `r` dummy variables are different in nature from the original variables they were based on.
 
 **Tip**. You're not really doing or interpreting anything in this section. Just make sure you include your code so I know you followed along.
 
@@ -177,7 +179,7 @@ It may not look like it, but we went along with a lot of default settings with t
 
 -   Add the setting `method = "norm"`, which uses a Bayesian regression method that presumes the variables are all continuous--which they are.
 
--   Also, to make the next exercise easier, set `m = 4`, which will result in 4 imputed data sets.
+-   Also, to make the next exercise easier, set `m = 5`, which will result in 5 imputed data sets.
 
 Save the results as `imp2`. Then inspect `imp2$method`, `imp2$predictorMatrix`, `imp2$formulas`, and `imp2$loggedEvents`. Show me all that code.
 
@@ -188,28 +190,6 @@ Since we've been working so hard to make those imputed data sets, we may as well
 You'll notice our `d_imp` has two new columns. The`.imp` column tells you which imputation number is it. The `.id` column tells you which row number the data is from.
 
 With your `d_imp` data, make a scatter plot with `lpr` on the x-axis, `lpo` on the y-axis, and faceted by `.imp`. To deal with the overplotting, I recommend you adjust the `size` and `alpha` settings within `geom_point()`. Since you've been learning about how to beautify your **ggplot2** figures, feel free to pretty up the visualization in other ways. Make yourself proud.
-
-## 11. More plots.
-
--   The plots above are a little unsatisfying because there's no distinction between the observed and imputed values. Fortunately, we can use our `r_lpr` and `r_lpo` dummies to tell which cases had missingness on `lpr` and/or `lpo`. The code below will give you the row numbers for all those cases. Execute that code.
-
-**Tip**: Play around with the code I gave you and make sure you understand what it's doing.
-
-```{r}
-missing_in_lpr_or_lpo <- d %>% 
-  mutate(.id = 1:n()) %>% 
-  filter(r_lpr == 0 | r_lpo == 0) %>% 
-  pull(.id)
-```
-
--   Now execute the following code to make a subset of your `d_imp` data, which we'll name `d_imp_small`.
-
-```{r}
-d_imp_small <- d_imp %>% 
-  filter(.id %in% missing_in_lpr_or_lpo)
-```
-
--   Now make another faceted scatter plot, just like in task #10, but this time with the `d_imp_small` data. If you are successful, you will get a scatter plot that only shows the imputed values.
 
 ```{r}
 

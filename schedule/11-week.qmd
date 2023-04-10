@@ -7,7 +7,14 @@ date: 2023-04-10
 
 ### Articles
 
-{{< fa book >}} James, G., Witten, D., Hastie, T., & Tibshirani, R. (2013). An Introduction to Statistical Learning: With Applications in R. Springer.
+- {{< fa book >}} James, G., Witten, D., Hastie, T., & Tibshirani, R. (2013). An Introduction to Statistical Learning: With Applications in R. Springer.
+
+
+- {{< fa book >}}[(Introduction to Clustering)](http://hanj.cs.illinois.edu/cs412/bk3/10.pdf)
+
+
+(kind of long but good introduction to topic)
+
 
 [Chapter 12 12.4-12.5](https://hastie.su.domains/ISLR2/ISLRv2_website.pdf)
 

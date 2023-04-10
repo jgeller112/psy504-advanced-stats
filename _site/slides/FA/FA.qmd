@@ -371,13 +371,15 @@ Several different ways:
 -   Cumulative percent variance extracted (75%)
 
     ```{r}
-    #| echo: false
-    #| 
+    #|
+    #| eval: FALSE
 
-    efa <- psych::fa(data, nfactors = 5, rotate="none", fm="pa") %>%
-       model_parameters(sort = TRUE)
+    number_items <- fa.parallel(data, fa="fa")
 
-    summary(efa)
+    #eigenvalues > 1 and > .7
+    sum(number_items$fa.values >= 1)
+    sum(number_items$fa.values >= .7)
+
 
     ```
 
@@ -408,6 +410,8 @@ fviz_screeplot(res.pca, addlabels=TRUE)
 ```
 :::
 :::
+
+## 
 
 ## Fitting factor model: \# of factors
 
@@ -472,6 +476,7 @@ library(parameters)
 efa <- psych::fa(data, nfactors = 5, rotate="none", fm="pa")
 #use pca instead
 ###fm="pca")
+efa <- psych::fa(data, nfactors = 5, rotate="none", fm="principal")
 ```
 
 ![](images/IMG_2416.jpeg)

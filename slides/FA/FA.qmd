@@ -207,9 +207,13 @@ library(corrplot)
 
 ## PCA vs. FA
 
--   Run *factor analysis* if you assume or wish to test a theoretical model of *latent factors* causing observed variables.
+<br>
 
--   Run *principal component analysis* If you want to simply *reduce* your correlated observed variables to a smaller set of important independent composite variables.
+<br>
+
+-   Run *factor analysis* if you assume or wish to test a theoretical model of *latent factors* causing observed variables
+
+-   Run PCA If you want to simply *reduce* your correlated observed variables to a smaller set of important independent composite variables
 
 ## Eigenvalues and Eigenvectors
 
@@ -226,11 +230,14 @@ library(corrplot)
 ## Factor analysis steps
 
 1.  Checking the suitability of data
+
 2.  Decide \# of factors
+
 3.  Extraction
+
 4.  Rotation
-5.  Interpret
-6.  *Optional*: Compute factor scores
+
+5.  Interpret/name
 
 ## Data
 

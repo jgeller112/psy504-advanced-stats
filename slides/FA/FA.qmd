@@ -371,8 +371,8 @@ Several different ways:
 -   Cumulative percent variance extracted (75%)
 
     ```{r}
-    #|
-    #| eval: FALSE
+    #| eval: False
+    #| 
 
     number_items <- fa.parallel(data, fa="fa")
 
@@ -413,17 +413,7 @@ fviz_screeplot(res.pca, addlabels=TRUE)
 
 ## 
 
-## Fitting factor model: \# of factors
-
-```{r}
-
-number_items <- fa.parallel(data, fa="fa")
-
-#eigenvalues > 1 and > .7
-sum(number_items$fa.values >= 1)
-sum(number_items$fa.values >= .7)
-
-```
+## 
 
 ## Fitting factor model: \# of factors
 
@@ -580,6 +570,10 @@ fa.diagram(efa)
 ![](images/IMG_2405.png)
 :::
 :::
+
+## Rotation
+
+![](images/moving_rot.GIF){fig-align="center"}
 
 ## Rotation
 

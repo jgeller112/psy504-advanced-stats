@@ -1,6 +1,6 @@
 ---
 title: "Week 12"
-subtitle: "MLM"
+subtitle: "GEEs and MLMs"
 date: 2023-04-17
 ---
 ## Before Class
@@ -18,3 +18,4 @@ date: 2023-04-17
   - What is the difference between grand-mean and group mean centered data?
   - What is the folly of trying to account for dependence by including level 2 data in an ordinary regression model?
 
+- {{< fa book >}} Ballinger, G. A. (2004). [Using Generalized Estimating Equations for Longitudinal Data Analysis](/readings/GEEs.pdf). Organizational Research Methods, 7(2), 127–150. https://doi.org/10.1177/1094428104263672

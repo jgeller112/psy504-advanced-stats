@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Clustering in R"
+title: "Introduction to Clustering (with R)"
 subtitle: "Princeton University"
 author: "Jason Geller, PH.D."
 date: 'Updated:`r Sys.Date()`'
@@ -57,7 +57,7 @@ library(corrplot)
 
 ::: columns
 ::: {.column width="50%"}
--   Unsupervised learning algorithm
+-   Unsupervised learning
 
     -   No labels/or correct answer
 

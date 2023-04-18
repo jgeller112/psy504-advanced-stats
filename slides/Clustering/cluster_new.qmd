@@ -285,7 +285,7 @@ rownames(clust_data) <- clust_data$speaker # make row
 
 clust_data <- dplyr::select(clust_data,-speaker) # remove extra col sub 54 has weird formatting
 
-
+head(clust_data)
 
 ```
 :::
@@ -589,9 +589,9 @@ plot(rez_kmeans)
 
 ```
 
--   Cluster 1: Versicolor
+-   Cluster 1: Setosa
 
--   Cluster 2: Setosa + Virginica
+-   Cluster 2: Versicolor + Virginica
 :::
 :::
 

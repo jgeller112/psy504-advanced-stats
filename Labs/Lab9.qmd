@@ -1,0 +1,19 @@
+---
+title: "Lab 9"
+format: html
+editor: visual
+author: "Jason Geller, Ph.D."
+date: 2023 04 19
+toc: true
+toc_float: true
+---
+
+## Lab 9: Clustering
+
+-   Through this lab, you will gain experience running hierarchical and k-means clustering in R by reproducing the results from Reilly et al. (2021).
+
+> Reilly, J., Finley, A. M., Kelly, A., Zuckerman, B., & Flurie, M. (2021). Olfactory language and semantic processing in anosmia: A neuropsychological case control study. *Neurocase*, *27*(1), 86--96. <https://doi.org/10.1080/13554794.2020.1871491>
+
+-   Per Jamie's email please reproduce their findings exactly :). ![](email.jpeg)
+
+To access Lab 9, please [click here](https://classroom.github.com/a/aVNjDw22).

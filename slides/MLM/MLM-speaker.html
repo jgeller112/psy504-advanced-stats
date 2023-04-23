@@ -670,20 +670,11 @@ y_{ij} = (\beta_{0} + u_{0j})
 <section id="combined-multilevel-equation" class="slide level2">
 <h2>Combined multilevel equation</h2>
 <ul>
-<li>Level 1:</li>
+<li>Level 1: <span class="math display">\[y_{ij} = \beta_{0j} + \beta_{1j}x_{ij} + e_{ij}\]</span></li>
+<li>Level 2:</li>
 </ul>
-<p><span class="math display">\[y_{ij} = \beta_{0j} + \beta_{1j}x_{ij} + e_{ij}\]</span></p>
-<ul>
-<li><p>Level 2:</p>
-<ul>
-<li>Predicted intercept</li>
-</ul></li>
-</ul>
-<p><span class="math display">\[\beta_{0j} = \beta_{0} + u_{0j}\]</span></p>
-<ul>
-<li>Predicted slope</li>
-</ul>
-<p><span class="math display">\[\beta_{1j} = \beta_{1} + u_{1j}\]</span></p>
+<p><span class="math display">\[ Random Intercept = \beta_{0j} = \beta_{0} + u_{0j}\]</span></p>
+<p><span class="math display">\[Random{slope}=\beta_{1j} = \beta_{1} + u_{1j}\]</span></p>
 <ul>
 <li>Mixed Model Equation</li>
 </ul>
@@ -724,16 +715,11 @@ y_{ij} = (\beta_{0} + u_{0j})
 
 </div>
 </div>
-</section></section>
-<section>
-<section id="fitting-and-interpretation-of-mlms" class="title-slide slide level1 center">
-<h1>Fitting and Interpretation of MLMs</h1>
-
 </section>
-<section id="modeling-procedure" class="slide level2">
-<h2>Modeling procedure</h2>
+<section id="building-a-model" class="slide level2">
+<h2>Building a model</h2>
 <ul>
-<li>Forward or backward (you choose)
+<li><p>Forward or backward approach</p>
 <ul>
 <li><p>Model 1: Null (unconditional means) model (ICC)</p></li>
 <li><p>Model 2: full (maximal) model</p>
@@ -746,8 +732,8 @@ y_{ij} = (\beta_{0} + u_{0j})
 <li><p>Use <code>brms</code></p></li>
 </ul></li>
 </ul></li>
+<li><p>Model 3 (optional): remove fixed effects (e.g., interaction)</p></li>
 </ul></li>
-<li>Model 3 (optional): fixed effects</li>
 </ul>
 <aside><ol class="aside-footnotes"><li id="fn1"><p><code>afex::all_fit</code> will test a variety of optimizers and tell you which ones worked</p></li></ol></aside></section>
 <section id="model-fitting-ml-or-reml" class="slide level2">
@@ -810,7 +796,12 @@ y_{ij} = (\beta_{0} + u_{0j})
 </div>
 </div>
 
-<img data-src="MLM_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<img data-src="MLM_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch quarto-figure-center"></section></section>
+<section>
+<section id="fitting-and-interpreting-models" class="title-slide slide level1 center">
+<h1>Fitting and Interpreting Models</h1>
+
+</section>
 <section id="linear-regression" class="slide level2">
 <h2>Linear regression</h2>
 <div class="cell">
@@ -1248,13 +1239,13 @@ computed using a Wald t-distribution approximation.</code></pre>
 </div></li>
 </ul>
 </section>
-<section id="shrinkage-if-there-is-time" class="slide level2">
-<h2>Shrinkage (if there is time)</h2>
+<section id="shrinkage" class="slide level2">
+<h2>Shrinkage</h2>
 
 <img data-src="images/partial-pooling-vs-others-1.png" class="r-stretch quarto-figure-center"><p>(https://www.tjmahr.com/plotting-partial-pooling-in-mixed-effects-models/)</p>
 </section>
-<section id="centering-if-there-is-time" class="slide level2">
-<h2>Centering (if there is time)</h2>
+<section id="centering" class="slide level2">
+<h2>Centering</h2>
 <ul>
 <li><p>You must ensure that the zero value for each predictor is meaningful before running the model</p>
 <ul>
@@ -1270,11 +1261,11 @@ computed using a Wald t-distribution approximation.</code></pre>
 <section id="group--vs.-grand-mean-centering" class="slide level2">
 <h2>Group- vs.&nbsp;grand-mean centering</h2>
 <ul>
-<li><p>Grand-mean centering: $x_{ij} - x$</p>
+<li><p>Grand-mean centering: <span class="math inline">\(x_{i} - x\)</span></p>
 <ul>
 <li>Variable represents each observation’s deviation from everyone’s norm, regardless of group</li>
 </ul></li>
-<li><p>Group-mean centering: $x_{ij} - x_j$</p>
+<li><p>Group-mean centering: <span class="math inline">\(x_{ij} - x_j\)</span></p>
 <ul>
 <li>Variable represents each observation’s deviation from their group’s norm</li>
 </ul></li>

@@ -333,9 +333,10 @@ head(eye)
 
 ```
 
-## Modeling procedure
+## Building a model
 
--   Forward or backward (you choose)
+-   Forward or backward approach
+
     -   Model 1: Null (unconditional means) model (ICC)
 
     -   Model 2: full (maximal) model
@@ -349,7 +350,8 @@ head(eye)
             -   Deal with fixed effects
 
             -   Use `brms`
--   Model 3 (optional): fixed effects
+
+    -   Model 3 (optional): remove fixed effects (e.g., interaction)
 
 [^1]: `afex::all_fit` will test a variety of optimizers and tell you which ones worked
 

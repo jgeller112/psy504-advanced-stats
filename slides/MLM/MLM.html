@@ -404,7 +404,7 @@ Jason Geller, PH.D.
 </div>
 </div>
 
-  <p class="date">4/23/23</p>
+  <p class="date">4/24/23</p>
 </section>
 <section class="slide level2">
 
@@ -1144,13 +1144,20 @@ Degrees-of-freedom method: asymptotic </code></pre>
 <span id="cb20-24"><a href="#cb20-24"></a>  <span class="fu">ggtitle</span>(<span class="st">"Pupil Effect"</span>, <span class="at">subtitle =</span> <span class="st">"White dots represent model mean and error bars represent 95% CIs. Black dots are group level means for each person"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="ggeffects" class="slide level2">
-<h2><code>ggeffects</code></h2>
+<section id="easystats-1" class="slide level2">
+<h2><code>Easystats</code></h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">ggemmeans</span>(max_model, <span class="at">terms=</span><span class="fu">c</span>(<span class="st">"vocoded"</span>), <span class="at">type=</span><span class="st">"re"</span>)<span class="sc">%&gt;%</span> <span class="fu">plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>pupil_plot_lmer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="MLM_files/figure-revealjs/unnamed-chunk-21-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<section id="ggeffects" class="slide level2">
+<h2><code>ggeffects</code></h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">ggemmeans</span>(max_model, <span class="at">terms=</span><span class="fu">c</span>(<span class="st">"vocoded"</span>), <span class="at">type=</span><span class="st">"re"</span>)<span class="sc">%&gt;%</span> <span class="fu">plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="MLM_files/figure-revealjs/unnamed-chunk-22-1.png" width="960" class="r-stretch quarto-figure-center"></section>
 <section id="effect-size" class="slide level2">
 <h2>Effect size</h2>
 <ul>
@@ -1161,28 +1168,28 @@ Degrees-of-freedom method: asymptotic </code></pre>
 <li><p>Transform f to <span class="math inline">\(\eta_p^2\)</span> (<em>when using afex::mixed)</em></p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co">#get eta for model</span></span>
-<span id="cb22-2"><a href="#cb22-2"></a></span>
-<span id="cb22-3"><a href="#cb22-3"></a><span class="fu">F_to_eta2</span>(<span class="fl">43.75</span>,<span class="dv">1</span>,  <span class="fl">52.09</span>)</span>
-<span id="cb22-4"><a href="#cb22-4"></a></span>
-<span id="cb22-5"><a href="#cb22-5"></a><span class="co"># get r2 </span></span>
-<span id="cb22-6"><a href="#cb22-6"></a><span class="fu">r2</span>(max_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co">#get eta for model</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a></span>
+<span id="cb23-3"><a href="#cb23-3"></a><span class="fu">F_to_eta2</span>(<span class="fl">43.75</span>,<span class="dv">1</span>,  <span class="fl">52.09</span>)</span>
+<span id="cb23-4"><a href="#cb23-4"></a></span>
+<span id="cb23-5"><a href="#cb23-5"></a><span class="co"># get r2 </span></span>
+<span id="cb23-6"><a href="#cb23-6"></a><span class="fu">r2</span>(max_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="r2mlm" class="slide level2">
 <h2><code>r2mlm</code></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># install.packages("devtools")</span></span>
-<span id="cb23-2"><a href="#cb23-2"></a><span class="co">#devtools::install_github#("mkshaw/r2mlm")</span></span>
-<span id="cb23-3"><a href="#cb23-3"></a></span>
-<span id="cb23-4"><a href="#cb23-4"></a>r2mlm<span class="sc">::</span><span class="fu">r2mlm</span>(max_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># install.packages("devtools")</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="co">#devtools::install_github#("mkshaw/r2mlm")</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a></span>
+<span id="cb24-4"><a href="#cb24-4"></a>r2mlm<span class="sc">::</span><span class="fu">r2mlm</span>(max_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 <img data-src="images/r2mlm.png" class="r-stretch quarto-figure-center"></section>
 <section id="write-up" class="slide level2">
 <h2>Write-up</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>report<span class="sc">::</span><span class="fu">report</span>(max_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>report<span class="sc">::</span><span class="fu">report</span>(max_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>We fitted a linear mixed model (estimated using REML and nloptwrap optimizer)
 to predict mean_pupil with vocoded (formula: mean_pupil ~ vocoded). The model
@@ -1205,7 +1212,7 @@ computed using a Wald t-distribution approximation.</code></pre>
 <section id="table" class="slide level2">
 <h2>Table</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>modelsummary<span class="sc">::</span><span class="fu">modelsummary</span>(max_model, <span class="at">output =</span> <span class="st">"html"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>modelsummary<span class="sc">::</span><span class="fu">modelsummary</span>(max_model, <span class="at">output =</span> <span class="st">"html"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
@@ -1288,13 +1295,13 @@ computed using a Wald t-distribution approximation.</code></pre>
 <li><p>We can fit most of the models we talked about this semester as a multilevel model</p></li>
 <li><p>Easy to fit Bayesian equivalents as well (using <code>brms</code>)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># poisson</span></span>
-<span id="cb27-2"><a href="#cb27-2"></a><span class="co"># binomial</span></span>
-<span id="cb27-3"><a href="#cb27-3"></a><span class="co"># negative binomial</span></span>
-<span id="cb27-4"><a href="#cb27-4"></a></span>
-<span id="cb27-5"><a href="#cb27-5"></a><span class="fu">glmer</span>(<span class="at">family=</span><span class="st">"binomial"</span>)</span>
-<span id="cb27-6"><a href="#cb27-6"></a><span class="fu">glmer</span>(<span class="at">family=</span><span class="st">"poisson"</span>)</span>
-<span id="cb27-7"><a href="#cb27-7"></a><span class="fu">glmer.nb</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="co"># poisson</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a><span class="co"># binomial</span></span>
+<span id="cb28-3"><a href="#cb28-3"></a><span class="co"># negative binomial</span></span>
+<span id="cb28-4"><a href="#cb28-4"></a></span>
+<span id="cb28-5"><a href="#cb28-5"></a><span class="fu">glmer</span>(<span class="at">family=</span><span class="st">"binomial"</span>)</span>
+<span id="cb28-6"><a href="#cb28-6"></a><span class="fu">glmer</span>(<span class="at">family=</span><span class="st">"poisson"</span>)</span>
+<span id="cb28-7"><a href="#cb28-7"></a><span class="fu">glmer.nb</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></li>
 </ul>
 </section>
@@ -1351,21 +1358,21 @@ computed using a Wald t-distribution approximation.</code></pre>
 <section id="group-mean-center-in-r" class="slide level2">
 <h2>Group mean center in R</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">library</span>(datawizard) <span class="co">#easystats </span></span>
-<span id="cb28-2"><a href="#cb28-2"></a></span>
-<span id="cb28-3"><a href="#cb28-3"></a><span class="co"># how to group mean center </span></span>
-<span id="cb28-4"><a href="#cb28-4"></a>d <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> </span>
-<span id="cb28-5"><a href="#cb28-5"></a>  <span class="co"># Grand mean centering (CMC)</span></span>
-<span id="cb28-6"><a href="#cb28-6"></a>  <span class="fu">mutate</span>(<span class="at">iv.gmc =</span> iv<span class="sc">-</span><span class="fu">mean</span>(iv)) <span class="sc">%&gt;%</span></span>
-<span id="cb28-7"><a href="#cb28-7"></a>  <span class="co"># Person mean centering (more generally, centering within cluster)</span></span>
-<span id="cb28-8"><a href="#cb28-8"></a>  <span class="fu">group_by</span>(id) <span class="sc">%&gt;%</span> </span>
-<span id="cb28-9"><a href="#cb28-9"></a>  <span class="fu">mutate</span>(<span class="at">iv.cm =</span> <span class="fu">mean</span>(iv),</span>
-<span id="cb28-10"><a href="#cb28-10"></a>         <span class="at">iv.cwc =</span> iv<span class="sc">-</span>iv.cm) <span class="sc">%&gt;%</span></span>
-<span id="cb28-11"><a href="#cb28-11"></a>  ungroup <span class="sc">%&gt;%</span></span>
-<span id="cb28-12"><a href="#cb28-12"></a>  <span class="co"># Grand mean centering of the aggregated variable</span></span>
-<span id="cb28-13"><a href="#cb28-13"></a>  <span class="fu">mutate</span>(<span class="at">iv.cmc =</span> iv.cm<span class="sc">-</span><span class="fu">mean</span>(iv.cm))</span>
-<span id="cb28-14"><a href="#cb28-14"></a><span class="co"># data wizard way</span></span>
-<span id="cb28-15"><a href="#cb28-15"></a>x <span class="ot">&lt;-</span> <span class="fu">demean</span>(x, <span class="at">select=</span><span class="fu">c</span>(<span class="st">"x"</span>), <span class="at">group=</span><span class="st">"ID"</span>) <span class="co">#gets within-group cluster</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">library</span>(datawizard) <span class="co">#easystats </span></span>
+<span id="cb29-2"><a href="#cb29-2"></a></span>
+<span id="cb29-3"><a href="#cb29-3"></a><span class="co"># how to group mean center </span></span>
+<span id="cb29-4"><a href="#cb29-4"></a>d <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> </span>
+<span id="cb29-5"><a href="#cb29-5"></a>  <span class="co"># Grand mean centering (CMC)</span></span>
+<span id="cb29-6"><a href="#cb29-6"></a>  <span class="fu">mutate</span>(<span class="at">iv.gmc =</span> iv<span class="sc">-</span><span class="fu">mean</span>(iv)) <span class="sc">%&gt;%</span></span>
+<span id="cb29-7"><a href="#cb29-7"></a>  <span class="co"># Person mean centering (more generally, centering within cluster)</span></span>
+<span id="cb29-8"><a href="#cb29-8"></a>  <span class="fu">group_by</span>(id) <span class="sc">%&gt;%</span> </span>
+<span id="cb29-9"><a href="#cb29-9"></a>  <span class="fu">mutate</span>(<span class="at">iv.cm =</span> <span class="fu">mean</span>(iv),</span>
+<span id="cb29-10"><a href="#cb29-10"></a>         <span class="at">iv.cwc =</span> iv<span class="sc">-</span>iv.cm) <span class="sc">%&gt;%</span></span>
+<span id="cb29-11"><a href="#cb29-11"></a>  ungroup <span class="sc">%&gt;%</span></span>
+<span id="cb29-12"><a href="#cb29-12"></a>  <span class="co"># Grand mean centering of the aggregated variable</span></span>
+<span id="cb29-13"><a href="#cb29-13"></a>  <span class="fu">mutate</span>(<span class="at">iv.cmc =</span> iv.cm<span class="sc">-</span><span class="fu">mean</span>(iv.cm))</span>
+<span id="cb29-14"><a href="#cb29-14"></a><span class="co"># data wizard way</span></span>
+<span id="cb29-15"><a href="#cb29-15"></a>x <span class="ot">&lt;-</span> <span class="fu">demean</span>(x, <span class="at">select=</span><span class="fu">c</span>(<span class="st">"x"</span>), <span class="at">group=</span><span class="st">"ID"</span>) <span class="co">#gets within-group cluster</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="footer footer-default">
 <p>PSY 504: Advanced Statistics</p>

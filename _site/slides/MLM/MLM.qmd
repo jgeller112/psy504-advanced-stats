@@ -647,6 +647,15 @@ pupil_plot_lmer <- ggplot(pupil_data_mean, aes(x = vocoded, y = mean_pup)) +
 
 ```
 
+## `Easystats`
+
+```{r}
+#| fig-align: "center"
+
+pupil_plot_lmer
+
+```
+
 ## `ggeffects`
 
 ```{r}

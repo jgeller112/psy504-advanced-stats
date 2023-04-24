@@ -299,7 +299,7 @@ eye %>% group_by(subject, vocoded) %>% summarise(mean_pupil=mean(mean_pupil)) %>
 -   The dotted lines are fixed slopes. The arrows show the added error term for each random slope
 
 $$
-(\beta_{1} + u_{1j})
+y_{ij}=(\beta_{1} + u_{1j})
 $$
 
 ![](images/randintslope3.png){fig-align="center"}

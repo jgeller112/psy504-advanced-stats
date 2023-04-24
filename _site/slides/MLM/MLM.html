@@ -384,6 +384,9 @@
       margin-right: 0; 
     }
   </style>
+  
+  <script src="MLM_files/libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="MLM_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -425,9 +428,10 @@ Jason Geller, PH.D.
 <li><p>Partial-pooling/shrinkage</p></li>
 <li><p>Growth curve modeling</p></li>
 <li><p>Different types of degrees of freedom</p></li>
-<li><p>Grand-mean vs.&nbsp;group-mean centering</p></li>
+<li><p>Centering</p></li>
 <li><p>Effective sample size</p></li>
 <li><p>Power</p></li>
+<li><p>Cross-level interactions</p></li>
 </ul>
 <p><strong>If you have specific questions about these things ask me</strong></p>
 </section>
@@ -469,8 +473,8 @@ Jason Geller, PH.D.
 <img data-src="images/nested.png" class="r-stretch quarto-figure-center"><ul>
 <li>For now we will focus on data with two levels:
 <ul>
-<li>Level one: Most basic level of observation</li>
-<li>Level two: Groups formed from aggregated level-one observation</li>
+<li>Level one: most basic level of observation</li>
+<li>Level two: groups formed from aggregated level-one observation</li>
 </ul></li>
 </ul>
 </section>
@@ -487,7 +491,10 @@ Jason Geller, PH.D.
 <ul>
 <li>Uses ML for missing data (partial pooling or shrinkage)</li>
 </ul></li>
-<li><strong><em>Power</em></strong></li>
+<li><strong><em>Power</em></strong>
+<ul>
+<li>Deaggregated data</li>
+</ul></li>
 <li><strong><em>Take into account within and between variance</em></strong></li>
 <li><strong><em>Flexibility</em></strong></li>
 </ul>
@@ -507,7 +514,7 @@ Jason Geller, PH.D.
 <ul>
 <li><p>Nested designs</p></li>
 <li><p>Repeated measures</p></li>
-<li><p>longitudinal data</p></li>
+<li><p>Longitudinal data</p></li>
 </ul></li>
 <li><p>Why use them:</p>
 <ul>
@@ -716,20 +723,18 @@ y_{ij} = (\beta_{0} + u_{0j})
 </div>
 </div>
 </section>
-<section id="building-a-model" class="slide level2">
-<h2>Building a model</h2>
+<section id="model-selection" class="slide level2">
+<h2>Model selection</h2>
 <ul>
 <li><p>Forward or backward approach</p>
 <ul>
-<li><p>Model 1: Null (unconditional means) model (ICC)</p></li>
+<li><p>Model 1: Null (unconditional means) model (calculate ICC)</p></li>
 <li><p>Model 2: full (maximal) model</p>
 <ul>
 <li><p>if non-convergence (pay attention to warning messages):</p>
 <ul>
 <li><p>Try different optimizers <sup>1</sup></p></li>
 <li><p>Deal with random effects</p></li>
-<li><p>Deal with fixed effects</p></li>
-<li><p>Use <code>brms</code></p></li>
 </ul></li>
 </ul></li>
 <li><p>Model 3 (optional): remove fixed effects (e.g., interaction)</p></li>
@@ -860,8 +865,8 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 </div>
 </section>
-<section id="interclass-correlation-icc" class="slide level2">
-<h2>Interclass correlation (ICC)</h2>
+<section id="intraclass-correlation-icc" class="slide level2">
+<h2>Intraclass correlation (ICC)</h2>
 <ul>
 <li><p>ICC is a standardized way of expressing how much variance is due to clustering/group</p>
 <ul>
@@ -1047,10 +1052,9 @@ Degrees-of-freedom method: asymptotic </code></pre>
 </ul></li>
 </ul>
 
-<img data-src="MLM_files/figure-revealjs/unnamed-chunk-17-1.png" width="960" class="r-stretch quarto-figure-center"></section></section>
-<section>
-<section id="model-comparison" class="title-slide slide level1 center">
-<h1>Model Comparison</h1>
+<img data-src="MLM_files/figure-revealjs/unnamed-chunk-17-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<section id="model-comparison" class="slide level2">
+<h2>Model comparison</h2>
 <ul>
 <li><p>Can compare models using <code>anova</code> function or <code>test_likelihoodratio</code> from <code>easystats</code></p>
 <ul>
@@ -1140,26 +1144,13 @@ Degrees-of-freedom method: asymptotic </code></pre>
 <span id="cb20-24"><a href="#cb20-24"></a>  <span class="fu">ggtitle</span>(<span class="st">"Pupil Effect"</span>, <span class="at">subtitle =</span> <span class="st">"White dots represent model mean and error bars represent 95% CIs. Black dots are group level means for each person"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="easystats-1" class="slide level2">
-<h2><code>Easystats</code></h2>
+<section id="ggeffects" class="slide level2">
+<h2><code>ggeffects</code></h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>pupil_plot_lmer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">ggemmeans</span>(max_model, <span class="at">terms=</span><span class="fu">c</span>(<span class="st">"vocoded"</span>), <span class="at">type=</span><span class="st">"re"</span>)<span class="sc">%&gt;%</span> <span class="fu">plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="MLM_files/figure-revealjs/unnamed-chunk-21-1.png" width="960" class="r-stretch quarto-figure-center"></section>
-<section id="afex" class="slide level2">
-<h2><code>Afex</code></h2>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">afex_plot</span>(m, <span class="at">x =</span> <span class="st">"vocoded"</span>, </span>
-<span id="cb22-2"><a href="#cb22-2"></a>                <span class="at">mapping =</span> <span class="fu">c</span>(<span class="st">"color"</span>, <span class="st">"shape"</span>, <span class="st">"linetype"</span>), </span>
-<span id="cb22-3"><a href="#cb22-3"></a>                <span class="at">error =</span> <span class="st">"within"</span>, </span>
-<span id="cb22-4"><a href="#cb22-4"></a>                <span class="at">point_arg =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">5</span>), <span class="at">line_arg =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">2</span>),</span>
-<span id="cb22-5"><a href="#cb22-5"></a>                <span class="at">error_arg =</span> <span class="fu">list</span>(<span class="at">linewidth =</span> <span class="dv">2</span>, <span class="at">width =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="dv">1</span>))</span>
-<span id="cb22-6"><a href="#cb22-6"></a></span>
-<span id="cb22-7"><a href="#cb22-7"></a>p2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="MLM_files/figure-revealjs/unnamed-chunk-22-1.png" width="960" class="r-stretch quarto-figure-center"></section>
 <section id="effect-size" class="slide level2">
 <h2>Effect size</h2>
 <ul>
@@ -1170,40 +1161,28 @@ Degrees-of-freedom method: asymptotic </code></pre>
 <li><p>Transform f to <span class="math inline">\(\eta_p^2\)</span> (<em>when using afex::mixed)</em></p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># can use F values from this to grab an estimated effect size</span></span>
-<span id="cb23-2"><a href="#cb23-2"></a><span class="fu">F_to_eta2</span>(<span class="fl">43.75</span>,<span class="dv">1</span>,  <span class="fl">52.09</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-
-<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-23">
-<colgroup><col><col><col><col></colgroup><tbody><tr>
-<th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Eta2_partial</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">CI</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">CI_low</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">CI_high</th></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0.456</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0.95</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0.292</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">1</td></tr>
-</tbody></table>
-
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co">#easystats</span></span>
-<span id="cb24-2"><a href="#cb24-2"></a><span class="fu">r2</span>(max_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># R2 for Mixed Models
-
-  Conditional R2: 0.077
-     Marginal R2: 0.001</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co">#get eta for model</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a></span>
+<span id="cb22-3"><a href="#cb22-3"></a><span class="fu">F_to_eta2</span>(<span class="fl">43.75</span>,<span class="dv">1</span>,  <span class="fl">52.09</span>)</span>
+<span id="cb22-4"><a href="#cb22-4"></a></span>
+<span id="cb22-5"><a href="#cb22-5"></a><span class="co"># get r2 </span></span>
+<span id="cb22-6"><a href="#cb22-6"></a><span class="fu">r2</span>(max_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="r2mlm" class="slide level2">
 <h2><code>r2mlm</code></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>r2mlm<span class="sc">::</span><span class="fu">r2mlm</span>(max_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># install.packages("devtools")</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="co">#devtools::install_github#("mkshaw/r2mlm")</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a></span>
+<span id="cb23-4"><a href="#cb23-4"></a>r2mlm<span class="sc">::</span><span class="fu">r2mlm</span>(max_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
+
+<img data-src="images/r2mlm.png" class="r-stretch quarto-figure-center"></section>
 <section id="write-up" class="slide level2">
 <h2>Write-up</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>report<span class="sc">::</span><span class="fu">report</span>(max_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>report<span class="sc">::</span><span class="fu">report</span>(max_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>We fitted a linear mixed model (estimated using REML and nloptwrap optimizer)
 to predict mean_pupil with vocoded (formula: mean_pupil ~ vocoded). The model
@@ -1223,19 +1202,99 @@ computed using a Wald t-distribution approximation.</code></pre>
 </div>
 </div>
 </section>
+<section id="table" class="slide level2">
+<h2>Table</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>modelsummary<span class="sc">::</span><span class="fu">modelsummary</span>(max_model, <span class="at">output =</span> <span class="st">"html"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:center;"> &nbsp;(1) </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> (Intercept) </td>
+   <td style="text-align:center;"> 0.004 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:center;"> (0.002) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> vocodedV6 </td>
+   <td style="text-align:center;"> 0.003 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:center;"> (0.001) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SD (Intercept subject) </td>
+   <td style="text-align:center;"> 0.012 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SD (vocodedV6 subject) </td>
+   <td style="text-align:center;"> 0.005 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cor (Intercept~vocodedV6 subject) </td>
+   <td style="text-align:center;"> −0.195 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;box-shadow: 0px 1px"> SD (Observations) </td>
+   <td style="text-align:center;box-shadow: 0px 1px"> 0.041 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Num.Obs. </td>
+   <td style="text-align:center;"> 5609 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> R2 Marg. </td>
+   <td style="text-align:center;"> 0.001 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> R2 Cond. </td>
+   <td style="text-align:center;"> 0.077 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> AIC </td>
+   <td style="text-align:center;"> −19801.7 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> BIC </td>
+   <td style="text-align:center;"> −19761.9 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ICC </td>
+   <td style="text-align:center;"> 0.1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> RMSE </td>
+   <td style="text-align:center;"> 0.04 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</section>
 <section id="generalized-linear-mixed-models" class="slide level2">
 <h2>Generalized linear mixed models</h2>
 <ul>
 <li><p>We can fit most of the models we talked about this semester as a multilevel model</p></li>
 <li><p>Easy to fit Bayesian equivalents as well (using <code>brms</code>)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># poisson</span></span>
-<span id="cb29-2"><a href="#cb29-2"></a><span class="co"># binomial</span></span>
-<span id="cb29-3"><a href="#cb29-3"></a><span class="co"># negative binomial</span></span>
-<span id="cb29-4"><a href="#cb29-4"></a></span>
-<span id="cb29-5"><a href="#cb29-5"></a><span class="fu">glmer</span>(<span class="at">family=</span><span class="st">"binomial"</span>)</span>
-<span id="cb29-6"><a href="#cb29-6"></a><span class="fu">glmer</span>(<span class="at">family=</span><span class="st">"poisson"</span>)</span>
-<span id="cb29-7"><a href="#cb29-7"></a><span class="fu">glmer.nb</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># poisson</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="co"># binomial</span></span>
+<span id="cb27-3"><a href="#cb27-3"></a><span class="co"># negative binomial</span></span>
+<span id="cb27-4"><a href="#cb27-4"></a></span>
+<span id="cb27-5"><a href="#cb27-5"></a><span class="fu">glmer</span>(<span class="at">family=</span><span class="st">"binomial"</span>)</span>
+<span id="cb27-6"><a href="#cb27-6"></a><span class="fu">glmer</span>(<span class="at">family=</span><span class="st">"poisson"</span>)</span>
+<span id="cb27-7"><a href="#cb27-7"></a><span class="fu">glmer.nb</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></li>
 </ul>
 </section>
@@ -1292,21 +1351,21 @@ computed using a Wald t-distribution approximation.</code></pre>
 <section id="group-mean-center-in-r" class="slide level2">
 <h2>Group mean center in R</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">library</span>(datawizard) <span class="co">#easystats </span></span>
-<span id="cb30-2"><a href="#cb30-2"></a></span>
-<span id="cb30-3"><a href="#cb30-3"></a><span class="co"># how to group mean center </span></span>
-<span id="cb30-4"><a href="#cb30-4"></a>d <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> </span>
-<span id="cb30-5"><a href="#cb30-5"></a>  <span class="co"># Grand mean centering (CMC)</span></span>
-<span id="cb30-6"><a href="#cb30-6"></a>  <span class="fu">mutate</span>(<span class="at">iv.gmc =</span> iv<span class="sc">-</span><span class="fu">mean</span>(iv)) <span class="sc">%&gt;%</span></span>
-<span id="cb30-7"><a href="#cb30-7"></a>  <span class="co"># Person mean centering (more generally, centering within cluster)</span></span>
-<span id="cb30-8"><a href="#cb30-8"></a>  <span class="fu">group_by</span>(id) <span class="sc">%&gt;%</span> </span>
-<span id="cb30-9"><a href="#cb30-9"></a>  <span class="fu">mutate</span>(<span class="at">iv.cm =</span> <span class="fu">mean</span>(iv),</span>
-<span id="cb30-10"><a href="#cb30-10"></a>         <span class="at">iv.cwc =</span> iv<span class="sc">-</span>iv.cm) <span class="sc">%&gt;%</span></span>
-<span id="cb30-11"><a href="#cb30-11"></a>  ungroup <span class="sc">%&gt;%</span></span>
-<span id="cb30-12"><a href="#cb30-12"></a>  <span class="co"># Grand mean centering of the aggregated variable</span></span>
-<span id="cb30-13"><a href="#cb30-13"></a>  <span class="fu">mutate</span>(<span class="at">iv.cmc =</span> iv.cm<span class="sc">-</span><span class="fu">mean</span>(iv.cm))</span>
-<span id="cb30-14"><a href="#cb30-14"></a><span class="co"># data wizard way</span></span>
-<span id="cb30-15"><a href="#cb30-15"></a>x <span class="ot">&lt;-</span> <span class="fu">demean</span>(x, <span class="at">select=</span><span class="fu">c</span>(<span class="st">"x"</span>), <span class="at">group=</span><span class="st">"ID"</span>) <span class="co">#gets within-group cluster</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">library</span>(datawizard) <span class="co">#easystats </span></span>
+<span id="cb28-2"><a href="#cb28-2"></a></span>
+<span id="cb28-3"><a href="#cb28-3"></a><span class="co"># how to group mean center </span></span>
+<span id="cb28-4"><a href="#cb28-4"></a>d <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> </span>
+<span id="cb28-5"><a href="#cb28-5"></a>  <span class="co"># Grand mean centering (CMC)</span></span>
+<span id="cb28-6"><a href="#cb28-6"></a>  <span class="fu">mutate</span>(<span class="at">iv.gmc =</span> iv<span class="sc">-</span><span class="fu">mean</span>(iv)) <span class="sc">%&gt;%</span></span>
+<span id="cb28-7"><a href="#cb28-7"></a>  <span class="co"># Person mean centering (more generally, centering within cluster)</span></span>
+<span id="cb28-8"><a href="#cb28-8"></a>  <span class="fu">group_by</span>(id) <span class="sc">%&gt;%</span> </span>
+<span id="cb28-9"><a href="#cb28-9"></a>  <span class="fu">mutate</span>(<span class="at">iv.cm =</span> <span class="fu">mean</span>(iv),</span>
+<span id="cb28-10"><a href="#cb28-10"></a>         <span class="at">iv.cwc =</span> iv<span class="sc">-</span>iv.cm) <span class="sc">%&gt;%</span></span>
+<span id="cb28-11"><a href="#cb28-11"></a>  ungroup <span class="sc">%&gt;%</span></span>
+<span id="cb28-12"><a href="#cb28-12"></a>  <span class="co"># Grand mean centering of the aggregated variable</span></span>
+<span id="cb28-13"><a href="#cb28-13"></a>  <span class="fu">mutate</span>(<span class="at">iv.cmc =</span> iv.cm<span class="sc">-</span><span class="fu">mean</span>(iv.cm))</span>
+<span id="cb28-14"><a href="#cb28-14"></a><span class="co"># data wizard way</span></span>
+<span id="cb28-15"><a href="#cb28-15"></a>x <span class="ot">&lt;-</span> <span class="fu">demean</span>(x, <span class="at">select=</span><span class="fu">c</span>(<span class="st">"x"</span>), <span class="at">group=</span><span class="st">"ID"</span>) <span class="co">#gets within-group cluster</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="footer footer-default">
 <p>PSY 504: Advanced Statistics</p>

@@ -75,11 +75,13 @@ library(corrplot)
 
 -   Different types of degrees of freedom
 
--   Grand-mean vs. group-mean centering
+-    Centering
 
 -   Effective sample size
 
 -   Power
+
+-   Cross-level interactions
 
 **If you have specific questions about these things ask me**
 
@@ -116,8 +118,8 @@ library(corrplot)
 ![](images/nested.png){fig-align="center"}
 
 -   For now we will focus on data with two levels:
-    -   Level one: Most basic level of observation
-    -   Level two: Groups formed from aggregated level-one observation
+    -   Level one: most basic level of observation
+    -   Level two: groups formed from aggregated level-one observation
 
 ## Multilevel models are awesome!
 
@@ -128,6 +130,7 @@ library(corrplot)
 -   ***Missing data***
     -   Uses ML for missing data (partial pooling or shrinkage)
 -   ***Power***
+    -   Deaggregated data
 -   ***Take into account within and between variance***
 -   ***Flexibility***
 :::
@@ -145,7 +148,7 @@ library(corrplot)
 
     -   Repeated measures
 
-    -   longitudinal data
+    -   Longitudinal data
 
 -   Why use them:
 
@@ -333,11 +336,11 @@ head(eye)
 
 ```
 
-## Building a model
+## Model selection
 
 -   Forward or backward approach
 
-    -   Model 1: Null (unconditional means) model (ICC)
+    -   Model 1: Null (unconditional means) model (calculate ICC)
 
     -   Model 2: full (maximal) model
 
@@ -346,10 +349,6 @@ head(eye)
             -   Try different optimizers [^1]
 
             -   Deal with random effects
-
-            -   Deal with fixed effects
-
-            -   Use `brms`
 
     -   Model 3 (optional): remove fixed effects (e.g., interaction)
 
@@ -449,7 +448,7 @@ summary(null_model)
 
 ```
 
-## Interclass correlation (ICC)
+## Intraclass correlation (ICC)
 
 -   ICC is a standardized way of expressing how much variance is due to clustering/group
 
@@ -584,7 +583,7 @@ cor_test(re,  "vocodedV6", "(Intercept)") %>%
   plot()
 ```
 
-# Model Comparison
+## Model comparison
 
 -   Can compare models using `anova` function or `test_likelihoodratio` from `easystats`
 
@@ -648,27 +647,12 @@ pupil_plot_lmer <- ggplot(pupil_data_mean, aes(x = vocoded, y = mean_pup)) +
 
 ```
 
-## `Easystats`
+## `ggeffects`
 
 ```{r}
 #| fig-align: "center"
 #| 
-pupil_plot_lmer
-
-```
-
-## `Afex`
-
-```{r}
-#| fig-align: "center"
-#| 
-p2 <- afex_plot(m, x = "vocoded", 
-                mapping = c("color", "shape", "linetype"), 
-                error = "within", 
-                point_arg = list(size = 5), line_arg = list(size = 2),
-                error_arg = list(linewidth = 2, width = 0, linetype = 1))
-
-p2
+ggemmeans(max_model, terms=c("vocoded"), type="re")%>% plot()
 ```
 
 ## Effect size
@@ -680,13 +664,14 @@ p2
 -   Transform f to $\eta_p^2$ (*when using afex::mixed)*
 
 ```{r}
+#| eval: false
 
-# can use F values from this to grab an estimated effect size
+
+#get eta for model
+
 F_to_eta2(43.75,1,  52.09)
-```
 
-```{r}
-#easystats
+# get r2 
 r2(max_model)
 ```
 
@@ -694,14 +679,26 @@ r2(max_model)
 
 ```{r}
 #| eval: false
+
+# install.packages("devtools")
+#devtools::install_github#("mkshaw/r2mlm")
+
 r2mlm::r2mlm(max_model)
 
 ```
+
+![](images/r2mlm.png){fig-align="center"}
 
 ## Write-up
 
 ```{r}
 report::report(max_model)
+```
+
+## Table
+
+```{r}
+modelsummary::modelsummary(max_model, output = "html")
 ```
 
 ## Generalized linear mixed models

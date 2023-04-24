@@ -75,7 +75,7 @@ library(corrplot)
 
 -   Different types of degrees of freedom
 
--    Centering
+-   Centering
 
 -   Effective sample size
 
@@ -195,7 +195,7 @@ library(broom.mixed) # tidy output of mixed models
 library(afex) # fit mixed models
 library(emmeans) # marginal means
 library(ggeffects) # marginal means
-eye  <- read_csv(here::here("data","vocoded_pupil.csv" ))
+eye  <- read_csv("https://raw.githubusercontent.com/jgeller112/psy504-advanced-stats/main/slides/MLM/data/vocoded_pupil.csv")
 
 ```
 :::
